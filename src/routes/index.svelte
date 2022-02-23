@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import { onMount } from 'svelte'
+  import { db } from '$lib/db'
+  import { doc, onSnapshot } from 'firebase/firestore'
+  
+  export let res
+
+  onMount(()=> {
+    return onSnapshot(doc(db, 'notes', 'id'), (doc)=> {
+      res = doc.data()
+    })
+  })
+  
+</script>
+{JSON.stringify(res)}

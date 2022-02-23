@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
+import svg from '@poppanator/sveltekit-svg';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,7 +14,10 @@ const config = {
       assets: 'build',
       fallback: '200.html',
       precompress: false
-    })
+    }),
+    vite: {
+      plugins: [svg()]
+    }
 	}
 };
 
