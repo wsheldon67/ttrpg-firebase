@@ -1,0 +1,94 @@
+/* Colors */
+:root {
+  --t: #EEE;
+  --at: black;
+
+  --b0: #121212;
+  --b1: #1B1B1B;
+  --b2: #242424;
+  --b3: #2D2D2D;
+  --b4: #363636;
+
+  --p: #bbdefb;
+
+  --bad: #ef9a9a;
+  --good: #a5d6a7;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --t: black;
+    --b0: white;
+  }
+}
+
+/* Variables */
+:root {
+  --break1: 36em;
+}
+
+/* Defaults */
+* {
+  color: var(--t);
+  background-color: inherit;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: large;
+}
+html {background-color: var(--b0);}
+body {
+  background-color: var(--b0);
+  padding: 2em 0em;
+  margin: 0em;
+  overflow: auto;
+}
+
+button {
+  border: none;
+}
+button:hover {
+  filter: saturate(1.5) brightness(.8)
+}
+
+/* Utilities */
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.descHeight100 * {
+  height: 100%;
+}
+.vertCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap {flex-wrap: wrap;}
+
+
+.arrow,
+.arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+.arrow {
+  visibility: hidden;
+}
+.arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+.tip[data-popper-placement^='top'] > .arrow {
+  bottom: -4px;
+}
+.tip[data-popper-placement^='bottom'] > .arrow {
+  top: -4px;
+}
+.tip[data-popper-placement^='left'] > .arrow {
+  right: -4px;
+}
+.tip[data-popper-placement^='right'] > .arrow {
+  left: -4px;
+}
