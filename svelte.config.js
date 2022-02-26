@@ -17,6 +17,9 @@ const config = {
     }),
     vite: {
       plugins: [svg()]
+    },
+    prerender: {
+      enabled: false
     }
 	}
 };
