@@ -1,3 +1,6 @@
+<script context='module'>
+  import '$lib/firebase'
+</script>
 <script>
   import '../app.css'
   import TopNav from './_layout/TopNav.svelte'
