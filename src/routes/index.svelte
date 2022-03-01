@@ -3,7 +3,7 @@
   import { db } from '$lib/firebase'
   import { doc, onSnapshot } from 'firebase/firestore'
   
-  export let res
+  let res
 
   onMount(async ()=> {
     return onSnapshot(doc(db, 'notes', 'id'), (doc)=> {
