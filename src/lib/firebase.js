@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import { getFirestore } from 'firebase/firestore';
 
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
 import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
 
@@ -19,7 +21,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+export const app = firebase.initializeApp(firebaseConfig);
 //export const auth = getAuth(app)
 export const db = getFirestore()
 
@@ -30,3 +32,23 @@ export const uiOptions = {
   ],
   signInSuccessUrl: '/'
 }
+
+export var uid
+
+export function isSignedIn (){
+  return new Promise((resolve, reject) => {
+    const auth = getAuth()
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        uid = user.uid
+        resolve(user)
+      } else {
+        reject('No users signed in.')
+      }
+    })
+  })
+}
+// there is stuff we can't do until the user is signed in
+// on authstatechanged, set the store
+// login page signs user in, layout checks that user is signed in,
+//    if they are not, redirects
