@@ -33,14 +33,11 @@ export const uiOptions = {
   signInSuccessUrl: '/'
 }
 
-export var uid
-
 export function isSignedIn (){
   return new Promise((resolve, reject) => {
     const auth = getAuth()
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        uid = user.uid
         resolve(user)
       } else {
         reject('No users signed in.')

@@ -1,6 +1,13 @@
 <script>
+  import { onMount } from 'svelte'
   let note
   let uid
+  
+  onMount(async () => {
+    const { isSignedIn } = await import('$lib/firebase')
+    const user = await isSignedIn()
+    uid = user.uid
+  })
 
   async function click() {
     const { collection, addDoc } = await import('firebase/firestore')
