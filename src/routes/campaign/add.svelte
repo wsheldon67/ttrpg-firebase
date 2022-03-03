@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { campaign, campaignID } from '$lib/campaign'
+  import { campaign } from '$lib/campaign'
   let name
   let uid
 
@@ -20,8 +20,8 @@
     
     // set firebase realtime listener to update store on changes
     campaign.set(docRef.id)
-    // set campaign ID for use in sending things to firebase
-    campaignID.set(docRef.id)
+    // set campaign ID for use in sending things to firebase (maybe needs to be a cookie or somethin)
+    localStorage.setItem('campaignID', docRef.id)
   }
   // TODO campaign/notes/permissions combo
   /* 

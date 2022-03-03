@@ -1,6 +1,6 @@
 import { doc, onSnapshot } from "firebase/firestore";
 import { writable } from "svelte/store";
-import { db } from "./firebase";
+//import { db } from "./firebase";
 
 var unsub
 
@@ -9,7 +9,8 @@ function createStore() {
 
   return {
     subscribe,
-    set: (id) => {
+    set: async (id) => {
+      const { db } = await import('./firebase')
       if (unsub) {unsub()}
       unsub = onSnapshot(doc(db, 'campaigns', id), (doc) => {
         set(doc.data())
@@ -18,5 +19,3 @@ function createStore() {
   }
 }
 export const campaign = createStore()
-
-export const campaignID = writable(null)
