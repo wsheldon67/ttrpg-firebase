@@ -6,6 +6,7 @@
 
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
+
   
   onMount(async ()=>{
     const { isSignedIn } = await import ('$lib/firebase')
@@ -16,12 +17,14 @@
     if (!localStorage.getItem('campaignID')) {
       goto('/campaign')
     }
-    if (!$campaign) {
-      campaign.set(localStorage.getItem('campaignID'))
-    }
   })
+  let returnval = campaign.set(localStorage.getItem('campaignID'))
 
 </script>
+{#await returnval}
+Loading...
+{:then}
 <TopNav />
 <slot />
 <BottomNav />
+{/await}

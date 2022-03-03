@@ -1,5 +1,5 @@
 import { doc, onSnapshot } from "firebase/firestore";
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 //import { db } from "./firebase";
 
 var unsub
@@ -11,9 +11,12 @@ function createStore() {
     subscribe,
     set: async (id) => {
       const { db } = await import('./firebase')
-      if (unsub) {unsub()}
-      unsub = onSnapshot(doc(db, 'campaigns', id), (doc) => {
-        set(doc.data())
+      return new Promise((resolve) => {
+        if (unsub) {unsub()}
+        unsub = onSnapshot(doc(db, 'campaigns', id), (doc) => {
+          set(doc.data())
+          resolve('campaign has loaded')
+        })
       })
     },
     clear: () => {
