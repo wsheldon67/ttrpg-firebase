@@ -6,7 +6,6 @@
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
   
-
   onMount(async ()=>{
     const { isSignedIn } = await import ('$lib/firebase')
     const signedIn = await isSignedIn()

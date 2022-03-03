@@ -45,7 +45,3 @@ export function isSignedIn (){
     })
   })
 }
-// there is stuff we can't do until the user is signed in
-// on authstatechanged, set the store
-// login page signs user in, layout checks that user is signed in,
-//    if they are not, redirects
