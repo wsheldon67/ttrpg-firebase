@@ -7,5 +7,6 @@
 </style>
 
 <a href='/auth/login'>Login</a>
-<a href='/notes/add'>Notes</a>
+<a href='/notes/add'>Add Note</a>
+<a href='/notes/all'>All Notes</a>
 <a href='/campaign'>Switch Campaign</a>
