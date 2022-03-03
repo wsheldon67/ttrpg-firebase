@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   let note
   let uid
+  let campaignID = localStorage.getItem('campaignID')
   
   onMount(async () => {
     const { isSignedIn } = await import('$lib/firebase')
@@ -13,7 +14,7 @@
     const { collection, addDoc } = await import('firebase/firestore')
     const { db } = await import('$lib/firebase')
     
-    const docRef = await addDoc(collection(db, 'notes'), {
+    const docRef = await addDoc(collection(db, 'campaigns', campaignID, 'notes'), {
       user: uid,
       body: note
     })
