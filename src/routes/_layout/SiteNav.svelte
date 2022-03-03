@@ -7,8 +7,5 @@
 </style>
 
 <a href='/auth/login'>Login</a>
-<a href='/time'>Time</a>
-<a href='/notes'>Notes</a>
+<a href='/notes/add'>Notes</a>
 <a href='/campaign'>Switch Campaign</a>
-
-<a href='/settings'>Settings</a>
