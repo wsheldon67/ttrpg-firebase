@@ -14,16 +14,18 @@
     const { collection, addDoc } = await import('firebase/firestore')
     const { db } = await import ('$lib/firebase')
     const docRef = await addDoc(collection(db, 'campaigns'),{
-      uid, name
+      uid, name,
+      users: {
+        [uid]: ['GM Only','Everyone']
+      }
     })
     console.log('doc written with id', docRef.id)
     
     // set firebase realtime listener to update store on changes
     campaign.set(docRef.id)
-    // set campaign ID for use in sending things to firebase (maybe needs to be a cookie or somethin)
+    // set campaign ID for use in sending things to firebase
     localStorage.setItem('campaignID', docRef.id)
   }
-  // TODO campaign/notes/permissions combo
   /* 
     1. create campaign doc with uid
     2. firebase realtime sets writable store
