@@ -15,6 +15,11 @@ function createStore() {
       unsub = onSnapshot(doc(db, 'campaigns', id), (doc) => {
         set(doc.data())
       })
+    },
+    clear: () => {
+      if (unsub) {unsub()}
+      unsub = undefined
+      set(null)
     }
   }
 }
