@@ -1,15 +1,13 @@
 <script>
-  import { onMount } from 'svelte'
-  import { db } from '$lib/firebase'
-  import { doc, onSnapshot } from 'firebase/firestore'
-  
-  let res
+  import Search from '$lib/c/Search.svelte'
 
-  onMount(async ()=> {
-    return onSnapshot(doc(db, 'notes', 'id'), (doc)=> {
-      res = doc.data()
-    })
-  })
-  
+  let data = [
+    {label: 'cow', value: 0},
+    {label: 'dog', value: 1},
+    {label: 'rat', value: 2}
+  ]
+  function click(e) {
+    console.log(e.detail)
+  }
 </script>
-{JSON.stringify(res)}
+<Search opts={data} on:click={click}/>
