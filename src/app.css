@@ -43,6 +43,7 @@ body {
 
 button {
   border: none;
+  width: min-content;
 }
 button:hover {
   filter: saturate(1.5) brightness(.8)
@@ -56,6 +57,11 @@ button:hover {
 }
 .descHeight100 * {
   height: 100%;
+}
+.p {
+  background-color: var(--p);
+  color: var(--at);
+  padding: .25em .5em;
 }
 .vertCenter {
   display: flex;
