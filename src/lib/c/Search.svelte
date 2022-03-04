@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
 
-  export let opts = []
+  export let searchFunc = val => val
   export let threshold = 0
   let show = false
   let filteredOpts = []
@@ -11,16 +11,17 @@
     dispatch('click', value)
   }
   function focus(e) {
+    dispatch('focus')
     if (e.target.value.length >= threshold) {show = true}
   }
   function blur() {
     show = false
   }
-  function change(e) {
-    const search_term = e.target.value.toLowerCase()
-    filteredOpts = opts.filter(el => el.label.toLowerCase().includes(search_term))
-    console.log(filteredOpts)
+  async function change(e) {
+    if (e.target.value.length < threshold) {return}
+    filteredOpts = await searchFunc(e.target.value)
   }
+  // TODO create a version of this that searches from the db, after threshold
 </script>
 <style>
   input {
