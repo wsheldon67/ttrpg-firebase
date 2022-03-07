@@ -1,6 +1,7 @@
 <script>
   import SiteNav from './SiteNav.svelte'
   import Menu from '$lib/i/menu.svg'
+  import Search from './Search.svelte'
 
   let isOpen = false
   function toggle() {isOpen = !isOpen}
@@ -30,7 +31,7 @@
   <button on:click={toggle} class='vertCenter'>
     <Menu />
   </button>
-  <input type='search' placeholder='search' />
+  <Search />
   <div>Logo</div>
 </div>
 {#if isOpen}

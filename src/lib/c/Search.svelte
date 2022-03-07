@@ -19,23 +19,28 @@
   }
   async function change(e) {
     if (e.target.value.length < threshold) {return}
+    show = true
     filteredOpts = await searchFunc(e.target.value)
   }
-  // TODO create a version of this that searches from the db, after threshold
+  function mousedown(e) {
+    e.preventDefault()
+  }
 </script>
 <style>
   input {
     width: 100%;
   }
 </style>
-<div on:blur={blur}>
 <input
+  on:blur={blur}
   on:focus={focus}
   on:input={change}
 />
 {#if show}
   {#each filteredOpts as opt}
-    <button on:click={() => {click(opt.value)}}>{opt.label}</button>
+    <button
+      on:click={() => {click(opt.value)}}
+      on:mousedown={mousedown}
+    >{opt.label}</button>
   {/each}
 {/if}
-</div>
