@@ -30,13 +30,32 @@
   input {
     width: 100%;
   }
+  .cont {
+    position: relative;
+  }
+  .results {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2em;
+    width: 100%;
+    max-width: var(--break1);
+    z-index: 2;
+  }
+  button {
+    width: 100%;
+    text-align: justify;
+    border: 2px solid black;
+  }
 </style>
+<div class='cont'>
 <input
   on:blur={()=>{show=false}}
   on:focus={focus}
   on:input={change}
 />
 {#if show}
+<div class='results'>
   {#each filteredOpts as opt}
     <button
       on:click={() => {click(opt.value)}}
@@ -49,4 +68,6 @@
     {/if}
   </button>
   {/each}
+</div>
 {/if}
+</div>

@@ -12,8 +12,13 @@
   })
 
   async function searchFunc(query) {
-    const res = await index.search(query)
-    console.log(res)
+    //const res = await index.search(query)
+    const res = {
+      hits: [
+        {name: 'cow', objectID: 'ididididididi', body: 'this is the cow body'},
+        {name: 'pig', objectID: 'ididwwidididi', body: 'this is the pig body you crazy son of a boy fallacy big nose branchy wandchy toomanterin gopher.'}
+      ]
+    }
     const result = res.hits.map((el) => {return {label: el.name, value: el.objectID, sub: el.body}})
     return result
   }
