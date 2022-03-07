@@ -13,8 +13,8 @@
 
   async function searchFunc(query) {
     const res = await index.search(query)
-    const result = res.hits.map((el) => {return {label: el.name, value: el.body}})
-    console.log(result)
+    console.log(res)
+    const result = res.hits.map((el) => {return {label: el.name, value: el.objectID, sub: el.body}})
     return result
   }
 
@@ -23,7 +23,4 @@
   }
 
 </script>
-<svelte:head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
-</svelte:head>
 <Search {searchFunc} threshold={2} on:click={click}/>
