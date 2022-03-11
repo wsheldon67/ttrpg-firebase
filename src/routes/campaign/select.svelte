@@ -18,7 +18,6 @@
       res.push({data: doc.data(), id: doc.id})
     })
     campaigns = res
-    // TODO change to map
   })
 
   async function changeCampaign(e) {
@@ -30,6 +29,7 @@
 </script>
 
 <select on:change={changeCampaign}>
+  <option>- Select -</option>
   {#each campaigns as campaign}
     <option value={campaign.id}>{campaign.data.name}</option>
   {/each}
