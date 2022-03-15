@@ -1,14 +1,22 @@
-<script>
+<script lang='ts'>
   import { truncate_string } from '../pretty';
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
 
-  export let searchFunc = val => val
+  type FilteredOpt = {
+    value: any,
+    label: string,
+    sub?: string
+  }
+
+  export let searchFunc = async function (query_text: string): Promise<FilteredOpt[]>{
+    return [{value: '', label: 'Please provide callback to searchFunc'}]
+  }
   export let threshold = 0
   export let max_length = 50
 
   let show = false
-  let filteredOpts = []
+  let filteredOpts: FilteredOpt[] = []
 
   function click(value) {
     dispatch('click', value)

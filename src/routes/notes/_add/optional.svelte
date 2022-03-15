@@ -1,6 +1,6 @@
-<script>
+<script lang='ts'>
   import CustomLabel from './customLabel.svelte'
-  export let optional
+  export let optional: {label: string}[]
   let len = [true]
   function add() {
     len = [...len, true]

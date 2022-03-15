@@ -1,8 +1,10 @@
 <script lang='ts'>
   import { campaign } from '$lib/campaign'
   import Adder from '$lib/c/Adder.svelte'
-  import { onMount } from 'svelte'
   import { get_roles } from './roles'
+
+
+  export let change = (event) => {}
 
   let promise = get_roles($campaign)
 
@@ -13,6 +15,6 @@
   {#await promise}
     Loading...
   {:then opts}
-    <Adder {opts}/>
+    <Adder {opts} on:change={change}/>
   {/await}
 </label>

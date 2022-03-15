@@ -1,13 +1,17 @@
-<script>
-  import Search from '$lib/c/Search.svelte'
+<script lang='ts'>
+  import Adder from '$lib/c/Adder.svelte'
+  import Add from './notes/_add.svelte'
 
-  let data = [
-    {label: 'cow', value: 0},
-    {label: 'dog', value: 1},
-    {label: 'rat', value: 2}
+  let require = [{label: 'label1', type: 'number'},{label: 'label2'}]
+  let optional = [{label: 'opti1'},{label: 'opti2'}]
+  let types = [{label: 'NPC'},{label: 'Place'}]
+
+  let opts = [
+    {label: 'yes', value: 'true', id: 'yes'},
+    {label: 'no', value: 'false', id: 'no'}
   ]
-  function click(e) {
-    console.log(e.detail)
-  }
+
 </script>
-<Search opts={data} on:click={click}/>
+
+<Add {require} {optional} type='test' {types} />
+<Adder {opts} />
