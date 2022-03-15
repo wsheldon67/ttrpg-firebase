@@ -5,8 +5,8 @@
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
 
-  export let opts = []
-  let selected = []
+  export let opts: {label: string, value: any, id: any}[]
+  let selected: {label: string, value: any, id: any}[] = []
 
   function input(e) {
     if (e.target.value == '') {return}
