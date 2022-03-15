@@ -1,10 +1,11 @@
 import firebase from 'firebase/compat/app';
-import { getFirestore } from 'firebase/firestore';
+import { setDoc, doc, getFirestore } from 'firebase/firestore';
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
+import { goto } from '$app/navigation';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +23,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = firebase.initializeApp(firebaseConfig);
-//export const auth = getAuth(app)
 export const db = getFirestore()
 
 export const ui = new firebaseui.auth.AuthUI(firebase.auth())
@@ -30,7 +30,18 @@ export const uiOptions = {
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID
   ],
-  signInSuccessUrl: '/'
+  //signInSuccessUrl: '/',
+  callbacks: {
+    signInSuccessWithAuthResult: async (authResult) => {
+      const {user} = authResult
+      console.log(user)
+      await setDoc(doc(db, 'users', user.uid), {
+        displayName: user.displayName
+      }, {merge: true})
+      goto('/')
+      return false
+    }
+  }
 }
 
 export function isSignedIn (){
