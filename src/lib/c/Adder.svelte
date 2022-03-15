@@ -4,9 +4,10 @@
   // event when something is added, removed, or changed fires on both.
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
+  import type { Element } from '../types.type'
 
-  export let opts: {label: string, value: any, id: any}[]
-  let selected: {label: string, value: any, id: any}[] = []
+  export let opts: Element[]
+  let selected: Element[] = []
 
   function input(e) {
     if (e.target.value == '') {return}
