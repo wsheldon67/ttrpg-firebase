@@ -58,7 +58,7 @@
 <div class='results'>
   {#each filteredOpts as opt}
     <button
-      on:click={() => {click(opt.value)}}
+      on:click|preventDefault={() => {click(opt.value)}}
       on:mousedown|preventDefault={()=>{}}
     >
     {opt.label}
