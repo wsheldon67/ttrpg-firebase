@@ -20,6 +20,7 @@
 
   function click(value) {
     dispatch('click', value)
+    show = false
   }
   
   function focus(e) {
