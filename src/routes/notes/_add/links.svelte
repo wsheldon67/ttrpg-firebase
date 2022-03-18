@@ -3,20 +3,18 @@
   import algoliasearch from 'algoliasearch/lite'
   import { onMount } from 'svelte'
 
-  export let add_type
-  export let remove_type
+  export let add_link
+  export let remove_link
+  export let ty:{label: string, value: string}
 
   let index
+  let members:{objectID: string, label: string}[] = []
+  let campaignID = localStorage.getItem('campaignID')
 
   onMount(() => {
     const searchClient = algoliasearch('63TFNF6SIM', '3a935d9fd11ba4ca236618ee36fc1280')
     index = searchClient.initIndex('notes')
   })
-
-
-  export let ty:{label: string, value: string}
-  let members:{objectID: string, label: string}[] = []
-  let campaignID = localStorage.getItem('campaignID')
 
   async function searchFunc(query:string) {
     const res = await index.search(query, {filters: `type:${ty.value} AND campaign:${campaignID}`})
@@ -26,13 +24,13 @@
   }
   async function click(e) {
     const {objectID} = e.detail
-    add_type(ty.value, objectID)
+    add_link(ty.value, objectID)
     members = [...members, e.detail]
   }
   function click_remove(e) {
     const objectID = e.target.value
     members = members.filter(el => el.objectID !== objectID)
-    remove_type(ty.value, objectID)
+    remove_link(ty.value, objectID)
   }
 </script>
 <div> 

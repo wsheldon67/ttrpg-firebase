@@ -16,4 +16,4 @@
   ]
 
 </script>
-<Add {require} {optional} type='npc'{links}/>
+<Add {require} {optional} type='npc' {links}/>

@@ -4,7 +4,7 @@
   import { get_roles } from './roles'
 
 
-  export let change = (event) => {}
+  export let change_permissions = (event) => {}
 
   let promise = get_roles($campaign)
 
@@ -15,6 +15,6 @@
   {#await promise}
     Loading...
   {:then opts}
-    <Adder {opts} on:change={change}/>
+    <Adder {opts} on:change={change_permissions}/>
   {/await}
 </label>
