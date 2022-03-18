@@ -1,12 +1,13 @@
 <script lang='ts'>
-  import Optional from './_add/optional.svelte'
-  import Require from './_add/require.svelte'
-  import Types from './_add/links.svelte'
-  import Permissions from './_add/permissions.svelte'
+  import Optional from './optional.svelte'
+  import Require from './require.svelte'
+  import Types from './links.svelte'
+  import Permissions from '/permissions.svelte'
 
-  import { submit_form, add_link, remove_link, change_permissions } from './_add/submit_form'
+  import { submit_form, add_link, remove_link, change_permissions } from './submit_form'
+  import type { NoteType } from '../note.type';
 
-  export let type:"npc"|"event"|"place"
+  export let type:NoteType
   export let require: {type?: string, label: string}[] = []
   export let optional: {label: string}[] = []
   export let links: {label: string, value: string}[] = []

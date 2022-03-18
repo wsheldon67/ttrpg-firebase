@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import Add from '../_add.svelte'
+  import Add from '../_add/Note.svelte'
 
   let require = [
     {label: 'body'}

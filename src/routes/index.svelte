@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Adder from '$lib/c/Adder.svelte'
-  import Add from './notes/_add.svelte'
+  import Add from './notes/_add/Note.svelte'
 
   let require = [{label: 'label1', type: 'number'},{label: 'label2'}]
   let optional = [{label: 'opti1'},{label: 'opti2'}]
