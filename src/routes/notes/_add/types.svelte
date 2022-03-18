@@ -3,6 +3,8 @@
   import algoliasearch from 'algoliasearch/lite'
   import { onMount } from 'svelte'
 
+  export let add_type
+
   let index
 
   onMount(() => {
@@ -11,20 +13,31 @@
   })
 
 
-  export let ty:{label: string}
+  export let ty:{label: string, value: string}
   let members = []
   let campaignID = localStorage.getItem('campaignID')
 
   async function searchFunc(query:string) {
-    const res = await index.search(query, {filters: `type:${ty.label} AND campaign:${campaignID}`})
-    return res.hits.map((el) => {return {label: el.name, value: el.objectID}})
+    const res = await index.search(query, {filters: `type:${ty.value} AND campaign:${campaignID}`})
+    return res.hits.map((el) => {
+      return {label: el.name, value: {objectID: el.objectID, label: el.name}}
+    })
+  }
+  async function click(e) {
+    const {objectID, label} = e.detail
+    add_type(ty.label, objectID)
+    members = [...members, label]
   }
 </script>
 <div>
   <div>
     {#each members as member}
-      <div>{member}</div>
+      <button>{member}</button>
     {/each}
   </div>
-  <Search {searchFunc} />
+  <!--svelte-ignore a11y-label-has-associated-control-->
+  <label>
+    {ty.label}
+    <Search {searchFunc} on:click={click}/>
+  </label>
 </div>
