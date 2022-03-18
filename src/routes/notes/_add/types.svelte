@@ -4,6 +4,7 @@
   import { onMount } from 'svelte'
 
   export let add_type
+  export let remove_type
 
   let index
 
@@ -14,7 +15,7 @@
 
 
   export let ty:{label: string, value: string}
-  let members = []
+  let members:{objectID: string, label: string}[] = []
   let campaignID = localStorage.getItem('campaignID')
 
   async function searchFunc(query:string) {
@@ -24,15 +25,23 @@
     })
   }
   async function click(e) {
-    const {objectID, label} = e.detail
-    add_type(ty.label, objectID)
-    members = [...members, label]
+    const {objectID} = e.detail
+    add_type(ty.value, objectID)
+    members = [...members, e.detail]
+  }
+  function click_remove(e) {
+    const objectID = e.target.value
+    members = members.filter(el => el.objectID !== objectID)
+    remove_type(ty.value, objectID)
   }
 </script>
-<div>
+<div> 
   <div>
     {#each members as member}
-      <button>{member}</button>
+      <button
+        on:click|preventDefault={click_remove}
+        value={member.objectID}
+      >{member.label}</button>
     {/each}
   </div>
   <!--svelte-ignore a11y-label-has-associated-control-->
