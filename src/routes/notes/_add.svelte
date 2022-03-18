@@ -9,10 +9,10 @@
   export let type:string
   export let require = []
   export let optional = []
-  export let types = []
+  export let links = []
 
   let viewers = []
-  let links = {}
+  let form_links = {}
   let all_links: string[] = []
 
   async function submit(e) {
@@ -29,7 +29,7 @@
     // on submit, need to add types to their linked notes
   }
   function remove_type(label: string, objectID: string) {
-    links[label] = links[label].filter(el => el !== objectID)
+    form_links[label] = form_links[label].filter(el => el !== objectID)
     all_links = all_links.filter(el => el !== objectID)
   }
   // TODO this component should accept starting/default values
@@ -51,7 +51,7 @@
 <form>
   <Require {require} />
   <Optional {optional} />
-  {#each types as ty}
+  {#each links as ty}
     <Types {ty} {add_type} {remove_type}/>
   {/each}
   <Permissions {change}/>

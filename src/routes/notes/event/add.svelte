@@ -7,9 +7,9 @@
   let optional = [
     {label: 'title'}
   ]
-  let types = [
+  let links = [
     {label: 'NPCs', value: 'npc'}, {label: 'Places', value: 'place'}
   ]
 
 </script>
-<Add type='event' {require} {optional} {types} />
+<Add type='event' {require} {optional} {links} />

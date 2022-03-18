@@ -11,9 +11,9 @@
     {label: 'Cha', type: 'number'}, {label: 'Con', type: 'number'},
     
   ]
-  let types = [
+  let links = [
     {label: 'Places', value: 'place'}
   ]
 
 </script>
-<Add {require} {optional} type='npc' {types}/>
+<Add {require} {optional} type='npc'{links}/>

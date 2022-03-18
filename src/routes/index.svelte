@@ -4,7 +4,7 @@
 
   let require = [{label: 'label1', type: 'number'},{label: 'label2'}]
   let optional = [{label: 'opti1'},{label: 'opti2'}]
-  let types = [{label: 'NPC'},{label: 'Place'}]
+  let links = [{label: 'NPC', value: 'npc'},{label: 'Place', value: 'place'}]
 
   let opts = [
     {label: 'yes', value: 'true', id: 'yes'},
@@ -13,5 +13,5 @@
 
 </script>
 
-<Add {require} {optional} type='test' {types} />
+<Add {require} {optional} type='test' {links} />
 <Adder {opts} />
