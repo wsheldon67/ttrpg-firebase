@@ -3,10 +3,10 @@
   import Adder from '$lib/c/Adder.svelte'
   import { get_roles } from './roles'
 
-
   export let change_permissions = (event) => {}
-
-  let promise = get_roles($campaign)
+  export let note = undefined
+  
+  let promise = get_roles($campaign, note)
 
 </script>
 <!--svelte-ignore a11y-label-has-associated-control-->
@@ -14,7 +14,7 @@
   Can view this note:
   {#await promise}
     Loading...
-  {:then opts}
-    <Adder {opts} on:change={change_permissions}/>
+  {:then {opts, selected}}
+    <Adder {opts} on:change={change_permissions} {selected}/>
   {/await}
 </label>

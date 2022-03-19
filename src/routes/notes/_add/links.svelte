@@ -6,6 +6,7 @@
   export let add_link
   export let remove_link
   export let ty:{label: string, value: string}
+  export let note: any = undefined
 
   let index
   let members:{objectID: string, label: string}[] = []
@@ -14,6 +15,10 @@
   onMount(() => {
     const searchClient = algoliasearch('63TFNF6SIM', '3a935d9fd11ba4ca236618ee36fc1280')
     index = searchClient.initIndex('notes')
+    
+    if (note) {
+      members = note.links[ty.value]
+    }
   })
 
   async function searchFunc(query:string) {

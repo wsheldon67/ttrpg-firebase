@@ -2,11 +2,21 @@ let viewers: string[] = []
 let links = {}
 let all_links: string[] = []
 
+// TODO add existing note data to these things on load
+
+export function load(note) {
+  viewers = note.viewers
+  links = note.links
+  for (let i in note.links) {
+    all_links.push(...note.links[i])
+  }
+}
+
 /** Compile form data from all components, add note to server, update linked notes. */
-export async function submit_form(e, type:string) {
+export async function submit_form(e, type:string, objectID?: string) {
   const doc_to_insert: any = {type, viewers, links}
   const { isSignedIn, db } = await import ('$lib/firebase')
-  const { collection, addDoc, writeBatch, arrayUnion, doc } = await import ('firebase/firestore')
+  const { collection, addDoc, setDoc, writeBatch, arrayUnion, doc } = await import ('firebase/firestore')
   const { uid } = await isSignedIn()
   doc_to_insert.user = uid
   doc_to_insert.campaign = localStorage.getItem('campaignID')
@@ -17,7 +27,13 @@ export async function submit_form(e, type:string) {
     doc_to_insert[entry[0]] = entry[1]
   }
   console.log(doc_to_insert)
-  const docRef = await addDoc(collection(db, 'notes'), doc_to_insert)
+  let docRef
+  if (objectID) {
+    await setDoc(doc(db, 'notes', objectID), doc_to_insert)
+    docRef = {id: objectID}
+  } else {
+    docRef = await addDoc(collection(db, 'notes'), doc_to_insert)
+  }
 
   // set our links
   const batch = writeBatch(db)

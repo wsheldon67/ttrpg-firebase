@@ -24,7 +24,7 @@ export async function get_notes_where(
   const querySnapshot = await getDocs(q)
   const res = []
   querySnapshot.forEach((doc) => {
-    res.push(doc.data())
+    res.push({...doc.data(), objectID: doc.id})
   })
   return res
 }

@@ -1,8 +1,13 @@
 import type { Element, Campaign, User } from "$lib/types.type";
 import { get_user } from '$lib/db'
 
-export async function get_roles(campaign: Campaign):Promise<Element[]> {
+type Result = {
+  opts: Element[],
+  selected: Element[]
+}
 
+export async function get_roles(campaign: Campaign, note:any):Promise<Result> {
+  if (!note) {note = {viewers:[]}}
   const roles = {}
 
   // users
@@ -20,18 +25,31 @@ export async function get_roles(campaign: Campaign):Promise<Element[]> {
 
   // roles
   const role_elements: Element[] = []
+  const role_selected: Element[] = []
 
   for (let role in roles) {
-    role_elements.push({label: role, value: role, id: role})
+    if (note.viewers.includes(role)) {
+      role_selected.push({label: role, value: role, id: role})
+    } else {
+      role_elements.push({label: role, value: role, id: role})
+    }
   }
 
   // users
   const user_elements: Element[] = []
+  const user_selected: Element[] = []
   const users: User[] = await Promise.all(user_promises)
 
   users.forEach((user, index) => {
-    user_elements.push({label: user.displayName, value: uids[index], id: uids[index]})
+    if (note.viewers.includes(uids[index])) {
+      user_selected.push({label: user.displayName, value: uids[index], id: uids[index]})
+    } else {
+      user_elements.push({label: user.displayName, value: uids[index], id: uids[index]})
+    }
   })
 
-  return [...role_elements, ...user_elements]
+  return {
+    opts: [...role_elements, ...user_elements],
+    selected: [...role_selected, ...user_selected]
+  }
 }

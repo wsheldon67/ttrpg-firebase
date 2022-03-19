@@ -1,19 +1,29 @@
 <script lang='ts'>
   import Optional from './optional.svelte'
   import Require from './require.svelte'
-  import Types from './links.svelte'
-  import Permissions from '/permissions.svelte'
+  import Links from './links.svelte'
+  import Permissions from './permissions.svelte'
 
-  import { submit_form, add_link, remove_link, change_permissions } from './submit_form'
+  import { submit_form, add_link, remove_link, change_permissions, load } from './submit_form'
   import type { NoteType } from '../note.type';
+  import { onMount } from 'svelte';
+  import NoteTypes from './note_types'
 
-  export let type:NoteType
-  export let require: {type?: string, label: string}[] = []
-  export let optional: {label: string}[] = []
-  export let links: {label: string, value: string}[] = []
+  export let type:NoteType = 'event'
+  export let require: {type?: string, label: string}[] = NoteTypes[type].require
+  export let optional: {label: string}[] = NoteTypes[type].optional
+  export let links: {label: string, value: string}[] = NoteTypes[type].links
+
+  export let note:any = {}
+  export let objectID = undefined
+
+  onMount(()=> {
+    load(note)
+    type = note.type
+  })
 
   async function submit(e) {
-    submit_form(e, type)
+    submit_form(e, type, objectID)
   }
   // TODO this component should accept starting/default values
   // TODO this component should optionally accept an objectID to update instead of writing a new note
@@ -36,11 +46,11 @@
 A form used to update notes.
 -->
 <form>
-  <Require {require} />
-  <Optional {optional} />
+  <Require {require} {note} />
+  <Optional {optional} {note} />
   {#each links as ty}
-    <Types {ty} {add_link} {remove_link}/>
+    <Links {ty} {add_link} {remove_link} {note}/>
   {/each}
-  <Permissions {change_permissions}/>
+  <Permissions {change_permissions} {note}/>
   <button on:click|preventDefault={submit} class='p'>Save</button>
 </form>
