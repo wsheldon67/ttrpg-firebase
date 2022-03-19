@@ -7,7 +7,7 @@
   import type { Element } from '../types.type'
 
   export let opts: Element[]
-  let selected: Element[] = []
+  export let selected: Element[] = []
 
   function input(e) {
     if (e.target.value == '') {return}
