@@ -1,7 +1,7 @@
 <script lang='ts'>
   export let require: {label: string, type?: string}[] = []
   export let note = undefined
-
+  // TODO support textarea as type
 </script>
 {#each require as reqItem}
   <label>
