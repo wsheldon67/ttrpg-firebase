@@ -17,7 +17,7 @@
     index = searchClient.initIndex('notes')
     
     if (note) {
-      members = note.links[ty.value]
+      members = note.links[ty.value] || []
     }
   })
 
