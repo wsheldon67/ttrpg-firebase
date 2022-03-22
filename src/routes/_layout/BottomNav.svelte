@@ -3,8 +3,8 @@
   import TimeIcon from '$lib/i/clock.svg'
   import NoteIcon from '$lib/i/edit-3.svg'
   import BookIcon from '$lib/i/book-open.svg'
-  //import Time from '../time/Time.svelte'
-  //import QuickNote from '../notes/_QuickNote.svelte'
+
+  import CompSearch from '../comp/Search.svelte'
 
   const open = {
     time: false,
@@ -47,6 +47,6 @@
   </Widget>
   <Widget id='rules' tip='Look up a rule' on:click={click} show={open.rules}>
     <BookIcon slot='icon' />
-    //TODO rule lookup
+    <CompSearch />
   </Widget>
 </nav>

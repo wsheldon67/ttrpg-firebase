@@ -10,7 +10,7 @@
     const q = query(
       collection(db, 'compendium'),
       where('system','==', system),
-      where('path', '==', path)
+      where('url', '==', path)
     )
     const snapshot = await getDocs(q)
     let res

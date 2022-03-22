@@ -9,7 +9,8 @@ export type Campaign = {
   uid: string,
   users: {
     [index: string]: string[] | any
-  }[]
+  }[],
+  system: '5e'|'starfinder'
 }
 
 export type User = {

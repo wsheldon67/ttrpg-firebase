@@ -2,6 +2,7 @@
   import { truncate_string } from '../pretty';
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
+  import Popper from './Popper.svelte'
 
   type FilteredOpt = {
     value: any,
@@ -14,6 +15,7 @@
   }
   export let threshold = 0
   export let max_length = 50
+  export let fit = false
 
   let show = false
   let filteredOpts: FilteredOpt[] = []
@@ -39,17 +41,14 @@
   input {
     width: 100%;
   }
+  .fit {
+    width: 100%;
+  }
+  .expand {
+    width: 96vw;
+  }
   .cont {
     position: relative;
-  }
-  .results {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 2em;
-    width: 100%;
-    max-width: var(--break1);
-    z-index: 2;
   }
   button {
     width: 100%;
@@ -58,13 +57,15 @@
   }
 </style>
 <div class='cont'>
+
+<Popper {show}>
 <input
   on:blur={()=>{show=false}}
   on:focus={focus}
   on:input={change}
+  slot='reference'
 />
-{#if show}
-<div class='results'>
+<div class={fit?'fit':'expand'} slot='content'>
   {#each filteredOpts as opt}
     <button
       on:click|preventDefault={() => {click(opt.value)}}
@@ -78,5 +79,5 @@
   </button>
   {/each}
 </div>
-{/if}
+</Popper>
 </div>
