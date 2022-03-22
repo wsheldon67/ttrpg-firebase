@@ -32,6 +32,9 @@
     width: max-content;
     height: min-content;
   }
+  span {
+    text-decoration: underline dotted var(--t) 8%;
+  }
 </style>
 {#if block}
 <div
