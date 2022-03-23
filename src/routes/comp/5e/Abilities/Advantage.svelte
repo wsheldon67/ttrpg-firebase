@@ -3,5 +3,5 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Advantage'>
-  Roll two d20's and take the higher result.
+  <p>Roll two d20's and take the higher result.</p>
 </Header>

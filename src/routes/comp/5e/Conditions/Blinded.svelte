@@ -4,7 +4,7 @@
   export let start:number = 1
 </script>
 <Header h={1} {start} title='Blinded'>
-  When a creature is blinded:
+  <p>When a creature is blinded:</p>
   <ul>
     <li>It fails ability checks that require sight.</li>
     <li>Others get <Tip text='advantage'/> on attack rolls against it.</li>

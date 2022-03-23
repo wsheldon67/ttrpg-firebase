@@ -8,7 +8,7 @@
   <Advantage start={start+1} />
   <Disadvantage start={start+1} />
   <Header h={2} {start} title='Multiple (Dis)Advantages'>
-    Advantages and disadvantages do not stack:
+    <p>Advantages and disadvantages do not stack:</p>
     <table>
       <tr>
         <th>Advantages</th>
@@ -33,6 +33,6 @@
     </table>
   </Header>
   <Header h={2} {start} title='Rerolls'>
-    If something lets you reroll a d20 while you have advantage or disadvantage, you reroll only one of the two dice. You may choose which dice to reroll.
+    <p>If something lets you reroll a d20 while you have advantage or disadvantage, you reroll only one of the two dice. You may choose which dice to reroll.</p>
   </Header>
 </Header>

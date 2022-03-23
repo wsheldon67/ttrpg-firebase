@@ -4,11 +4,11 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Grappled'>
-  Effect:
+  <p>Effect:</p>
   <ul>
     <li>Speed = 0</li>
   </ul>
-  Ends if:
+  <p>Ends if:</p>
   <ul>
     <li>Grappler is <Tip text='incapacitated'/>.</li>
     <li>Grappled is removed from reach of grappler.</li>

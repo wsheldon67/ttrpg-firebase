@@ -3,5 +3,5 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Deafened'>
-  Fail any ability check that requires hearing.
+  <p>Fail any ability check that requires hearing.</p>
 </Header>

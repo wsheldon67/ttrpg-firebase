@@ -6,14 +6,14 @@
   let low = start + 1
 </script>
 <Header h={1} {start} title='Damage Resistance and Vulnerability'>
-  Some creatures and objects are exceedingly difficult or easy to hurt with certain types of damage.
+  <p>Some creatures and objects are exceedingly difficult or easy to hurt with certain types of damage.</p>
   <Resistance start={low} />
   <Vulnerability start={low} />
   <Header h={2} {start} title='Rules'>
     <ul>
       <li>Applied <strong>after</strong> other modifiers to damage.</li>
     </ul>
-    Does not stack:
+    <p>Does not stack:</p>
     <table>
       <tr>
         <th>Resistances</th>

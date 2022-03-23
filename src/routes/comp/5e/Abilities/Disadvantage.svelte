@@ -3,5 +3,5 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Disadvantage'>
-  Roll two d20s and take the lower result.
+  <p>Roll two d20s and take the lower result.</p>
 </Header>

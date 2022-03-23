@@ -4,7 +4,7 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Petrified'>
-  Creature and any non-magical objects it is carrying are transformed into a solid, inanimate substsance.
+  <p>Creature and any non-magical objects it is carrying are transformed into a solid, inanimate substsance.</p>
   <ul>
     <li>Weight increases 10x</li>
     <li>Aging ceases</li>

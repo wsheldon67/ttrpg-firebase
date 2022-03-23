@@ -13,6 +13,7 @@
 <style>
   button {
     width: 100%;
+    padding: .25em 0em;
     text-align: left;
     color: inherit;
     font-weight: inherit;

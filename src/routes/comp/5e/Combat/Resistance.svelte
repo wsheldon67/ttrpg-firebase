@@ -3,5 +3,5 @@
   export let start: number = 1
 </script>
 <Header h={1} {start} title='Resistance'>
-  Damage of the specified type is halved against the creature.
+  <p>Damage of the specified type is halved against the creature.</p>
 </Header>

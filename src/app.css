@@ -49,23 +49,29 @@ button {
 button:hover {
   filter: saturate(1.5) brightness(.8)
 }
+h1, h2, h3, h4, h5 {
+  margin: .25em 0em;
+}
 h1 {
   color: var(--p);
+  background-color: var(--b2);
   font-weight: bold;
   font-size: x-large;
 }
 h2 {
   color: var(--good);
+  background-color: var(--b3);
   font-size: larger;
 }
 h3 {
-  color: var(--bad)
+  color: var(--bad);
+  background-color: var(--b4);
 }
 h4 {
-  color: var(--a)
+  color: var(--a);
 }
 h5 {
-  color: var(--t)
+  color: var(--t);
 }
 
 /* Utilities */
