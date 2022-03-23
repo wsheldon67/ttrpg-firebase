@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: min-content auto min-content;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     background-color: var(--b4);
   }
@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 2em;
+    top: 0em;
     width: 100vw;
     max-width: var(--break1);
     background-color: var(--b3);

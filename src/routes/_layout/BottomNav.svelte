@@ -24,8 +24,8 @@
 </script>
 <style>
   nav {
-    position: absolute;
-    bottom: 0.25em;
+    position: fixed;
+    bottom: 0em;
     height: 2em;
     width: 100%;
     display: flex;

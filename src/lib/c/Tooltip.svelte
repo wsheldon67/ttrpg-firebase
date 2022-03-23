@@ -27,7 +27,9 @@
 <style>
   .tip {
     padding: .25em;
-    background-color: var(--b4);
+    background-color: var(--t);
+    color: var(--at);
+    filter: opacity(96%);
     max-width: 16em;
     width: max-content;
     height: min-content;
