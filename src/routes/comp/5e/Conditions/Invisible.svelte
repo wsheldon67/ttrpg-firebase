@@ -2,8 +2,9 @@
   import Header from '$lib/c/Header.svelte'
 import Tip from '../_Tip.svelte'
   export let start: number = 1
+  export let show: boolean = true
 </script>
-<Header h={1} {start} title='Invisible'>
+<Header h={1} {start} {show} title='Invisible'>
   <ul>
     <li>Impossible to see</li>
     <li>Considered to be <Tip text='heavily obscured' path='Environment/HeavilyObscured'/></li>

@@ -2,8 +2,9 @@
   import Header from '$lib/c/Header.svelte'
   import Tip from '../_Tip.svelte'
   export let start: number = 1
+  export let show: boolean = true
 </script>
-<Header h={1} {start} title='Petrified'>
+<Header h={1} {start} {show} title='Petrified'>
   <p>Creature and any non-magical objects it is carrying are transformed into a solid, inanimate substsance.</p>
   <ul>
     <li>Weight increases 10x</li>

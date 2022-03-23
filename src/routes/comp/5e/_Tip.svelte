@@ -8,6 +8,7 @@
     'advantage': 'Abilities/Advantage',
     'disadvantage': 'Abilities/Disadvantage',
     'incapacitated': 'Conditions/Incapacitated',
+    'crit': 'Combat/CriticalHit'
   }
 
   if (common[text.toLowerCase()]) {
