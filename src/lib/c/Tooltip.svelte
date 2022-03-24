@@ -28,6 +28,7 @@
   .tip {
     padding: .25em;
     background-color: var(--t);
+    font-weight: var(--at-weight);
     color: var(--at);
     filter: opacity(96%);
     max-width: 16em;
