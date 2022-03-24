@@ -50,6 +50,6 @@
   <!--svelte-ignore a11y-label-has-associated-control-->
   <label>
     {ty.label}
-    <Search {searchFunc} on:click={click}/>
+    <Search {searchFunc} on:click={click} fit/>
   </label>
 </div>
