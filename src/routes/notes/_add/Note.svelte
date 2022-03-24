@@ -27,8 +27,7 @@
   async function submit(e) {
     submit_form(e, type, objectID)
   }
-  // TODO this component should accept starting/default values
-  // TODO this component should optionally accept an objectID to update instead of writing a new note
+
 </script>
 <style>
   form {

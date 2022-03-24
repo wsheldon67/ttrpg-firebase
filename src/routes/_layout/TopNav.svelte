@@ -5,7 +5,6 @@
 
   let isOpen = false
   function toggle() {isOpen = !isOpen}
-  // TODO search
 </script>
 <style>
   .nav {

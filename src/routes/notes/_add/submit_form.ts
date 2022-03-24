@@ -2,8 +2,6 @@ let viewers: string[] = []
 let links = {}
 let all_links: string[] = []
 
-// TODO add existing note data to these things on load
-
 export function load(note) {
   viewers = note.viewers
   links = note.links

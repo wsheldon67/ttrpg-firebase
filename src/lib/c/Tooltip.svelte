@@ -20,9 +20,7 @@
     bottom: [0, 0],
     left: [0, 0]
   }
-  // TODO arrow
-  // TODO nice placement
-  // TODO styles
+
 </script>
 <style>
   .tip {
