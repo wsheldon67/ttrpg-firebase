@@ -14,12 +14,14 @@
   export let optional: {label: string}[] = NoteTypes[type].optional
   export let links: {label: string, value: string}[] = NoteTypes[type].links
 
-  export let note:any = {}
+  export let note:any = undefined
   export let objectID = undefined
 
   onMount(()=> {
-    load(note)
-    type = note.type
+    if (note) {
+      load(note)
+      type = note.type
+    }
   })
 
   async function submit(e) {

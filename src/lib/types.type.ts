@@ -8,7 +8,7 @@ export type Campaign = {
   name: string,
   uid: string,
   users: {
-    [index: string]: string[] | any
+    [index: string]: any
   }[],
   system: '5e'|'starfinder'
 }

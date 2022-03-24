@@ -26,6 +26,10 @@ export async function submit_form(e, type:string, objectID?: string) {
   for (let entry of formData.entries()) {
     doc_to_insert[entry[0]] = entry[1]
   }
+
+  if (doc_to_insert.permissions_style === 'Everyone') {
+    doc_to_insert.viewers = ['Everyone']
+  }
   console.log(doc_to_insert)
   let docRef
   if (objectID) {
