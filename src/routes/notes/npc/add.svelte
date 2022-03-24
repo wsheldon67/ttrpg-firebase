@@ -2,7 +2,7 @@
   import Add from '../_add/Note.svelte'
 
   let require = [
-    {label: 'body'}, {label: 'name'}
+    {label: 'body', type:'textarea'}, {label: 'name'}
   ]
   let optional = [
     {label: 'CR', type: 'number'}, {label: 'Class'}, {label: 'Race'},
