@@ -1,3 +1,6 @@
+<script lang='ts'>
+  import { campaign } from '$lib/campaign'
+</script>
 <style>
   * {
     background-color: inherit;
@@ -9,4 +12,5 @@
 <a href='/auth/login'>Login</a>
 <a href='/notes/add'>Add Note</a>
 <a href='/notes/all'>All Notes</a>
+<a href={`/comp/${$campaign.system}`}>Compendium</a>
 <a href='/campaign'>Switch Campaign</a>

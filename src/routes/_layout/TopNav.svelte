@@ -14,12 +14,13 @@
     position: fixed;
     top: 0;
     background-color: var(--b4);
+    height: 1.8em;
   }
   .siteNav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0em;
+    top: 1.8em;
     width: 100vw;
     max-width: var(--break1);
     background-color: var(--b3);
