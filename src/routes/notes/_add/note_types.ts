@@ -1,4 +1,6 @@
 export default {
+  // TODO every note must have a body, a type, and a name
+  // TODO implement 'value' (what is saved) vs 'label'
   npc: {
     require: [
       {label: 'body'}, {label: 'name'}
@@ -13,6 +15,7 @@ export default {
       {label: 'Places', value: 'place'}
     ]
   },
+
   event: {
     require: [
       {label: 'body'}
@@ -24,9 +27,20 @@ export default {
       {label: 'NPCs', value: 'npc'}, {label: 'Places', value: 'place'}
     ]
   },
+
   place: {
     require: [],
     optional: [],
+    links: []
+  },
+
+  quick: {
+    require: [
+      {label: 'body', type: 'textarea'}
+    ],
+    optional: [
+      {label: 'name'}
+    ],
     links: []
   }
 }

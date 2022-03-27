@@ -1,1 +1,1 @@
-export type NoteType = 'npc'|'event'|'place'
+export type NoteType = 'npc'|'event'|'place'|'quick'
