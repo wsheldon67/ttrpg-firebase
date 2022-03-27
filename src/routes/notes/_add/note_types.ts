@@ -3,7 +3,7 @@ export default {
   // TODO implement 'value' (what is saved) vs 'label'
   npc: {
     require: [
-      {label: 'body'}, {label: 'name'}
+      {label: 'name'}
     ],
     optional: [
       {label: 'CR', type: 'number'}, {label: 'Class'}, {label: 'Race'},
@@ -18,7 +18,7 @@ export default {
 
   event: {
     require: [
-      {label: 'body'}
+
     ],
     optional: [
       {label: 'title'}
@@ -36,7 +36,7 @@ export default {
 
   quick: {
     require: [
-      {label: 'body', type: 'textarea'}
+
     ],
     optional: [
       {label: 'name'}
