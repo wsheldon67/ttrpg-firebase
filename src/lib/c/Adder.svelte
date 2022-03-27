@@ -24,7 +24,14 @@
     selected = selected.filter(el => el.id !== e.target.value)
     dispatch('change', selected)
   }
+  // TODO draw 'x' on button on hover (for remove from selected)
 </script>
+<select on:input={input}>
+  <option></option>
+  {#each opts as opt (opt.id)}
+    <option value={opt.id}>{opt.label}</option>
+  {/each}
+</select>
 <div>
   {#each selected as select (select.id)}
     <button
@@ -33,9 +40,3 @@
     >{select.label}</button>
   {/each}
 </div>
-<select on:input={input}>
-  <option></option>
-  {#each opts as opt (opt.id)}
-    <option value={opt.id}>{opt.label}</option>
-  {/each}
-</select>

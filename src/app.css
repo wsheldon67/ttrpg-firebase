@@ -45,7 +45,7 @@ body {
 
 button {
   border: none;
-  width: min-content;
+  width: max-content;
 }
 button:hover {
   filter: saturate(1.5) brightness(.8)

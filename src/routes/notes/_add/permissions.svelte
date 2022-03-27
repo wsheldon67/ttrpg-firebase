@@ -15,27 +15,51 @@
   })
 
   let promise = get_roles($campaign, note)
-
 </script>
+<style>
+  .cont {
+    display: grid;
+    grid-template-areas:
+    "head head"
+    "evry indv";
+    background-color: var(--b2);
+  }
+  label {
+    background-color: var(--b3);
+    margin: .0em .25em;
+  }
+  .individuals :global(button) {
+    grid-area: indv;
+    background-color: var(--b4);
+  }
+  .everyone {
+    grid-area: evry;
+  }
+  .head {
+    grid-area: head;
+    text-align: center;
+    margin: .25em;
+  }
+</style>
 <!--svelte-ignore a11y-label-has-associated-control-->
-<label>
-  Can view this note:
+<div class='cont'>
+  <p class='head'>Can view this note:</p>
   {#await promise}
     Loading...
   {:then {opts, selected}}
-    <label>
-      Everyone
+    <label class='everyone'>
       <input
         type='radio'
         value='Everyone'
         name='permissions_style'
         checked={!isGM}
       />
+      Everyone
     </label>
-    <label>
-      Individuals
+    <label class='individuals'>
       <input type='radio' value='Individual' name='permissions_style' checked={isGM}/>
+      Individuals:
+      <Adder {opts} on:change={change_permissions} {selected}/>
     </label>
-    <Adder {opts} on:change={change_permissions} {selected}/>
   {/await}
-</label>
+  </div>
