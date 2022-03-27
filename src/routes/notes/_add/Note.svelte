@@ -1,4 +1,6 @@
 <script lang='ts'>
+  // TODO add user defined tags
+  // TODO make this pretty (css)
   import Optional from './optional.svelte'
   import Require from './require.svelte'
   import Links from './links.svelte'
