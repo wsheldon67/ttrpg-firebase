@@ -30,7 +30,7 @@
   async function submit(e) {
     submit_form(e, type, objectID)
   }
-
+  // TODO something should happen on note write / failure
 </script>
 <style>
   form {
