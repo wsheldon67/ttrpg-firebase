@@ -50,7 +50,7 @@
 A form used to update notes.
 -->
 <form>
-  <textarea name='body' value={note?note.body:''}></textarea>
+  <textarea name='body' value={note?note.data.body:''}></textarea>
   <Require {require} {note} />
   <Optional {optional} {require} {note} />
   {#each links as ty}
