@@ -6,13 +6,10 @@ type Result = {
   selected: Element[]
 }
 
-export async function get_roles(campaign: Campaign, note:any):Promise<Result> {
+export async function get_roles(campaign: Campaign, note:any, change_permissions):Promise<Result> {
   if (!note) {note = {viewers:[]}}
   const { isSignedIn } = await import ('$lib/firebase')
   const { uid } = await isSignedIn()
-
-  // on a new blank note, set the current user as selected
-
 
   const uids: string[] = []
   const user_promises: Promise<any>[] = []
@@ -33,6 +30,8 @@ export async function get_roles(campaign: Campaign, note:any):Promise<Result> {
       user_elements.push({label: user.displayName, value: uids[index], id: uids[index]})
     }
   })
+
+  change_permissions({detail: user_selected})
 
   return {
     opts: user_elements,

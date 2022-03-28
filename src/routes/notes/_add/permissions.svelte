@@ -14,7 +14,7 @@
     isGM = user.uid === $campaign.uid
   })
 
-  let promise = get_roles($campaign, note)
+  let promise = get_roles($campaign, note, change_permissions)
 </script>
 <style>
   .cont {
