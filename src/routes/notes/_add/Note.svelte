@@ -6,10 +6,11 @@
   import Links from './links.svelte'
   import Permissions from './permissions.svelte'
 
-  import { submit_form, add_link, remove_link, change_permissions, load } from './submit_form'
+  import { submit_form, add_link, remove_link, change_permissions, load, change_tags } from './submit_form'
   import type { NoteType } from '../note.type';
   import { onMount } from 'svelte';
   import NoteTypes from './note_types'
+  import Tags from './tags.svelte';
 
   export let type:NoteType = 'event'
   export let require: {type?: string, label: string}[] = NoteTypes[type].require
@@ -55,6 +56,7 @@ A form used to update notes.
   {#each links as ty}
     <Links {ty} {add_link} {remove_link} {note}/>
   {/each}
+  <Tags on:change={change_tags} {note} />
   <Permissions {change_permissions} {note}/>
   <button on:click|preventDefault={submit} class='p'>Save</button>
 </form>

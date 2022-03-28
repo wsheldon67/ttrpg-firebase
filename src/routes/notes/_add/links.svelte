@@ -38,7 +38,12 @@
     remove_link(ty.value, objectID)
   }
 </script>
-<div> 
+<div>
+  <!--svelte-ignore a11y-label-has-associated-control-->
+  <label>
+    {ty.label}
+    <Search {searchFunc} on:click={click} fit/>
+  </label>
   <div>
     {#each members as member}
       <button
@@ -47,9 +52,4 @@
       >{member.label}</button>
     {/each}
   </div>
-  <!--svelte-ignore a11y-label-has-associated-control-->
-  <label>
-    {ty.label}
-    <Search {searchFunc} on:click={click} fit/>
-  </label>
 </div>

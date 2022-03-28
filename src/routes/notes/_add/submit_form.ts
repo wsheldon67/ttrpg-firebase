@@ -1,6 +1,7 @@
 let viewers: string[] = []
 let links = {}
 let all_links: string[] = []
+let tags: string[] = []
 
 export function load(note) {
   viewers = note.viewers
@@ -12,7 +13,7 @@ export function load(note) {
 
 /** Compile form data from all components, add note to server, update linked notes. */
 export async function submit_form(e, type:string, objectID?: string) {
-  const doc_to_insert: any = {type, viewers, links}
+  const doc_to_insert: any = {type, viewers, links, tags}
   const { isSignedIn, db } = await import ('$lib/firebase')
   const { collection, addDoc, setDoc, writeBatch, arrayUnion, doc } = await import ('firebase/firestore')
   const { uid } = await isSignedIn()
@@ -67,4 +68,9 @@ export function add_link(label: string, objectID: string) {
 export function remove_link(label: string, objectID: string) {
   links[label] = links[label].filter(el => el !== objectID)
   all_links = all_links.filter(el => el !== objectID)
+}
+
+/** */
+export function change_tags(e) {
+  tags = e.detail
 }

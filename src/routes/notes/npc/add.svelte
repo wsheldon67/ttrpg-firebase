@@ -1,19 +1,7 @@
 <script>
   import Add from '../_add/Note.svelte'
-
-  let require = [
-    {label: 'body', type:'textarea'}, {label: 'name'}
-  ]
-  let optional = [
-    {label: 'CR', type: 'number'}, {label: 'Class'}, {label: 'Race'},
-    {label: 'Str', type: 'number'}, {label: 'Dex', type: 'number'},
-    {label: 'Int', type: 'number'}, {label: 'Wis', type: 'number'},
-    {label: 'Cha', type: 'number'}, {label: 'Con', type: 'number'},
-    
-  ]
-  let links = [
-    {label: 'Places', value: 'place'}
-  ]
+  import NoteTypes from '../_add/note_types'
 
 </script>
-<Add {require} {optional} type='npc' {links}/>
+<h1>New NPC</h1>
+<Add {...NoteTypes.npc} type='npc' />

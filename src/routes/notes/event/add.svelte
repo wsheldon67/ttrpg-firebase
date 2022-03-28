@@ -1,15 +1,7 @@
 <script lang='ts'>
   import Add from '../_add/Note.svelte'
-
-  let require = [
-    {label: 'body', type:'textarea'}
-  ]
-  let optional = [
-    {label: 'title'}
-  ]
-  let links = [
-    {label: 'NPCs', value: 'npc'}, {label: 'Places', value: 'place'}
-  ]
+  import NoteType from '../_add/note_types'
 
 </script>
-<Add type='event' {require} {optional} {links} />
+<h1>Add an event</h1>
+<Add type='event' {...NoteType.event} />

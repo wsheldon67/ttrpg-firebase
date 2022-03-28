@@ -9,5 +9,5 @@
     dispatch('input')
   }
 </script>
-<input bind:value={label} {list} on:input|once={input}/>
-<input name={label} {value}/>
+<input bind:value={label} {list} on:input|once={input} placeholder='Custom Attribute'/>
+<input name={label} {value} placeholder='Value'/>
