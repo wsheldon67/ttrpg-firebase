@@ -13,6 +13,6 @@
   })
 </script>
 {#each notes as note}
-  <a href={`/notes/edit/${note.objectID}`}>Edit</a>
+  <a href={`/notes/edit/${note.objectID}?type=${type}`}>Edit</a>
   <ObjectViewer object={note} attributes={{body: undefined}}/>
 {/each}

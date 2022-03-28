@@ -4,4 +4,4 @@
 
 </script>
 <h1>New NPC</h1>
-<Add {...NoteTypes.npc} type='npc' />
+<Add {...NoteTypes.npc} type='npc' redirect='/notes/npc'/>

@@ -1,8 +1,20 @@
+<script context='module'>
+  export async function load({url}) {
+    return {
+      props: {
+        searchParams: url.searchParams
+      }
+    }
+  }
+</script>
 <script>
   import { page } from '$app/stores'
   import Note from '../_add/Note.svelte'
 
   let objectID = $page.params.objectID
+  export let searchParams
+  console.log(searchParams)
+  $: redirect = searchParams?`/notes/${searchParams.get('type')}`:''
 
   async function load_note ()  {
     const { db } = await import ('$lib/firebase')
@@ -16,6 +28,6 @@
 </script>
 {#await promise}
   Loading...
-{:then note} 
-<Note {note} {objectID}/>
+{:then note}
+<Note {note} {objectID} {redirect}/>
 {/await}
