@@ -10,13 +10,13 @@
       <textarea
         type={reqItem.type}
         name={reqItem.label}
-        value={note?note[reqItem.label]:''}
+        value={note?note.data[reqItem.label]:''}
       ></textarea>
     {:else}
     <input
       type={reqItem.type}
       name={reqItem.label}
-      value={note?note[reqItem.label]:''}
+      value={note?note.data[reqItem.label]:''}
     />
     {/if}
   </label>

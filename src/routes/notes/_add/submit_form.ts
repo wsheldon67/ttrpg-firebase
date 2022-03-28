@@ -13,7 +13,7 @@ export function load(note) {
 
 /** Compile form data from all components, add note to server, update linked notes. */
 export async function submit_form(e, type:string, objectID?: string) {
-  const doc_to_insert: any = {type, viewers, links, tags}
+  const doc_to_insert: any = {type, viewers, links, tags, data:{}}
   const { isSignedIn, db } = await import ('$lib/firebase')
   const { collection, addDoc, setDoc, writeBatch, arrayUnion, doc } = await import ('firebase/firestore')
   const { uid } = await isSignedIn()
@@ -23,7 +23,7 @@ export async function submit_form(e, type:string, objectID?: string) {
   const formData = new FormData(e.target.parentNode)
   // @ts-ignore
   for (let entry of formData.entries()) {
-    doc_to_insert[entry[0]] = entry[1]
+    doc_to_insert.data[entry[0]] = entry[1]
   }
 
   if (doc_to_insert.permissions_style === 'Everyone') {
