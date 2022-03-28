@@ -5,9 +5,11 @@
   export let list
   export let label = ''
   export let value = undefined
-  function input() {
-    dispatch('input')
+  export let index
+
+  function input(e) {
+    dispatch('input', {index, label, value})
   }
 </script>
-<input bind:value={label} {list} on:input|once={input} placeholder='Custom Attribute'/>
-<input name={label} {value} placeholder='Value'/>
+<input bind:value={label} {list} on:input={input} placeholder='Custom Attribute'/>
+<input name={label} bind:value={value} on:input={input} placeholder='Value'/>

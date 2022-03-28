@@ -5,7 +5,7 @@
   export let optional: {label: string}[]
   export let note: any = undefined
 
-  let len: any[] = [true]
+  let len: any[] = [{label: ''}]
 
   onMount(() => {
     if (note) {
@@ -18,17 +18,23 @@
     }
   })
 
-
-  function add() {
-    len = [...len, true]
+  function add(e: {detail:{index: number, label: string, value: any}}) {
+    const {index, label, value} = e.detail
+    len[index] = {label, value}
+    console.log(len)
+    if (index === len.length - 1) {
+      // we're updating the last one, need to add a new row
+      len = [...len, {label: ''}]
+    }
   }
 </script>
-{#each len as opt}
+{#each len as opt, index}
   <div><CustomLabel
     list='optional'
     on:input={add}
     label={opt.label ? opt.label : ''}
     value={opt.value ? opt.value : ''}
+    {index}
   /></div>
 {/each}
 <datalist id='optional' style='display: none;'>
