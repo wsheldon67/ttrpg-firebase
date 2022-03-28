@@ -12,10 +12,11 @@
     if (note) {
       // any attributes that are not required
       for (let key in note.data) {
-        if (require.find(el => el.label === key)) {
+        if (!require.find(el => el.label === key)) {
           len.push({label: key, value: note.data[key]})
         }
       }
+      len = len
     }
   })
 
