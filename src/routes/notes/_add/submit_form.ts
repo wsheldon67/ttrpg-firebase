@@ -48,6 +48,7 @@ export async function submit_form(e, type:string, objectID?: string) {
   })
   await batch.commit()
   console.log('doc written with id', docRef.id)
+  return {...doc_to_insert, objectID: docRef.id}
 }
 
 /** Add viewers to the note */

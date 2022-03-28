@@ -1,5 +1,4 @@
 <script lang='ts'>
-  // TODO add user defined tags
   // TODO make this pretty (css)
   import Optional from './optional.svelte'
   import Require from './require.svelte'
@@ -8,9 +7,11 @@
 
   import { submit_form, add_link, remove_link, change_permissions, load, change_tags } from './submit_form'
   import type { NoteType } from '../note.type';
-  import { onMount } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import NoteTypes from './note_types'
   import Tags from './tags.svelte';
+  import { goto } from '$app/navigation';
+  const dispatch = createEventDispatcher()
 
   export let type:NoteType = 'event'
   export let require: {type?: string, label: string}[] = NoteTypes[type].require
@@ -19,6 +20,7 @@
 
   export let note:any = undefined
   export let objectID = undefined
+  export let redirect:string = undefined
 
   onMount(()=> {
     if (note) {
@@ -28,9 +30,17 @@
   })
 
   async function submit(e) {
-    submit_form(e, type, objectID)
+    try {
+      const doc = await submit_form(e, type, objectID)
+      next(doc)
+    } catch (error) {
+      console.log(error)
+    }
   }
-  // TODO something should happen on note write / failure
+  function next(doc) {
+    if (redirect) {goto(redirect)}
+    dispatch('success', doc)
+  }
 </script>
 <style>
   form {
