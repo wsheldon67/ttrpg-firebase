@@ -7,12 +7,13 @@
   export let note: any = undefined
 
   let len: any[] = [{label: ''}]
+  let require_plus = [...require, {label: 'body'}, {label: 'permissions_style'}]
 
   onMount(() => {
     if (note) {
       // any attributes that are not required
       for (let key in note.data) {
-        if (!require.find(el => el.label === key)) {
+        if (!require_plus.find(el => el.label === key)) {
           len.push({label: key, value: note.data[key]})
         }
       }
