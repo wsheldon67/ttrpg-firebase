@@ -26,7 +26,6 @@ function remove (e) {
   <input on:keydown={add} />
 </label>
 <div>
-  here's the buttons:
   {#each selected as one}
     <button on:click|preventDefault={remove} value={one}>
       {one}
