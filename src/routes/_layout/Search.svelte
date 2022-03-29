@@ -28,7 +28,7 @@
     const res = [
       // notes
       ...results[0].hits.map((el) => {
-        return {label: el.name, sub: el.body, value: {id: el.objectID, type: 'note'}}
+        return {label: el.data.name, sub: el.data.body, value: {id: el.objectID, type: 'note'}}
       }),
       // compendium
       ...results[1].hits.map((el) => {
