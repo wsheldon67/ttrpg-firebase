@@ -1,12 +1,12 @@
 <script lang='ts'>
-  import { set_unit } from "./current"
+  import { set_unit, add } from "./current"
   import LzNumber from "$lib/c/LZNumber.svelte"
   import { campaign } from "$lib/campaign"
   import { display } from './display'
   import ClockIcon from '$lib/i/clock.svg'
 
   $: display_time = display($campaign.time.current, $campaign.time.settings)
-  const {one_based} = $campaign.time.settings
+  const {one_based, pm_switch} = $campaign.time.settings
 
   function change(e, unit) {
     if (unit === 'month' || 'day') {
@@ -16,6 +16,10 @@
     }
   }
   // FIXME setting AM/PM does nothing
+  function ampm(e) {
+    const mod = {AM: -1, PM: 1}
+    add(pm_switch * mod[e.target.value], 'hour', $campaign)
+  }
 </script>
 
 <style>
@@ -44,7 +48,7 @@
   <LzNumber value={display_time.minute} on:change={e => change(e, 'minute')} />:
   <LzNumber value={display_time.second} on:change={e => change(e, 'second')} />
   {#if display_time.suffix}
-    <select value={display_time.suffix}>
+    <select value={display_time.suffix} on:input={ampm}>
       <option>AM</option>
       <option>PM</option>
     </select>
