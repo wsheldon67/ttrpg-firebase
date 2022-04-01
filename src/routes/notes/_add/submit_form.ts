@@ -1,9 +1,11 @@
 import type { Campaign } from '$lib/types.type'
+import type { Time } from '../../time/time.type'
 
 let viewers: string[] = []
 let links = {}
 let all_links: string[] = []
 let tags: string[] = []
+let time: Time
 
 export function load(note) {
   viewers = note.viewers
@@ -11,6 +13,7 @@ export function load(note) {
   for (let i in note.links) {
     all_links.push(...note.links[i])
   }
+  time = note.time
 }
 
 /** Compile form data from all components, add note to server, update linked notes. */
@@ -21,7 +24,7 @@ export async function submit_form(
     objectID?: string
   ) {
   const doc_to_insert: any = {
-    type, viewers, links, tags, data:{}, time: campaign.time.current
+    type, viewers, links, tags, data:{}, time: time || campaign.time.current
   }
   const { isSignedIn, db } = await import ('$lib/firebase')
   const { collection, addDoc, setDoc, writeBatch, arrayUnion, doc } = await import ('firebase/firestore')
