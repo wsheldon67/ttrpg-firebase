@@ -15,3 +15,7 @@ export function signed(number: number): string {
     return '+' + number
   }
 }
+/** Add leading zeros to a number */
+export function lz (num:number, digits:number):string {
+  return num.toString().padStart(digits, '0')
+}

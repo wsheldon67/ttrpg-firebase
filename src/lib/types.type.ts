@@ -1,3 +1,5 @@
+import type { Settings as TimeSettings, Time } from "src/routes/time/time.type"
+
 export type Element = {
   label: string,
   value: any,
@@ -10,7 +12,11 @@ export type Campaign = {
   users: {
     [index: string]: any
   }[],
-  system: '5e'|'starfinder'
+  system: '5e'|'starfinder',
+  time: {
+    settings: TimeSettings,
+    current: Time
+  }
 }
 
 export type User = {
