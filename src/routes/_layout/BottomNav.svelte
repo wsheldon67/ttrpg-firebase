@@ -5,6 +5,7 @@
   import BookIcon from '$lib/i/book-open.svg'
 
   import CompSearch from '../comp/Search.svelte'
+  import Change from '../time/change.svelte'
 
   const open = {
     time: false,
@@ -39,7 +40,7 @@
 <nav>
   <Widget id='time' tip='Adjust game time' on:click={click} show={open.time}>
     <TimeIcon slot='icon' />
-    // TODO
+    <Change />
   </Widget>
   <Widget id='notes' tip='Make a note' on:click={click} show={open.notes}>
     <NoteIcon slot='icon' />
