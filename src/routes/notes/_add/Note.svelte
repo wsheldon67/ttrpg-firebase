@@ -12,6 +12,7 @@
   import Tags from './tags.svelte';
   import { goto } from '$app/navigation';
   const dispatch = createEventDispatcher()
+  import { campaign } from '$lib/campaign'
 
   export let type:NoteType = 'event'
   export let require: {type?: string, label: string}[] = NoteTypes[type].require
@@ -31,7 +32,7 @@
 
   async function submit(e) {
     try {
-      const doc = await submit_form(e, type, objectID)
+      const doc = await submit_form(e, type, $campaign, objectID)
       next(doc)
     } catch (error) {
       console.log(error)
