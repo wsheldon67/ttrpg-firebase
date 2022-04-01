@@ -13,5 +13,5 @@
 
 </script>
 
-<Add {require} {optional} type='test' {links} />
+<Add {require} {optional} type='quick' {links} />
 <Adder {opts} />

@@ -15,7 +15,6 @@
       set_unit(e.detail, unit, $campaign)
     }
   }
-  // FIXME setting AM/PM does nothing
   function ampm(e) {
     const mod = {AM: -1, PM: 1}
     add(pm_switch * mod[e.target.value], 'hour', $campaign)

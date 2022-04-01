@@ -3,7 +3,7 @@
   import { search_client } from '$lib/algolia'
   import { campaign } from '$lib/campaign'
   import { goto } from '$app/navigation'
-
+  // TODO pagination
   const campaignID = localStorage.getItem('campaignID')
   async function searchFunc(query) {
     const { isSignedIn } = await import ('$lib/firebase')

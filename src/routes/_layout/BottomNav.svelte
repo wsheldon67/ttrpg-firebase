@@ -44,7 +44,7 @@
   </Widget>
   <Widget id='notes' tip='Make a note' on:click={click} show={open.notes}>
     <NoteIcon slot='icon' />
-    // TODO
+    // TODO quick note
   </Widget>
   <Widget id='rules' tip='Look up a rule' on:click={click} show={open.rules}>
     <BookIcon slot='icon' />
