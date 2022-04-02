@@ -7,5 +7,6 @@
   <ul>
     <li>Blocks vision entirely</li>
     <li>Observers are effectively <Tip text='blinded' path='Conditions/Blinded'/></li>
+    <li>Includes darkness, opaque fog or dense foliage</li>
   </ul>
 </Header>
