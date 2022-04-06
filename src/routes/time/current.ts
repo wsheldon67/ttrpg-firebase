@@ -1,6 +1,6 @@
 import type { Time, Unit } from "$lib/time/time.type"
 import type { Campaign } from "$lib/types.type"
-import * as time from '$lib/time/change'
+import * as time from '$lib/time'
 
 var timeout_id
 
