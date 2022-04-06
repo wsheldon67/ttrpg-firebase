@@ -1,5 +1,5 @@
 import type { Campaign } from '$lib/types.type'
-import type { Time } from '../../time/time.type'
+import type { Time } from '$lib/time/time.type'
 
 let viewers: string[] = []
 let links = {}

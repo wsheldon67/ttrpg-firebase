@@ -2,7 +2,7 @@
   import { set_unit, add } from "./current"
   import LzNumber from "$lib/c/LZNumber.svelte"
   import { campaign } from "$lib/campaign"
-  import { display } from './display'
+  import { display } from '$lib/time/display'
   import ClockIcon from '$lib/i/clock.svg'
 
   $: display_time = display($campaign.time.current, $campaign.time.settings)

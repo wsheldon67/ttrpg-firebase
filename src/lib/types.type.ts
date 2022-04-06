@@ -1,4 +1,4 @@
-import type { Settings as TimeSettings, Time } from "src/routes/time/time.type"
+import type { Settings as TimeSettings, Time } from "$lib/time/time.type"
 
 export type Element = {
   label: string,

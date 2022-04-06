@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Set from './Set.svelte'
-  import type { Unit } from './time.type'
+  import type { Unit } from '$lib/time/time.type'
   import AddUnit from './_AddUnit.svelte'
   import NextDay from './_NextDay.svelte'
 

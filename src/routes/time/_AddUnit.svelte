@@ -1,8 +1,8 @@
 <script lang='ts'>
   import { add } from './current'
   import { campaign } from '$lib/campaign'
-  import type { Unit } from './time.type';
-
+  import type { Unit } from '$lib/time/time.type'
+  
   export let amt:number = 1
   export let label:string = '1 Second'
   export let unit:Unit = 'second'
