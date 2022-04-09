@@ -29,6 +29,18 @@ export function settle(time:Time, settings:Settings, as_is?:boolean):Time {
     sob.day--
   }
 
+  const order = ['year', 'month', 'day', 'hour', 'minute', 'second']
+
+  for (let i in order) {
+    const unit = order[i]
+    const next = order[1+Number(i)]
+    if (next && sob[unit]) {
+      const frac = sob[unit] - Math.trunc(sob[unit])
+      sob[next] += frac * units[next]
+      sob[unit] -= frac
+    }
+  }
+
   let carry_over = 0
 
   for (let unit in units) {
@@ -41,7 +53,9 @@ export function settle(time:Time, settings:Settings, as_is?:boolean):Time {
     } else {
       carry_over = 0
     }
+    
     sob[unit] = Number(set_value)
   }
+  sob.second = Math.floor(sob.second)
   return sob
 }

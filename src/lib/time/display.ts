@@ -5,6 +5,7 @@ type DisplayTime = Time & {
   weekday?: string
 }
 
+/** Display a moment using the display settings */
 export function display(time:Time, settings:Settings):DisplayTime {
   const {
     pm_switch, one_based, weekdays, months_in_year, days_in_month
@@ -33,4 +34,26 @@ export function display(time:Time, settings:Settings):DisplayTime {
     dob.weekday = weekdays[day_number]
   }
   return dob
+}
+
+/** Only show from the highest non-zero part thru the next (2) parts */
+export function trunc(time:Time, parts:number=2):Time {
+  const order = ['year', 'month', 'day', 'hour', 'minute', 'second']
+  let highest:string = 'second'
+  for (let v of order) {
+    if (time[v] !== 0) {
+      highest = v
+      break
+    }
+  }
+  const h_index = order.indexOf(highest)
+  let res:any = {}
+  order.forEach((v,i) => {
+    if (i < h_index + parts) {
+      res[v] = time[v]
+    } else {
+      res[v] = 0
+    }
+  })
+  return res
 }
