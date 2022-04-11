@@ -78,3 +78,18 @@ export function duration_abbr(time:Time):string {
   }
   return res
 }
+
+/** Format an array with commas and the word 'and' */
+export function array_to_words(array:string[]):string {
+  let res = ''
+  if (array.length === 1){return array[0]}
+  if (array.length === 2){return array[0] + ' and ' + array[1]}
+  array.forEach((v, i) => {
+    if (i !== array.length - 1) {
+      res += v + ', '
+    } else {
+      res += 'and ' + v
+    }
+  })
+  return res
+}
