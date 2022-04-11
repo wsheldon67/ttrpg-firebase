@@ -7,37 +7,54 @@
 
   export let start: number = 1
   export let show: boolean = true
+  let travel_hours = Math.floor($campaign.time.settings.hours_in_day / 3)
+  const non_forced = Math.floor($campaign.time.settings.hours_in_day / 3)
+  $: forced = travel_hours - non_forced
 
   const distances: string[] = ['feet', 'miles']
-  const paces = {
-    fast: {minute: 400, hour: 4*5280, day: 30*5280},
-    normal: {minute: 300, hour: 3*5280, day: 24*5280},
-    slow: {minute: 200, hour: 2*5280, day: 18*5280}
+  $: paces = {
+    fast: {minute: 400, hour: 4*5280, day: 30*5280*travel_hours/8},
+    normal: {minute: 300, hour: 3*5280, day: 24*5280*travel_hours/8},
+    slow: {minute: 200, hour: 2*5280, day: 18*5280*travel_hours/8}
   }
 
   let amt = 3
   let unit = 'miles'
+  let difficult = false
 
-  function get_time (pace:string, amt, unit):string {
+  $: diff_terr = difficult ? 2 : 1
+
+  function get_time (pace:string, amt, unit, mod, paces):string {
     const {minute, hour, day} = paces[pace]
-    const dist = unit==='feet' ? amt : amt * 5280
+    const dist = (unit==='feet' ? amt : amt * 5280)
     let tt:Time = {year: 0, month: 0, day: 0, hour: 0, minute: 0, second: 0}
     if (dist < hour) {
-      tt.minute = dist / minute
+      tt.minute = dist * mod / minute
     } else if (dist < day) {
-      tt.hour = dist / hour
+      tt.hour = dist * mod / hour
     } else {
-      tt.day = dist / day
+      tt.day = dist * mod / day
     }
     return duration_abbr(trunc(settle(tt, $campaign.time.settings, true)))
   }
 
-  $: fast = get_time('fast', amt, unit)
-  $: normal = get_time('normal', amt, unit)
-  $: slow = get_time('slow', amt, unit)
+  $: fast = get_time('fast', amt, unit, diff_terr, paces)
+  $: normal = get_time('normal', amt, unit, diff_terr, paces)
+  $: slow = get_time('slow', amt, unit, diff_terr, paces)
 
 </script>
 <Header h={1} {start} {show} title='Distance'>
+  <label>
+    <input type='checkbox' bind:checked={difficult} />
+    Difficult Terrain
+  </label>
+  <label>
+    Hours per Day:
+    <input bind:value={travel_hours} type='number' />
+  </label>
+  {#if forced > 0}
+    <div>Forced March ({forced}h)</div>
+  {/if}
   <label>
     Distance:
     <input type='number' bind:value={amt}/>
