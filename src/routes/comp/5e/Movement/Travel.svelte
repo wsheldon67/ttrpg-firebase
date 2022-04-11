@@ -3,6 +3,7 @@
   import Tip from '../_Tip.svelte'
   import Distance from './Distance.svelte'
   import Time from './TravelTime.svelte'
+  import Vehicles from './Vehicles.svelte'
 
   export let start: number = 1
   export let show: boolean = true
@@ -28,4 +29,5 @@
       <li>On failure, suffer one level of <Tip text='exhaustion' path='Conditions/Exhaustion'/>.</li>
     </ul>
   </Header>
+  <Vehicles start={low} show={false} />
 </Header>

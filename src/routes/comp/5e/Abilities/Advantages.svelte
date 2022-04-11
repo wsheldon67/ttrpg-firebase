@@ -3,8 +3,9 @@
   import Advantage from './Advantage.svelte'
   import Disadvantage from './Disadvantage.svelte'
   export let start: number = 1
+  export let show: boolean = true
 </script>
-<Header h={1} {start} title='Advantage/Disadvantage'>
+<Header h={1} {start} {show} title='Advantage/Disadvantage'>
   <Advantage start={start+1} />
   <Disadvantage start={start+1} />
   <Header h={2} {start} title='Multiple (Dis)Advantages'>
