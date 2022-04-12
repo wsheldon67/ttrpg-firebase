@@ -67,6 +67,7 @@ h2 {
 h3 {
   color: var(--bad);
   background-color: var(--b4);
+  padding-left: .5em;
 }
 h4 {
   color: var(--a);
@@ -76,6 +77,12 @@ h5 {
 }
 input[type='number'] {
   width: 3em;
+}
+p {
+  margin: .25em;
+}
+ul {
+  margin-top: .25em;
 }
 
 /* Utilities */
