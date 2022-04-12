@@ -4,6 +4,6 @@
   export let start: number = 1
   export let show: boolean = true
 </script>
-<Header h={1} {start} {show} title='Combat'>
-  <a href='/comp/5e/Combat/Turn'>Your Turn in Combat</a>
+<Header h={1} {start} {show} title='Difficult Terrain'>
+  <p>Increases movement cost by 1 foot</p>
 </Header>

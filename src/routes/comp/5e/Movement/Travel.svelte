@@ -1,7 +1,7 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../_Tip.svelte'
   import Distance from './Distance.svelte'
+  import ForcedMarch from './ForcedMarch.svelte'
   import Time from './TravelTime.svelte'
   import Vehicles from './Vehicles.svelte'
 
@@ -22,12 +22,6 @@
       <li>Move at half speed</li>
     </ul>
   </Header>
-  <Header h={2} {start} show={false} title='Forced March'>
-    <ul>
-      <li>A creature can sustain travel up to 1/3 of the time (8h of a 24h day).</li>
-      <li>For each additional hour, make a Con save against 10 + [number of additional hours].</li>
-      <li>On failure, suffer one level of <Tip text='exhaustion' path='Conditions/Exhaustion'/>.</li>
-    </ul>
-  </Header>
+  <ForcedMarch start={low} show={false} />
   <Vehicles start={low} show={false} />
 </Header>

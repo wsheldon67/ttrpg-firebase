@@ -8,6 +8,7 @@
   <ul>
     <li>Only movement option is <Tip text='crawl' path='Movement/ClimbSwimCrawl'/></li>
     <li>Disadvantage on attack rolls</li>
+    <li>Flying creatures knocked prone fall.</li>
   </ul>
   <p>Attacks against a prone creature have:</p>
   <table>

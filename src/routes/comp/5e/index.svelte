@@ -3,6 +3,7 @@
   import Abilities from './Abilities/index.svelte'
   import Conditions from './Conditions/toc.svelte'
   import Movement from './Movement/index.svelte'
+  import Combat from './Combat/index.svelte'
 
   export let start: number = 2
   export let show: boolean = true
@@ -11,4 +12,5 @@
   <Abilities {start} />
   <Conditions {start} />
   <Movement {start} />
+  <Combat {start} />
 </Header>
