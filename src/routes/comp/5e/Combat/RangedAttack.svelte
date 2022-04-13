@@ -1,5 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+import Tooltip from '$lib/c/Tooltip.svelte'
   import Tip from '../_Tip.svelte'
   import AttackOrder from './AttackOrder.svelte'
   import Hit from './Hit.svelte'
@@ -29,6 +30,12 @@
 <Header h={1} {start} {show} title='Ranged Attack'>
   <AttackOrder />
   <Visibility start={start+1} show={false} />
+  <Header h={2} {start} show={false} title='Underwater'>
+    <ul>
+      <li>Automatically miss beyond <Tooltip tip='See Range below'>normal range</Tooltip>.</li>
+      <li>Attacks have <Tip text='disadvantage'/> unless made with a crossbow, net, or a weapon <Tooltip tip='Such as a spear, trident, or dart'>thrown like a javelin</Tooltip>.</li>
+    </ul>
+  </Header>
   <Header h={2} {start} title='Range'>
     <p>Ranged weapons have one or two ranges listed.</p>
     <ul>

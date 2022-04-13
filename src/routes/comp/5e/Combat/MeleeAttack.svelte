@@ -35,6 +35,13 @@
   <Header h={2} {start} show={false} title='Knock Unconcioius'>
     <p>When you reduce a creature to 0 HP, you may choose to knock it <Tip text='unconcious'/> instead of killing it.</p>
   </Header>
+  <Header h={2} {start} show={false} title='Underwater'>
+    <p>If you have a swim speed, attack as normal.</p>
+    <p>If you do not have a swim speed, attack with disadvantage unless you are using:</p>
+    <ul>
+      <li>A dagger, javelin, shortsword, spear or trident.</li>
+    </ul>
+  </Header>
   <Visibility start={start+1} show={false}/>
   <Header h={2} {start} title='Attack Roll'>
     <details>
