@@ -4,6 +4,7 @@
   import Tip from '../_Tip.svelte'
   import Tooltip from '$lib/c/Tooltip.svelte'
   import DifficultTerrain from '../Movement/DifficultTerrain.svelte'
+  import SqueezeThrough from './SqueezeThrough.svelte'
 
   export let start: number = 1
   export let show: boolean = true
@@ -15,6 +16,7 @@
     <li>Movement does not have to be <Tooltip tip='You can take actions in the middle of your movement.'>contiguous</Tooltip>.</li>
   </ul>
   <ClimbSwimCrawl start={start+1} show={false}/>
+  <SqueezeThrough start={start+1} show={false}/>
   <Header h={2} {start} show={false} title='Different Speeds'>
     <p>If you have more than one speed:</p>
     <ul>

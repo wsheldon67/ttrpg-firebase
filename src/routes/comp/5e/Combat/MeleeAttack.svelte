@@ -32,6 +32,9 @@
       <li>The bonus attack only adds your ability modifier if it is negative.</li>
     </ul>
   </Header>
+  <Header h={2} {start} show={false} title='Knock Unconcioius'>
+    <p>When you reduce a creature to 0 HP, you may choose to knock it <Tip text='unconcious'/> instead of killing it.</p>
+  </Header>
   <Visibility start={start+1} show={false}/>
   <Header h={2} {start} title='Attack Roll'>
     <details>
