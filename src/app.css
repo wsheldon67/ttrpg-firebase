@@ -81,6 +81,17 @@ input[type='number'] {
 p {
   margin: .25em;
 }
+table {
+  width: 100%;
+  max-width: var(--break1);
+  border: 1px solid var(--b4);
+}
+th {
+  filter: saturate(.5) brightness(1.5);
+}
+tr:nth-child(odd) {
+  filter: saturate(.5) brightness(1.125)
+}
 ul {
   margin-top: .25em;
 }
