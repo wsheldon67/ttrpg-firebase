@@ -36,6 +36,8 @@
     <Collapse label={entry.key}>
       <svelte:self object={entry.value} />
     </Collapse>
+  {:else if typeof(entry.value) === 'function'}
+    {''}
   {:else if entry.value.length > 50}
     <Collapse label={entry.key}>
       {entry.value}
