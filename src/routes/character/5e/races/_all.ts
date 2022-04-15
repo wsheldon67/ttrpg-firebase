@@ -1,1 +1,1 @@
-export { Dwarf, HillDwarf } from './Dwarf'
+export { Hill_Dwarf, Mountain_Dwarf } from './Dwarf'

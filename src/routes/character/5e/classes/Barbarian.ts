@@ -1,20 +1,42 @@
-import type { ICharacter } from "../character";
+import type { Feat } from "../character"
+import type { Item } from '$lib/prereqs'
+import type { API } from "../api"
 
-export function Barbarian(c:ICharacter) {
-  c.levels[1].feats.push(Rage, UnarmoredDefense)
-  c.levels[1].rages = 2
-  c.levels[1].rage_dmg = 2
+const levels:{rages: number, rage_dmg: number}[] = [
+  {rages: 0, rage_dmg: 0},
+  {rages: 2, rage_dmg: 2}, {rages: 2, rage_dmg: 2},
+  {rages: 3, rage_dmg: 2}, {rages: 3, rage_dmg: 2},
+  {rages: 3, rage_dmg: 2}, {rages: 4, rage_dmg: 2},
+  {rages: 4, rage_dmg: 2}, {rages: 4, rage_dmg: 3},
+  {rages: 4, rage_dmg: 3}, {rages: 5, rage_dmg: 3},
+  {rages: 5, rage_dmg: 3}, {rages: 5, rage_dmg: 4},
+  {rages: 6, rage_dmg: 4}, {rages: 6, rage_dmg: 4},
+  {rages: 6, rage_dmg: 4}, {rages: Infinity, rage_dmg: 4},
+]
+
+export function Barbarian(level:number):Item[] {
+  const items:Item[] = []
+  items.push({
+    id: 'Barbarian',
+    func: (c: API) => {
+      c.info.rages = levels[level].rages
+      c.info.rage_dmg = levels[level].rage_dmg
+    }
+  })
+  return items
 }
 
-function Rage() {
+function Rage(source: string):Feat {
   return {
     title: 'Rage',
-    desc: `A rage function`
+    text: `A rage function`,
+    tags: [], source
   }
 }
-function UnarmoredDefense() {
+function UnarmoredDefense(source: string):Feat {
   return {
     title: 'Unarmored Defense',
-    desc: `An unarmored defense function`
+    text: `An unarmored defense function`,
+    tags: [], source
   }
 }

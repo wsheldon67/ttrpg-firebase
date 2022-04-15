@@ -1,9 +1,24 @@
 import * as races from './races/_all'
 import * as classes from './classes/_all'
-const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha']
+import { abilities } from './data'
+
+export interface Feat {
+  title: string, text: string, tags: string[], source: string
+}
+export interface Item {
+  name: string
+  weight: number
+  location: string
+  type?: string
+  [key: string]: any
+}
 
 export interface Data {
-  race: string, class: string
+  race: string, class: string, level: number, name: string
+  items: Item[],
+  equipped: {
+    [slot: string]: Item
+  }
 }
 
 export interface Character extends Data {
@@ -14,8 +29,7 @@ export interface Character extends Data {
     }
   }
   levels: {
-    prof: number,
-    feats: Function[]
+    prof: number
   }
   info: {
     basic: {
@@ -23,8 +37,12 @@ export interface Character extends Data {
       speed: number
       [key: string]: any
     }
+    proficiencies: {
+      [category: string]: string[]
+    }
     [key: string]: any
   }
+  feats: Feat[]
 }
 
 const base = create_base()
@@ -47,16 +65,19 @@ function create_base():Character {
   })
 
   b.info = {
-    basic: {size: 'Medium', speed: 30}
+    basic: {size: 'Medium', speed: 30},
+    proficiencies: {}
   }
+
+  b.feats = []
 
   return b
 }
-
 
 export function character(data:Data):Character {
   const c = {...data, ...base}
   races[c.race](c)
   classes[c.class](c)
+
   return c
 }
