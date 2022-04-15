@@ -7,9 +7,9 @@
   export let attributes = {}
   let comboAttr = {...defaults, ...attributes}
 
-  $: entries = arrayify()
+  $: entries = arrayify(object)
 
-  function arrayify() {
+  function arrayify(object) {
     const res = []
     for (let key in object) {
       if (!comboAttr[key]){
@@ -36,7 +36,7 @@
     <Collapse label={entry.key}>
       <svelte:self object={entry.value} />
     </Collapse>
-  {:else if typeof(entry.value) === 'function'}
+  {:else if typeof(entry.value) === 'function' || typeof(entry.value) === 'undefined'}
     {''}
   {:else if entry.value.length > 50}
     <Collapse label={entry.key}>
