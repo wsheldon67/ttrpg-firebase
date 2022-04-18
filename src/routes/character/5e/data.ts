@@ -14,3 +14,5 @@ export const skills = [
   {name: 'Deception', ab: 'cha'}, {name: 'Intimidation', ab: 'cha'},
   {name: 'Performance', ab: 'cha'}, {name: 'Persuasion', ab: 'cha'}
 ]
+
+export const sizes = ['Tiny', 'Fine', 'Small', 'Medium', 'Large', 'Giant', 'Gargantuan']

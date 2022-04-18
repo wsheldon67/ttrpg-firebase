@@ -21,5 +21,9 @@ export interface Data {
   wealth: number
   [key: string]: any,
   race: string
-  hp: number
+  hp: number,
+  trackers: {
+    label: string, value: number, max?:number
+    reset_on?: string[], reset_to?: number
+  }[]
 }

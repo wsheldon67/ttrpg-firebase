@@ -1,6 +1,9 @@
+import type { Data } from './User'
+
 interface Comp {
-  id: string
-  value: string
+  source: string
+  operation: string
+  value: number
 }
 export interface Item {
   name: string
@@ -30,9 +33,9 @@ export interface Character {
   ab: {name: string, mod: number, adv: number, score: number, comp: Comp[], score_comp: Comp[]}[]
   skill: D20[]
   save: D20[]
-  tracker: {value: number, max?:number}[]
+  tracker: {label: string, value: number, max?:number}[]
   active: {title: string, text: string, action: Function}[]
-  passive: {title: string, text: string}
+  passive: {title: string, text: string, tags: string[]}[]
   info: {
     basic: {
       speed: {value: number, comp: Comp[]}
@@ -40,9 +43,9 @@ export interface Character {
       [key: string]: any
     }
     prof: {
-      bonus: number
-      [category: string]: {skill: string, source: string}[]|number
+      [category: string]: {name: string, comp: string[]}[]
     }
+    prof_bonus: number
     personality: {
       alignment: string
       background: string
@@ -72,4 +75,43 @@ export interface Character {
   slot: {remain: number, max: number}[]
   max_cantrips: number
   max_spells: number
+}
+
+/** A base character for scripts to modify. */
+export function create_empty_character(data:Data):Character {
+  return {
+    race: data.race, subrace: data.subrace, name: data.name,
+    xp: data.xp, xp_goal: 0, xp_progress: 0,
+    class: data.class,
+    level: 0,
+    ab: [],
+    skill: [],
+    save: [],
+    tracker: [],
+    active: [],
+    passive: [],
+    info: {
+      basic: {
+        speed: {value: 0, comp: []},
+        size: {value: 'undefined', comp: []}
+      },
+      prof: {},
+      prof_bonus: 0,
+      personality: {
+        alignment: data.alignment,
+        background: data.background
+      }
+    },
+    hp: 0, max_hp: 0,
+    initiative: {mod: 0, comp: []},
+    equipped: [],
+    armor: 'undefined',
+    ac: 0,
+    equipable: {},
+    item: [],
+    spell: [],
+    slot: [],
+    max_cantrips: 0,
+    max_spells: 0
+  }
 }

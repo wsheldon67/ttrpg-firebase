@@ -1,6 +1,6 @@
-import type { Feat } from "../character"
 import type { Item } from '$lib/prereqs'
-import type { API } from "../api"
+import { add_info } from '../api'
+import type { Params } from '../character'
 
 const levels:{rages: number, rage_dmg: number}[] = [
   {rages: 0, rage_dmg: 0},
@@ -18,22 +18,22 @@ export function Barbarian(level:number):Item[] {
   const items:Item[] = []
   items.push({
     id: 'Barbarian',
-    func: (c: API) => {
-      c.info.rages = levels[level].rages
-      c.info.rage_dmg = levels[level].rage_dmg
+    func: ({character}:Params) => {
+      add_info(character, 'Rage', 'Rages', levels[level].rages)
+      add_info(character, 'Rage', 'Rage Damage', levels[level].rage_dmg)
     }
   })
   return items
 }
 
-function Rage(source: string):Feat {
+function Rage(source: string) {
   return {
     title: 'Rage',
     text: `A rage function`,
     tags: [], source
   }
 }
-function UnarmoredDefense(source: string):Feat {
+function UnarmoredDefense(source: string) {
   return {
     title: 'Unarmored Defense',
     text: `An unarmored defense function`,

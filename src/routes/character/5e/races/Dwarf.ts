@@ -1,7 +1,7 @@
-import type { Feat } from "../character"
 import type { Item } from '$lib/prereqs'
-import type { API } from "../api"
-function Darkvision(distance:number, source: string):Feat {
+import { add_ability_score, add_prof_item, add_size, add_speed } from '../api'
+import type { Params } from '../character'
+function Darkvision(distance:number, source: string) {
   return {
     title: `Darkvision (${distance}')`,
     text: `Within ${distance}', can see dim as if it were bright, and darkness as if it were dim.`,
@@ -13,18 +13,29 @@ function Darkvision(distance:number, source: string):Feat {
 const Dwarf: Item[] = [
   {
     id: 'Dwarf', cats: ['ability'],
-    func: (c: API) => {
-      c.ab.con.score.push({id: 'Dwarf', value: 2})
+    func: ({character}:Params) => {
+      add_ability_score(character, 'Dwarf', 'con', 2)
     }
   },{
     id: 'Dwarf', cats: ['speed'],
-    func: (c: API) => {
-      c.info.basic.speed = 25
+    func: ({character}:Params) => {
+      add_speed(character, 'Dwarf', 25)
     }
   },{
     id: 'Dwarf',
-    func: (c: API) => {
-      c.feats.push(Darkvision(60, 'Dwarf'))
+    func: ({character}:Params) => {
+      character.passive.push(Darkvision(60, 'Dwarf'))
+      // TODO figure out feats / active feats
+    }
+  },{
+    id: 'Dwarf', cats: ['size'],
+    func: ({character}:Params) => {
+      add_size(character, 'Dwarf', 3)
+    }
+  },{
+    id: 'Dwarf', cats: ['profs'],
+    func: ({character, data}:Params) => {
+      add_prof_item(character, 'Dwarf', 'Tool', data.Dwarf.tool_proficiency)
     }
   }
 ]
@@ -33,8 +44,8 @@ export const Hill_Dwarf: Item[] = [
   ...Dwarf,
   {
     id: 'Hill Dwarf', cats: ['ability'],
-    func: (c: API) => {
-      c.ab.wis.score.push({id: 'Hill Dwarf', value: 1})
+    func: ({character}:Params) => {
+      add_ability_score(character, 'Hill Dwarf', 'wis', 1)
     }
   }
 ]
@@ -42,8 +53,14 @@ export const Mountain_Dwarf: Item[] = [
   ...Dwarf,
   {
     id: 'Mountain Dwarf', cats: ['ability'],
-    func: (c: API) => {
-      c.ab.str.score.push({id: 'Mountain Dwarf', value: 2})
+    func: ({character}:Params) => {
+      add_ability_score(character, 'Hill Dwarf', 'str', 2)
+    }
+  },{
+    id: 'Mountain Dwarf', cats: ['profs'],
+    func: ({character}:Params) => {
+      add_prof_item(character, 'Hill Dwarf', 'Armor', 'Light')
+      add_prof_item(character, 'Hill Dwarf', 'Armor', 'Medium')
     }
   }
 ]

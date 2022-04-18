@@ -1,7 +1,7 @@
 <script lang='ts'>
   import ObjectViewer from '$lib/c/ObjectViewer.svelte'
   import type {Data} from './User'
-  import { display } from './display'
+  import { process_character } from './character'
 
   const races = ['Mountain_Dwarf', 'Hill_Dwarf']
   
@@ -23,10 +23,14 @@
     background: ``,
     info: {},
     wealth: 50,
-    hp: 30
+    hp: 30,
+    trackers: [],
+    Dwarf: {
+      tool_proficiency: `Smith's Tools`
+    }
   }
 
-  $: c = display(d)
+  $: c = process_character(d)
 
 </script>
 <select bind:value={d.subrace}>

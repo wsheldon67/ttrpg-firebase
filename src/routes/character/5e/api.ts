@@ -1,77 +1,42 @@
-import { abilities, skills } from "./data"
+import { signed } from "$lib/pretty"
+import type { Ability } from "./data"
+import type { Character } from "./UI"
+import type { Data } from "./User"
 
-export interface Feat {
-  title: string, text: string, tags: string[]
+export function add_ability_score(character:Character, source: string, ability:Ability, value:number) {
+  const ability_object = character.ab.find(el => el.name === ability)
+  ability_object.score_comp.push({
+    source, value,
+    operation: signed(value)
+  })
 }
 
-export interface API {
-  ab: {
-    [ability: string]: {
-      score:{id: string, value: number}[]
-      mod:{id: string, value: number}[]
-      adv:{id: string, value: number}[]
-    }
-  }
-  skill: {
-    [skill: string]: {
-      mod: {id: string, value: number}[]
-      adv: {id: string, value: number}[]
-      ab: string
-    }
-  }
-  save: {
-    [save: string]: {
-      mod: {id: string, value: number}[]
-      adv: {id: string, value: number}[]
-    }
-  }
-  info: {
-    basic: {
-      size: string
-      speed: number
-      [key: string]: any
-    }
-    proficiencies: {
-      [category: string]: string[]
-    }
-    [key: string]: any
-  }
-  feats: Feat[]
+export function add_speed(character:Character, source:string, value:number) {
+  character.info.basic.speed.comp.push({
+    source, value,
+    operation: signed(value)
+  })
 }
-function create_base():API {
-  const b:any = {}
 
-  b.ab = {}
-  abilities.forEach((ab)=>{
-    b.ab[ab] = {
-      score: [], mod: [], adv: []
-    }
+export function add_size(character:Character, source:string, value:number) {
+  character.info.basic.size.comp.push({
+    source, value,
+    operation: signed(value)
   })
-
-  b.skill = {}
-  skills.forEach(({name}) => {
-    const ab = skills.find((el) => el.name === name).ab
-    b.skill[name] = {
-      mod: [], adv: [], ab
-    }
-  })
-
-  b.save = {}
-  abilities.forEach((ab)=>{
-    b.save[ab] = {
-      mod: [], adv: []
-    }
-  })
-
-  b.info = {
-    basic: {size: 'Medium', speed: 30},
-    proficiencies: {}
-  }
-
-  b.feats = []
-
-  return b
 }
-export const api = create_base()
 
-// prof: Math.floor((i+1)/4)+2,
+export function add_prof_item(character:Character, source:string, category:string, name:string){
+  if (!character.info.prof[category]) {
+    character.info.prof[category] = []
+  }
+  if (!character.info.prof[category].find(el => el.name === name)) {
+    character.info.prof[category].push({name, comp:[]})
+  }
+  const prof_object = character.info.prof[category].find(el => el.name === name)
+  prof_object.comp.push(source)
+}
+
+export function add_info(character:Character, cat:string, key:string, value:any) {
+  if (!character.info[cat]) {character.info[cat] = {}}
+  character.info[cat][key] = value
+}
