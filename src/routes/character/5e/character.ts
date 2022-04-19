@@ -51,6 +51,8 @@ function add_prereq_to_scripts(scripts:Item[], prereq: string):void {
  * Literally everything is either in the rules, or stored in user data.
     * There is no state besides what is described by the user data.
     * Push a button = change user data.
+    * So active, etc, are just lists of components, which modify user data
+    * Feats run every time, whether they 'run' is determined by user data
 
  # Prereq Categories
  * setup - all class, race things run AFTER setup.

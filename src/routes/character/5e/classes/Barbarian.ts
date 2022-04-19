@@ -1,6 +1,7 @@
 import type { Item } from '$lib/prereqs'
 import { add_info } from '../api'
 import type { Params } from '../character'
+import RageComp from './Rage.svelte'
 
 const levels:{rages: number, rage_dmg: number}[] = [
   {rages: 0, rage_dmg: 0},
@@ -26,6 +27,8 @@ export function Barbarian(level:number):Item[] {
   return items
 }
 
+export const feats = [RageComp]
+
 function Rage(source: string) {
   return {
     title: 'Rage',
@@ -33,6 +36,8 @@ function Rage(source: string) {
     tags: [], source
   }
 }
+
+
 function UnarmoredDefense(source: string) {
   return {
     title: 'Unarmored Defense',

@@ -24,6 +24,12 @@ export interface D20 {
 export interface Roll extends D20 {
   q: number, d: number
 }
+export interface Feat {
+  title: string, text: any, tags: string[]
+}
+export interface ActiveFeat extends Feat {
+  component: any
+}
 
 export interface Character {
   race: string, subrace: string, name: string
@@ -34,8 +40,8 @@ export interface Character {
   skill: D20[]
   save: D20[]
   tracker: {label: string, value: number, max?:number}[]
-  active: {title: string, text: string, action: Function}[]
-  passive: {title: string, text: string, tags: string[]}[]
+  active: ActiveFeat[]
+  passive: Feat[]
   info: {
     basic: {
       speed: {value: number, comp: Comp[]}
