@@ -8,7 +8,7 @@ const create_ability_skeleton: Item = {
   func: ({character}:Params) => {
     abilities.forEach((ability) => {
       character.ab.push({
-        name: ability, mod: 0, adv: 0, score: 10, comp: [], score_comp: []
+        name: ability, mod: 0, adv: 0, score: 10, comp: [], score_comp: [], adv_comp: []
       })
     })
   }
