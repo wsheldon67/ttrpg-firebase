@@ -3,7 +3,7 @@ import { add_ability_score, add_prof_item, add_size, add_speed } from '../api'
 import type { Params } from '../character'
 function Darkvision(distance:number, source: string) {
   return {
-    title: `Darkvision (${distance}')`,
+    name: `Darkvision (${distance}')`,
     text: `Within ${distance}', can see dim as if it were bright, and darkness as if it were dim.`,
     tags: ['Passive'],
     source

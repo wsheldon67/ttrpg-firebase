@@ -19,7 +19,7 @@ export function Barbarian(level:number):Item[] {
   const items:Item[] = []
   const {rage_dmg, rages} = levels[level]
   items.push({
-    id: 'Barbarian',
+    id: 'Barbarian Rage',
     func: ({character, data}:Params) => {
       if (!data.script.Rage) {data.script.Rage = {
         rages: rages
@@ -45,14 +45,23 @@ export function Barbarian(level:number):Item[] {
     func: ({character}:Params) => {
       character.active.push(RageComp)
       character.passive.push({
-        title: 'Rage',
+        name: 'Rage',
         tags: ['Combat'],
         text: {
           'Bonus Action': `Advantage on str checks and saves; Melee attacks using str get +${rage_dmg}; You have resistance to bludgeoning, piercing, and slashing dmg.`,
           'Rules': `Cannot be wearing heavy armor; Cannot cast or concentrate spells; Ends if you are knocked unconcious; Ends if you have not attacked a hostile or taken dmg since your last turn; You can end your rage as a bonus action;`,
           'Duration': `1 minute`,
-          'Uses': `${levels[level].rages} uses recharged on a long rest.`
+          'Uses': `${rages} uses recharged on a long rest.`
         }
+      })
+    }
+  })
+  items.push({
+    id: 'Barbarian',
+    func: ({character}:Params) => {
+      character.info.basic.hit_dice.push({
+        class: 'Barbarian',
+        dice: level + 'd12'
       })
     }
   })

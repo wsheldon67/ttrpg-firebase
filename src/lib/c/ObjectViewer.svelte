@@ -32,7 +32,11 @@
 </style>
 
 {#each entries as entry}
-  {#if typeof(entry.value) === 'object'}
+  {#if !Number.isNaN(Number(entry.key))}
+    <Collapse label={entry.value.name || entry.key}>
+      <svelte:self object={entry.value} />
+    </Collapse>
+  {:else if typeof(entry.value) === 'object'}
     <Collapse label={entry.key}>
       <svelte:self object={entry.value} />
     </Collapse>

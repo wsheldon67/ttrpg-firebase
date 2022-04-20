@@ -2,7 +2,6 @@
   import ObjectViewer from '$lib/c/ObjectViewer.svelte'
   import type {Data} from './User'
   import { process_character } from './character'
-  import { feats } from './classes/Barbarian'
 
   const races = ['Mountain_Dwarf', 'Hill_Dwarf']
   
@@ -25,10 +24,11 @@
     info: {},
     wealth: 50,
     hp: 30,
-    trackers: [],
+    tracker: [],
     Dwarf: {
       tool_proficiency: `Smith's Tools`
-    }
+    },
+    script: {}
   }
 
   $: c = process_character(d)
@@ -40,6 +40,6 @@
   {/each}
 </select>
 <ObjectViewer object={c} />
-{#each feats as feat}
+{#each c.active as feat}
   <svelte:component this={feat} bind:data={d}/>
 {/each}

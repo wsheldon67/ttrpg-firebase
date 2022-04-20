@@ -25,7 +25,7 @@ export interface Roll extends D20 {
   q: number, d: number
 }
 export interface Feat {
-  title: string, text: any, tags: string[]
+  name: string, text: any, tags: string[]
 }
 
 export interface Character {
@@ -46,6 +46,7 @@ export interface Character {
     basic: {
       speed: {value: number, comp: Comp[]}
       size: {value: string, comp: Comp[]}
+      hit_dice: {class: string, dice: string}[]
       [key: string]: any
     }
     prof: {
@@ -101,7 +102,8 @@ export function create_empty_character(data:Data):Character {
     info: {
       basic: {
         speed: {value: 0, comp: []},
-        size: {value: 'undefined', comp: []}
+        size: {value: 'undefined', comp: []},
+        hit_dice: [],
       },
       prof: {},
       prof_bonus: 0,
