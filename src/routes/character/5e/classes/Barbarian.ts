@@ -2,6 +2,7 @@ import type { Item } from '$lib/prereqs'
 import { add_ability_adv, add_info, add_resistance, add_tracker } from '../api'
 import type { Params } from '../character'
 import RageComp from './Rage.svelte'
+import type { Data } from '../User'
 
 const levels:{rages: number, rage_dmg: number}[] = [
   {rages: 0, rage_dmg: 0},
@@ -26,7 +27,11 @@ export function Barbarian(level:number):Item[] {
       }}
       add_info(character, 'Rage', 'Rages', rages)
       add_info(character, 'Rage', 'Rage Damage', rage_dmg)
-      add_tracker(character, 'Rages', data.script.Rage.rages, rages, rages, ['Long Rest'])
+      add_tracker(character, 'Rages', data.script.Rage.rages, rages, (new_data:Data, type:string) => {
+        if (type === 'Long Rest') {
+          new_data.script.Rage.rages = rages
+        }
+      })
       if (data.script.Rage.active) {
         add_ability_adv(character, 'Rage', 'str', 1)
         add_resistance(character, 'Bludgeoning', 'Rage')

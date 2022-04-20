@@ -1,9 +1,12 @@
 import type { Data, Tracker } from './User'
 
-interface Comp {
+export interface Comp {
   source: string
   operation: string
   value: number
+}
+export interface ScriptTracker {
+  label: string, value: number, max?: number, reset?:Function
 }
 export interface Item {
   name: string
@@ -40,6 +43,7 @@ export interface Character {
   skill: D20[]
   save: D20[]
   tracker: Tracker[]
+  script_tracker: ScriptTracker[]
   active: any[]
   passive: Feat[]
   info: {
@@ -97,6 +101,7 @@ export function create_empty_character(data:Data):Character {
     skill: [],
     save: [],
     tracker: [],
+    script_tracker: [],
     active: [],
     passive: [],
     info: {

@@ -58,9 +58,17 @@ export function add_resistance(character:Character, name:string, source:string) 
 
 export function add_tracker(
   character:Character, label:string, value:number,
-  max?:number, reset_to?:number, reset_on?:string[]
+  max?:number, reset?:Function
   ) {
-  character.tracker.push({
-    label, value, max, reset_on, reset_to
+  character.script_tracker.push({
+    label, value, max, reset
   })
+}
+
+export function run_reset(character:Character, data:Data, type:string) {
+  const new_data = JSON.parse(JSON.stringify(data))
+  character.script_tracker.forEach(({reset}) => {
+    reset(new_data, type)
+  })
+  return new_data
 }

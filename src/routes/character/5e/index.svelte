@@ -2,6 +2,7 @@
   import ObjectViewer from '$lib/c/ObjectViewer.svelte'
   import type {Data} from './User'
   import { process_character } from './character'
+import { run_reset } from './api';
 
   const races = ['Mountain_Dwarf', 'Hill_Dwarf']
   
@@ -33,6 +34,10 @@
 
   $: c = process_character(d)
 
+  function long_rest() {
+    d = run_reset(c, d, 'Long Rest')
+  }
+
 </script>
 <select bind:value={d.subrace}>
   {#each races as race}
@@ -43,3 +48,4 @@
 {#each c.active as feat}
   <svelte:component this={feat} bind:data={d}/>
 {/each}
+<button on:click={long_rest}>Long Rest</button>
