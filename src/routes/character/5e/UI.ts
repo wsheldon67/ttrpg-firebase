@@ -1,4 +1,4 @@
-import type { Data } from './User'
+import type { Data, Tracker } from './User'
 
 interface Comp {
   source: string
@@ -27,20 +27,20 @@ export interface Roll extends D20 {
 export interface Feat {
   title: string, text: any, tags: string[]
 }
-export interface ActiveFeat extends Feat {
-  component: any
-}
 
 export interface Character {
   race: string, subrace: string, name: string
   xp: number, xp_goal: number, xp_progress: number
   class: {name: string, level: number}[]
   level: number
-  ab: {name: string, mod: number, adv: number, score: number, comp: Comp[], score_comp: Comp[]}[]
+  ab: {
+    name: string, mod: number, adv: number, score: number,
+    comp: Comp[], score_comp: Comp[], adv_comp: Comp[]
+  }[]
   skill: D20[]
   save: D20[]
-  tracker: {label: string, value: number, max?:number}[]
-  active: ActiveFeat[]
+  tracker: Tracker[]
+  active: any[]
   passive: Feat[]
   info: {
     basic: {
@@ -74,6 +74,7 @@ export interface Character {
   equipable: {
     [slot: string]: {label: string, value: string}[]
   }
+  resistance: {name: string, comp: string[]}[]
 
   item: Item[]
 
@@ -81,6 +82,7 @@ export interface Character {
   slot: {remain: number, max: number}[]
   max_cantrips: number
   max_spells: number
+  script: any
 }
 
 /** A base character for scripts to modify. */
@@ -114,10 +116,12 @@ export function create_empty_character(data:Data):Character {
     armor: 'undefined',
     ac: 0,
     equipable: {},
+    resistance: [],
     item: [],
     spell: [],
     slot: [],
     max_cantrips: 0,
-    max_spells: 0
+    max_spells: 0,
+    script: {}
   }
 }

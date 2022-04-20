@@ -22,8 +22,11 @@ export interface Data {
   [key: string]: any,
   race: string
   hp: number,
-  trackers: {
-    label: string, value: number, max?:number
-    reset_on?: string[], reset_to?: number
-  }[]
+  tracker: Tracker[]
+  script: any
+}
+
+export interface Tracker {
+  label: string, value: number, max?:number
+  reset_on?: string[], reset_to?: number
 }
