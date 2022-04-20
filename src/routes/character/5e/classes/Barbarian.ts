@@ -1,5 +1,5 @@
 import type { Item } from '$lib/prereqs'
-import { add_info } from '../api'
+import { add_ability_adv, add_info, add_resistance, add_tracker } from '../api'
 import type { Params } from '../character'
 import RageComp from './Rage.svelte'
 
@@ -17,31 +17,44 @@ const levels:{rages: number, rage_dmg: number}[] = [
 
 export function Barbarian(level:number):Item[] {
   const items:Item[] = []
+  const {rage_dmg, rages} = levels[level]
   items.push({
     id: 'Barbarian',
+    func: ({character, data}:Params) => {
+      if (!data.script.Rage) {data.script.Rage = {
+        rages: rages
+      }}
+      add_info(character, 'Rage', 'Rages', rages)
+      add_info(character, 'Rage', 'Rage Damage', rage_dmg)
+      add_tracker(character, 'Rages', data.script.Rage.rages, rages, rages, ['Long Rest'])
+      if (data.script.Rage.active) {
+        add_ability_adv(character, 'Rage', 'str', 1)
+        add_resistance(character, 'Bludgeoning', 'Rage')
+        add_resistance(character, 'Piercing', 'Rage')
+        add_resistance(character, 'Slashing', 'Rage')
+        /*
+        if (weapon.type === 'melee' && attack.ability === 'str') {
+          dmg_mod = rage_dmg
+        }
+        */
+      }
+    }
+  })
+  items.push({
+    id: 'Barbarian Rage',
     func: ({character}:Params) => {
-      add_info(character, 'Rage', 'Rages', levels[level].rages)
-      add_info(character, 'Rage', 'Rage Damage', levels[level].rage_dmg)
+      character.active.push(RageComp)
+      character.passive.push({
+        title: 'Rage',
+        tags: ['Combat'],
+        text: {
+          'Bonus Action': `Advantage on str checks and saves; Melee attacks using str get +${rage_dmg}; You have resistance to bludgeoning, piercing, and slashing dmg.`,
+          'Rules': `Cannot be wearing heavy armor; Cannot cast or concentrate spells; Ends if you are knocked unconcious; Ends if you have not attacked a hostile or taken dmg since your last turn; You can end your rage as a bonus action;`,
+          'Duration': `1 minute`,
+          'Uses': `${levels[level].rages} uses recharged on a long rest.`
+        }
+      })
     }
   })
   return items
-}
-
-export const feats = [RageComp]
-
-function Rage(source: string) {
-  return {
-    title: 'Rage',
-    text: `A rage function`,
-    tags: [], source
-  }
-}
-
-
-function UnarmoredDefense(source: string) {
-  return {
-    title: 'Unarmored Defense',
-    text: `An unarmored defense function`,
-    tags: [], source
-  }
 }
