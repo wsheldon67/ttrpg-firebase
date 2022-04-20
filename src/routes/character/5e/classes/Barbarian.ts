@@ -1,8 +1,10 @@
 import type { Item } from '$lib/prereqs'
-import { add_ability_adv, add_info, add_resistance, add_tracker } from '../api'
+import { add_ability_adv, add_attack_mod, add_info, add_prof_item, add_resistance, add_tracker, type AttackMod } from '../api'
 import type { Params } from '../character'
 import RageComp from './Rage.svelte'
 import type { Data } from '../User'
+import type { Comp } from '../UI'
+import { signed } from '$lib/pretty'
 
 const levels:{rages: number, rage_dmg: number}[] = [
   {rages: 0, rage_dmg: 0},
@@ -20,7 +22,7 @@ export function Barbarian(level:number):Item[] {
   const items:Item[] = []
   const {rage_dmg, rages} = levels[level]
   items.push({
-    id: 'Barbarian Rage',
+    id: 'Barbarian Rage', pre: ['Add Ability to Attacks'], cats: ['attack'],
     func: ({character, data}:Params) => {
       if (!data.script.Rage) {data.script.Rage = {
         rages: rages
@@ -37,11 +39,16 @@ export function Barbarian(level:number):Item[] {
         add_resistance(character, 'Bludgeoning', 'Rage')
         add_resistance(character, 'Piercing', 'Rage')
         add_resistance(character, 'Slashing', 'Rage')
-        /*
-        if (weapon.type === 'melee' && attack.ability === 'str') {
-          dmg_mod = rage_dmg
-        }
-        */
+        add_attack_mod(character, ({type, slot}:AttackMod):Comp => {
+          const uses_str = slot.melee_attack.comp.some(el => el.source === 'str')
+          if (type === 'melee' && uses_str) {
+            return {
+              source: 'Rage',
+              value: rage_dmg,
+              operation: signed(rage_dmg)
+            }
+          }
+        })
       }
     }
   })
@@ -62,12 +69,23 @@ export function Barbarian(level:number):Item[] {
     }
   })
   items.push({
-    id: 'Barbarian',
+    id: 'Barbarian Hit Dice',
     func: ({character}:Params) => {
       character.info.basic.hit_dice.push({
         class: 'Barbarian',
         dice: level + 'd12'
       })
+    }
+  })
+  items.push({
+    id: 'Barbarian Proficiency',
+    func: ({character}:Params) => {
+      add_prof_item(character, 'Barbarian', 'Armor', 'Light')
+      add_prof_item(character, 'Barbarian', 'Armor', 'Medium')
+      add_prof_item(character, 'Barbarian', 'Armor', 'Shield')
+
+      add_prof_item(character, 'Barbarian', 'Weapon', 'Simple')
+      add_prof_item(character, 'Barbarian', 'Weapon', 'Martial')
     }
   })
   return items

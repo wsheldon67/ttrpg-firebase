@@ -22,7 +22,7 @@ export interface Spell {
   [key: string]: any
 }
 export interface D20 {
-  label:string, mod: number, adv: number, comp: Comp[]
+  label:string, mod: number, adv: number, comp: Comp[], adv_comp:Comp[]
 }
 export interface Roll extends D20 {
   q: number, d: number

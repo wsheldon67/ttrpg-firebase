@@ -1,6 +1,6 @@
 import { signed } from "$lib/pretty"
 import type { Ability } from "./data"
-import type { Character } from "./UI"
+import type { Character, Item } from "./UI"
 import type { Data } from "./User"
 
 export function add_ability_score(character:Character, source: string, ability:Ability, value:number) {
@@ -17,6 +17,15 @@ export function add_ability_adv(character:Character, source: string, ability:Abi
     operation: value === 1 ? '+adv' : '+disadv'
   })
 }
+export function add_ability_prof(character:Character, source:string, ability:Ability) {
+  const comp = character.ab.find(el => el.name === ability).comp
+  const comp_has_prof = comp.some(el => el.source.includes('Prof'))
+
+}
+
+export function get_ab_mod(character:Character, ability:Ability) {
+  return character.ab.find(el => el.name === ability).mod
+}
 
 export function add_speed(character:Character, source:string, value:number) {
   character.info.basic.speed.comp.push({
@@ -25,10 +34,10 @@ export function add_speed(character:Character, source:string, value:number) {
   })
 }
 
-export function add_size(character:Character, source:string, value:number) {
+export function add_size(character:Character, source:string, value:number, operation?:string) {
   character.info.basic.size.comp.push({
     source, value,
-    operation: signed(value)
+    operation: operation || signed(value)
   })
 }
 
@@ -76,4 +85,24 @@ export function run_reset(character:Character, data:Data, type:string) {
     }
   })
   return new_data
+}
+
+export interface AttackMod {
+  slot: any, type: 'melee'|'ranged',
+  weapon: Item 
+}
+const blank_weapon = {
+  name: 'None', weight: 0, location: 'Inventory', type: 'Weapon'
+}
+export function add_attack_mod(character:Character, func:Function) {
+  character.equipped.forEach((slot) => {
+    ['melee', 'ranged'].forEach((type) => {
+      const params = {
+        slot, type,
+        weapon: character.item.find(el => el.name === slot.name) || blank_weapon
+      }
+      const comp = func(params)
+      if (comp) {slot[type + '_attack'].comp.push(comp)}
+    })
+  })
 }

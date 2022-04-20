@@ -1,6 +1,8 @@
 <script>
   import { defaults } from './ObjectViewerDefaults'
   import Collapse from './Collapse.svelte'
+  import Tooltip from './Tooltip.svelte'
+  import { comp_to_words } from '$lib/pretty';
   // TODO collapse long text, overridable
 
   export let object = {}
@@ -30,12 +32,12 @@
       return entry.key
     }
   }
-
+  // Tooltip
 </script>
 <style>
   .reg {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 6em max-content;
   }
 </style>
 {#if debug}
@@ -43,7 +45,12 @@
 {/if}
 
 {#each entries as entry}
-  {#if typeof(entry.value) === 'object'}
+  {#if entry.value.comp}
+    <div class='reg'>
+      <span>{entry.key}</span>
+      <Tooltip tip={comp_to_words(entry.value.comp)}>{entry.value.value}</Tooltip>
+    </div>
+  {:else if typeof(entry.value) === 'object'}
     <Collapse label={label(entry)}>
       <svelte:self object={entry.value} />
     </Collapse>

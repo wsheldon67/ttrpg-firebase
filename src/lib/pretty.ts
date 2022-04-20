@@ -1,3 +1,4 @@
+import type { Comp } from "src/routes/character/5e/UI"
 import type { Time } from "./time"
 
 /** If your string is longer than max_length, we'll cut it short and add... */
@@ -90,6 +91,14 @@ export function array_to_words(array:string[]):string {
     } else {
       res += 'and ' + v
     }
+  })
+  return res
+}
+
+export function comp_to_words(comps:Comp[]):string {
+  let res = ''
+  comps.forEach(({source, operation}) => {
+    res += source + ': ' + operation + '; '
   })
   return res
 }

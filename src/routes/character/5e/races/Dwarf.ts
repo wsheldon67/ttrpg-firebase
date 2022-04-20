@@ -30,7 +30,7 @@ const Dwarf: Item[] = [
   },{
     id: 'Dwarf', cats: ['size'],
     func: ({character}:Params) => {
-      add_size(character, 'Dwarf', 3)
+      add_size(character, 'Dwarf', 3, 'Medium')
     }
   },{
     id: 'Dwarf', cats: ['profs'],

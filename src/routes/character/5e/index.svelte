@@ -2,7 +2,7 @@
   import ObjectViewer from '$lib/c/ObjectViewer.svelte'
   import type {Data} from './User'
   import { process_character } from './character'
-import { run_reset } from './api';
+  import { run_reset } from './api';
 
   const races = ['Mountain_Dwarf', 'Hill_Dwarf']
   
