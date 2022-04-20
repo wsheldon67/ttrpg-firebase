@@ -66,9 +66,14 @@ export function add_tracker(
 }
 
 export function run_reset(character:Character, data:Data, type:string) {
-  const new_data = JSON.parse(JSON.stringify(data))
+  const new_data:Data = JSON.parse(JSON.stringify(data))
   character.script_tracker.forEach(({reset}) => {
     reset(new_data, type)
+  })
+  new_data.tracker.forEach((el) => {
+    if (el.reset_on.includes(type)) {
+      el.value = el.reset_to
+    }
   })
   return new_data
 }
