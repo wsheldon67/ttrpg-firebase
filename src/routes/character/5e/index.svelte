@@ -39,7 +39,7 @@
     <option>{race}</option>
   {/each}
 </select>
-<ObjectViewer object={c} />
+<ObjectViewer object={c} debug/>
 {#each c.active as feat}
   <svelte:component this={feat} bind:data={d}/>
 {/each}
