@@ -10,6 +10,13 @@ export function add_ability_score(character:Character, source: string, ability:A
     operation: signed(value)
   })
 }
+export function add_ability_adv(character:Character, source: string, ability:Ability, value:number) {
+  const ability_object = character.ab.find(el => el.name === ability)
+  ability_object.adv_comp.push({
+    source, value,
+    operation: value === 1 ? '+adv' : '+disadv'
+  })
+}
 
 export function add_speed(character:Character, source:string, value:number) {
   character.info.basic.speed.comp.push({
@@ -39,4 +46,21 @@ export function add_prof_item(character:Character, source:string, category:strin
 export function add_info(character:Character, cat:string, key:string, value:any) {
   if (!character.info[cat]) {character.info[cat] = {}}
   character.info[cat][key] = value
+}
+
+export function add_resistance(character:Character, name:string, source:string) {
+  if (!character.resistance.find(el => el.name === name)) {
+    character.resistance.push({name, comp: []})
+  }
+  const resistance_object = character.resistance.find(el => el.name === name)
+  resistance_object.comp.push(source)
+}
+
+export function add_tracker(
+  character:Character, label:string, value:number,
+  max?:number, reset_to?:number, reset_on?:string[]
+  ) {
+  character.tracker.push({
+    label, value, max, reset_on, reset_to
+  })
 }
