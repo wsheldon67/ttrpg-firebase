@@ -22,7 +22,7 @@ export interface Spell {
   [key: string]: any
 }
 export interface D20 {
-  label:string, mod: number, adv: number, comp: Comp[], adv_comp:Comp[]
+  name:string, mod: number, adv: number, comp: Comp[], adv_comp:Comp[]
 }
 export interface Roll extends D20 {
   q: number, d: number
@@ -51,12 +51,12 @@ export interface Character {
       speed: {value: number, comp: Comp[]}
       size: {value: string, comp: Comp[]}
       hit_dice: {class: string, dice: string}[]
+      prof_bonus: number
       [key: string]: any
     }
     prof: {
       [category: string]: {name: string, comp: string[]}[]
     }
-    prof_bonus: number
     personality: {
       alignment: string
       background: string
@@ -109,9 +109,9 @@ export function create_empty_character(data:Data):Character {
         speed: {value: 0, comp: []},
         size: {value: 'undefined', comp: []},
         hit_dice: [],
+        prof_bonus: 0
       },
       prof: {},
-      prof_bonus: 0,
       personality: {
         alignment: data.alignment,
         background: data.background
