@@ -15,13 +15,24 @@ const create_ability_skeleton: Item = {
   }
 }
 
+const create_save_skeleton:Item = {
+  id: 'Save Skeleton',
+  func: ({character}:Params) => {
+    abilities.forEach((ability) => {
+      character.save.push({
+        name: ability, mod: 0, adv: 0, comp: [], adv_comp: []
+      })
+    })
+  }
+}
+
 const create_skill_skeleton: Item = {
   id: 'Skill Skeleton', cats: ['skill'], pre: ['ability'],
   func: ({character}:Params) => {
     skills.forEach(({name, ab}) => {
       const mod = character.ab.find(el => el.name === ab).mod
       character.skill.push({
-        label: name, mod: 0, adv: 0,
+        name, mod: 0, adv: 0,
         comp: [{
           source: ab,
           value: mod,
@@ -39,10 +50,10 @@ const create_equipped_skeleton:Item = {
     ['Left Hand', 'Right Hand'].forEach(slot => {
       character.equipped.push({
         slot, name: data.equipped[slot],
-        melee_attack: {label: 'Melee Attack', mod: 0, adv: 0, comp: [], adv_comp:[]},
-        ranged_attack: {label: 'Ranged Attack', mod: 0, adv: 0, comp: [], adv_comp:[]},
-        melee_dmg: {label: 'Melee Dmg', mod: 0, adv: 0, q: 0, d: 0, comp: [], adv_comp:[]},
-        ranged_dmg: {label: 'Melee Attack', mod: 0, adv: 0, q: 0, d: 0, comp: [], adv_comp:[]},
+        melee_attack: {name: 'Melee Attack', mod: 0, adv: 0, comp: [], adv_comp:[]},
+        ranged_attack: {name: 'Ranged Attack', mod: 0, adv: 0, comp: [], adv_comp:[]},
+        melee_dmg: {name: 'Melee Dmg', mod: 0, adv: 0, q: 0, d: 0, comp: [], adv_comp:[]},
+        ranged_dmg: {name: 'Melee Attack', mod: 0, adv: 0, q: 0, d: 0, comp: [], adv_comp:[]},
       })
     })
   }
@@ -72,5 +83,5 @@ const add_ab_to_attack:Item = {
 /** A list of scripts that describe the changes that general rules make to this character. */
 export const generic_scripts:Item[] = [
   create_ability_skeleton, create_skill_skeleton, create_equipped_skeleton,
-  add_ab_to_attack
+  add_ab_to_attack, create_save_skeleton
 ]
