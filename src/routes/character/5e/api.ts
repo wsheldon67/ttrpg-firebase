@@ -21,7 +21,7 @@ export function add_save_prof(character:Character, source:string, ability:Abilit
   const comp = character.save.find(el => el.name === ability).comp
   const comp_has_prof = comp.some(el => el.source.includes('Prof'))
   if (!comp_has_prof) {
-    const prof_bonus = character.info.Basic['Proficiency Bonus']
+    const prof_bonus = character.prof_bonus
     comp.push({
       source: 'Prof (' + source + ')',
       value: prof_bonus,
@@ -33,7 +33,7 @@ export function add_skill_prof(character:Character, source:string, skill:string)
   const comp = character.skill.find(el => el.name === skill).comp
   const comp_has_prof = comp.some(el => el.source.includes('Prof'))
   if (!comp_has_prof) {
-    const prof_bonus = character.info.Basic['Proficiency Bonus']
+    const prof_bonus = character.prof_bonus
     comp.push({
       source: 'Prof (' + source + ')',
       value: prof_bonus,

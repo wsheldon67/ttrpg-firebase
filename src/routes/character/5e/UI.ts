@@ -46,12 +46,13 @@ export interface Character {
   script_tracker: ScriptTracker[]
   active: any[]
   passive: Feat[]
+  prof_bonus: number
   info: {
     Basic: {
       Speed: {value: number, comp: Comp[]}
       Size: {value: string, comp: Comp[]}
       'Hit Dice': string[]
-      'Proficiency Bonus': number
+      'Proficiency Bonus': string
       Race: string,
       Class: {[class_name: string]: number}
       [key: string]: any
@@ -106,12 +107,13 @@ export function create_empty_character(data:Data):Character {
     script_tracker: [],
     active: [],
     passive: [],
+    prof_bonus: 0,
     info: {
       Basic: {
         Speed: {value: 0, comp: []},
         Size: {value: 'undefined', comp: []},
         'Hit Dice': [],
-        'Proficiency Bonus': 0,
+        'Proficiency Bonus': '',
         Race: data.subrace,
         Class: {}
       },

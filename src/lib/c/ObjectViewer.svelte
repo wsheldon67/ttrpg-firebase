@@ -40,9 +40,7 @@
   .reg {
     display: grid;
     grid-template-columns: 6em max-content;
-  }
-  .solo {
-    padding: .25em 2em;
+    padding: .25em;
   }
 </style>
 {#if debug}

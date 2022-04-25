@@ -1,6 +1,7 @@
 import type { Item } from "$lib/prereqs";
+import { signed } from "$lib/pretty";
 import type { Params } from "../character";
-import { sizes } from "../data";
+import { profs, sizes } from "../data";
 import { get_mod_from_comp } from "./helpers";
 
 const compile_speed:Item = {
@@ -19,6 +20,18 @@ const compile_size:Item = {
   }
 }
 
+const calculate_level:Item = {
+  id: 'Calculate Level',
+  func: ({character}:Params) => {
+    character.class.forEach(({name, level}) => {
+      character.level += level
+      character.info.Basic.Class[name] = level
+    })
+    character.info.Basic['Proficiency Bonus'] = signed(profs[character.level])
+    character.prof_bonus = profs[character.level]
+  }
+}
+
 export const info_scripts:Item[] = [
-  compile_speed, compile_size
+  compile_speed, compile_size, calculate_level
 ]
