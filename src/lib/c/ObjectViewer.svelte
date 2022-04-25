@@ -41,6 +41,9 @@
     display: grid;
     grid-template-columns: 6em max-content;
   }
+  .solo {
+    padding: .25em 2em;
+  }
 </style>
 {#if debug}
   <button on:click={()=> console.log(object)}>See Object</button>
@@ -64,13 +67,13 @@
   {/if}
 {:else}
   {#if object.comp}
-    <Tooltip tip={object.comp.join('; ')}>{object.name}</Tooltip>
+    <Tooltip tip={object.comp.join('; ')} block>{object.name}</Tooltip>
   {:else if Array.isArray(object)}
     {#each object as item}
       <svelte:self object={item} />
     {/each}
   {:else if typeof(object) === 'string' || typeof(object) === 'number'}
-    {object}
+    <div>{object}</div>
   {:else if typeof(object) === 'object'}
     {#each arrayify(object) as entry}
       <svelte:self key={entry.key} object={entry.value} />

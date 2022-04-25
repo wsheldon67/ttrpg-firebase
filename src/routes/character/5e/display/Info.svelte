@@ -5,4 +5,4 @@
   export let c:Character
 
 </script>
-<ObjectViewer object={c.info}/>
+<ObjectViewer object={c.info} debug/>
