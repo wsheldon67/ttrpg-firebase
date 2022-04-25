@@ -1,5 +1,5 @@
 import type { Item } from '$lib/prereqs'
-import { add_ability_adv, add_attack_mod, add_info, add_prof_item, add_resistance, add_tracker, type AttackMod } from '../api'
+import { add_ability_adv, add_attack_mod, add_info, add_prof_item, add_resistance, add_save_prof, add_skill_prof, add_tracker, type AttackMod } from '../api'
 import type { Params } from '../character'
 import RageComp from './Rage.svelte'
 import type { Data } from '../User'
@@ -86,6 +86,20 @@ export function Barbarian(level:number):Item[] {
 
       add_prof_item(character, 'Barbarian', 'Weapon', 'Simple')
       add_prof_item(character, 'Barbarian', 'Weapon', 'Martial')
+    }
+  })
+  items.push({
+    id: 'Barbarian Save Prof', pre: ['Save Skeleton'],
+    func: ({character}:Params) => {
+      add_save_prof(character, 'Barbarian', 'str')
+      add_save_prof(character, 'Barbarian', 'con')
+    }
+  })
+  items.push({
+    id: 'Barbarian Skill Prof', pre: ['Skill Skeleton'],
+    func: ({character, data}:Params) => {
+      add_skill_prof(character, 'Barbarian', data.script.Barbarian.skill_prof1)
+      add_skill_prof(character, 'Barbarian', data.script.Barbarian.skill_prof2)
     }
   })
   return items
