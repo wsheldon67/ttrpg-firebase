@@ -71,7 +71,7 @@ export function Barbarian(level:number):Item[] {
   items.push({
     id: 'Barbarian Hit Dice',
     func: ({character}:Params) => {
-      character.info.Basic['Hit Dice'].push(`Barbarian - ${level}d12`)
+      character.info.Basic['Hit Dice'].push(`Barbarian: ${level}d12`)
       // FIXME this wont be great when we need to access hit dice later
     }
   })
