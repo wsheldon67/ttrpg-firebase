@@ -16,7 +16,8 @@ const config = {
       precompress: false
     }),
     vite: {
-      plugins: [svg()]
+      plugins: [svg()],
+      chokidarWatchOptions: {usePolling: true}
     },
     prerender: {
       enabled: false
