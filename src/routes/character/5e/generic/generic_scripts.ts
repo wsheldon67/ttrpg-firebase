@@ -1,30 +1,11 @@
 import type { Item } from "$lib/prereqs";
 import { signed } from "$lib/pretty";
-import { get_ab_mod } from "./api";
-import type { Params } from "./character";
-import { abilities, skills } from "./data";
+import { get_ab_mod } from "../api";
+import type { Params } from "../character";
+import { skills } from "../data";
+import { ability_scripts } from "./abilities";
 
-const create_ability_skeleton: Item = {
-  id: 'Ability Skeleton', cats: ['setup'],
-  func: ({character}:Params) => {
-    abilities.forEach((ability) => {
-      character.ab.push({
-        name: ability, mod: 0, adv: 0, score: 10, comp: [], score_comp: [], adv_comp: []
-      })
-    })
-  }
-}
 
-const create_save_skeleton:Item = {
-  id: 'Save Skeleton',
-  func: ({character}:Params) => {
-    abilities.forEach((ability) => {
-      character.save.push({
-        name: ability, mod: 0, adv: 0, comp: [], adv_comp: []
-      })
-    })
-  }
-}
 
 const create_skill_skeleton: Item = {
   id: 'Skill Skeleton', cats: ['skill'], pre: ['ability'],
@@ -80,8 +61,11 @@ const add_ab_to_attack:Item = {
   }
 }
 
+
+
+
 /** A list of scripts that describe the changes that general rules make to this character. */
 export const generic_scripts:Item[] = [
-  create_ability_skeleton, create_skill_skeleton, create_equipped_skeleton,
-  add_ab_to_attack, create_save_skeleton
+  ...ability_scripts, create_skill_skeleton, create_equipped_skeleton,
+  add_ab_to_attack,
 ]

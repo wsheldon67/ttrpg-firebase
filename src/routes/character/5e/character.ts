@@ -4,7 +4,7 @@ import { run, type Item } from "$lib/prereqs"
 
 import * as races from './races/_all'
 import * as classes from './classes/_all'
-import { generic_scripts } from "./generic_scripts"
+import { generic_scripts } from "./generic/generic_scripts"
 
 /** Combine user-defined storable data with game rules to derive a display-ready character. */
 export function process_character(data:Data):Character {
