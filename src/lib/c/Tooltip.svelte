@@ -35,6 +35,7 @@
   }
   span {
     text-decoration: underline dotted var(--t) 8%;
+    width: max-content;
   }
 </style>
 {#if block}
