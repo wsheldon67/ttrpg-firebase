@@ -12,7 +12,7 @@ function Darkvision(distance:number, source: string) {
 
 const Dwarf: Item[] = [
   {
-    id: 'Dwarf', cats: ['ability'],
+    id: 'Dwarf', cats: ['ability mods'],
     func: ({character}:Params) => {
       add_ability_score(character, 'Dwarf', 'con', 2)
     }

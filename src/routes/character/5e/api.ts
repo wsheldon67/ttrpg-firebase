@@ -21,7 +21,7 @@ export function add_save_prof(character:Character, source:string, ability:Abilit
   const comp = character.save.find(el => el.name === ability).comp
   const comp_has_prof = comp.some(el => el.source.includes('Prof'))
   if (!comp_has_prof) {
-    const prof_bonus = character.info.basic.prof_bonus
+    const prof_bonus = character.info.Basic['Proficiency Bonus']
     comp.push({
       source: 'Prof (' + source + ')',
       value: prof_bonus,
@@ -33,7 +33,7 @@ export function add_skill_prof(character:Character, source:string, skill:string)
   const comp = character.skill.find(el => el.name === skill).comp
   const comp_has_prof = comp.some(el => el.source.includes('Prof'))
   if (!comp_has_prof) {
-    const prof_bonus = character.info.basic.prof_bonus
+    const prof_bonus = character.info.Basic['Proficiency Bonus']
     comp.push({
       source: 'Prof (' + source + ')',
       value: prof_bonus,
@@ -47,27 +47,27 @@ export function get_ab_mod(character:Character, ability:Ability) {
 }
 
 export function add_speed(character:Character, source:string, value:number) {
-  character.info.basic.speed.comp.push({
+  character.info.Basic.Speed.comp.push({
     source, value,
     operation: signed(value)
   })
 }
 
 export function add_size(character:Character, source:string, value:number, operation?:string) {
-  character.info.basic.size.comp.push({
+  character.info.Basic.Size.comp.push({
     source, value,
     operation: operation || signed(value)
   })
 }
 
 export function add_prof_item(character:Character, source:string, category:string, name:string){
-  if (!character.info.prof[category]) {
-    character.info.prof[category] = []
+  if (!character.info.Proficiencies[category]) {
+    character.info.Proficiencies[category] = []
   }
-  if (!character.info.prof[category].find(el => el.name === name)) {
-    character.info.prof[category].push({name, comp:[]})
+  if (!character.info.Proficiencies[category].find(el => el.name === name)) {
+    character.info.Proficiencies[category].push({name, comp:[]})
   }
-  const prof_object = character.info.prof[category].find(el => el.name === name)
+  const prof_object = character.info.Proficiencies[category].find(el => el.name === name)
   prof_object.comp.push(source)
 }
 

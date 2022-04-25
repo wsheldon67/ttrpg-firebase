@@ -47,19 +47,21 @@ export interface Character {
   active: any[]
   passive: Feat[]
   info: {
-    basic: {
-      speed: {value: number, comp: Comp[]}
-      size: {value: string, comp: Comp[]}
-      hit_dice: {class: string, dice: string}[]
-      prof_bonus: number
+    Basic: {
+      Speed: {value: number, comp: Comp[]}
+      Size: {value: string, comp: Comp[]}
+      'Hit Dice': string[]
+      'Proficiency Bonus': number
+      Race: string,
+      Class: {[class_name: string]: number}
       [key: string]: any
     }
-    prof: {
+    Proficiencies: {
       [category: string]: {name: string, comp: string[]}[]
     }
-    personality: {
-      alignment: string
-      background: string
+    Personality: {
+      Alignment: string
+      Background: string
       [key: string]: any
     }
     [category: string]: any
@@ -105,16 +107,18 @@ export function create_empty_character(data:Data):Character {
     active: [],
     passive: [],
     info: {
-      basic: {
-        speed: {value: 0, comp: []},
-        size: {value: 'undefined', comp: []},
-        hit_dice: [],
-        prof_bonus: 0
+      Basic: {
+        Speed: {value: 0, comp: []},
+        Size: {value: 'undefined', comp: []},
+        'Hit Dice': [],
+        'Proficiency Bonus': 0,
+        Race: data.subrace,
+        Class: {}
       },
-      prof: {},
-      personality: {
-        alignment: data.alignment,
-        background: data.background
+      Proficiencies: {},
+      Personality: {
+        Alignment: data.alignment,
+        Background: data.background
       }
     },
     hp: 0, max_hp: 0,

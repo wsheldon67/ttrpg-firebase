@@ -1,8 +1,9 @@
-import { abilities } from "../data";
+import { abilities, type Ability } from "../data";
 import { signed } from "$lib/pretty";
 import { score_to_mod, get_mod_from_comp, get_adv_from_comp } from "./helpers";
 import type { Item } from "$lib/prereqs";
 import type { Params } from "../character";
+import { get_ab_mod } from "../api";
 
 const create_ability_skeleton: Item = {
   id: 'Ability Skeleton', cats: ['setup'],
@@ -16,7 +17,7 @@ const create_ability_skeleton: Item = {
 }
 
 const create_save_skeleton:Item = {
-  id: 'Save Skeleton',
+  id: 'Save Skeleton', cats: ['setup'],
   func: ({character}:Params) => {
     abilities.forEach((ability) => {
       character.save.push({
@@ -27,7 +28,7 @@ const create_save_skeleton:Item = {
 }
 
 const add_ability_rolls:Item = {
-  id: 'Add Initial Ability Rolls', cats: ['ability mods'],
+  id: 'Add Initial Ability Rolls', cats: ['ability mods'], pre: ['setup'],
   func: ({character, data}:Params) => {
     abilities.forEach((ability) => {
       const ability_object = character.ab.find(el => el.name === ability)
@@ -57,7 +58,24 @@ const compile_ab_score:Item = {
   }
 }
 
+const compile_save_mod:Item = {
+  id: 'Compile Saves', cats: ['save'], pre: ['ability', 'prof'],
+  func: ({character}:Params) => {
+    abilities.forEach((ability:Ability) => {
+      const save_object = character.save.find(el => el.name === ability)
+      const mod = get_ab_mod(character, ability)
+      save_object.comp.push({
+        source: 'Ability',
+        value: mod,
+        operation: signed(mod)
+      })
+      save_object.mod = get_mod_from_comp(save_object.comp)
+      save_object.adv = get_adv_from_comp(save_object.adv_comp)
+    })
+  }
+}
+
 export const ability_scripts = [
   create_ability_skeleton, create_save_skeleton, add_ability_rolls,
-  compile_ab_score
+  compile_ab_score, compile_save_mod
 ]

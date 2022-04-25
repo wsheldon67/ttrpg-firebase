@@ -22,9 +22,12 @@ import { signed } from "$lib/pretty";
   .disadv {
     background-color: var(--b);
   }
+  button {
+    min-width: 5em;
+  }
 </style>
 <button
-  class={adv}
+  class={adv + ' p'}
   on:click={roll}
 >
   {q}d{d} {signed(m)}

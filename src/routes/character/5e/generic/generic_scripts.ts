@@ -4,6 +4,7 @@ import { get_ab_mod } from "../api";
 import type { Params } from "../character";
 import { skills } from "../data";
 import { ability_scripts } from "./abilities";
+import { info_scripts } from "./info";
 
 
 
@@ -67,5 +68,5 @@ const add_ab_to_attack:Item = {
 /** A list of scripts that describe the changes that general rules make to this character. */
 export const generic_scripts:Item[] = [
   ...ability_scripts, create_skill_skeleton, create_equipped_skeleton,
-  add_ab_to_attack,
+  add_ab_to_attack, ...info_scripts
 ]
