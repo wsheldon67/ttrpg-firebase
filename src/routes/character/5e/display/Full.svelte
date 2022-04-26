@@ -7,6 +7,7 @@ import ObjectViewer from '$lib/c/ObjectViewer.svelte';
   import Ability from './ability.svelte';
 import Info from './Info.svelte';
 import Save from './Save.svelte';
+import Skill from './Skill.svelte';
 
   export let data:Data
 
@@ -18,16 +19,21 @@ import Save from './Save.svelte';
     flex-direction: column;
   }
 </style>
-<Collapse label='Abilities' collapsed={false}>
+<Collapse label='Abilities'>
   <div class='col'>
     <Ability {c}/>
   </div>
 </Collapse>
-<Collapse label='Saves' collapsed={false}>
+<Collapse label='Saves'>
   <div class='col'>
     <Save {c}/>
   </div>
 </Collapse>
-<Collapse label='Info' collapsed={false}>
+<Collapse label='Skills' collapsed={false}>
+  <div class='col'>
+    <Skill {c}/>
+  </div>
+</Collapse>
+<Collapse label='Info'>
   <Info {c}/>
 </Collapse>

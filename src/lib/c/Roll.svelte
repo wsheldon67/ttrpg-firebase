@@ -14,6 +14,7 @@ import { signed } from "$lib/pretty";
     // TODO send_roll_to_chat(q, d, m, a, label)
     console.log(q,d,m,a,label)
   }
+  // TODO add temp mods
 </script>
 <style>
   .adv {

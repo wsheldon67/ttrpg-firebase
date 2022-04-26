@@ -94,7 +94,7 @@ export function Barbarian(level:number):Item[] {
     }
   })
   items.push({
-    id: 'Barbarian Skill Prof', pre: ['Skill Skeleton'],
+    id: 'Barbarian Skill Prof', pre: ['Skill Skeleton'], cats: ['skill'],
     func: ({character, data}:Params) => {
       add_skill_prof(character, 'Barbarian', data.script.Barbarian.skill_prof1)
       add_skill_prof(character, 'Barbarian', data.script.Barbarian.skill_prof2)
