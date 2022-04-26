@@ -4,9 +4,8 @@ import type { Params } from '../character'
 function Darkvision(distance:number, source: string) {
   return {
     name: `Darkvision (${distance}')`,
-    text: `Within ${distance}', can see dim as if it were bright, and darkness as if it were dim.`,
-    tags: ['Passive'],
-    source
+    text: [`Within ${distance}', can see dim as if it were bright, and darkness as if it were dim.`, `Source: ${source}`],
+    tags: ['Passive']
   }
 }
 
@@ -25,7 +24,6 @@ const Dwarf: Item[] = [
     id: 'Dwarf',
     func: ({character}:Params) => {
       character.passive.push(Darkvision(60, 'Dwarf'))
-      // TODO figure out feats / active feats
     }
   },{
     id: 'Dwarf', cats: ['size'],

@@ -5,6 +5,7 @@ import ObjectViewer from '$lib/c/ObjectViewer.svelte';
   import { process_character } from '../character';
   import type { Data } from '../User'
   import Ability from './ability.svelte';
+import Feats from './Feats.svelte';
 import Info from './Info.svelte';
 import Save from './Save.svelte';
 import Skill from './Skill.svelte';
@@ -29,11 +30,14 @@ import Skill from './Skill.svelte';
     <Save {c}/>
   </div>
 </Collapse>
-<Collapse label='Skills' collapsed={false}>
+<Collapse label='Skills'>
   <div class='col'>
     <Skill {c}/>
   </div>
 </Collapse>
 <Collapse label='Info'>
   <Info {c}/>
+</Collapse>
+<Collapse label='Feats' collapsed={false}>
+  <Feats {c}/>
 </Collapse>
