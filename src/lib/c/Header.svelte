@@ -7,6 +7,10 @@
   export let show: boolean = undefined
   export let hide: boolean = undefined
 
+  let loaded = !hide
+
+  $: className = hide ? 'hidden' : ''
+
   onMount(() => {
     if (typeof(show) === 'undefined') {
       show = !hide
@@ -20,6 +24,7 @@
   function toggle() {
     show = !show
     hide = !hide
+    loaded = true
   }
 </script>
 <style>
@@ -48,6 +53,8 @@
   <h5><button on:click={toggle}>{title}</button></h5>
 {/if}
 
-{#if show}
-  <slot />
+{#if loaded}
+  <div class={className}>
+    <slot />
+  </div>
 {/if}
