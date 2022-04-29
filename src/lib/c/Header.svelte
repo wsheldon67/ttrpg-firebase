@@ -1,13 +1,25 @@
 <script lang='ts'>
+  import { onMount } from "svelte";
+
   export let h: number
   export let start: number = 1
   export let title: string
-  export let show: boolean = true
+  export let show: boolean = undefined
+  export let hide: boolean = undefined
+
+  onMount(() => {
+    if (typeof(show) === 'undefined') {
+      show = !hide
+    } else {
+      console.warn('Show is being depreciated, please switch to hide.')
+    }
+  })
 
   let c:number = start + h - 1
 
   function toggle() {
     show = !show
+    hide = !hide
   }
 </script>
 <style>

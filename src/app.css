@@ -11,7 +11,7 @@
   --b4: #363636;
 
   --p: #bbdefb;
-  --a: #ffe082;
+  --a: #eee1b9;
 
   --bad: #ef9a9a;
   --good: #a5d6a7;
@@ -71,6 +71,7 @@ h3 {
 }
 h4 {
   color: var(--a);
+  font-weight: normal;
 }
 h5 {
   color: var(--t);
