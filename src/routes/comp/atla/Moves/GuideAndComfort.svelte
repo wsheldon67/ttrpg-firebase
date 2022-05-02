@@ -25,7 +25,7 @@
       <td>
         They choose to either:
         <ul>
-          <li>Embrace your guidance and comfort. They clear a <Tip text='condition'/> or 2 fatigue. You may ask one question, they must answer honestly.</li>
+          <li>Embrace your guidance and comfort. They immediately clear a <Tip text='condition'/> or 2 fatigue. You may ask one question, they must answer honestly.</li>
           <li>Shut you down. They inflict a condition on you, and you shift their <Tip text='balance'/>.</li>
         </ul>
       </td>

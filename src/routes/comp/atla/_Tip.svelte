@@ -5,12 +5,31 @@
   export let path:string = text
 
   const common = {
-    'condition': '',
-    'ongoing': '',
-    'tricking': '',
-    'pleading':'',
+    'condition': 'Core/Condition',
+    'ongoing': 'Core/Ongoing',
+    'forward': 'Core/Forward',
+    'tricking': 'Moves/Trick',
+    'trick': 'Moves/Trick',
+    'pleading':'Moves/Plead',
+    'plead': 'Moves/Plead',
     'calling them out': '',
-    'balance': 'Balance'
+    'call someone out': '',
+    'balance': 'Balance',
+    'resist shifting your balance': '',
+    'intimidate': 'Moves/Intimidate',
+    'guide and comfort': 'Moves/GuideAndComfort',
+    'guiding and comforting': 'Moves/GuideAndComfort',
+    'assess a situation': 'Moves/AssessSituation',
+    'push your luck': 'Moves/PushYourLuck',
+    'deny a callout': '',
+    'rely on your skills or training': 'Moves/RelyOnSkillsAndTraining',
+    'skills and training': 'Moves/RelyOnSkillsAndTraining',
+    'taken out':'',
+    'scene': '',
+    'off-balance': '',
+    'fatigue': '',
+    'training': '',
+    'backgrounds': '',
   }
 
   if (common[text.toLowerCase()]) {
