@@ -6,22 +6,24 @@
 
   const common = {
     'condition': 'Core/Condition',
+    'conditions': 'Core/Condition',
     'ongoing': 'Core/Ongoing',
     'forward': 'Core/Forward',
     'tricking': 'Moves/Trick',
     'trick': 'Moves/Trick',
     'pleading':'Moves/Plead',
     'plead': 'Moves/Plead',
-    'calling them out': '',
-    'call someone out': '',
+    'calling them out': 'Moves/CallSomeoneOut',
+    'call someone out': 'Moves/CallSomeoneOut',
+    'live up to your principle': 'Moves/CallSomeoneOut',
     'balance': 'Balance',
-    'resist shifting your balance': '',
+    'resist shifting your balance': 'Moves/ResistShiftingYourBalance',
     'intimidate': 'Moves/Intimidate',
     'guide and comfort': 'Moves/GuideAndComfort',
     'guiding and comforting': 'Moves/GuideAndComfort',
     'assess a situation': 'Moves/AssessSituation',
     'push your luck': 'Moves/PushYourLuck',
-    'deny a callout': '',
+    'deny a callout': 'Moves/DenyACallout',
     'rely on your skills or training': 'Moves/RelyOnSkillsAndTraining',
     'skills and training': 'Moves/RelyOnSkillsAndTraining',
     'taken out':'',
@@ -30,6 +32,8 @@
     'fatigue': '',
     'training': '',
     'backgrounds': '',
+    'principle': '',
+    'shift your balance': 'Balance/Shift',
   }
 
   if (common[text.toLowerCase()]) {
