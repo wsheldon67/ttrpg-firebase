@@ -35,6 +35,9 @@
     'backgrounds': 'Setup/Background',
     'principle': 'Balance/Principle',
     'shift your balance': 'Balance/Shift',
+    'exchange':'',
+    'basic': '',
+    'mastered': '',
   }
 
   if (common[text.toLowerCase()]) {
