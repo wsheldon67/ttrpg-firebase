@@ -66,7 +66,7 @@
     'test balance': 'Techniques/TestBalance',
     'bolster or hinder': 'Techniques/BolsterOrHinder',
     'commit': 'Techniques/Commit',
-    'fictionally': '',
+    'fictionally': 'Core/Fiction',
   }
 
   if (common[text.toLowerCase()]) {
