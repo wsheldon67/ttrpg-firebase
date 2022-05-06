@@ -1,27 +1,11 @@
 <script lang='ts'>
   import Tooltip from '$lib/c/Tooltip.svelte'
+import { get_comp_promise } from './get_comp';
   export let text:string
   export let path:string = text
   export let system:string
 
-  let promise = async() => {
-    const {db} = await import ('$lib/firebase')
-    const { collection, query, where, getDocs } = await import ('firebase/firestore')
-    const q = query(
-      collection(db, 'compendium'),
-      where('system','==', system),
-      where('url', '==', path)
-    )
-    const snapshot = await getDocs(q)
-    let res
-    snapshot.forEach((doc) => {
-      res = doc.data()
-    })
-    if (!res){
-      res = {system: 'Common', path: 'NODBENTRY', quick: `"${path}"" was not found in firestore/compendium`}
-    }
-    return res
-  }
+  let promise = get_comp_promise(system, path)
 </script>
 {#await promise()}
 <Tooltip tip='loading...'>
