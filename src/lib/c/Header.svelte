@@ -1,6 +1,9 @@
 <script lang='ts'>
   import { onMount } from "svelte";
 
+  import Down from '../i/chevron-down.svg'
+  import Right from '../i/chevron-right.svg'
+
   export let h: number
   export let start: number = 1
   export let title: string
@@ -41,17 +44,17 @@
   @component
   A magic header that upgrades/downgrades its level based on its parents.
 -->
-{#if c===1}
-  <h1><button on:click={toggle}>{title}</button></h1>
-{:else if c===2}
-  <h2><button on:click={toggle}>{title}</button></h2>
-{:else if c===3}
-  <h3><button on:click={toggle}>{title}</button></h3>
-{:else if c===4}
-  <h4><button on:click={toggle}>{title}</button></h4>
-{:else}
-  <h5><button on:click={toggle}>{title}</button></h5>
-{/if}
+
+<svelte:element this={'h'+c}>
+  <button on:click={toggle}>
+    {#if hide}
+      <Right />
+    {:else}
+      <Down />
+    {/if}
+    {title}
+  </button>
+</svelte:element>
 
 {#if loaded}
   <div class={className}>
