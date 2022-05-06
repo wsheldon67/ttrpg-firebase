@@ -3,3 +3,7 @@
 <a href='/comp/atla/Moves/Balance'>Balance Moves</a>
 <a href='/comp/atla/Core/Condition'>Conditions</a>
 <a href='/comp/atla/Statuses'>Statuses</a>
+<a href='/comp/atla/Combat'>Combat</a>
+<a href='/comp/atla/Techniques'>Techniques</a>
+<a href='/comp/atla/Techniques/Training'>The Training Move</a>
+<a href='/comp/atla/Techniques/Mastery'>Technique Mastery</a>

@@ -93,7 +93,7 @@ th {
 tr:nth-child(odd) {
   filter: saturate(.5) brightness(1.125)
 }
-ul {
+ul, ol {
   margin-top: .25em;
 }
 
