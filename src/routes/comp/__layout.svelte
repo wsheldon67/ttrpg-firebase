@@ -1,11 +1,17 @@
 <script lang='ts'>
-  import { page } from '$app/stores'
+  import { afterNavigate } from '$app/navigation'
   import { get_comp_promise } from './get_comp'
 
-  let split = $page.routeId.split('/')
-  let system = split[1]
-  let path = split.slice(2).join('/')
-  let promise = get_comp_promise(system, path)
+  let title:string = 'Compendium'
+
+  afterNavigate(async ({to}) => {
+    let split = to.pathname.split('/')
+    let system = split[2]
+    let path = split.slice(3).join('/')
+    let promise = get_comp_promise(system, path)
+    let res = await promise()
+    title = res.title
+  })
 
 </script>
 <style>
@@ -15,9 +21,7 @@
   }
 </style>
 <svelte:head>
-  {#await promise() then res}
-    <title>{res.title}</title>
-  {/await}
+  <title>{title}</title>
 </svelte:head>
 <div>
   <slot />
