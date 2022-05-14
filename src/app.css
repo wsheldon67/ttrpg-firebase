@@ -107,6 +107,12 @@ ul, ol {
 .descHeight100 * {
   height: 100%;
 }
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 2em;
+}
 .p {
   background-color: var(--p);
   color: var(--at);

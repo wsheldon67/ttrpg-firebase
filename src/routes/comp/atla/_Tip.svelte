@@ -15,6 +15,7 @@
     'plead': 'Moves/Plead',
     'calling them out': 'Moves/CallSomeoneOut',
     'call someone out': 'Moves/CallSomeoneOut',
+    'call you out': 'Moves/CallSomeoneOut',
     'live up to your principle': 'Moves/LiveUpToYourPrinciple',
     'live up to that principle': 'Moves/LiveUpToYourPrinciple',
     'balance': 'Balance',
@@ -67,6 +68,10 @@
     'bolster or hinder': 'Techniques/BolsterOrHinder',
     'commit': 'Techniques/Commit',
     'fictionally': 'Core/Fiction',
+    'creativity': '',
+    'focus': '',
+    'harmony': '',
+    'passion': '',
   }
 
   if (common[text.toLowerCase()]) {
