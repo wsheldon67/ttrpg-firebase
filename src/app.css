@@ -104,6 +104,24 @@ ul, ol {
   flex-direction: row;
   justify-content: center;
 }
+.card {
+  background-color: var(--b1);
+  max-width: 36em;
+  width: 46%;
+  text-align: initial;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: .5em;
+}
+.card > h2 {
+  width: 100%;
+}
+.cardtainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .descHeight100 * {
   height: 100%;
 }

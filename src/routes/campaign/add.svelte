@@ -33,5 +33,12 @@
   */
 </script>
 <input placeholder='campaign name' bind:value={name}/>
+<label>
+  Campaign Type:
+  <select>
+    <option>Dungeons & Dragons (5e)</option>
+    <option>Avatar Legends</option>
+  </select>
+</label>
 <button on:click={click}>Submit</button>
 <a href='/campaign/data'>See Data</a>

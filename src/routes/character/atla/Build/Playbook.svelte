@@ -1,6 +1,6 @@
 <script lang='ts'>
 import Tooltip from "$lib/c/Tooltip.svelte"
-import Adamant from "../../../comp/atla/Playbooks/Adamant.svelte"
+import Adamant from "../../../comp/atla/Playbooks/Adamant/index.svelte"
 import Nav from "./_Nav.svelte";
 import Next from "./_Next.svelte"
 

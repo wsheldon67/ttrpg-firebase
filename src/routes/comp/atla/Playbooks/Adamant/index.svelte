@@ -1,7 +1,9 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
 import Tooltip from '$lib/c/Tooltip.svelte'
-  import Tip from '../_Tip.svelte'
+  import Tip from '../../_Tip.svelte'
+import TakesOneToKnowOne from './TakesOneToKnowOne.svelte'
+import ThisWasAVictory from './ThisWasAVictory.svelte'
 
   export let start: number = 1
   export let hide: boolean = false
@@ -24,7 +26,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
     </table>
   </Header>
   <Header h={2} {start} title='Demeanor Options' hide>
-    <ul>
+    <ul class='list'>
       <li>Above-it-all</li>
       <li>Perfectionist</li>
       <li>Chilly</li>
@@ -39,5 +41,9 @@ import Tooltip from '$lib/c/Tooltip.svelte'
       <li>Cannot resist your lodestar when they <Tip text='shift your balance'/> or <Tip text='call you out'/></li>
       <li>//TODO finish lodestar</li>
     </ul>
+  </Header>
+  <Header h={2} {start} title='Moves' hide>
+    <ThisWasAVictory start={start+2} hide/>
+    <TakesOneToKnowOne start={start+2} hide/>
   </Header>
 </Header>

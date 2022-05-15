@@ -13,19 +13,6 @@ import Next from "./_Next.svelte";
     flex-wrap: wrap;
     padding: .5em;
   }
-  .card {
-    background-color: var(--b1);
-    max-width: 36em;
-    width: 46%;
-    text-align: initial;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: .5em;
-  }
-  .card :global(h2) {
-    width: 100%;
-  }
   .selected {
     border: 1px solid var(--bad)
   }
