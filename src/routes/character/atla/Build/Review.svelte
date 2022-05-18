@@ -1,7 +1,8 @@
 <script lang='ts'>
-import Next from "./_Next.svelte";
+  import type { Data } from "../character"
+  import ObjectViewer from "$lib/c/ObjectViewer.svelte";
 
+  export let character:Data
 
 </script>
-summary of character as currently built.
-<Next from='Connections' />
+<ObjectViewer object={character} />

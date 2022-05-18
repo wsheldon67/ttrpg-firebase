@@ -31,6 +31,7 @@
     flex-wrap: wrap;
   }
 </style>
+<p>Choose 1 or 2 backgrounds:</p>
 <div class='cont'>
   {#each options as {name, component} (name)}
     <button

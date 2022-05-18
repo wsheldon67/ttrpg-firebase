@@ -1,6 +1,7 @@
 <script lang='ts'>
 import { beforeUpdate } from "svelte";
 import type { Data } from '../character'
+import { playbooks } from "../playbooks";
 
 import Backgrounds from "./Backgrounds.svelte";
 import Connections from "./Connections.svelte";
@@ -15,7 +16,7 @@ import Training from "./Training.svelte";
   const order = [Playbook, Details, Training, Backgrounds, Touches, Stats, Techniques, Connections, Review]
   let current_page = 0
 
-  let character:Data = {
+  export let character:Data = {
     playbook: 'Adamant',
     concept: '',
     name: '',
@@ -32,7 +33,7 @@ import Training from "./Training.svelte";
     balance: 0,
     center: 0,
     playbook_moves: [],
-    techniques: [],
+    techniques: [{name: playbooks.Adamant.technique.name, level: 2}],
     connections: ['',''],
     statuses: [],
     growth_advancements: [],
@@ -72,6 +73,6 @@ import Training from "./Training.svelte";
 {#if current_page > 0}
   <button on:click={()=>{current_page--}} class='back p'>Back</button>
 {/if}
-{#if current_page < order.length}
+{#if current_page < order.length-1}
   <button on:click={()=>{current_page++}} class='next p'>Next</button>
 {/if}
