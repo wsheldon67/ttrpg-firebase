@@ -1,36 +1,67 @@
 <script lang='ts'>
-import Next from "./_Next.svelte";
+  import type { Data } from "../character"
+  import { techniques } from "../techniques"
+  import { playbooks } from '../playbooks'
+
+  export let character:Data
+
+  $: mastered = character.techniques.filter(el => el.level === 2).length
+  $: learned = character.techniques.filter(el => el.level === 1).length
+
+  async function get_techniques() {
+    const applicable_techniques = techniques.filter(({tags})=>{
+      return tags.includes(character.training) || tags.includes('Universal')
+    })
+    const all_techniques = [playbooks[character.playbook].technique, ...applicable_techniques]
+    const promises = all_techniques.map(({url}) => {
+      return import(`../../../comp/atla/${url}.svelte`)
+    })
+    const componets = await Promise.all(promises)
+    const res = all_techniques.map((technique, index) => {
+      return {
+        component: componets[index].default,
+        ...technique
+      }
+    })
+    return res
+  }
+  const promise = get_techniques()
+
+  function check(level:number, name:string, e:any) {
+    const {checked} = e.target
+    if (checked) {
+      character.techniques = [{level, name}, ...character.techniques]
+    } else {
+      character.techniques = character.techniques.filter(el => el.name !== name)
+    }
+  }
 
 </script>
-<p>Choose one mastered and one learned technique:</p>
+<p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
 <div class='cardtainer'>
-  <div class='card'>
-    <div>
-      <label>
-        <input type='checkbox'/>
-        Learned
-      </label>
-      <label>
-        <input type='checkbox'/>
-        Mastered
-      </label>
-    </div>
-    <h2>Attack Weakness</h2>
-    <p>Strike an enemy at a weak point where they've already been injured. Mark 1 fatigue to target an engaged, Impaired enemy in reach; they suffer fatigue equal to however many conditions they already have marked.</p>
-  </div>
-  <div class='card'>
-    <div>
-      <label>
-        <input type='checkbox'/>
-        Learned
-      </label>
-      <label>
-        <input type='checkbox'/>
-        Mastered
-      </label>
-    </div>
-    <h2>Charge</h2>
-    <p>Advance straight at an enemy to strike them full force. Mark 1 fatigue to close the distance and engage with an enemy you aren't currently engaged with, inflicting one condition or 2 fatigue (their choice). Become Favored for the next exchange.</p>
-  </div>
+  {#await promise}
+    Loading...
+  {:then comps}
+    {#each comps as {component, name} (name)}
+      <div class='card'>
+        <div>
+          <label>
+            <input type='checkbox'
+              on:input={e => check(1,name, e)}
+              checked={character.techniques.some(el => el.name === name && el.level >= 1)}
+            />
+            Learned
+          </label>
+          <label>
+            <input type='checkbox'
+              on:input={e => check(2, name, e)}
+              checked={character.techniques.some(el => el.name === name && el.level >= 2)}
+            />
+            Mastered
+          </label>
+        </div>
+        <svelte:component this={component} hide start={2}/>
+      </div>
+    {/each}
+  {/await}
 </div>
-<Next from='Stats' to='Connections'/>

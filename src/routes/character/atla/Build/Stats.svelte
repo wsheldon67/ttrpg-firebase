@@ -1,31 +1,51 @@
 <script lang='ts'>
-  import ThisWasAVictory from '../../../comp/atla/Playbooks/Adamant/ThisWasAVictory.svelte'
-  import TakesOneToKnowOne from '../../../comp/atla/Playbooks/Adamant/TakesOneToKnowOne.svelte'
-import Next from './_Next.svelte'
+import { plural } from '$lib/pretty';
+
+  import { moves } from '../moves'
+  export let character
+
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
-  let choice = 'Passion'
+
+  function select_move(move_name:string) {
+    if (character.playbook_moves.includes(move_name)) {
+      character.playbook_moves = character.playbook_moves.filter(el => el !== move_name)
+    } else if (character.playbook_moves.length == 2) {
+      character.playbook_moves[1] = move_name
+    } else {
+      character.playbook_moves = [...character.playbook_moves, move_name]
+    }
+  }
 </script>
 <style>
-  .selected {
-    border: 1px solid red;
+  .highlighted {
+    box-shadow: 0em 0em 1em 0em var(--good);
   }
 </style>
 <p>Take +1 to a stat:</p>
 <div>
   {#each stats as stat}
     <label>
-      <input type='radio' name='stat' value={stat} bind:group={choice} />
+      <input
+        type='radio'
+        name='stat'
+        value={stat}
+        bind:group={character.boosted_stats[0]}
+        class:highlighted={character.boosted_stats[0] === stat}
+      />
       {stat}
     </label>
   {/each}
 </div>
-<p>Choose 2 moves:</p>
+<p>Choose {plural(2-character.playbook_moves.length, 'move')}:</p>
 <div class='cardtainer'>
-  <div class='card selected'>
-    <ThisWasAVictory start={2} hide/>
-  </div>
-  <div class='card'>
-    <TakesOneToKnowOne start={2} hide/>
-  </div>
+{#each moves[character.playbook] as {component, stat, name}}
+  <button
+    class='card'
+    class:highlighted={stat === character.boosted_stats[0]}
+    class:selected={character.playbook_moves.includes(name)}
+    on:click={()=>{select_move(name)}}
+  >
+    <svelte:component this={component} hide start={2}/>
+  </button>
+{/each}
 </div>
-<Next from='Touches' to='Techniques'/>

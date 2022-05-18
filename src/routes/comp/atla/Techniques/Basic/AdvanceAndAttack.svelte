@@ -1,9 +1,9 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../_Tip.svelte'
-import Pressure from './Pressure.svelte'
-import Smash from './Smash.svelte'
-import Strike from './Strike.svelte'
+  import Tip from '../../_Tip.svelte'
+import Pressure from '../Pressure.svelte'
+import Smash from '../Smash.svelte'
+import Strike from '../Strike.svelte'
 
   export let start: number = 1
   export let hide: boolean = false

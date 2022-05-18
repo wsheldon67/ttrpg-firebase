@@ -5,9 +5,24 @@
   import Privileged from '../../../comp/atla/Setup/Privileged.svelte'
   import Urban from '../../../comp/atla/Setup/Urban.svelte'
   import Wilderness from '../../../comp/atla/Setup/Wilderness.svelte'
-import Next from './_Next.svelte'
 
-  let options = [Military, Monastic, Outlaw, Privileged, Urban, Wilderness]
+  export let character
+
+  let options = [
+    {name: 'Military', component: Military}, {name: 'Monastic', component: Monastic},
+    {name: 'Outlaw', component: Outlaw}, {name: 'Priveledged', component: Privileged},
+    {name: 'Urban', component: Urban}, {name: 'Wilderness', component: Wilderness}
+  ]
+
+  function click(background:string) {
+    if (character.backgrounds.includes(background)) {
+      character.backgrounds = character.backgrounds.filter(el => el !== background)
+    } else if (character.backgrounds.length === 2) {
+      character.backgrounds[1] = background
+    } else {
+      character.backgrounds = [...character.backgrounds, background]
+    }
+  }
 </script>
 <style>
   .cont {
@@ -17,10 +32,12 @@ import Next from './_Next.svelte'
   }
 </style>
 <div class='cont'>
-  {#each options as option}
-    <button class='card'>
-      <svelte:component this={option} start={2}/>
+  {#each options as {name, component} (name)}
+    <button
+      class={'card' + (character.backgrounds.includes(name) ? ' selected' : '')}
+      on:click={()=>{click(name)}}
+    >
+      <svelte:component this={component} start={2}/>
     </button>
   {/each}
 </div>
-<Next from='Training' to='Touches' />

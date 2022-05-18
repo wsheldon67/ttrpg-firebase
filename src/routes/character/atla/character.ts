@@ -5,9 +5,9 @@ export interface Data {
   name: string
   training: string
   fighting_style: string
-  background: string
+  backgrounds: string[]
   hometown: string
-  demeanor: string
+  demeanors: string[]
   history: LongString[]
   look: LongString
   boosted_stats: Stat[]
@@ -19,13 +19,13 @@ export interface Data {
   techniques: {
     name: string
     level: number
-  }
+  }[]
   connections: [string, string]
   statuses: Status[]
   growth_advancements: {
     name: string
     settings: any
-  }
+  }[]
   growth: number
   feature_settings: any
 }

@@ -1,27 +1,28 @@
 <script lang='ts'>
-import Tooltip from "$lib/c/Tooltip.svelte";
-import Nav from "./_Nav.svelte";
-import Next from "./_Next.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
 
-  
+  export let character
+
 </script>
 <style>
   .cont {
     display: flex;
     flex-direction: column;
   }
-
 </style>
-<Nav />
 perhaps include scope, group focus, inciting incident
 <div class='cont'>
   <label>
     <Tooltip tip="A one-sentence description of your character.">Concept:</Tooltip>
-    <textarea></textarea>
+    <textarea
+      bind:value={character.concept}
+    ></textarea>
   </label>
   <label>
     Name:
-    <input type='text'/>
+    <input
+      type='text'
+      bind:value={character.name}
+    />
   </label>
 </div>
-<Next from='Playbook' to='Training'/>

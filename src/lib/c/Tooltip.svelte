@@ -38,7 +38,7 @@
     width: max-content;
   }
   div {
-    width: max-content;
+    width: 100%;
   }
 </style>
 {#if block}

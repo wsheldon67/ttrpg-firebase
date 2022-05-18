@@ -136,6 +136,9 @@ ul, ol {
   color: var(--at);
   padding: .25em .5em;
 }
+.selected {
+  border: 1px solid var(--bad)
+}
 .vertCenter {
   display: flex;
   flex-direction: column;

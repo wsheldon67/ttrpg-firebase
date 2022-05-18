@@ -1,29 +1,32 @@
 <script lang='ts'>
-import Earthbending from "../../../comp/atla/Setup/Earthbending.svelte";
-import Waterbending from "../../../comp/atla/Setup/Waterbending.svelte";
-import Nav from "./_Nav.svelte";
-import Next from "./_Next.svelte";
+  import Earthbending from "../../../comp/atla/Setup/Earthbending.svelte";
+  import Waterbending from "../../../comp/atla/Setup/Waterbending.svelte";
 
+  export let character
 
+  const trainings = [
+    {name: 'Waterbending', component: Waterbending},
+    {name: 'Earthbending', component: Earthbending}
+  ]
+
+  function click(clicked_training:string) {
+    character.training = clicked_training
+  }
 </script>
-<style>
-  .cont {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: .5em;
-  }
-  .selected {
-    border: 1px solid var(--bad)
-  }
-</style>
-<Nav />
 <label>
   Fighting Style:
-  <input type='text'/>
+  <input
+    type='text'
+    bind:value={character.fighting_style}
+  />
 </label>
-<div class='cont'>
-  <button class='card'><Waterbending start={2} /></button>
-  <button class='card selected'><Earthbending start={2} /></button>
+<div class='cardtainer'>
+{#each trainings as {component, name}}
+  <button
+    class={'card' + (character.training === name ? ' selected' : '')}
+    on:click={()=>{click(name)}}
+  >
+    <svelte:component this={component} start={2}/>
+  </button>
+{/each}
 </div>
-<Next from='Details' to='Backgrounds'/>
