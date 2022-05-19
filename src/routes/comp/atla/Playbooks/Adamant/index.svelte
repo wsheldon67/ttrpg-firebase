@@ -2,6 +2,11 @@
   import Header from '$lib/c/Header.svelte'
 import Tooltip from '$lib/c/Tooltip.svelte'
   import Tip from '../../_Tip.svelte'
+import StartingStats from '../_StartingStats.svelte'
+import Blurb from './Blurb.svelte'
+import DrivenByJustice from './DrivenByJustice.svelte'
+import IDontHateYou from './IDontHateYou.svelte'
+import NoTimeForFeelings from './NoTimeForFeelings.svelte'
 import TakesOneToKnowOne from './TakesOneToKnowOne.svelte'
 import ThisWasAVictory from './ThisWasAVictory.svelte'
 
@@ -9,22 +14,11 @@ import ThisWasAVictory from './ThisWasAVictory.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='The Adamant'>
-  <p><em>The Adamant will fix the world, even if it means breaking all the rules. Play the Adamant if you want to contend with what "doing right" means in a complicated world.</em></p>
+  <Blurb />
   <Header h={2} {start} title='Principles'>
     <p><Tooltip tip="The desire to hold back and be careful, to think and comprehend and plan instead of bulling ahead.">Restraint</Tooltip> vs <Tooltip tip="The drive to change things for the better and have it stick. Cares more about getting results than what it might cost.">Results</Tooltip></p>
   </Header>
-  <Header h={2} {start} title='Starting Stats'>
-    <table>
-      <tr>
-        <td><Tip text='Creativity'/> +0</td>
-        <td><Tip text='Focus'/> +1</td>
-      </tr>
-      <tr>
-        <td><Tip text='Harmony'/> -1</td>
-        <td><Tip text='Passion'/> +1</td>
-      </tr>
-    </table>
-  </Header>
+  <StartingStats {start} stats={[0,1,-1,1]}/>
   <Header h={2} {start} title='Demeanor Options' hide>
     <ul class='list'>
       <li>Above-it-all</li>
@@ -45,5 +39,8 @@ import ThisWasAVictory from './ThisWasAVictory.svelte'
   <Header h={2} {start} title='Moves' hide>
     <ThisWasAVictory start={start+2} hide/>
     <TakesOneToKnowOne start={start+2} hide/>
+    <NoTimeForFeelings start={start+2} hide/>
+    <IDontHateYou start={start+2} hide/>
+    <DrivenByJustice start={start+2} hide/>
   </Header>
 </Header>

@@ -7,6 +7,7 @@
   const common = {
     'condition': 'Core/Condition',
     'conditions': 'Core/Condition',
+    'insecure': 'Core/Condition',
     'ongoing': 'Core/Ongoing',
     'forward': 'Core/Forward',
     'tricking': 'Moves/Trick',
@@ -40,6 +41,7 @@
     'shift your balance': 'Balance/Shift',
     'shifts your balance': 'Balance/Shift',
     'shift their balance': 'Balance/Shift',
+    'balance shifts': 'Balance/Shift',
     'combat exchange': 'Combat',
     'exchange':'Combat',
     'basic': 'Techniques/Basic',
