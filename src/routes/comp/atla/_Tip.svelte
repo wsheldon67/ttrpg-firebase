@@ -8,6 +8,7 @@
     'condition': 'Core/Condition',
     'conditions': 'Core/Condition',
     'insecure': 'Core/Condition',
+    'angry': 'Core/Condition',
     'ongoing': 'Core/Ongoing',
     'forward': 'Core/Forward',
     'tricking': 'Moves/Trick',

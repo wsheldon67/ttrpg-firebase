@@ -1,5 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import Tooltip from '$lib/c/Tooltip.svelte'
   import Tip from '../../_Tip.svelte'
   import StartingStats from '../_StartingStats.svelte'
   import Blurb from './Blurb.svelte'
@@ -10,9 +11,9 @@
 <Header h={1} {start} {hide} title=''>
   <Blurb />
   <Header h={2} {start} title='Principles'>
-    <Tip text=''/>
+    <Tooltip tip=''></Tooltip>
       vs
-    <Tip text=''/>
+    <Tooltip tip=''></Tooltip>
   </Header>
   <StartingStats {start} stats={[]}/>
   <Header h={2} {start} title='Demeanor Options'>

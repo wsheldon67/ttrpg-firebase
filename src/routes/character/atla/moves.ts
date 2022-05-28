@@ -8,11 +8,16 @@ import HeresThePlan from '../../comp/atla/Playbooks/Bold/HeresThePlan.svelte'
 import NotDoneYet from '../../comp/atla/Playbooks/Bold/NotDoneYet.svelte'
 import YouMissedSomething from '../../comp/atla/Playbooks/Bold/YouMissedSomething.svelte'
 import StraightShooter from '../../comp/atla/Playbooks/Bold/StraightShooter.svelte'
-import SuspiciousMind from 'src/routes/comp/atla/Playbooks/Guardian/SuspiciousMind.svelte'
-import BadgeOfAuthority from 'src/routes/comp/atla/Playbooks/Guardian/BadgeOfAuthority.svelte'
-import CatchALiar from 'src/routes/comp/atla/Playbooks/Guardian/CatchALiar.svelte'
-import FurrowedBrow from 'src/routes/comp/atla/Playbooks/Guardian/FurrowedBrow.svelte'
-import MartyrComplex from 'src/routes/comp/atla/Playbooks/Guardian/MartyrComplex.svelte'
+import SuspiciousMind from '../../comp/atla/Playbooks/Guardian/SuspiciousMind.svelte'
+import BadgeOfAuthority from '../../comp/atla/Playbooks/Guardian/BadgeOfAuthority.svelte'
+import CatchALiar from '../../comp/atla/Playbooks/Guardian/CatchALiar.svelte'
+import FurrowedBrow from '../../comp/atla/Playbooks/Guardian/FurrowedBrow.svelte'
+import MartyrComplex from '../../comp/atla/Playbooks/Guardian/MartyrComplex.svelte'
+import FueledByAnger from '../../comp/atla/Playbooks/Hammer/FueledByAnger.svelte'
+import WallsCantHoldMe from '../../comp/atla/Playbooks/Hammer/WallsCantHoldMe.svelte'
+import PunchWhereItMatters from '../../comp/atla/Playbooks/Hammer/PunchWhereItMatters.svelte'
+import ComprehendYourFoe from '../../comp/atla/Playbooks/Hammer/ComprehendYourFoe.svelte'
+import StandAndFight from '../../comp/atla/Playbooks/Hammer/StandAndFight.svelte'
 
 interface Moves {
   [playbook: string]: {
@@ -90,6 +95,29 @@ export const moves:Moves = {
       name: 'Martyr Complex',
       component: MartyrComplex,
       stat: ''
+    }
+  ],
+  Hammer: [
+    {
+      name: 'Fueled by Anger',
+      component: FueledByAnger,
+      stat: 'Passion'
+    },{
+      name: "Walls Can't Hold Me",
+      component: WallsCantHoldMe,
+      stat: 'Passion'
+    },{
+      name: 'Punch Where It Matters',
+      component: PunchWhereItMatters,
+      stat: 'Creativity'
+    },{
+      name: 'Comprehend Your Foe',
+      component: ComprehendYourFoe,
+      stat: 'Creativity'
+    },{
+      name: 'Stand and Fight!',
+      component: StandAndFight,
+      stat: 'Passion'
     }
   ]
 }
