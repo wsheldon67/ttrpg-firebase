@@ -1,1 +1,0 @@
-export {Barbarian} from './Barbarian'
