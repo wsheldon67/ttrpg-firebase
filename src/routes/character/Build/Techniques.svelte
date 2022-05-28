@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import type { Data } from "../../../../.svelte-kit/types/src/routes/character/atla/character"
-  import { techniques } from "../atla/techniques"
-  import { playbooks } from '../atla/playbooks'
+  import type { Data } from "$lib/data/character"
+  import { techniques } from "$lib/data/techniques"
+  import { playbooks } from '$lib/data/playbooks'
 
   export let character:Data
 

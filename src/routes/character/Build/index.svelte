@@ -1,7 +1,7 @@
 <script lang='ts'>
 import { beforeUpdate } from "svelte";
-import type { Data } from '../../../../.svelte-kit/types/src/routes/character/atla/character'
-import { playbooks } from "../atla/playbooks";
+import type { Data } from '$lib/data/character'
+import { playbook } from "$lib/data/playbooks";
 
 import Backgrounds from "./Backgrounds.svelte";
 import Connections from "./Connections.svelte";
@@ -33,7 +33,7 @@ import Training from "./Training.svelte";
     balance: 0,
     center: 0,
     playbook_moves: [],
-    techniques: [{name: playbooks.Adamant.technique.name, level: 2}],
+    techniques: [{name: playbook.Adamant.technique.name, level: 2}],
     connections: ['',''],
     statuses: [],
     growth_advancements: [],

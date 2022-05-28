@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import KyoshiEra from "../../comp/atla/Setup/KyoshiEra.svelte";
-  import RokuEra from "../../comp/atla/Setup/RokuEra.svelte";
+  import KyoshiEra from "../../comp/Setup/KyoshiEra.svelte";
+  import RokuEra from "../../comp/Setup/RokuEra.svelte";
 </script>
 Choose an era:
 <div class='cardtainer'>

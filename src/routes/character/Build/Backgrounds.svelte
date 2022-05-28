@@ -1,10 +1,10 @@
 <script lang='ts'>
-  import Military from '../../comp/atla/Setup/Military.svelte'
-  import Monastic from '../../comp/atla/Setup/Monastic.svelte'
-  import Outlaw from '../../comp/atla/Setup/Outlaw.svelte'
-  import Privileged from '../../comp/atla/Setup/Privileged.svelte'
-  import Urban from '../../comp/atla/Setup/Urban.svelte'
-  import Wilderness from '../../comp/atla/Setup/Wilderness.svelte'
+  import Military from '../../comp/Setup/Military.svelte'
+  import Monastic from '../../comp/Setup/Monastic.svelte'
+  import Outlaw from '../../comp/Setup/Outlaw.svelte'
+  import Privileged from '../../comp/Setup/Privileged.svelte'
+  import Urban from '../../comp/Setup/Urban.svelte'
+  import Wilderness from '../../comp/Setup/Wilderness.svelte'
 
   export let character
 

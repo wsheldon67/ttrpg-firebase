@@ -82,4 +82,4 @@
   }
 
 </script>
-<Tip {text} {path} system='atla' />
+<Tip {text} {path} />

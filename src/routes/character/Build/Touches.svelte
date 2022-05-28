@@ -1,6 +1,6 @@
 <script lang='ts'>
 import Tooltip from "$lib/c/Tooltip.svelte";
-import { playbooks } from "../atla/playbooks";
+import { playbooks } from "$lib/data/playbooks";
 
 export let character
 $: playbook = playbooks[character.playbook]

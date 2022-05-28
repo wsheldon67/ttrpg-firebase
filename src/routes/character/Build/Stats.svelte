@@ -1,7 +1,7 @@
 <script lang='ts'>
 import { plural } from '$lib/pretty';
 
-  import { moves } from '../../../../.svelte-kit/types/src/routes/character/atla/moves'
+  import { moves } from '$lib/data/moves'
   export let character
 
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']

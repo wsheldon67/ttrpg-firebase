@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import Earthbending from "../../comp/atla/Setup/Earthbending.svelte";
-  import Waterbending from "../../comp/atla/Setup/Waterbending.svelte";
+  import Earthbending from "../../comp/Setup/Earthbending.svelte";
+  import Waterbending from "../../comp/Setup/Waterbending.svelte";
 
   export let character
 

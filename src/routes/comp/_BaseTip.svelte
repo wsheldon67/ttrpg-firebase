@@ -3,9 +3,8 @@
 import { get_comp_promise } from './get_comp';
   export let text:string
   export let path:string = text
-  export let system:string
 
-  let promise = get_comp_promise(system, path)
+  let promise = get_comp_promise('atla', path)
 </script>
 {#await promise()}
 <Tooltip tip='loading...'>
@@ -13,6 +12,6 @@ import { get_comp_promise } from './get_comp';
 </Tooltip>
 {:then res}
 <Tooltip tip={res.quick}>
-  <a href={`/comp/${system}/${res.link||path}`}>{text}</a>
+  <a href={`/comp/${res.link||path}`}>{text}</a>
 </Tooltip>
 {/await}
