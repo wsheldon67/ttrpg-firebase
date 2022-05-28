@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../atla/_Tip.svelte'
+  import Tip from '../_Tip.svelte'
 
   export let start: number = 1
   export let hide: boolean = false

@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import Tip from '../_Tip.svelte'
+  import Tip from './_BaseTip.svelte'
 
   export let text:string
   export let path:string = text

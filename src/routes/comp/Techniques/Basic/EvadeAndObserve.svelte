@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../../atla/_Tip.svelte'
+  import Tip from '../../_Tip.svelte'
 import BolsterOrHinder from '../BolsterOrHinder.svelte'
 import Commit from '../Commit.svelte'
 import TestBalance from '../TestBalance.svelte'

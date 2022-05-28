@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../../atla/_Tip.svelte'
+  import Tip from '../../_Tip.svelte'
 import Ready from '../Ready.svelte'
 import Retaliate from '../Retaliate.svelte'
 import SeizeAPosition from '../SeizeAPosition.svelte'

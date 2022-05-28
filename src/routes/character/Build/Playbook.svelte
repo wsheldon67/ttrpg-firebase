@@ -1,9 +1,9 @@
 <script lang='ts'>
   import Tooltip from "$lib/c/Tooltip.svelte"
-  import type {Data} from "../character";
-  import Adamant from "../../../comp/atla/Playbooks/Adamant/index.svelte"
-  import Bold from "../../../comp/atla/Playbooks/Bold/index.svelte"
-  import {playbooks as playbook_data} from '../playbooks'
+  import type {Data} from "../../../lib/data/character";
+  import Adamant from "../../comp/Playbooks/Adamant/index.svelte"
+  import Bold from "../../comp/Playbooks/Bold/index.svelte"
+  import {playbooks as playbook_data} from '../../../lib/data/playbooks'
 
   export let character:Data
   $: selected = character.playbook
