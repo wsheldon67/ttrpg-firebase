@@ -1,7 +1,7 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-import ResultTable from '../../Moves/_ResultTable.svelte'
-  import Tip from '../../_Tip.svelte'
+import ResultTable from '$lib/c/ResultTable.svelte'
+  import Tip from '$lib/c/Tip.svelte'
 
   export let start: number = 1
   export let hide: boolean = false

@@ -1,7 +1,7 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
 import Tooltip from '$lib/c/Tooltip.svelte'
-  import Tip from '../_Tip.svelte'
+  import Tip from '$lib/c/Tip.svelte'
 
   export let start: number = 1
   export let hide: boolean = false

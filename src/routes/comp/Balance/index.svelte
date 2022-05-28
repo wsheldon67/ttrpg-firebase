@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../_Tip.svelte'
+  import Tip from '$lib/c/Tip.svelte'
   import Shift from './Shift.svelte'
 
   export let start: number = 1

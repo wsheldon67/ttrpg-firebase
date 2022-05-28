@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '../_Tip.svelte'
+  import Tip from '$lib/c/Tip.svelte'
 import Military from './Military.svelte'
 import Monastic from './Monastic.svelte'
 import Outlaw from './Outlaw.svelte'
