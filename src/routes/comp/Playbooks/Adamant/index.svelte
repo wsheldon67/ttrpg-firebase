@@ -16,7 +16,7 @@ import ThisWasAVictory from './ThisWasAVictory.svelte'
 <Header h={1} {start} {hide} title='The Adamant'>
   <Blurb />
   <Header h={2} {start} title='Principles'>
-    <p><Tooltip tip="The desire to hold back and be careful, to think and comprehend and plan instead of bulling ahead.">Restraint</Tooltip> vs <Tooltip tip="The drive to change things for the better and have it stick. Cares more about getting results than what it might cost.">Results</Tooltip></p>
+    <p><Tooltip tip="">Restraint</Tooltip> vs <Tooltip tip="">Results</Tooltip></p>
   </Header>
   <StartingStats {start} stats={[0,1,-1,1]}/>
   <Header h={2} {start} title='Demeanor Options' hide>
