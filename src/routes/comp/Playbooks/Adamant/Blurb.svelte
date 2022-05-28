@@ -1,1 +1,0 @@
-<p><em>The Adamant will fix the world, even if it means breaking all the rules. Play the Adamant if you want to contend with what "doing right" means in a complicated world.</em></p>

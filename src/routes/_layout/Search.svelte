@@ -42,7 +42,7 @@
     if (e.detail.type === 'note') {
       goto(`/notes/edit/${e.detail.id}`)
     } else {
-      goto(`/comp/${$campaign.system}/${e.detail.url}`)
+      goto(`/comp/${e.detail.url}`)
     }
   }
 
