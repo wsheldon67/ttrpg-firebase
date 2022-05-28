@@ -1,11 +1,13 @@
 <script lang='ts'>
   import type { Playbook } from "$lib/data/playbooks"
   import Header from "$lib/c/Header.svelte"
-  import Tip from '../_Tip.svelte'
+  import Tip from '$lib/c/Tip.svelte'
   import Tooltip from "$lib/c/Tooltip.svelte"
   import { signed } from '$lib/pretty'
+  import type { Move } from "$lib/data/playbooks/moves";
 
   export let playbook:Playbook
+  export let moves:Move[]
   export let start: number = 1
   export let hide: boolean = false
 </script>
@@ -36,6 +38,11 @@
         <li>{demeanor}</li>
       {/each}
     </ul>
+  </Header>
+  <Header h={2} {start} title='Moves' hide>
+    {#each moves as {component}}
+      <svelte:component this={component} start={start+2} hide/>
+    {/each}
   </Header>
   <slot />
 </Header>

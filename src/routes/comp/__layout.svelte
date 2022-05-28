@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { afterNavigate } from '$app/navigation'
-  import { get_comp_promise } from './get_comp'
+  import { get_comp_promise } from '$lib/c/get_comp'
 
   let title:string = 'Compendium'
 

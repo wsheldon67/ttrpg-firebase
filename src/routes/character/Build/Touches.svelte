@@ -1,9 +1,10 @@
 <script lang='ts'>
 import Tooltip from "$lib/c/Tooltip.svelte";
-import { playbooks } from "$lib/data/playbooks";
+import { playbook as playbooks } from "$lib/data/playbooks";
 
 export let character
 $: playbook = playbooks[character.playbook]
+$: full_history = [...playbook.history, 'Why are you committed to this group or purpose?']
 
 let current_demeanor = ''
 
@@ -32,7 +33,7 @@ function remove_demeanor(demeanor:string) {
   <input type='text' bind:value={character.hometown}/>
 </label>
 <label>
-  <Tooltip tip="Recommended: Above-it-all, Perfectionist, Chilly, Rebelious, Flippant, Standoffish">Demeanors:</Tooltip>
+  <Tooltip tip={`Recommended: ${playbook.demeanors.join(', ')}`}>Demeanors:</Tooltip>
   <input
     type='text'
     on:keypress={demeanor_keyboard}
@@ -53,7 +54,7 @@ function remove_demeanor(demeanor:string) {
 </label>
 {#each character.history as question_text, index}
   <label>
-    {playbook.history[index]}
+    {full_history[index]}
     <textarea bind:value={question_text}></textarea>
   </label>
 {/each}

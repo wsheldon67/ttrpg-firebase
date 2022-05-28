@@ -1,42 +1,54 @@
 <script lang='ts'>
   import Tooltip from "$lib/c/Tooltip.svelte"
-  import type {Data} from "$lib/data/character";
+  import type {Data} from "$lib/data/character"
   import Adamant from "../../comp/Playbooks/Adamant/index.svelte"
   import Bold from "../../comp/Playbooks/Bold/index.svelte"
-  import {playbooks as playbook_data} from '$lib/data/playbooks'
+  import Guardian from '../../comp/Playbooks/Guardian/index.svelte'
+  import Hammer from '../../comp/Playbooks/Hammer/index.svelte'
+  import Icon from '../../comp/Playbooks/Icon/index.svelte'
+  import Idealist from '../../comp/Playbooks/Idealist/index.svelte'
+  import Pillar from '../../comp/Playbooks/Pillar/index.svelte'
+  import Prodigy from '../../comp/Playbooks/Prodigy/index.svelte'
+  import Rogue from '../../comp/Playbooks/Rogue/index.svelte'
+  import Successor from '../../comp/Playbooks/Successor/index.svelte'
+  import Destined from '../../comp/Playbooks/Destined/index.svelte'
+  import Elder from '../../comp/Playbooks/Elder/index.svelte'
+  import Foundling from '../../comp/Playbooks/Foundling/index.svelte'
+  import Razor from '../../comp/Playbooks/Razor/index.svelte'
+
+  import {playbooks, type Playbook} from '$lib/data/playbooks'
 
   export let character:Data
   $: selected = character.playbook
 
   const comps = {
-    'Adamant': Adamant,
-    'Bold': Bold
+    Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor,
+    Destined, Elder, Foundling, Razor
   }
 
-  const playbooks = [
-    {name: 'Adamant', text: `will fix the world, even if it means breaking all the rules.`, motivation: `contend with what "doing right" means in a complicated world.`},
-    {name: 'Bold', text: `fights to live up to their self-image and earn others' trust and confidence.`, motivation: `build your reputation and leadership skills.`},
-    {name: 'Guardian', text: `defends someone close to them, steadfast and watchful.`, motivation: `be the first to see danger coming and the last line of defense.`}
-  ]
-
-  function click(clicked_playbook:string) {
-    character.playbook = clicked_playbook
-    character.techniques = [{name: playbook_data[clicked_playbook].technique.name, level: 2}]
+  function click(clicked_playbook:Playbook) {
+    character.playbook = clicked_playbook.name
+    character.techniques = [{name: clicked_playbook.technique.name, level: 2}]
   }
 </script>
 
 <svelte:component this={comps[selected]} start={1} hide/>
 <h1>Playbooks</h1>
 <div class='cardtainer'>
-{#each playbooks as {name, text, motivation} (name)}
+{#each playbooks as playbook (playbook.name)}
   <button
-    class={'card' + (selected === name ? ' selected' : '')}
-    on:click={()=>{click(name)}}
+    class={'card' + (selected === playbook.name ? ' selected' : '')}
+    on:click={()=>{click(playbook)}}
   >
-    <Tooltip tip={`Play the ${name} if you want to ${motivation}`} block>
-      <h2>{name}</h2>
-      <p>The {name} {text}</p>
+    <Tooltip tip={`Play the ${playbook.name} if ${playbook.motivation}`} block>
+      <h2>{playbook.name}</h2>
+      <p>The {playbook.name} {playbook.blurb}</p>
     </Tooltip>
   </button>
 {/each}
 </div>
+<style>
+  h1 {
+    margin-top: 1em;
+  }
+</style>
