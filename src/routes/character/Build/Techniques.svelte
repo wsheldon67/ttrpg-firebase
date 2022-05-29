@@ -64,3 +64,8 @@
     {/each}
   {/await}
 </div>
+<style>
+  div.cardtainer {
+    margin-bottom: 2em;
+  }
+</style>
