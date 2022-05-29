@@ -35,6 +35,7 @@
     justify-content: start;
     gap: .5em;
     background-color: var(--b3);
+    z-index: 12;
   }
 </style>
 

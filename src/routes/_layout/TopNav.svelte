@@ -15,6 +15,7 @@
     top: 0;
     background-color: var(--b4);
     height: 1.8em;
+    z-index: 12;
   }
   .siteNav {
     display: flex;
@@ -24,6 +25,7 @@
     width: 100vw;
     max-width: var(--break1);
     background-color: var(--b3);
+    z-index: 12;
   }
 </style>
 
