@@ -1,9 +1,9 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
-import Ready from '../Ready.svelte'
-import Retaliate from '../Retaliate.svelte'
-import SeizeAPosition from '../SeizeAPosition.svelte'
+  import Ready from './Ready.svelte'
+  import Retaliate from './Retaliate.svelte'
+  import SeizeAPosition from './SeizeAPosition.svelte'
 
   export let start: number = 1
   export let hide: boolean = false

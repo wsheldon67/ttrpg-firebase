@@ -1,9 +1,9 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
-import BolsterOrHinder from '../BolsterOrHinder.svelte'
-import Commit from '../Commit.svelte'
-import TestBalance from '../TestBalance.svelte'
+  import BolsterOrHinder from './BolsterOrHinder.svelte'
+  import Commit from './Commit.svelte'
+  import TestBalance from './TestBalance.svelte'
 
   export let start: number = 1
   export let hide: boolean = false
