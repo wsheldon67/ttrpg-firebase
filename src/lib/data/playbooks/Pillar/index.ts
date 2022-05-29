@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import SlideAroundTheBlow from './SlideAroundTheBlow.svelte'
 
 export const Pillar:Playbook = {
   name: 'Pillar',
@@ -23,7 +24,7 @@ export const Pillar:Playbook = {
     `Who never thought you deserved to lead the group?`,
     `What uniform, heirloom, or symbol do you carry as a talisman of the group?`,
   ],
-  technique: {name: 'Slide Around the Blow', url: 'Playbooks/Pillar/SlideAroundTheBlow'},
+  technique: {name: 'Slide Around the Blow', tags: [], component: SlideAroundTheBlow},
   connections: [
     [``,`doesn't really respect my accomplishments; they probably need a lesson or two.`],
     [``, `seems like they would've been a good candidate to be a part of my squad; I'll look after them.`]

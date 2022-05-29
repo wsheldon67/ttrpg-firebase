@@ -12,18 +12,17 @@
     const applicable_techniques = techniques.filter(({tags})=>{
       return tags.includes(character.training) || tags.includes('Universal')
     })
-    const all_techniques = [playbook[character.playbook].technique, ...applicable_techniques]
-    const promises = all_techniques.map(({url}) => {
-      return import(`../../comp/${url}.svelte`)
+    const promises = applicable_techniques.map(({url}) => {
+      return import(`../../comp/Techniques/${url}.svelte`)
     })
     const componets = await Promise.all(promises)
-    const res = all_techniques.map((technique, index) => {
+    const res = applicable_techniques.map((technique, index) => {
       return {
         component: componets[index].default,
-        ...technique
+        name: technique.name
       }
     })
-    return res
+    return [playbook[character.playbook].technique, ...res]
   }
   const promise = get_techniques()
 

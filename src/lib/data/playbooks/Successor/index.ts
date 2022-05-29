@@ -1,4 +1,5 @@
 import type { Playbook } from '../../playbooks'
+import Break from './Break.svelte'
 
 export const Successor:Playbook = {
   name: 'Successor',
@@ -22,7 +23,7 @@ export const Successor:Playbook = {
     `What do you carry that reminds you of the place most associated with your lineage?`,
     `What part of your lineage's identity is most important and valuable to you as a person?`,
   ],
-  technique: {name: 'Break', url: 'Playbooks/Successor/Break'},
+  technique: {name: 'Break', tags: [], component: Break},
   connections: [
     [``, `has major concerns, fears, or grievances with my lineage — and with me, by proxy.`],
     [``,`seems free of their past in a way I wish I could let go of mine; hearing them talk about the future feels amazing!`]

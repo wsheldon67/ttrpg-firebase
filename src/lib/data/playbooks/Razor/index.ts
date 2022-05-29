@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import Lure from './Lure.svelte'
 
 export const Razor:Playbook = {
   name: 'Razor',
@@ -22,7 +23,7 @@ export const Razor:Playbook = {
     masters and be something more?`,
     `What totem of your masters can you not bring yourself to throw away?`,
   ],
-  technique: {name: 'Lure', url: 'Playbooks/Razor/Lure'},
+  technique: {name: 'Lure', tags: [], component: Lure},
   connections: [
     [``, `seems to be able to connect to other people openly, freely, and easily. I wish they would show me how.`],
     [`I see`, `as lacking control. Maybe I can help hone them, at least a little bit.`]

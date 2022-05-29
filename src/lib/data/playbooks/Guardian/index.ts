@@ -1,4 +1,5 @@
-import type { Playbook } from "../playbooks";
+import type { Playbook } from "../../playbooks";
+import Divert from "./Divert.svelte";
 
 export const Guardian:Playbook = {
   name: 'Guardian',
@@ -22,7 +23,7 @@ export const Guardian:Playbook = {
     `Who used to be in your circle of trust before they betrayed you?`,
     `What tattered garment or adornment reminds you of those you protect… or failed to protect?`,
   ],
-  technique: {name: 'Divert', url: 'Playbooks/Guardian/Divert'},
+  technique: {name: 'Divert', tags: [], component: Divert},
   demeanors: ['Harsh', 'Serious', 'Polite', 'Quiet', 'Suspicious', 'Cautious'],
   connections: [
     ['',`is my ward - they need me to have their back, end of story.`],

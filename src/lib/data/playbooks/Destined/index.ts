@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import Anticipate from './Anticipate.svelte'
 
 export const Destined:Playbook = {
   name: 'Destined',
@@ -21,7 +22,7 @@ export const Destined:Playbook = {
     `Who do you turn to for guidance when you feel overwhelmed by your destiny?`,
     `What token or symbol do you carry that proves to any observer that you are chosen by fate?`,
   ],
-  technique: {name: 'Anticipate', url: 'Playbooks/Destined/Anticipate'},
+  technique: {name: 'Anticipate', component: Anticipate, tags: []},
   connections: [
     [`I believe`, `will play a crucial role in my fulfillment of my destiny, for good or ill.`],
     [`Being around`, `helps me put my destiny out of my mind, for a time. Why?`]

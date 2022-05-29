@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import Disorient from './Disorient.svelte'
 
 export const Idealist:Playbook = {
   name: 'Idealist',
@@ -22,7 +23,7 @@ export const Idealist:Playbook = {
     `Who helped you through your grief? What did they teach you?`,
     `What symbol, heirloom, or mark do you carry to remind you of what you lost?`,
   ],
-  technique: {name: 'Disorient', url: 'Playbooks/Idealist/Disorient'},
+  technique: {name: 'Disorient', tags: [], component: Disorient},
   demeanors: ['Lonely', 'Compassionate', 'Joyful', 'Grieving', 'Earnest', 'Resolute'],
   connections: [
     [`I recognize some of the pain I have felt inside of`, `; I'm going to try to help them.`],

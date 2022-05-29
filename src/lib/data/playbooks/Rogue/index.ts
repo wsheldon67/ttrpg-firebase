@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import SweepTheLeg from './SweepTheLeg.svelte'
 
 export const Rogue:Playbook = {
   name: 'Rogue',
@@ -22,7 +23,7 @@ export const Rogue:Playbook = {
     `Who was ready to do anything to break you of your bad habits?`,
     `What is your favorite possession that you stole, swiped, or otherwise acquired illegitimately?`,
   ],
-  technique: {name: 'Sweep the Leg', url: 'Playbooks/Rogue/SweepTheLeg'},
+  technique: {name: 'Sweep the Leg', tags: [], component: SweepTheLeg},
   connections: [
     [``, `is waaaaay too uptight, too trapped in themselves; they need to break some rules!`],
     [``, `is amazing and I hope they like me; maybe they're worth playing it straight?`]

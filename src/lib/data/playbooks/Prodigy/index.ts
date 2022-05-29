@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import SteadyStance from './SteadyStance.svelte'
 
 export const Prodigy:Playbook = {
   name: 'Prodigy',
@@ -23,7 +24,7 @@ export const Prodigy:Playbook = {
     `Who cares for you greatly but doesn't understand your talent?`,
     `What strange talisman or detail of your clothing plays a role in your talents?`,
   ],
-  technique: {name: 'Steady Stance', url: 'Playbooks/Prodigy/SteadyStance'},
+  technique: {name: 'Steady Stance', tags: [], component: SteadyStance},
   connections: [
     [``, `could use training from someone who knows what they're doing; I suppose I am up to the task.`],
     [`I'm not sure if the overtures of friendship from`, `make me happy, mad, or both.`]

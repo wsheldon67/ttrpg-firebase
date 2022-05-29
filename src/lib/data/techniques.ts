@@ -7,7 +7,7 @@ interface Technique {
 export const techniques:Technique[] = [
   {
     name: 'Bolster or Hinder',
-    url: 'Techniques/BolsterOrHinder',
-    tags: ['Universal']
+    url: 'Techniques/Basic/BolsterOrHinder',
+    tags: ['Basic']
   }
 ]

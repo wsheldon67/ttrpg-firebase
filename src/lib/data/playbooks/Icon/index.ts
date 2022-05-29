@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import WallOfPerfection from './WallOfPerfection.svelte'
 
 export const Icon:Playbook = {
   name: 'Icon',
@@ -22,7 +23,7 @@ export const Icon:Playbook = {
     `Who showed you that even with the weight of your burden, you could still find ways to play?`,
     `What token of your burden and tradition do you always carry?`,
   ],
-  technique: {name: 'Wall of Perfection', url: 'Playbooks/Icon/WallOfPerfection'},
+  technique: {name: 'Wall of Perfection', tags: [], component: WallOfPerfection},
   demeanors: ['Naive', 'Playful', 'Needy', 'Sad', 'Haughty', 'Grave'],
   connections: [
     [``, `seems to not fully understand what it means that I'm the icon of my tradition… and I kind of like feeling free around them.`],

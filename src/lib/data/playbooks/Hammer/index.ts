@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import Overwhelm from './Overwhelm.svelte'
 
 export const Hammer:Playbook = {
   name: 'Hammer',
@@ -22,7 +23,7 @@ export const Hammer:Playbook = {
     `Who tried their best to teach you restraint, calm, and thoughtfulness?`,
     `What fragile trinket or heirloom do you keep and protect?`,
   ],
-  technique: {name: 'Overwhelm', url: 'Playbooks/Hammer/Overwhelm'},
+  technique: {name: 'Overwhelm', tags: [], component: Overwhelm},
   demeanors: ['Playful', 'Blunt', 'Quiet', 'Loud', 'Excessive', 'Determined'],
   connections: [
     ['',`has a way to solve problems with words instead of firsts - it's really impressive!`],

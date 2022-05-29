@@ -1,3 +1,4 @@
+import PinpointAim from "./PinpointAim.svelte"
 import type { Playbook } from "../../playbooks"
 
 export const Adamant:Playbook = {
@@ -20,7 +21,7 @@ export const Adamant:Playbook = {
     `Who earned your grudging respect by teaching you pragmatism?`,
     `What heirloom or piece of craftsmanship do you carry to remind you to stay true to yourself?`,
   ],
-  technique: {name: 'Pinpoint Aim', url: 'Playbooks/Adamant/PinpointAim'},
+  technique: {name: 'Pinpoint Aim', tags: [], component: PinpointAim},
   demeanors: ['Above-it-all', 'Perfectionist', 'Chilly', 'Rebellious', 'Flippant', 'Standoffish'],
   connections: [
     [``, `takes issue with my methods - perhaps they have a point, but I certainly can't admit that to them!`],

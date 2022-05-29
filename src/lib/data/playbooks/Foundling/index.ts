@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import FeelTheFlow from './FeelTheFlow.svelte'
 
 export const Foundling:Playbook = {
   name: 'Foundling',
@@ -24,7 +25,7 @@ export const Foundling:Playbook = {
     `What detail of your clothing or visible trinket reveals you belong 
     to two cultures?`,
   ],
-  technique: {name: 'Feel the Flow', url: 'Playbooks/Foundling/FeelTheFlow'},
+  technique: {name: 'Feel the Flow', tags: [], component: FeelTheFlow},
   connections: [
     [``, `seems to think one of my heritages should be valued more; there's something persuasive in their words.`],
     [``, `is so awesome, with skills and heritage I've never seen! I want to learn all I can about them and their background`]

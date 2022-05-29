@@ -31,7 +31,7 @@ export interface Playbook {
   principles: [Principle, Principle]
   stats: [Creativity, Focus, Harmony, Passion]
   history: [string, string, string, string]
-  technique: {name:string, url:string}
+  technique: {name:string, tags:string[], component:any}
   connections: [[string,string], [string,string]]
   moment_of_balance: string
   growth_question: string

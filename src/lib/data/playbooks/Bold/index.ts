@@ -1,4 +1,5 @@
 import type { Playbook } from "../../playbooks"
+import TagTeam from "./TagTeam.svelte"
 
 export const Bold:Playbook = {
   name: 'Bold',
@@ -22,7 +23,7 @@ export const Bold:Playbook = {
     `Whose approval do you think you will never attain?`,
     `What token or symbol do you wear to prove you are serious?`,
   ],
-  technique: {name: 'Tag Team', url: 'Playbooks/Bold/TagTeam'},
+  technique: {name: 'Tag Team', tags: [], component: TagTeam},
   demeanors: ['Impatient', 'Sensitive', 'Affable', 'Enthusiatic', 'Talkative', 'Impetuous'],
   connections: [
     ['', `scoffs at me and my plans; one day I'll show them what I can do.`],

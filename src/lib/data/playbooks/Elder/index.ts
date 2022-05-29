@@ -1,4 +1,5 @@
-import type { Playbook } from '../playbooks'
+import type { Playbook } from '../../playbooks'
+import Patience from './Patience.svelte'
 
 export const Elder:Playbook = {
   name: 'Elder',
@@ -21,7 +22,7 @@ export const Elder:Playbook = {
     `Who is still your ally and confidante, despite the tense history you've shared?`,
     `What outfit or uniform do you wear to remind yourself of your former duties?`,
   ],
-  technique: {name: 'Patience', url: 'Playbooks/Elder/Patience'},
+  technique: {name: 'Patience', tags: [], component: Patience},
   connections: [
     [`I care about`, `more than they know...even though they are probably my most frustrating student.`],
     [``, `is not to be underestimated. In fact, they may have something to teach me!`]
