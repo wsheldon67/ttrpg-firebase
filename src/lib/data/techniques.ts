@@ -138,382 +138,382 @@ export const techniques: Technique[] = [
   {
     name: 'Blood Twisting',
     url: 'Water/BloodTwisting',
-    tags: ['Water', 'Advance & Attack', 'Blood', 'Rare']
+    tags: ['Waterbending', 'Advance & Attack', 'Blood', 'Rare']
   },
   {
     name: 'Breath Of Ice',
     url: 'Water/BreathOfIce',
-    tags: ['Water', 'Defend & Maneuver']
+    tags: ['Waterbending', 'Defend & Maneuver']
   },
   {
     name: 'Creeping Ice',
     url: 'Water/CreepingIce',
-    tags: ['Water', 'Evade & Observe']
+    tags: ['Waterbending', 'Evade & Observe']
   },
   {
     name: 'Crushing Grip Of Seas',
     url: 'Water/CrushingGripOfSeas',
-    tags: ['Water', 'Advance & Attack', 'Rare']
+    tags: ['Waterbending', 'Advance & Attack', 'Rare']
   },
   {
     name: 'Flow As Water',
     url: 'Water/FlowAsWater',
-    tags: ['Water', 'Defend & Maneuver']
+    tags: ['Waterbending', 'Defend & Maneuver']
   },
   {
     name: 'Freeze Blood',
     url: 'Water/FreezeBlood',
-    tags: ['Water', 'Advance & Attack', 'Rare', 'Blood']
+    tags: ['Waterbending', 'Advance & Attack', 'Rare', 'Blood']
   },
   {
     name: 'Ice Guantlet',
     url: 'Water/IceGuantlet',
-    tags: ['Water', 'Defend & Maneuver']
+    tags: ['Waterbending', 'Defend & Maneuver']
   },
   {
     name: 'Ice Prison',
     url: 'Water/IcePrison',
-    tags: ['Water', 'Advance & Attack', 'Rare']
+    tags: ['Waterbending', 'Advance & Attack', 'Rare']
   },
   {
     name: 'Refresh',
     url: 'Water/Refresh',
-    tags: ['Water', 'Evade & Observe', 'Heal']
+    tags: ['Waterbending', 'Evade & Observe', 'Heal']
   },
   {
     name: 'Stream The Water',
     url: 'Water/StreamTheWater',
-    tags: ['Water', 'Advance & Attack']
+    tags: ['Waterbending', 'Advance & Attack']
   },
   {
     name: 'Slip Over Ice',
     url: 'Water/SlipOverIce',
-    tags: ['Water', 'Advance & Attack']
+    tags: ['Waterbending', 'Advance & Attack']
   },
   {
     name: 'Water Cloak',
     url: 'Water/WaterCloak',
-    tags: ['Water', 'Defend & Maneuver', 'Rare']
+    tags: ['Waterbending', 'Defend & Maneuver', 'Rare']
   },
   {
     name: 'Water Whip',
     url: 'Water/WaterWhip',
-    tags: ['Water', 'Defend & Maneuver']
+    tags: ['Waterbending', 'Defend & Maneuver']
   },/*
   {
     name: 'Detect The Heavy Step',
     url: 'Earth/DetectTheHeavyStep',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Dust Stepping',
     url: 'Earth/DustStepping',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Earth Armor',
     url: 'Earth/EarthArmor',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Earth Guantlet',
     url: 'Earth/EarthGuantlet',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Earth Launch',
     url: 'Earth/EarthLaunch',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Earth Sinking',
     url: 'Earth/EarthSinking',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Eat Dirt',
     url: 'Earth/EatDirt',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Ground Shift',
     url: 'Earth/GroundShift',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Lava Star',
     url: 'Earth/LavaStar',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Metal Bindings',
     url: 'Earth/MetalBindings',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Rock Column',
     url: 'Earth/RockColumn',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Stone Shield',
     url: 'Earth/StoneShield',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'Thick Mud',
     url: 'Earth/ThickMud',
-    tags: ['Earth']
+    tags: ['Earthbending']
   },
   {
     name: 'A Single Spark',
     url: 'Fire/ASingleSpark',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Arc Lightning',
     url: 'Fire/ArcLightning',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Breath Of Fire',
     url: 'Fire/BreathOfFire',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Explosive Blast',
     url: 'Fire/ExplosiveBlast',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Fire Blade',
     url: 'Fire/FireBlade',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Fire Pinwheel',
     url: 'Fire/FirePinwheel',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Fire Stream',
     url: 'Fire/FireStream',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Fire Whip',
     url: 'Fire/FireWhip',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Flame Knives',
     url: 'Fire/FlameKnives',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Jet Stepping',
     url: 'Fire/JetStepping',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Lightning Blast',
     url: 'Fire/LightningBlast',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Spiral Flare Kick',
     url: 'Fire/SpiralFlareKick',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Wall Of Fiery Breath',
     url: 'Fire/WallOfFieryBreath',
-    tags: ['Fire']
+    tags: ['Firebending']
   },
   {
     name: 'Air Cushion',
     url: 'Air/AirCushion',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Air Scooter',
     url: 'Air/AirScooter',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Air Swipe',
     url: 'Air/AirSwipe',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Breath Of Wind',
     url: 'Air/BreathOfWind',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Cannonball',
     url: 'Air/Cannonball',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Cushion The Forceful Fist',
     url: 'Air/CushionTheForcefulFist',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Directed Funnel',
     url: 'Air/DirectedFunnel',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Reed In The Wind',
     url: 'Air/ReedInTheWind',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Shockwave',
     url: 'Air/Shockwave',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Small Vortex',
     url: 'Air/SmallVortex',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Suction',
     url: 'Air/Suction',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Twisting Wind',
     url: 'Air/TwistingWind',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Wind Run',
     url: 'Air/WindRun',
-    tags: ['Air']
+    tags: ['Airbending']
   },
   {
     name: 'Boom',
     url: 'Weapon/Boom',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Chi Blocking Jabs',
     url: 'Weapon/ChiBlockingJabs',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Chart A Course',
     url: 'Weapon/ChartACourse',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Counterstrike',
     url: 'Weapon/Counterstrike',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Disarm',
     url: 'Weapon/Disarm',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Feint',
     url: 'Weapon/Feint',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Parry',
     url: 'Weapon/Parry',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Pin A Fly To A Tree',
     url: 'Weapon/PinAFlyToATree',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Pinpoint Thrust',
     url: 'Weapon/PinpointThrust',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Switch It Up',
     url: 'Weapon/SwitchItUp',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Take The High Ground',
     url: 'Weapon/TakeTheHighGround',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Turn The Tables',
     url: 'Weapon/TurnTheTables',
-    tags: ['Weapon']
+    tags: ['Weapons']
   },
   {
     name: 'Better Faster Stronger',
     url: 'Tech/BetterFasterStronger',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Blinded By Science',
     url: 'Tech/BlindedByScience',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Collect Material',
     url: 'Tech/CollectMaterial',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Entangler',
     url: 'Tech/Entangler',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Full Power Attack',
     url: 'Tech/FullPowerAttack',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Jolt',
     url: 'Tech/Jolt',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Jury Rig',
     url: 'Tech/JuryRig',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Pinpoint Flaws',
     url: 'Tech/PinpointFlaws',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Plant Trap',
     url: 'Tech/PlantTrap',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Rebuild',
     url: 'Tech/Rebuild',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Smoke Bomb',
     url: 'Tech/SmokeBomb',
-    tags: ['Tech']
+    tags: ['Technology']
   },
   {
     name: 'Wind Up',
     url: 'Tech/WindUp',
-    tags: ['Tech']
+    tags: ['Technology']
   },*/
   {
     name: 'Ready',
