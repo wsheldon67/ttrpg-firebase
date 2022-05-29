@@ -57,7 +57,7 @@ import Training from "./Training.svelte";
 </script>
 <style>
   .next, .back {
-    position: absolute;
+    position: fixed;
     bottom: 2.2em;
   }
   .next {
