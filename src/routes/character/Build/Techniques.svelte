@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { Data } from "$lib/data/character"
   import { techniques } from "$lib/data/techniques"
-  import { playbooks } from '$lib/data/playbooks'
+  import { playbook } from '$lib/data/playbooks'
 
   export let character:Data
 
@@ -12,9 +12,9 @@
     const applicable_techniques = techniques.filter(({tags})=>{
       return tags.includes(character.training) || tags.includes('Universal')
     })
-    const all_techniques = [playbooks[character.playbook].technique, ...applicable_techniques]
+    const all_techniques = [playbook[character.playbook].technique, ...applicable_techniques]
     const promises = all_techniques.map(({url}) => {
-      return import(`../../../comp/atla/${url}.svelte`)
+      return import(`../../comp/${url}.svelte`)
     })
     const componets = await Promise.all(promises)
     const res = all_techniques.map((technique, index) => {
