@@ -3,6 +3,7 @@
 
   export let character
 
+  // TODO perhaps include scope, group focus, inciting incident
 </script>
 <style>
   .cont {
@@ -10,7 +11,6 @@
     flex-direction: column;
   }
 </style>
-perhaps include scope, group focus, inciting incident
 <div class='cont'>
   <label>
     <Tooltip tip="A one-sentence description of your character.">Concept:</Tooltip>

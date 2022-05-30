@@ -38,8 +38,14 @@ function remove_demeanor(demeanor:string) {
     type='text'
     on:keypress={demeanor_keyboard}
     bind:value={current_demeanor}
+    list='demeanors'
   />
 </label>
+<datalist id='demeanors'>
+  {#each playbook.demeanors as demeanor}
+    <option>{demeanor}</option>
+  {/each}
+</datalist>
 <div>
   {#each character.demeanors as demeanor}
     <button on:click={()=>{remove_demeanor(demeanor)}}>
@@ -52,6 +58,7 @@ function remove_demeanor(demeanor:string) {
   Look:
   <textarea bind:value={character.look}></textarea>
 </label>
+<p>Note: For best results, write full sentences in first person.</p>
 {#each character.history as question_text, index}
   <label>
     {full_history[index]}

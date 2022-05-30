@@ -32,6 +32,7 @@
     max-width: 16em;
     width: max-content;
     height: min-content;
+    z-index: 16;
   }
   span {
     text-decoration: underline dotted var(--t) 8%;
