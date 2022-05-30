@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import SteadyStance from './SteadyStance.svelte'
+import SteadyStance from '../../../../routes/comp/Techniques/Playbook/SteadyStance.svelte'
 
 export const Prodigy:Playbook = {
   name: 'Prodigy',

@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import SlideAroundTheBlow from './SlideAroundTheBlow.svelte'
+import SlideAroundTheBlow from '../../../../routes/comp/Techniques/Playbook/SlideAroundTheBlow.svelte'
 
 export const Pillar:Playbook = {
   name: 'Pillar',

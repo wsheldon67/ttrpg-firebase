@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Disorient from './Disorient.svelte'
+import Disorient from '../../../../routes/comp/Techniques/Playbook/Disorient.svelte'
 
 export const Idealist:Playbook = {
   name: 'Idealist',
