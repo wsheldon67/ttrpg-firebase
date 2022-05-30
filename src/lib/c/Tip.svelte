@@ -7,8 +7,11 @@
   const common = {
     'condition': 'Core/Condition',
     'conditions': 'Core/Condition',
-    'insecure': 'Core/Condition',
-    'angry': 'Core/Condition',
+    'afraid': 'Core/Afraid',
+    'angry': 'Core/Angry',
+    'guilty': 'Core/Guilty',
+    'insecure': 'Core/Insecure',
+    'troubled': 'Core/Troubled',
     'ongoing': 'Core/Ongoing',
     'forward': 'Core/Forward',
     'tricking': 'Moves/Trick',

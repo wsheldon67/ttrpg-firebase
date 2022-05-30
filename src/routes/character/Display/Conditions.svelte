@@ -1,5 +1,7 @@
 <script lang='ts'>
   import Header from "$lib/c/Header.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
+  import { quick } from "$lib/data/quick_tips";
   import type { Data } from '$lib/data/character'
 
   export let character:Data
@@ -11,7 +13,7 @@
     {#each character.conditions as condition}
       <label>
         <input type='checkbox' bind:checked={condition.applied} />
-        {condition.name}
+        <Tooltip tip={quick[condition.name.toLowerCase()]}>{condition.name}</Tooltip>
       </label>
     {/each}
   </div>
