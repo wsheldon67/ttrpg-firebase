@@ -3,16 +3,11 @@
   let value
   
   onMount(() => {
-    const statuses = ['Overwhelm', 'Wall of Perfection', 'Disorient', 'Slide Around The Blow',
-  'Steady Stance','Sweep The Leg', 'Break', 'Anticipate', 'Patience', 'Feel The Flow', 'Lure']
+
+    const statuses = ['Firebending', 'Airbending', 'Weapons', 'Technology']
     let res = ``
-    statuses.forEach((status) => {
-      res += `,
-  {
-    name: '${status}',
-    url: 'Playbook/${status.replace(/\s/g,'')}',
-    tags: ['Playbook']
-  }
+    statuses.forEach((v) => {
+      res += `{name: '${v}', component: ${v}},
       `
     })
     value = res

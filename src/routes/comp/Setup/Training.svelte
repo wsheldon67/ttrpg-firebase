@@ -1,37 +1,21 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '$lib/c/Tip.svelte'
-import Waterbending from './Waterbending.svelte'
+
+  import Airbending from './Airbending.svelte'
+  import Earthbending from './Earthbending.svelte'
+  import Firebending from './Firebending.svelte'
+  import Technology from './Technology.svelte'
+  import Waterbending from './Waterbending.svelte'
+  import Weapons from './Weapons.svelte'
 
   export let start: number = 1
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Training Style'>
   <Waterbending start={start+1} hide/>
-  <Header h={2} {start} title='Earthbending'>
-    // TODO finish training styles
-    <Header h={3} {start} title='Fighting Styles' hide>
-    
-    </Header>
-  </Header>
-  <Header h={2} {start} title='Firebending'>
-    <Header h={3} {start} title='Fighting Styles' hide>
-    
-    </Header>
-  </Header>
-  <Header h={2} {start} title='Airbending'>
-    <Header h={3} {start} title='Fighting Styles' hide>
-    
-    </Header>
-  </Header>
-  <Header h={2} {start} title='Weapons'>
-    <Header h={3} {start} title='Fighting Styles' hide>
-    
-    </Header>
-  </Header>
-  <Header h={2} {start} title='Technology'>
-    <Header h={3} {start} title='Fighting Styles' hide>
-    
-    </Header>
-  </Header>
+  <Earthbending start={start+1} hide/>
+  <Firebending start={start+1} hide/>
+  <Airbending start={start+1} hide/>
+  <Weapons start={start+1} hide/>
+  <Technology start={start+1} hide/>
 </Header>
