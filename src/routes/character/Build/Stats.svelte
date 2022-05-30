@@ -1,18 +1,19 @@
 <script lang='ts'>
-import { plural } from '$lib/pretty';
-
+  import { plural } from '$lib/pretty';
   import { moves } from '$lib/data/playbooks/moves'
+  import { playbook } from '$lib/data/playbooks';
+  import { stat_positions } from '$lib/data/calc_character';
   export let character
 
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
 
   function select_move(move_name:string) {
-    if (character.playbook_moves.includes(move_name)) {
-      character.playbook_moves = character.playbook_moves.filter(el => el !== move_name)
-    } else if (character.playbook_moves.length == 2) {
-      character.playbook_moves[1] = move_name
+    if (character.moves.includes(move_name)) {
+      character.moves = character.moves.filter(el => el !== move_name)
+    } else if (character.moves.length == 2) {
+      character.moves[1] = move_name
     } else {
-      character.playbook_moves = [...character.playbook_moves, move_name]
+      character.moves = [...character.moves, move_name]
     }
   }
 </script>
@@ -31,18 +32,19 @@ import { plural } from '$lib/pretty';
         value={stat}
         bind:group={character.boosted_stats[0]}
         class:highlighted={character.boosted_stats[0] === stat}
+        disabled={playbook[character.playbook].stats[stat_positions[stat]] >= 2}
       />
       {stat}
     </label>
   {/each}
 </div>
-<p>Choose {plural(2-character.playbook_moves.length, 'move')}:</p>
+<p>Choose {plural(2-character.moves.length, 'move')}:</p>
 <div class='cardtainer'>
 {#each moves[character.playbook] as {component, stat, name}}
   <button
     class='card'
     class:highlighted={stat === character.boosted_stats[0]}
-    class:selected={character.playbook_moves.includes(name)}
+    class:selected={character.moves.includes(name)}
     on:click={()=>{select_move(name)}}
   >
     <svelte:component this={component} hide start={2}/>

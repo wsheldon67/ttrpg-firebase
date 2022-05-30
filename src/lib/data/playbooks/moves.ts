@@ -28,3 +28,7 @@ export const moves:Moves = {
   Destined, Elder, Foundling, Razor
 }
 
+export const all_moves:Move[] = [
+  ...Adamant, ...Bold, ...Guardian, ...Hammer, ...Icon, ...Idealist, ...Pillar, ...Prodigy, ...Rogue, ...Successor,
+  ...Destined, ...Elder, ...Foundling, ...Razor
+]

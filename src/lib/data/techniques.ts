@@ -1,3 +1,5 @@
+
+
 interface Technique {
   name: string
   url: string
@@ -560,5 +562,9 @@ export const techniques: Technique[] = [
     url: 'Basic/Commit',
     tags: ['Basic', 'Evade & Observe']
   },
-
+  {
+    name: 'Pinpoint Aim',
+    url: 'Playbook/PinpointAim',
+    tags: ['Playbook']
+  }
 ]

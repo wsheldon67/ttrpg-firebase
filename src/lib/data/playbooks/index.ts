@@ -22,14 +22,14 @@ type Passion = number
 interface Principle {
   name: string, text: string
 }
-
+export type Stats = [Creativity, Focus, Harmony, Passion]
 export interface Playbook {
   name: string
   blurb: string
   motivation: string
   demeanors: string[]
   principles: [Principle, Principle]
-  stats: [Creativity, Focus, Harmony, Passion]
+  stats: Stats
   history: [string, string, string, string]
   technique: {name:string, tags:string[], component:any}
   connections: [[string,string], [string,string]]

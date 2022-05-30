@@ -1,8 +1,8 @@
 <script lang='ts'>
   import type { Data } from "$lib/data/character"
-  import ObjectViewer from "$lib/c/ObjectViewer.svelte";
+  import Display from '../Display/index.svelte'
 
   export let character:Data
 
 </script>
-<ObjectViewer object={character} />
+<Display bind:character={character} />

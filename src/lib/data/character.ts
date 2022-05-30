@@ -12,16 +12,17 @@ export interface Data {
   look: LongString
   boosted_stats: Stat[]
   fatigue: number
-  conditions: Condition[]
+  conditions: {name: Condition, applied:boolean}[]
   balance: number
   center: number
-  playbook_moves: string[]
+  moves: string[]
   techniques: {
     name: string
     level: number
   }[]
   connections: [string, string]
-  statuses: Status[]
+  positive_statuses: {name: Status, applied:boolean}[]
+  negative_statuses: {name: Status, applied:boolean}[]
   growth_advancements: {
     name: string
     settings: any

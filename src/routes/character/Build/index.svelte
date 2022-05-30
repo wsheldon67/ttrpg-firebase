@@ -29,13 +29,30 @@ import Training from "./Training.svelte";
     look: '',
     boosted_stats: [],
     fatigue: 0,
-    conditions: [],
+    conditions: [
+      {name: 'Afraid', applied: false},
+      {name: 'Angry', applied: false},
+      {name: 'Guilty', applied: false},
+      {name: 'Insecure', applied: false},
+      {name: 'Troubled', applied: false}
+    ],
     balance: 0,
     center: 0,
-    playbook_moves: [],
+    moves: [],
     techniques: [{name: playbook.Adamant.technique.name, level: 2}],
     connections: ['',''],
-    statuses: [],
+    positive_statuses: [
+      {name: 'Empowered', applied: false},
+      {name: 'Favored', applied: false},
+      {name: 'Inspired', applied: false},
+      {name: 'Prepared', applied: false}
+    ],
+    negative_statuses: [
+      {name: 'Doomed', applied: false},
+      {name: 'Impaired', applied: false},
+      {name: 'Trapped', applied: false},
+      {name: 'Stunned', applied: false}
+    ],
     growth_advancements: [],
     growth: 0,
     feature_settings: {}

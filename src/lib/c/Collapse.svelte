@@ -2,14 +2,11 @@
   export let collapsed = false
   export let label = 'Please define a label for this Collapse.'
 
-  $: className = collapsed ? '' : 'open'
-
   let loaded = !collapsed
 
   function toggle_collapse() {
     collapsed = !collapsed
     loaded = true
-    console.log(loaded)
   }
 </script>
 <style>
@@ -24,10 +21,15 @@
   button.open {
     background-color: var(--b4);
   }
+  div.collapsed {
+    display: none;
+  }
 </style>
-<div class={className}>
-  <button on:click={toggle_collapse} class={className}>{label}</button>
+<div class:open={!collapsed}>
+  <button on:click={toggle_collapse} class:open={!collapsed}>{label}</button>
   {#if loaded}
-    <slot />
+    <div class:collapsed={collapsed}>
+      <slot />
+    </div>
   {/if}
 </div>

@@ -8,7 +8,7 @@
   $: mastered = character.techniques.filter(el => el.level === 2).length
   $: learned = character.techniques.filter(el => el.level === 1).length
 
-  async function get_techniques() {
+  async function get_applicable_techniques() {
     const applicable_techniques = techniques.filter(({tags})=>{
       return tags.includes(character.training) || tags.includes('Universal')
     })
@@ -24,7 +24,7 @@
     })
     return [playbook[character.playbook].technique, ...res]
   }
-  const promise = get_techniques()
+  const promise = get_applicable_techniques()
 
   function check(level:number, name:string, e:any) {
     const {checked} = e.target

@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { campaign } from '$lib/campaign'
+  
 </script>
 <style>
   * {
@@ -13,7 +13,8 @@
 <a href='/notes/add'>Add Note</a>
 <a href='/notes/all'>All Notes</a>
 <a href='/time/change'>Adjust Time</a>
-<a href={`/comp`}>Compendium</a>
-<a href={`/character/Character`}>Character Sheet</a>
-<a href={`/character/Build`}>New Character</a>
+<a href='/comp'>Compendium</a>
+<a href='/character/Display'>Character Sheet</a>
+<a href='/character/Build'>New Character</a>
 <a href='/campaign'>Switch Campaign</a>
+<a href='/scriptwrite'>Script Writer</a>
