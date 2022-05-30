@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Header from "$lib/c/Header.svelte";
   import Tooltip from "$lib/c/Tooltip.svelte";
+  import { backgrounds } from "$lib/data/backgrounds";
   import type { Data } from "$lib/data/character";
 
   export let character:Data
@@ -12,12 +13,14 @@
     <ul>
       {#each character.backgrounds as background}
         <li>
-          <Tooltip tip='//TODO live tip'>{background}</Tooltip>
+          <Tooltip tip={backgrounds[background]}>{background}</Tooltip>
         </li>
       {/each}
     </ul>
+    <p>
     {#each character.history as history}
-      <p>{history}</p>
+      {history} {' '}
     {/each}
+    </p>
     <p>My hometown is {character.hometown}.</p>
   </Header>

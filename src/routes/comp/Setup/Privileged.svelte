@@ -1,12 +1,12 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '$lib/c/Tip.svelte'
+  import { backgrounds } from '$lib/data/backgrounds'
 
   export let start: number = 1
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Privileged'>
-  <p>You grew up in the lap of luxury, wealth, or prestige as a hereditary aristocrat, prominent merchant, or even the heir to a successful crime family.</p>
+  <p>{backgrounds.Privileged}</p>
   <Header h={2} {start} title='To Ponder' hide>
     <ul>
       <li>What advantages did your upbringing give you?</li>

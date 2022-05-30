@@ -1,12 +1,12 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '$lib/c/Tip.svelte'
+  import { backgrounds } from '$lib/data/backgrounds'
 
   export let start: number = 1
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Wilderness'>
-  <p>You grew up in a town or household surrounded by nature, the elements in their most raw form, and developed advanced survival skills because of it.</p>
+  <p>{backgrounds.Wilderness}</p>
   <Header h={2} {start} title='To Ponder' hide>
     <ul>
       <li>Which terrain makes you feel at home?</li>

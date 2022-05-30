@@ -1,12 +1,11 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '$lib/c/Tip.svelte'
-
+  import { backgrounds } from '$lib/data/backgrounds'
   export let start: number = 1
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Military'>
-  <p>You trained to fight as a soldier in a military unit such as a mercenary company, a regional militia, or a state government's standing army.</p>
+  <p>{backgrounds.Military}</p>
   <Header h={2} {start} title='To Ponder' hide>
     <ul>
       <li>Are you a solider, sailor, or spy?</li>

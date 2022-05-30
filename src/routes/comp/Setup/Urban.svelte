@@ -1,12 +1,12 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Tip from '$lib/c/Tip.svelte'
+  import { backgrounds } from '$lib/data/backgrounds'
 
   export let start: number = 1
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Urban'>
-  <p>You grew up running the streets of a big city like the Northern Water Tribe capital, Yu Dao, or Republic City. You rub shoulders with people from many different walks of life, and you might not feel so at home if your journey takes you to the wilderness.</p>
+  <p>{backgrounds.Urban}</p>
   <Header h={2} {start} title='To Ponder' hide>
     <ul>
       <li>What unexpected skills and knowledge do you have from city life?</li>
