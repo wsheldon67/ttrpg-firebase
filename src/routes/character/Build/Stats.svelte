@@ -1,11 +1,12 @@
 <script lang='ts'>
-  import { plural } from '$lib/pretty';
+  import { plural, signed } from '$lib/pretty';
   import { moves } from '$lib/data/playbooks/moves'
   import { playbook } from '$lib/data/playbooks';
-  import { stat_positions } from '$lib/data/calc_character';
+  import { get_stats, stat_positions } from '$lib/data/calc_character';
   export let character
 
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
+  $: realized_stats = get_stats(character)
 
   function select_move(move_name:string) {
     if (character.moves.includes(move_name)) {
@@ -24,7 +25,7 @@
 </style>
 <p>Take +1 to a stat:</p>
 <div>
-  {#each stats as stat}
+  {#each stats as stat, index}
     <label>
       <input
         type='radio'
@@ -34,7 +35,7 @@
         class:highlighted={character.boosted_stats[0] === stat}
         disabled={playbook[character.playbook].stats[stat_positions[stat]] >= 2}
       />
-      {stat}
+      {stat} ({signed(realized_stats[index])})
     </label>
   {/each}
 </div>
