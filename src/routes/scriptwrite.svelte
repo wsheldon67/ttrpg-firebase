@@ -3,13 +3,16 @@
   let value
   
   onMount(() => {
-    const statuses = ['Afraid', 'Angry', 'Guilty', 'Insecure', 'Troubled']
+    const statuses = ['Overwhelm', 'Wall of Perfection', 'Disorient', 'Slide Around The Blow',
+  'Steady Stance','Sweep The Leg', 'Break', 'Anticipate', 'Patience', 'Feel The Flow', 'Lure']
     let res = ``
     statuses.forEach((status) => {
-      res += `export const ${status}:Condition = {
-        name: '${status}',
-        text: \`\`
-      }
+      res += `,
+  {
+    name: '${status}',
+    url: 'Playbook/${status.replace(/\s/g,'')}',
+    tags: ['Playbook']
+  }
       `
     })
     value = res

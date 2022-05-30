@@ -566,5 +566,70 @@ export const techniques: Technique[] = [
     name: 'Pinpoint Aim',
     url: 'Playbook/PinpointAim',
     tags: ['Playbook']
+  },
+  {
+    name: 'Tag Team',
+    url: 'Playbook/TagTeam',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Divert',
+    url: 'Playbook/Divert',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Overwhelm',
+    url: 'Playbook/Overwhelm',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Wall of Perfection',
+    url: 'Playbook/WallofPerfection',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Disorient',
+    url: 'Playbook/Disorient',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Slide Around The Blow',
+    url: 'Playbook/SlideAroundTheBlow',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Steady Stance',
+    url: 'Playbook/SteadyStance',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Sweep The Leg',
+    url: 'Playbook/SweepTheLeg',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Break',
+    url: 'Playbook/Break',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Anticipate',
+    url: 'Playbook/Anticipate',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Patience',
+    url: 'Playbook/Patience',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Feel The Flow',
+    url: 'Playbook/FeelTheFlow',
+    tags: ['Playbook']
+  },
+  {
+    name: 'Lure',
+    url: 'Playbook/Lure',
+    tags: ['Playbook']
   }
 ]

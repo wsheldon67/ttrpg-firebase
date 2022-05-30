@@ -1,7 +1,8 @@
 <script lang='ts'>
 import { beforeUpdate } from "svelte";
-import type { Data } from '$lib/data/character'
-import { playbook } from "$lib/data/playbooks";
+import { blank, type Data } from '$lib/data/character'
+import { createEventDispatcher } from "svelte/internal";
+const dispatch = createEventDispatcher()
 
 import Backgrounds from "./Backgrounds.svelte";
 import Connections from "./Connections.svelte";
@@ -16,47 +17,7 @@ import Training from "./Training.svelte";
   const order = [Playbook, Details, Training, Backgrounds, Touches, Stats, Techniques, Connections, Review]
   let current_page = 0
 
-  export let character:Data = {
-    playbook: 'Adamant',
-    concept: '',
-    name: '',
-    training: 'Waterbending',
-    fighting_style: '',
-    backgrounds: [],
-    hometown: '',
-    demeanors: [],
-    history: new Array(5),
-    look: '',
-    boosted_stats: [],
-    fatigue: 0,
-    conditions: [
-      {name: 'Afraid', applied: false},
-      {name: 'Angry', applied: false},
-      {name: 'Guilty', applied: false},
-      {name: 'Insecure', applied: false},
-      {name: 'Troubled', applied: false}
-    ],
-    balance: 0,
-    center: 0,
-    moves: [],
-    techniques: [{name: playbook.Adamant.technique.name, level: 2}],
-    connections: ['',''],
-    positive_statuses: [
-      {name: 'Empowered', applied: false},
-      {name: 'Favored', applied: false},
-      {name: 'Inspired', applied: false},
-      {name: 'Prepared', applied: false}
-    ],
-    negative_statuses: [
-      {name: 'Doomed', applied: false},
-      {name: 'Impaired', applied: false},
-      {name: 'Trapped', applied: false},
-      {name: 'Stunned', applied: false}
-    ],
-    growth_advancements: [],
-    growth: 0,
-    feature_settings: {}
-  }
+  export let character:Data = blank
 
   // on updates, send to server
   let timeout_id
@@ -64,12 +25,10 @@ import Training from "./Training.svelte";
     if (timeout_id) {clearTimeout(timeout_id)}
     // wait 200ms to see if there's any sequential updates
     timeout_id = setTimeout(()=>{
-      console.log('//TODO send to server', character)
+      dispatch('update',character)
       timeout_id = undefined
     }, 2000)
   })
-
-  //FIXME next, back position incorrectly if page is long enough to scroll
 
 </script>
 <style>

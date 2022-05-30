@@ -5,6 +5,7 @@
   onMount(async ()=> {
     const {ui, uiOptions, app } = await import('$lib/firebase')
     console.log(typeof app)
+    //@ts-ignore
     ui.start('#firebaseui-auth-container', uiOptions)
     campaign.clear()
     localStorage.removeItem('campaignID')
