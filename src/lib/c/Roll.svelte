@@ -1,35 +1,22 @@
-<script>
-import { signed } from "$lib/pretty";
+<script lang='ts'>
+  import { get_basic_move_stat } from "$lib/data/calc_character";
+  import type { Data } from "$lib/data/character";
+  import type { Move } from "$lib/data/playbooks/moves";
+  import { signed } from "$lib/pretty";
 
-  export let q = 1
-  export let d = 20
-  export let m = 0
-  export let a = 0
-
-  $: adv = {'-1': 'disadv', '0': '', '1': 'adv'}[a]
-
-  export let label = undefined
-
-  function roll() {
-    // TODO send_roll_to_chat(q, d, m, a, label)
-    console.log(q,d,m,a,label)
-  }
-  // TODO add temp mods
+  export let character:Data
+  export let move:Move
+  $: stat = get_basic_move_stat(character, move)
 </script>
+<button>
+  {move.stat} {signed(stat)}
+</button>
 <style>
-  .adv {
-    background-color: var(--g);
-  }
-  .disadv {
-    background-color: var(--b);
-  }
   button {
-    min-width: 5em;
+    height: 1.8em;
+    background-color: var(--p);
+    color: var(--at);
+    margin-top: .4em;
+    width: 100%;
   }
 </style>
-<button
-  class={adv + ' p'}
-  on:click={roll}
->
-  {q}d{d} {signed(m)}
-</button>

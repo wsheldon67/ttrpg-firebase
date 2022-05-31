@@ -6,9 +6,11 @@
   let character
 
   onMount(async ()=> {
+    console.log('on mount right')
     const { isSignedIn, db } = await import('$lib/firebase')
     const { doc, getDoc } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
+    console.log('loading character', id)
     const docSnap = await getDoc(doc(db, 'characters', id))
     character = docSnap.data().character
   })
@@ -22,4 +24,6 @@
     })
   }
 </script>
-<Display {character} on:update={update}/>
+{#if character}
+  <Display {character} on:update={update}/>
+{/if}
