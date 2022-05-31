@@ -9,23 +9,28 @@ export const moves:Move[] = [
   {
     name: 'Best Friend',
     component: BestFriend,
-    stat: 'Creativity'
+    stat: 'Creativity',
+    tags: ['Bold']
   },{
     name: "Here's The Plan",
     component: HeresThePlan,
-    stat: ''
+    stat: '',
+    tags: ['Bold']
   },{
     name: 'Not Done Yet!',
     component: NotDoneYet,
-    stat: ''
+    stat: '',
+    tags: ['Bold']
   },{
     name: 'You Missed Something',
     component: YouMissedSomething,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Bold']
   },{
     name: 'Straight Shooter',
     component: StraightShooter,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Bold']
   }
 ]
 export default moves

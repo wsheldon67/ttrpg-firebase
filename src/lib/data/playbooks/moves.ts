@@ -17,7 +17,8 @@ import Razor from './Razor/moves'
 export interface Move {
   name: string,
   component: any,
-  stat: string
+  stat: string,
+  tags: string[]
 }
 interface Moves {
   [Playbook: string]: Move[]

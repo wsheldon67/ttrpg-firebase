@@ -9,23 +9,28 @@ const moves:Move[] = [
   {
     name: 'Fueled by Anger',
     component: FueledByAnger,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Bold']
   },{
     name: "Walls Can't Hold Me",
     component: WallsCantHoldMe,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Bold']
   },{
     name: 'Punch Where It Matters',
     component: PunchWhereItMatters,
-    stat: 'Creativity'
+    stat: 'Creativity',
+    tags: ['Bold']
   },{
     name: 'Comprehend Your Foe',
     component: ComprehendYourFoe,
-    stat: 'Creativity'
+    stat: 'Creativity',
+    tags: ['Bold']
   },{
     name: 'Stand and Fight!',
     component: StandAndFight,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Bold']
   }
 ]
 export default moves

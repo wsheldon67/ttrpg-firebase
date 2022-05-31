@@ -9,23 +9,28 @@ const moves:Move[] = [
   {
     name: 'Suspicious Mind',
     component: SuspiciousMind,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Bold']
   },{
     name: 'Badge Of Authority',
     component: BadgeOfAuthority,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Bold']
   },{
     name: 'Catch a Liar',
     component: CatchALiar,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Bold']
   },{
     name: 'Furrowed Brow',
     component: FurrowedBrow,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Bold']
   },{
     name: 'Martyr Complex',
     component: MartyrComplex,
-    stat: ''
+    stat: '',
+    tags: ['Bold']
   }
 ]
 export default moves

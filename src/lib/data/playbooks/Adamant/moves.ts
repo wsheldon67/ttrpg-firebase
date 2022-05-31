@@ -9,23 +9,28 @@ export const moves:Move[] = [
   {
     name: 'This Was a Victory',
     component: ThisWasAVictory,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Adamant']
   },{
     name: 'Takes One to Know One',
     component: TakesOneToKnowOne,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Adamant']
   },{
     name: 'No Time For Feelings',
     component: NoTimeForFeelings,
-    stat: ''
+    stat: '',
+    tags: ['Adamant']
   },{
     name: "I Don't Hate You",
     component: IDontHateYou,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Adamant']
   },{
     name: 'Driven By Justice',
     component: DrivenByJustice,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Adamant']
   }
 ]
 export default moves

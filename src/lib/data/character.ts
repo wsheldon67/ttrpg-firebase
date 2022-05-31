@@ -26,7 +26,7 @@ export interface Data {
   negative_statuses: {name: Status, applied:boolean}[]
   growth_advancements: {
     name: string
-    settings: any
+    settings?: any
   }[]
   growth: number
   feature_settings: any

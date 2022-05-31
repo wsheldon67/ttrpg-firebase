@@ -1,4 +1,4 @@
-import type { Data } from "./character";
+import type { Data, Stat } from "./character";
 import type { Stats } from "./playbooks";
 import { playbook } from "./playbooks";
 import type { Move } from "./playbooks/moves";
@@ -7,6 +7,7 @@ export const stat_positions = {
   'Creativity':0, 'Focus': 1, 'Harmony': 2, 'Passion': 3
 }
 export function get_stats(character:Data):Stats {
+  console.trace('Depreciated: get_stats')
   const {stats} = playbook[character.playbook]
   const {boosted_stats} = character
   const res:Stats = [...stats]
@@ -15,6 +16,29 @@ export function get_stats(character:Data):Stats {
     if (res[stat_positions[stat]] > 2) {
       res[stat_positions[stat]] = 2
     }
+  })
+  return res
+}
+export function get_all_stats(character:Data):{name: Stat, mod: number}[] {
+  const {stats} = playbook[character.playbook]
+  const {boosted_stats} = character
+  const res:any = stats.map((mod, index) => {
+    return {name: ['Creativity','Focus','Harmony','Passion'][index], mod}
+  })
+  boosted_stats.forEach((stat_name) => {
+    res[stat_positions[stat_name]].mod++
+    if (res[stat_positions[stat_name]].mod > 2) {
+      res[stat_positions[stat_name]].mod = 2
+    }
+  })
+  return res
+}
+interface StatObject {[stat:string]: number}
+export function get_stat_object(character:Data):StatObject {
+  const all_stats = get_all_stats(character)
+  const res = {}
+  all_stats.forEach(({name, mod}) => {
+    res[name] = mod
   })
   return res
 }

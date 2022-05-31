@@ -140,6 +140,7 @@ ul, ol {
   background-color: var(--p);
   color: var(--at);
   padding: .25em .5em;
+  font-weight: 600;
 }
 .selected {
   border: 1px solid var(--bad)
