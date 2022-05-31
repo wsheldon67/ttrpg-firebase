@@ -44,6 +44,9 @@ body {
   overflow: auto;
 }
 
+a {
+  color: rgb(143, 158, 255);
+}
 button {
   border: none;
   width: max-content;
