@@ -52,7 +52,7 @@ button {
   width: max-content;
 }
 button:hover {
-  filter: saturate(1.5) brightness(.8)
+  filter: saturate(1.5) brightness(.8);
 }
 h1, h2, h3, h4, h5 {
   margin: .25em 0em;
@@ -141,6 +141,10 @@ ul, ol {
   color: var(--at);
   padding: .25em .5em;
   font-weight: 600;
+}
+button.p[disabled], button.p[disabled]:hover {
+  filter: saturate(.8);
+  color: grey;
 }
 .selected {
   border: 1px solid var(--bad)
