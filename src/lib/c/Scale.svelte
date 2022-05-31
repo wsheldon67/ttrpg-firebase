@@ -5,12 +5,13 @@
   export let optimum
   export let low
   export let high
+  export let reverse:boolean = false
 
 </script>
   <button
     on:click={()=> value--}
     disabled={value <= 0}
-    class='down'
+    class={reverse ? 'good' : 'bad'}
   >-</button>
   <meter
     value={value}
@@ -23,16 +24,16 @@
   <button
     on:click={()=> value++}
     disabled={value >= 5}
-    class='up'
+    class={reverse ? 'bad' : 'good'}
   >+</button>
 <style>
   button {
     color: var(--at);
   }
-  .up {
+  .bad {
     background-color: var(--bad);
   }
-  .down {
+  .good {
     background-color: var(--good);
   }
   meter {
