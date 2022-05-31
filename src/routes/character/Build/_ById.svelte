@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { onMount } from 'svelte'
-  import Display from './index.svelte'
+  import Build from './index.svelte'
 
   export let id:string
   let character
@@ -24,5 +24,5 @@
   }
 </script>
 {#if character}
-  <Display {character} on:update={update} {id}/>
+  <Build {character} on:update={update} />
 {/if}

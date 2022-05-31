@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { onMount } from 'svelte'
+  import EditIcon from '$lib/i/Edit.svg'
 
   let characters = []
 
@@ -20,5 +21,16 @@
   })
 </script>
 {#each characters as {id, character}}
-  <a href={'/character/' + id}>{character.name}</a>
+  <div class='one'>
+    <a href={'/character/' + id}>{character.name}</a>
+    <a href={'/character/edit-'+id}><EditIcon /></a>
+  </div>
 {/each}
+<style>
+  .one {
+    display: grid;
+    grid-template-columns: max-content 2em;
+    gap: .5em;
+    padding-left: .5em;
+  }
+</style>

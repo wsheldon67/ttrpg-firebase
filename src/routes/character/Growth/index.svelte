@@ -1,13 +1,25 @@
 <script lang='ts'>
-import { get_unused_advancements } from "$lib/data/calc_character";
-
+  import { get_unused_advancements } from "$lib/data/calc_character";
   import type { Data } from "$lib/data/character"
-import { plural } from "$lib/pretty";
+  import { plural } from "$lib/pretty";
   import Center from "./Center.svelte"
   import Moment from "./Moment.svelte"
   import OtherPlaybook from "./OtherPlaybook.svelte"
   import Stat from "./Stat.svelte"
   import YourPlaybook from "./YourPlaybook.svelte"
+  import { beforeUpdate, createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
+
+  // on updates, send to server
+  let timeout_id
+  beforeUpdate(async()=>{
+    if (timeout_id) {clearTimeout(timeout_id)}
+    // wait 200ms to see if there's any sequential updates
+    timeout_id = setTimeout(()=>{
+      dispatch('update',character)
+      timeout_id = undefined
+    }, 2000)
+  })
 
   export let character:Data = {
     playbook: 'Adamant',

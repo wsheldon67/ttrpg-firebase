@@ -11,6 +11,7 @@
   const dispatch = createEventDispatcher()
   
   export let character:Data
+  export let id:string = null
   let start = 1
 
   // on updates, send to server
@@ -29,4 +30,4 @@
 <Status bind:character={character} {start} hide/>
 <Moves {character} {start} hide/>
 <Techniques {character} {start} hide/>
-<Growth bind:character={character} {start} hide/>
+<Growth bind:character={character} {start} {id} hide/>

@@ -1,11 +1,12 @@
 <script lang='ts'>
   import { onMount } from 'svelte'
-  import Display from './index.svelte'
+  import Growth from './index.svelte'
 
   export let id:string
   let character
 
   onMount(async ()=> {
+    console.log('on mount right')
     const { isSignedIn, db } = await import('$lib/firebase')
     const { doc, getDoc } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
@@ -24,5 +25,5 @@
   }
 </script>
 {#if character}
-  <Display {character} on:update={update} {id}/>
+  <Growth {character} on:update={update}/>
 {/if}
