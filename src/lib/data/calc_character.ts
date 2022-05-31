@@ -44,3 +44,9 @@ export function get_basic_move_stat(character:Data, move: Move):number {
   }
   return base_stat + condition_mod
 }
+
+export function get_unused_advancements(character:Data):number {
+  const advancements_earned = Math.floor(character.growth/4)
+  const advancements_taken = character.growth_advancements.length
+  return advancements_earned - advancements_taken
+}

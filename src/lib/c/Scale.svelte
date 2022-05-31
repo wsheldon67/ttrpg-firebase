@@ -1,4 +1,7 @@
 <script lang='ts'>
+  import { createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
+
   export let value:number = 0
   export let min
   export let max
@@ -7,23 +10,29 @@
   export let high
   export let reverse:boolean = false
 
+  function add() {
+    dispatch('change', 1)
+    if (value < Number(max)) {
+      value++
+      dispatch('input', value)
+    }
+  }
+  function subtract(){
+    dispatch('change', -1)
+    if (value > Number(min)) {
+      value--
+      dispatch('input', value)
+    }
+  }
+
 </script>
   <button
-    on:click={()=> value--}
-    disabled={value <= 0}
+    on:click={subtract}
     class={reverse ? 'good' : 'bad'}
   >-</button>
-  <meter
-    value={value}
-    {min}
-    {max}
-    {optimum}
-    {low}
-    {high}
-  ></meter>
+  <meter {value} {min} {max} {optimum} {low} {high}></meter>
   <button
-    on:click={()=> value++}
-    disabled={value >= 5}
+    on:click={add}
     class={reverse ? 'bad' : 'good'}
   >+</button>
 <style>
