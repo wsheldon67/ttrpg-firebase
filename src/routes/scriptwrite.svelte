@@ -4,11 +4,15 @@
   
   onMount(() => {
 
-    const statuses = ['Firebending', 'Airbending', 'Weapons', 'Technology']
+const vs = [`Roguish Charm`, `Slippery Eel-Hound`, `You're Not My Master!`, `Casing the Joint`, `Is That the Best You Got?`]
     let res = ``
-    statuses.forEach((v) => {
-      res += `{name: '${v}', component: ${v}},
-      `
+    vs.forEach((v) => {
+      res += `{
+  name: \`${v}\`,
+  component: ,
+  stat: '',
+  tags: ['Rogue']
+},`
     })
     value = res
   })
