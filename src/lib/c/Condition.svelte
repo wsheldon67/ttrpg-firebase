@@ -6,7 +6,9 @@
   export let condition:Condition
 
   function click() {
-    character.conditions.find(el => el.name === condition).applied = !remove
+    const new_conditions = [...character.conditions]
+    new_conditions.find(el => el.name === condition).applied = !remove
+    character.conditions = [...new_conditions]
   }
 </script>
 <button class='p' on:click={click}>

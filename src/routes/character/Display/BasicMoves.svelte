@@ -12,6 +12,6 @@
 </script>
 <Header h={1} {start} {hide} title='Basic Moves'>
   {#each Basic as move}
-    <Move {character} {move} start={start+1}/>
+    <Move bind:character={character} {move} start={start+1}/>
   {/each}
 </Header>

@@ -13,8 +13,8 @@
 </script>
 <Header h={1} {start} {hide} title='Moves'>
     {#each character.moves as move}
-      <Move {character} move={all_moves.find(el => el.name === move)} start={start+2}/>
+      <Move bind:character={character} move={all_moves.find(el => el.name === move)} start={start+2}/>
     {/each}
-    <BasicMoves {character} start={start+1} hide/>
-    <BalanceMoves {character} start={start+1} hide/>
+    <BasicMoves bind:character={character} start={start+1} hide/>
+    <BalanceMoves bind:character={character} start={start+1} hide/>
 </Header>
