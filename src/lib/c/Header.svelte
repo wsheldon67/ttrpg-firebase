@@ -54,6 +54,7 @@
     {/if}
     {title}
   </button>
+  <slot name="header"/>
 </svelte:element>
 
 {#if loaded}

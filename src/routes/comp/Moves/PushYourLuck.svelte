@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Push Your Luck'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you rely on fate and luck to carry you through:</p>
     <ul>

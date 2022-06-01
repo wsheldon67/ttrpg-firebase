@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Lose Your Balance'>
+  <slot slot="header"/>
   <p>When your balance shifts past the end of the track, choose one of the following:</p>
   <ul>
     <li>Give in or submit to your opposition</li>

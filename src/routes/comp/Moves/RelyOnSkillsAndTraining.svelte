@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Rely on Your Skills and Training'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you use your expertise and knowledge to overcome a significant complication or risk:</p>
     <ul>

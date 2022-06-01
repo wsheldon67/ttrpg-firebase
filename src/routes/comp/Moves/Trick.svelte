@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Trick'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you use your wits and skills to fool, confuse, or deceive an NPC:</p>
     <ul>

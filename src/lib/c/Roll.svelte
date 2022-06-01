@@ -1,22 +1,17 @@
 <script lang='ts'>
-  import { get_basic_move_stat } from "$lib/data/calc_character";
-  import type { Data } from "$lib/data/character";
-  import type { Move } from "$lib/data/playbooks/moves";
   import { signed } from "$lib/pretty";
 
-  export let character:Data
-  export let move:Move
-  $: stat = get_basic_move_stat(character, move)
+  export let mod:number
+  export let label:string
+  export let stat:string
+
 </script>
-<button>
-  {move.stat} {signed(stat)}
+<button class='p'>
+  {stat} {signed(mod)}
 </button>
 <style>
   button {
-    height: 1.8em;
-    background-color: var(--p);
-    color: var(--at);
-    margin-top: .4em;
+    height: 100%;
     width: 100%;
   }
 </style>

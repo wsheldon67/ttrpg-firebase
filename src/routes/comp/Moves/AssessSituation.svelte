@@ -9,6 +9,7 @@
   
 </script>
 <Header h={1} {start} {hide} title='Assess a Situation'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples'>
     <p>Any time you gather specific or useful information during a tense moment:</p>
     <ul>

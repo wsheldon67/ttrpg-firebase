@@ -8,6 +8,7 @@
   // TODO link shift balance
 </script>
 <Header h={1} {start} {hide} title='Guide and Comfort'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you try to comfort or offer guidance, such as:</p>
     <ul>

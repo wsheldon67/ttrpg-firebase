@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Intimidate'>
+  <slot slot="header"/>
   <Header h={2} {start} hide title='Examples'>
     <p>Any time you threaten an NPC into retreat or surrender, verbally or otherwise:</p>
     <ul>

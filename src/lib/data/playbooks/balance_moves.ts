@@ -9,22 +9,27 @@ export const Balance:Move[] = [
   {
     name: 'Live Up to Your Principle',
     component: LiveUpToYourPrinciple,
-    stat: 'Principle'
+    stat: 'Principle',
+    tags: ['Balance']
   },{
     name: 'Call Someone Out',
     component: CallSomeoneOut,
-    stat: 'Their Principle'
+    stat: '',
+    tags: ['Balance']
   },{
     name: 'Deny a Callout',
     component: DenyACallout,
-    stat: 'Principle'
+    stat: 'Principle',
+    tags: ['Balance']
   },{
     name: 'Resist Shifting Your Balance',
     component: ResistShiftingYourBalance,
-    stat: 'None'
+    stat: 'None',
+    tags: ['Balance']
   },{
     name: 'Lose Your Balance',
     component: LoseYourBalance,
-    stat: ''
+    stat: '',
+    tags: ['Balance']
   }
 ]

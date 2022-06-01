@@ -57,7 +57,7 @@ const condition_penalties = {
 }
 
 export function get_basic_move_stat(character:Data, move: Move):number {
-  const base_stat = get_stats(character)[stat_positions[move.stat]]
+  const base_stat = get_stat_object(character)[move.stat]
   const applicable_condition = condition_penalties[move.name].condition
   let condition_mod = 0
   if (applicable_condition) {

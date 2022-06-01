@@ -16,7 +16,7 @@
 <Header h={1} {start} {hide} title='Stats'>
   <div class='cont'>
     {#each stat_names as stat_name, index}
-      <button>
+      <button class='p'>
         {stat_name} {signed(stats[index])}
       </button>
     {/each}

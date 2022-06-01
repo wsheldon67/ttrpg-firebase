@@ -13,6 +13,7 @@ import Trick from './Trick.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Basic Moves'>
+  <slot slot="header"/>
   <AssessSituation start={start+1} hide/>
   <GuideAndComfort start={start+1} hide/>
   <Intimidate start={start+1} hide/>

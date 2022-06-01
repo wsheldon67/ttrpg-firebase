@@ -8,6 +8,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Plead'>
+  <slot slot="header"/>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you try to get help or a favor from a reluctant NPC:</p>
     <ul>

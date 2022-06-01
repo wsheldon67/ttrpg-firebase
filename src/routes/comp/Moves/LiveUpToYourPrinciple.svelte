@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Live Up to Your Principle'>
+  <slot slot="header"/>
   <p>When you take action in accordance with the values of a <Tip text='principle'/>, mark 1 <Tip text='fatigue'/> to roll with that principle instead of the stat you would normally roll.</p>
   <ul>
     <li>The roll must have a stat modifier</li>

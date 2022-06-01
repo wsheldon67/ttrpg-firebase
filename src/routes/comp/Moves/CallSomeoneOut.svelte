@@ -12,6 +12,7 @@ import FullResult from '$lib/c/FullResult.svelte'
   }
 </style>
 <Header h={1} {start} {hide} title='Call Someone Out'>
+  <slot slot="header"/>
   <ol>
     <li>Call someone out to live up to their <Tip text='principle' /></li>
     <li><Tip text='Shift your balance'/> away from center</li>

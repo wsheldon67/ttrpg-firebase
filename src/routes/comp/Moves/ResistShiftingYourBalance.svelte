@@ -8,6 +8,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Resist Shifting Your Balance'>
+  <slot slot="header"/>
   <p>When you resist an NPC that is trying to shift your <Tip text='balance'/>, roll without a modifier.</p>
   <FullResult>
     <tr>

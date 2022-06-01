@@ -11,6 +11,7 @@ import ResistShiftingYourBalance from './ResistShiftingYourBalance.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Balance Moves'>
+  <slot slot="header"/>
   <LiveUpToYourPrinciple start={start+1} hide/>
   <CallSomeoneOut start={start+1} hide/>
   <DenyACallout start={start+1} hide/>

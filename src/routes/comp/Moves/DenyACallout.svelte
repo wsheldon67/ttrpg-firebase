@@ -12,6 +12,7 @@ import FullResult from '$lib/c/FullResult.svelte'
   }
 </style>
 <Header h={1} {start} {hide} title='Deny a Callout'>
+  <slot slot="header"/>
   <p>Deny a call to <Tip text='live up to your principle'/>.</p>
   <p>Roll with that <Tip text='principle'/>:</p>
   <FullResult>
