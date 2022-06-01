@@ -28,6 +28,6 @@
 <Identity {character} {start} hide/>
 <Stats bind:character={character} {start} hide/>
 <Status bind:character={character} {start} hide/>
-<Moves {character} {start} hide/>
-<Techniques {character} {start} hide/>
+<Moves bind:character={character} {start} hide/>
+<Techniques bind:character={character} {start} hide/>
 <Growth bind:character={character} {start} {id} hide/>

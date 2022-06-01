@@ -104,6 +104,14 @@ ul, ol {
 }
 
 /* Utilities */
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+.buttons button {
+  height: 100%;
+  width: max-content;
+}
 .center {
   display: flex;
   flex-direction: row;

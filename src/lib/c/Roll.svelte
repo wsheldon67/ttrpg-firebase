@@ -9,9 +9,3 @@
 <button class='p'>
   {stat} {signed(mod)}
 </button>
-<style>
-  button {
-    height: 100%;
-    width: 100%;
-  }
-</style>

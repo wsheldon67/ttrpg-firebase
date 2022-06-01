@@ -39,13 +39,25 @@
     font-weight: inherit;
     font-size: inherit;
   }
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header > .header_content {
+    height: 100%;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+  }
 </style>
 <!--
   @component
   A magic header that upgrades/downgrades its level based on its parents.
 -->
 
-<svelte:element this={'h'+c}>
+<svelte:element this={'h'+c} class='header'>
   <button on:click={toggle}>
     {#if hide}
       <Right />
@@ -54,7 +66,7 @@
     {/if}
     {title}
   </button>
-  <slot name="header"/>
+  <div class='header_content'><slot name="header"/></div>
 </svelte:element>
 
 {#if loaded}

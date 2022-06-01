@@ -1,14 +1,22 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import StatRoll from '$lib/c/StatRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
   import ResultTable from '$lib/c/ResultTable.svelte'
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '$lib/data/playbooks/moves';
 
   export let start: number = 1
   export let hide: boolean = false
-  // TODO link shift balance
+  export let character:Data = undefined
+  export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title='Guide and Comfort'>
-  <slot slot="header"/>
+<Header h={1} {start} {hide} title="Guide and Comfort">
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <StatRoll {character} {move} />
+    {/if}
+  </div>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you try to comfort or offer guidance, such as:</p>
     <ul>

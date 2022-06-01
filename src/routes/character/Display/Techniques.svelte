@@ -19,12 +19,8 @@
 </script>
 <Header h={1} {start} {hide} title='Techniques'>
 
-    <div class='cardtainer'>
-      {#each techniques as technique}
-        <div class='card'>
-          <svelte:component this={technique.component} start={start+1} hide/>
-        </div>
-      {/each}
-    </div>
+  {#each techniques as technique}
+    <svelte:component this={technique.component} start={start+1} bind:character={character} hide/>
+  {/each}
 
 </Header>

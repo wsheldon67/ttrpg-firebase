@@ -1,18 +1,22 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import StatRoll from '$lib/c/StatRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
-import FullResult from '$lib/c/FullResult.svelte'
+  import FullResult from '$lib/c/FullResult.svelte'
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '$lib/data/playbooks/moves';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let move:Move = undefined
 </script>
-<style>
-  td {
-    text-align: center;
-  }
-</style>
-<Header h={1} {start} {hide} title='Call Someone Out'>
-  <slot slot="header"/>
+<Header h={1} {start} {hide} title="Call Someone Out">
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <StatRoll {character} {move} />
+    {/if}
+  </div>
   <ol>
     <li>Call someone out to live up to their <Tip text='principle' /></li>
     <li><Tip text='Shift your balance'/> away from center</li>
@@ -35,3 +39,8 @@ import FullResult from '$lib/c/FullResult.svelte'
     </ul>
   </Header>
 </Header>
+<style>
+  td {
+    text-align: center;
+  }
+</style>

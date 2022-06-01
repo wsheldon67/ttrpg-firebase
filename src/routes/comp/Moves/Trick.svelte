@@ -1,13 +1,22 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import StatRoll from '$lib/c/StatRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
   import ResultTable from '$lib/c/ResultTable.svelte'
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '$lib/data/playbooks/moves';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title='Trick'>
-  <slot slot="header"/>
+<Header h={1} {start} {hide} title="Trick">
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <StatRoll {character} {move} />
+    {/if}
+  </div>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you use your wits and skills to fool, confuse, or deceive an NPC:</p>
     <ul>

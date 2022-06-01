@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from "$lib/c/Header.svelte";
-import Move from "$lib/c/Move.svelte";
+  import Move from "$lib/c/Move.svelte";
   import type { Data } from '$lib/data/character'
   import { all_moves } from "$lib/data/playbooks/moves";
   import BalanceMoves from "./BalanceMoves.svelte";

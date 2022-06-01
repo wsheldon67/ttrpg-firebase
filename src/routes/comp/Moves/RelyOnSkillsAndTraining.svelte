@@ -1,13 +1,22 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import StatRoll from '$lib/c/StatRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
   import ResultTable from '$lib/c/ResultTable.svelte'
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '$lib/data/playbooks/moves';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title='Rely on Your Skills and Training'>
-  <slot slot="header"/>
+<Header h={1} {start} {hide} title="Rely on Your Skills and Training">
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <StatRoll {character} {move} />
+    {/if}
+  </div>
   <Header h={2} {start} title='Examples' hide>
     <p>Any time you use your expertise and knowledge to overcome a significant complication or risk:</p>
     <ul>
