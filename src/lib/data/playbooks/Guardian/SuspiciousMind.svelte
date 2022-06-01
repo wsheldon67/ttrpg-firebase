@@ -7,6 +7,7 @@ import ResultTable from '$lib/c/ResultTable.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Suspicious Mind'>
+  <slot slot='header'/>
   <p>Watch a person carefully to figure them out. Roll <Tip text='focus'/>:</p>
   <ResultTable>
     <td><Tip text='Hold'/> 1</td>

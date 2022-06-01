@@ -6,5 +6,6 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Walls Can't Hold Me">
+  <slot slot='header'/>
   <p>When you <Tip text='rely on your skills and training'/>, to dangerously smash your way through walls or other obstacles, roll with <Tip text='Passion'/> instead of <Tip text='Focus'/>.</p>
 </Header>

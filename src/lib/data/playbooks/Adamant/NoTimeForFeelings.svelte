@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='No Time For Feelings'>
+  <slot slot='header'/>
   <p>Mark 1 <Tip text='fatigue'/> to push down your feelings for the rest of the scene:</p>
   <ul>
     <li>Ignore <Tip text='condition'/> penalties</li>

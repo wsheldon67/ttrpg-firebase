@@ -7,6 +7,7 @@ import Tip from '$lib/c/Tip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Here's The Plan">
+  <slot slot='header'/>
   <p>You commit to a plan you've proposed to the group:</p>
   <ul>
     <li>Roll with <Tip text='Creativity'/></li>

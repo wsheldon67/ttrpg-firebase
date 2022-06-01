@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Stand and Fight!'>
+  <slot slot='header'/>
   <p>When you provoke an NPC opponent into attack you, roll with <Tip text='Passion'/>.</p>
   <FullResult>
     <tr>

@@ -7,6 +7,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='This Was a Victory'>
+  <slot slot='header'/>
   <p>Reveal that you have sabotaged a building, device, or vehicle right as it becomes relevant.</p>
   <Header h={2} {start} title='Roll Passion'>
     <p>Mark 1 <Tip text='fatigue'/></p>

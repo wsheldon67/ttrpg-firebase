@@ -7,6 +7,7 @@ import FullResult from '$lib/c/FullResult.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Badge of Authority'>
+  <slot slot='header'/>
   <p>Give an NPC an order based on the authority granted by a badge or symbol of authority from your background. Roll <Tip text='Passion'/></p>
   <FullResult>
     <tr>

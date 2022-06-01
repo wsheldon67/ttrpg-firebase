@@ -7,6 +7,7 @@ import Tip from '$lib/c/Tip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Straight Shooter'>
+  <slot slot='header'/>
   <p>Tell an NPC the blunt, honest truth about what you really think of them and their plans. Roll <Tip text='Focus'/>:</p>
   <FullResult>
     <tr>

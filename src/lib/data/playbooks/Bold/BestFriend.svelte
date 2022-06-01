@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Best Friend'>
+  <slot slot='header'/>
   <p>Your small animal companion could helps you <Tip text='push your luck'/>:</p>
   <ul>
     <li>Mark 1 <Tip text='fatigue'/></li>

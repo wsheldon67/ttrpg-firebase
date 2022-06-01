@@ -6,5 +6,6 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Martyr Complex'>
+  <slot slot='header'/>
   <p>When your total <Tip text='conditions'/>, <Tip text='principle'/>, and <Tip text='fatigue'/> is at least 8, take +1 <Tip text='ongoing'/> to all moves.</p>
 </Header>

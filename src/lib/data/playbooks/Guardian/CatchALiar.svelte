@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Catch a Liar'>
+  <slot slot='header'/>
   <p>When you are suspicious of someone, record their name.</p>
   <ul>
     <li>When you expose their lies or wrong-doing, clear all your <Tip text='fatigue'/> and up to 2 <Tip text='conditions'/>.</li>

@@ -6,5 +6,6 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Furrowed Brow'>
+  <slot slot='header'/>
   <p>Take +1 <Tip text='Focus'/> (max+3).</p>
 </Header>

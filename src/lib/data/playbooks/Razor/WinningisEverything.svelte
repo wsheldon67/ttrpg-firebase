@@ -5,5 +5,5 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Winning is Everything">
-  
+  <slot slot='header'/>
 </Header>

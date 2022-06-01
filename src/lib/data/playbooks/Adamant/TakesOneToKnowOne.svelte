@@ -7,6 +7,7 @@ import Tip from '$lib/c/Tip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Takes One to Know One'>
+  <slot slot='header'/>
   <p>Verbally needle someone by finding the weaknesses in their armor.</p>
   <Header h={2} {start} title='Roll Focus'>
     <FullResult>

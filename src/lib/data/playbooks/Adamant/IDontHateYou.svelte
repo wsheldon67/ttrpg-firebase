@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="I Don't Hate You">
+  <slot slot='header'/>
   <p><Tip text='Guide and comfort'/> someone in an awkward, understated, or idiosyncratic fashion:</p>
   <ul>
     <li>Mark <Tip text='insecure'/> if it is not already marked.</li>
