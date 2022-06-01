@@ -16,7 +16,7 @@
     return forwards
   }
   function click(e) {
-    goto(`/comp/${$campaign.system}/${e.detail}`)
+    goto(`/comp/${e.detail}`)
   }
 </script>
 <Search {searchFunc} on:click={click} threshold={1}/>

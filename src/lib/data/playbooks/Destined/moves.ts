@@ -10,23 +10,23 @@ const moves:Move[] = [
   {
   name: `Call From Afar`,
   component: CallFromAfar,
-  stat: '',
+  stat: 'Harmony',
   tags: ['Destined']
 },{
   name: `Eyes of the Soul`,
   component: EyesoftheSoul,
-  stat: '',
-  tags: ['Destined']
+  stat: 'Creativity',
+  tags: ['Destined', 'Angry']
 },{
   name: `Peacemaker`,
   component: Peacemaker,
-  stat: '',
-  tags: ['Destined']
+  stat: 'Harmony',
+  tags: ['Destined', 'Troubled']
 },{
   name: `More Than Fate's Playthings`,
   component: MoreThanFatesPlaythings,
   stat: '',
-  tags: ['Destined']
+  tags: ['Destined', 'Afraid']
 },{
   name: `Echoes of Legend`,
   component: EchoesofLegend,

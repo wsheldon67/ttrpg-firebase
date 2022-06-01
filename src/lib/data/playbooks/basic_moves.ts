@@ -12,34 +12,42 @@ export const Basic:Move[] = [
   {
     name: 'Assess a Situation',
     component: AssessSituation,
-    stat: 'Creativity'
+    stat: 'Creativity',
+    tags: ['Basic', 'Angry']
   },{
     name: 'Guide and Comfort',
     component: GuideAndComfort,
-    stat: 'Harmony'
+    stat: 'Harmony',
+    tags: ['Basic', 'Angry']
   },{
     name: 'Help',
     component: Help,
-    stat: ''
+    stat: '',
+    tags: ['Basic']
   },{
     name: 'Intimidate',
     component: Intimidate,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Basic', 'Afraid']
   },{
     name: 'Plead',
     component: Plead,
-    stat: 'Harmony'
+    stat: 'Harmony',
+    tags: ['Basic', 'Troubled']
   },{
     name: 'Push Your Luck',
     component: PushYourLuck,
-    stat: 'Passion'
+    stat: 'Passion',
+    tags: ['Basic', 'Guilty']
   },{
     name: 'Rely on Your Skills and Training',
     component: RelyOnSkillsAndTraining,
-    stat: 'Focus'
+    stat: 'Focus',
+    tags: ['Basic', 'Troubled']
   },{
     name: 'Trick',
     component: Trick,
-    stat: 'Creativity'
+    stat: 'Creativity',
+    tags: ['Basic', 'Insecure']
   }
 ]

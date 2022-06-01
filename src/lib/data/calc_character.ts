@@ -1,4 +1,4 @@
-import type { Data, Stat } from "./character";
+import type { Condition, Data, Stat } from "./character";
 import type { Stats } from "./playbooks";
 import { playbook } from "./playbooks";
 import type { Move } from "./playbooks/moves";
@@ -43,30 +43,25 @@ export function get_stat_object(character:Data):StatObject {
   return res
 }
 
-const condition_penalties = {
-  'Intimidate': {condition: 'Afraid', mod: -2},
-  'Call Someone Out': {condition: 'Afraid', mod: -2},
-  'Guide and Comfort': {condition: 'Angry', mod: -2},
-  'Assess a Situation':{conition: 'Angry', mod: -2},
-  'Push Your Luck': {condition: 'Guilty', mod: -2},
-  'Deny a Callout': {condition: 'Guilty', mod: 2},
-  'Trick': {condition: 'Insecure', mod: -2},
-  'Resist Shifting Your Balance': {condition: 'Insecure', mod: -2},
-  'Plead': {condition: 'Troubled', mod: -2},
-  'Rely on Your Skills and Training': {condition: 'Troubled', mod: -2}
+export function condition_is_applied(character:Data, condition:Condition):boolean {
+  return character.conditions.some(el => el.name === condition && el.applied)
+}
+export function apply_condition(character:Data, move: Move):number {
+  if (move.tags.includes('-Guilty') && condition_is_applied(character, 'Guilty')) {
+    return 2
+  }
+  let condition_mod = 0
+  move.tags.forEach((tag) => {
+    if (condition_is_applied(character, tag as Condition)) {
+      condition_mod = -2
+    }
+  })
+  return condition_mod
 }
 
 export function get_basic_move_stat(character:Data, move: Move):number {
-  const base_stat = get_stat_object(character)[move.stat]
-  const applicable_condition = condition_penalties[move.name]?.condition
-  let condition_mod = 0
-  if (applicable_condition) {
-    const is_applied = character.conditions.find(el => el.name === applicable_condition).applied
-    if (is_applied) {
-      condition_mod = condition_penalties[move.name].mod
-    }
-  }
-  return base_stat + condition_mod
+  const base_stat = get_stat_object(character)[move.stat] || 0
+  return base_stat + apply_condition(character, move)
 }
 
 export function get_unused_advancements(character:Data):number {

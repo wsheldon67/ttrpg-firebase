@@ -45,11 +45,14 @@ export interface UI {
 
 type LongString = string
 export type Stat = 'Creativity'|'Focus'|'Harmony'|'Passion'
+export const stats:Stat[] = ['Creativity','Focus','Harmony','Passion']
+
 export type Condition = 'Afraid'|'Angry'|'Guilty'|'Insecure'|'Troubled'
+export const conditions:Condition[] = ['Afraid','Angry','Guilty','Insecure','Troubled']
 export const technique_level = [false, 'Learned', 'Practiced', 'Mastered']
 export type Status = 'Empowered'|'Favored'|'Inspired'|'Prepared'|'Doomed'|'Impaired'|'Trapped'|'Stunned'
 
-export const stats:Stat[] = ['Creativity','Focus','Harmony','Passion']
+
 
 export const blank:Data = {
   playbook: 'Adamant',
