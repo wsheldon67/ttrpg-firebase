@@ -1,12 +1,23 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
+  import Fatigue from '$lib/c/Fatigue.svelte';
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '$lib/data/playbooks/moves';
+  import ClearAllConditions from '$lib/c/ClearAllConditions.svelte';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title='Lose Your Balance'>
-  <slot slot="header"/>
+<Header h={1} {start} {hide} title="Lose Your Balance">
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <ClearAllConditions bind:character={character} />
+      <Fatigue bind:character={character} amt={-5} />
+    {/if}
+  </div>
   <p>When your balance shifts past the end of the track, choose one of the following:</p>
   <ul>
     <li>Give in or submit to your opposition</li>

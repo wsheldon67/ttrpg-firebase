@@ -2,6 +2,7 @@
   import Header from '$lib/c/Header.svelte'
   import PrincipleRoll from '$lib/c/PrincipleRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
+  import Fatigue from '$lib/c/Fatigue.svelte';
   import type { Data } from '$lib/data/character';
   import type { Move } from '$lib/data/playbooks/moves';
 
@@ -14,6 +15,7 @@
   <div slot='header' class='buttons'>
     {#if character && move}
       <PrincipleRoll {character} {move} />
+      <Fatigue bind:character={character} />
     {/if}
   </div>
   <p>When you take action in accordance with the values of a <Tip text='principle'/>, mark 1 <Tip text='fatigue'/> to roll with that principle instead of the stat you would normally roll.</p>

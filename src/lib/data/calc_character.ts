@@ -1,7 +1,7 @@
 import type { Condition, Data, Stat } from "./character";
 import type { Stats } from "./playbooks";
 import { playbook } from "./playbooks";
-import type { Move } from "./playbooks/moves";
+import { all_moves, type Move } from "./playbooks/moves";
 
 export const stat_positions = {
   'Creativity':0, 'Focus': 1, 'Harmony': 2, 'Passion': 3
@@ -30,6 +30,18 @@ export function get_all_stats(character:Data):{name: Stat, mod: number}[] {
     if (res[stat_positions[stat_name]].mod > 2) {
       res[stat_positions[stat_name]].mod = 2
     }
+  })
+  character.moves.forEach((move_name) => {
+    const move = all_moves.find(el => el.name === move_name)
+    const stats = ['Creativity','Focus','Harmony','Passion']
+    stats.forEach((stat) => {
+      if (move.tags.includes('+'+stat)) {
+        res[stat_positions[stat]].mod++
+      }
+      if (res[stat_positions[stat]].mod > 3) {
+        res[stat_positions[stat]].mod = 3
+      }
+    })
   })
   return res
 }

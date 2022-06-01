@@ -15,6 +15,10 @@
     character = docSnap.data().character
   })
   async function update({detail}) {
+    if (!detail) {
+      console.error('detail is false!',detail)
+      return
+    }
     const { isSignedIn, db } = await import('$lib/firebase')
     const { doc, setDoc } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()

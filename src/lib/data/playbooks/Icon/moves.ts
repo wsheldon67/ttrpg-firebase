@@ -20,7 +20,7 @@ const moves:Move[] = [
     name: 'Concentration',
     component: Concentration,
     stat: 'Focus',
-    tags: ['Icon']
+    tags: ['Icon', '+Focus']
   },{
     name: 'Otter-Penguins, Unagi, and Hot Springs',
     component: OtterPenguinsUnagiAndHotSprings,

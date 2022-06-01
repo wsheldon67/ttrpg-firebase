@@ -49,6 +49,9 @@
     display: flex;
     flex-direction: row;
   }
+  .header_content :global(button) {
+    margin-right: 1px;
+  }
 </style>
 <!--
   @component

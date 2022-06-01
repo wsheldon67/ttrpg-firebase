@@ -3,6 +3,7 @@
   import StatRoll from '$lib/c/StatRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
   import ResultTable from '$lib/c/ResultTable.svelte'
+  import Fatigue from '$lib/c/Fatigue.svelte';
   import type { Data } from '$lib/data/character';
   import type { Move } from '$lib/data/playbooks/moves';
 
@@ -15,6 +16,7 @@
   <div slot='header' class='buttons'>
     {#if character && move}
       <StatRoll {character} {move} />
+      <Fatigue bind:character={character} />
     {/if}
   </div>
   <Header h={2} {start} title='Examples' hide>

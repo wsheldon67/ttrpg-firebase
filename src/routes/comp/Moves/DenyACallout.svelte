@@ -3,6 +3,7 @@
   import PrincipleRoll from '$lib/c/PrincipleRoll.svelte';
   import Tip from '$lib/c/Tip.svelte'
   import FullResult from '$lib/c/FullResult.svelte'
+  import Fatigue from '$lib/c/Fatigue.svelte';
   import type { Data } from '$lib/data/character';
   import type { Move } from '$lib/data/playbooks/moves';
 
@@ -15,6 +16,8 @@
   <div slot='header' class='buttons'>
     {#if character && move}
       <PrincipleRoll {character} {move} />
+      <Fatigue bind:character={character} amt={-1}/>
+      <Fatigue bind:character={character}/>
     {/if}
   </div>
   <p>Deny a call to <Tip text='live up to your principle'/>.</p>

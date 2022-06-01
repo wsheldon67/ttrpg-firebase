@@ -4,6 +4,6 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Concentration'>
-  <slot slot='header'/>
+<Header h={1} {start} {hide} title="Concentration">
+  <p>Take +1 to Focus</p>
 </Header>
