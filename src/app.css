@@ -4,11 +4,13 @@
   --at: black;
   --at-weight: bold;
 
-  --b0: #121212;
-  --b1: #1B1B1B;
-  --b2: #242424;
-  --b3: #2D2D2D;
-  --b4: #363636;
+  --b0: #111111;
+  --b1: #161616;
+  --b2: #1A1A1A;
+  --b3: #212121;
+  --b4: #292929;
+  --b5: #303030;
+  --b6: #363636;
 
   --p: #bbdefb;
   --a: #eee1b9;
@@ -55,33 +57,41 @@ button:hover {
   filter: saturate(1.5) brightness(.8);
 }
 h1, h2, h3, h4, h5 {
-  margin: .25em 0em;
+  margin: .25em 0em 0em;
 }
 h1 {
   color: var(--p);
-  background-color: var(--b4);
+  background-color: var(--b1);
   font-weight: bold;
   font-size: x-large;
 }
+.panel1 {
+  background-color: var(--b0);
+}
 h2 {
   color: var(--good);
-  background-color: var(--b3);
+  background-color: var(--b2);
   font-size: larger;
 }
+.panel2 {background-color: var(--b1);}
 h3 {
   color: var(--h3);
-  background-color: var(--b2);
+  background-color: var(--b3);
   padding-left: .5em;
 }
+.panel3 {background-color: var(--b2);}
 h4 {
   color: var(--a);
+  background-color: var(--b4);
   font-weight: normal;
   padding-left: .75em;
 }
+.panel4 {background-color: var(--b3);}
 h5 {
   color: var(--t);
   padding-left: 1em;
 }
+.panel5 {background-color: var(--b4);}
 input[type='number'] {
   width: 3em;
 }

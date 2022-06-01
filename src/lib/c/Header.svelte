@@ -12,8 +12,6 @@
 
   let loaded = !hide
 
-  $: className = hide ? 'hidden' : ''
-
   onMount(() => {
     if (typeof(show) === 'undefined') {
       show = !hide
@@ -70,7 +68,7 @@
 </svelte:element>
 
 {#if loaded}
-  <div class={className}>
+  <div class:hidden={hide} class={'panel'+c}>
     <slot />
   </div>
 {/if}
