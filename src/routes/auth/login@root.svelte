@@ -15,6 +15,8 @@
   div :global(label) {
     background-color: rgba(255,255,255,0);
   }
+  div :global(h1) {
+    background-color: white;
+  }
 </style>
 <div id='firebaseui-auth-container'></div>
-<div id='loader'>Loading...</div>

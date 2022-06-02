@@ -1,20 +1,20 @@
 <script lang='ts'>
   import Tooltip from "$lib/c/Tooltip.svelte"
   import type {Data} from "$lib/data/character"
-  import Adamant from "../../comp/Playbooks/Adamant/index.svelte"
-  import Bold from "../../comp/Playbooks/Bold/index.svelte"
-  import Guardian from '../../comp/Playbooks/Guardian/index.svelte'
-  import Hammer from '../../comp/Playbooks/Hammer/index.svelte'
-  import Icon from '../../comp/Playbooks/Icon/index.svelte'
-  import Idealist from '../../comp/Playbooks/Idealist/index.svelte'
-  import Pillar from '../../comp/Playbooks/Pillar/index.svelte'
-  import Prodigy from '../../comp/Playbooks/Prodigy/index.svelte'
-  import Rogue from '../../comp/Playbooks/Rogue/index.svelte'
-  import Successor from '../../comp/Playbooks/Successor/index.svelte'
-  import Destined from '../../comp/Playbooks/Destined/index.svelte'
-  import Elder from '../../comp/Playbooks/Elder/index.svelte'
-  import Foundling from '../../comp/Playbooks/Foundling/index.svelte'
-  import Razor from '../../comp/Playbooks/Razor/index.svelte'
+  import Adamant from "$lib/data/playbooks/Adamant/index.svelte"
+  import Bold from "$lib/data/playbooks/Bold/index.svelte"
+  import Guardian from '$lib/data/playbooks/Guardian/index.svelte'
+  import Hammer from '$lib/data/playbooks/Hammer/index.svelte'
+  import Icon from '$lib/data/playbooks/Icon/index.svelte'
+  import Idealist from '$lib/data/playbooks/Idealist/index.svelte'
+  import Pillar from '$lib/data/playbooks/Pillar/index.svelte'
+  import Prodigy from '$lib/data/playbooks/Prodigy/index.svelte'
+  import Rogue from '$lib/data/playbooks/Rogue/index.svelte'
+  import Successor from '$lib/data/playbooks/Successor/index.svelte'
+  import Destined from '$lib/data/playbooks/Destined/index.svelte'
+  import Elder from '$lib/data/playbooks/Elder/index.svelte'
+  import Foundling from '$lib/data/playbooks/Foundling/index.svelte'
+  import Razor from '$lib/data/playbooks/Razor/index.svelte'
 
   import {playbooks, type Playbook} from '$lib/data/playbooks'
 

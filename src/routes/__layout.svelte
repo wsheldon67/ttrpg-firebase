@@ -9,13 +9,16 @@
 
   
   onMount(async ()=>{
-    const { isSignedIn } = await import ('$lib/firebase')
-    const signedIn = await isSignedIn()
-    if (!signedIn) {
-      goto('/auth/login')
-    }
-    if (!localStorage.getItem('campaignID')) {
-      goto('/campaign')
+    try {
+      const { isSignedIn } = await import ('$lib/firebase')
+      const signedIn = await isSignedIn()
+      if (!signedIn) {
+        await goto('/auth/login')
+      } else if (!localStorage.getItem('campaignID')) {
+        goto('/campaign')
+      }
+    } catch(err) {
+      await goto('/auth/login')
     }
   })
   let returnval = campaign.set(localStorage.getItem('campaignID'))

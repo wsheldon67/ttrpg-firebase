@@ -2,9 +2,14 @@
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
   import Playbook from '../_Playbook.svelte'
-
   import { Adamant } from '$lib/data/playbooks/Adamant'
-  import moves from '$lib/data/playbooks/Adamant/moves'
+  import { onMount } from 'svelte';
+  let moves
+
+  onMount(async () => {
+    const module = await import('$lib/data/playbooks/Adamant/moves')
+    moves = module.default
+  })
 
   export let start: number = 1
   export let hide: boolean = false

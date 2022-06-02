@@ -7,3 +7,4 @@
 <a href='/comp/Techniques'>Techniques</a>
 <a href='/comp/Techniques/Training'>The Training Move</a>
 <a href='/comp/Techniques/Mastery'>Technique Mastery</a>
+<a href='/comp/Playbooks'>Playbooks</a>
