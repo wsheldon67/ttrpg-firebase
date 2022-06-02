@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Anticipate from '../../../../routes/comp/Techniques/Playbook/Anticipate.svelte'
+import Anticipate from '../../Techniques/Playbook/Anticipate.svelte'
 
 export const Destined:Playbook = {
   name: 'Destined',

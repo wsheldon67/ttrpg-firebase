@@ -7,7 +7,7 @@ interface Technique {
 
 export async function get_techniques(list_of_techniques:string[]):Promise<Technique[]> {
   const promises = list_of_techniques.map((name) => {
-    return import(`../../routes/comp/Techniques/${techniques.find(el => el.name === name).url}.svelte`)
+    return import(`./Techniques/${techniques.find(el => el.name === name).url}.svelte`)
   })
   const componets = await Promise.all(promises)
   const res = list_of_techniques.map((technique, index) => {

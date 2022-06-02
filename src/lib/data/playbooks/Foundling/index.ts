@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import FeelTheFlow from '../../../../routes/comp/Techniques/Playbook/FeelTheFlow.svelte'
+import FeelTheFlow from '../../Techniques/Playbook/FeelTheFlow.svelte'
 
 export const Foundling:Playbook = {
   name: 'Foundling',

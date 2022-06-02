@@ -1,4 +1,4 @@
-import PinpointAim from "../../../../routes/comp/Techniques/Playbook/PinpointAim.svelte"
+import PinpointAim from "../../Techniques/Playbook/PinpointAim.svelte"
 import type { Playbook } from "../../playbooks"
 
 export const Adamant:Playbook = {

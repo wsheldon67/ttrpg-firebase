@@ -1,5 +1,5 @@
 import type { Playbook } from "../../playbooks"
-import TagTeam from "../../../../routes/comp/Techniques/Playbook/TagTeam.svelte"
+import TagTeam from "../../Techniques/Playbook/TagTeam.svelte"
 
 export const Bold:Playbook = {
   name: 'Bold',

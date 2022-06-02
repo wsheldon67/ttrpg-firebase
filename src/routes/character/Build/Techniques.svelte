@@ -13,7 +13,7 @@
       return tags.includes(character.training) || tags.includes('Universal')
     })
     const promises = applicable_techniques.map(({url}) => {
-      return import(`../../comp/Techniques/${url}.svelte`)
+      return import(`../../../lib/data/Techniques/${url}.svelte`)
     })
     const componets = await Promise.all(promises)
     const res = applicable_techniques.map((technique, index) => {
