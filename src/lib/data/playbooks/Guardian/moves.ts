@@ -25,7 +25,7 @@ const moves:Move[] = [
     name: 'Furrowed Brow',
     component: FurrowedBrow,
     stat: 'Focus',
-    tags: ['Bold']
+    tags: ['Bold', '+Focus']
   },{
     name: 'Martyr Complex',
     component: MartyrComplex,

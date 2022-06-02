@@ -1,12 +1,25 @@
 <script lang='ts'>
+  import Fatigue from '$lib/c/Fatigue.svelte';
+  import Roll from '$lib/c/Roll.svelte'
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
+  import type { Data } from '$lib/data/character';
+  import type { Move } from '../moves';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let move:Move = undefined
+
+  $: marked_conditions = character ? character.conditions.filter(el => el.applied).length : null
 </script>
 <Header h={1} {start} {hide} title='No Time For Feelings'>
-  <slot slot='header'/>
+  <div slot='header' class='buttons'>
+    {#if character && move}
+      <Fatigue bind:character={character} />
+      <Roll mod={marked_conditions} label='Resist Shifting You Balance' stat='Conditions'/>
+    {/if}
+  </div>
   <p>Mark 1 <Tip text='fatigue'/> to push down your feelings for the rest of the scene:</p>
   <ul>
     <li>Ignore <Tip text='condition'/> penalties</li>

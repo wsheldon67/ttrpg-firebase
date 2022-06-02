@@ -30,7 +30,7 @@ export const moves:Move[] = [
     name: 'Driven By Justice',
     component: DrivenByJustice,
     stat: 'Passion',
-    tags: ['Adamant']
+    tags: ['Adamant', '+Passion']
   }
 ]
 export default moves
