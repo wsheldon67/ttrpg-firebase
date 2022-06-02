@@ -6,8 +6,8 @@
   import Moves from "./Moves.svelte";
   import Techniques from "./Techniques.svelte";
   import Growth from "./Growth.svelte";
-
   import { beforeUpdate, createEventDispatcher } from 'svelte'
+  import Bonuses from "./Bonuses.svelte";
   const dispatch = createEventDispatcher()
   
   export let character:Data
@@ -31,3 +31,4 @@
 <Moves bind:character={character} {start} hide/>
 <Techniques bind:character={character} {start} hide/>
 <Growth bind:character={character} {start} {id} hide/>
+<Bonuses bind:character={character} {start} hide/>

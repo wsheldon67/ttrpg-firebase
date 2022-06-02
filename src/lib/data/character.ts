@@ -30,6 +30,7 @@ export interface Data {
   }[]
   growth: number
   feature_settings: any
+  bonuses: {name: string, source: string}[]
 }
 
 export interface UI {
@@ -93,5 +94,6 @@ export const blank:Data = {
   ],
   growth_advancements: [],
   growth: 0,
-  feature_settings: {}
+  feature_settings: {},
+  bonuses: []
 }

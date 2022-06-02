@@ -1,9 +1,10 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-
+  import Tip from '$lib/c/Tip.svelte'
+  
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='The Strength of Your Heart'>
-  <slot slot='header'/>
+<Header h={1} {start} {hide} title="The Strength of Your Heart">
+  <p>When you <Tip text='seize a position'/>, foes must mark 2 <Tip text='fatigue'/> to block your movement.</p>
 </Header>

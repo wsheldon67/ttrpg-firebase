@@ -5,5 +5,5 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Understanding Mien'>
-  <slot slot='header'/>
+  <p>Take +1 to Harmony (max +3)</p>
 </Header>

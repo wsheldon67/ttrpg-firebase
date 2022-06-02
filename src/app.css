@@ -101,7 +101,8 @@ p {
 table {
   width: 100%;
   max-width: var(--break1);
-  border: 1px solid var(--b4);
+  border: 1px solid var(--b6);
+  border-collapse: collapse;
 }
 th {
   filter: saturate(.5) brightness(1.5);

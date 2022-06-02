@@ -1,10 +1,10 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+  import type { Data } from '$lib/data/character'
+  import type { Move } from '$lib/data/playbooks/moves'
+  import StatRoll from '$lib/c/StatRoll.svelte'
   import Tip from '$lib/c/Tip.svelte'
-  import ResultTable from '$lib/c/ResultTable.svelte'
-  import type { Data } from '$lib/data/character';
-  import type { Move } from '$lib/data/playbooks/moves';
-  import StatRoll from '$lib/c/StatRoll.svelte';
+  import Fatigue from '$lib/c/Fatigue.svelte'
   
   export let start: number = 1
   export let hide: boolean = false

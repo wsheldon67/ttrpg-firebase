@@ -10,7 +10,7 @@ const moves:Move[] = [
     name: 'Understanding Mien',
     component: UnderstandingMien,
     stat: 'Harmony',
-    tags: ['Pillar']
+    tags: ['Pillar', '+Harmony']
   },{
     name: `A Warrior's Heart`,
     component: AWarriorsHeart,
