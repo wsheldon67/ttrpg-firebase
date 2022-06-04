@@ -20,6 +20,9 @@
     characters = res
   })
 </script>
+{#if characters.length === 0}
+  <p>You don't have any characters! How about you <a href='/character/new'>make one</a>?</p>
+{/if}
 {#each characters as {id, character}}
   <div class='one'>
     <a href={'/character/' + id}>{character.name}</a>
