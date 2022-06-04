@@ -15,7 +15,7 @@
   })
   async function update({detail}) {
     if (!detail) {
-      console.error('detail is false!',detail)
+      console.error('Preventing overwiting with undefined character...',detail)
       return
     }
     const { isSignedIn, db } = await import('$lib/firebase')

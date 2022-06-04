@@ -593,7 +593,7 @@ export const techniques: Technique[] = [
     tags: ['Playbook']
   },
   {
-    name: 'Slide Around The Blow',
+    name: 'Slide Around the Blow',
     url: 'Playbook/SlideAroundTheBlow',
     tags: ['Playbook']
   },

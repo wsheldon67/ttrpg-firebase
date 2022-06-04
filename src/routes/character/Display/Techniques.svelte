@@ -8,11 +8,10 @@
   export let start:number = 1
   export let hide:boolean = false
 
-  $: technique_names = character.techniques.map(el => el.name)
-
   let techniques
 
   onMount(async () => {
+    const technique_names = character.techniques.map(el => el.name)
     techniques = await get_techniques(technique_names)
   })
 
