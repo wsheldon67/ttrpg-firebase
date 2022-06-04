@@ -1,6 +1,9 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
+  import type { Data } from '$lib/data/character'
+  
+  export let character:Data = undefined
   
   export let start: number = 1
   export let hide: boolean = false

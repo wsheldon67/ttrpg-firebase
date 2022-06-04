@@ -6,8 +6,8 @@
   
   export let start: number = 1
   export let hide: boolean = false
-  //export let character:Data = undefined
-  //export let move:Move = undefined
+  export let character:Data = undefined
+  export let move:Move = undefined
 
   // TODO techniques from other skills and training
   // This move might be complicated, also looking into how we're implementing the Training Move

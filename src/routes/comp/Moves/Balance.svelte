@@ -1,11 +1,11 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
   import Tip from '$lib/c/Tip.svelte'
-import CallSomeoneOut from './CallSomeoneOut.svelte'
-import DenyACallout from './DenyACallout.svelte'
-import LiveUpToYourPrinciple from './LiveUpToYourPrinciple.svelte'
-import LoseYourBalance from './LoseYourBalance.svelte'
-import ResistShiftingYourBalance from './ResistShiftingYourBalance.svelte'
+  import CallSomeoneOut from './CallSomeoneOut.svelte'
+  import DenyACallout from './DenyACallout.svelte'
+  import LiveUpToYourPrinciple from './LiveUpToYourPrinciple.svelte'
+  import LoseYourBalance from './LoseYourBalance.svelte'
+  import ResistShiftingYourBalance from './ResistShiftingYourBalance.svelte'
 
   export let start: number = 1
   export let hide: boolean = false
