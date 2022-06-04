@@ -10,11 +10,11 @@
 </style>
 
 <a href='/auth/login'>Login</a>
-<a href='/notes/add'>Add Note</a>
-<a href='/notes/all'>All Notes</a>
-<a href='/time/change'>Adjust Time</a>
+<!-- <a href='/notes/add'>Add Note</a> -->
+<!-- <a href='/notes/all'>All Notes</a> -->
+<!-- <a href='/time/change'>Adjust Time</a> -->
 <a href='/comp'>Compendium</a>
 <a href='/character/select'>Character Sheet</a>
 <a href='/character/new'>New Character</a>
-<a href='/campaign'>Switch Campaign</a>
-<a href='/scriptwrite'>Script Writer</a>
+<!-- <a href='/campaign'>Switch Campaign</a> -->
+<!-- <a href='/scriptwrite'>Script Writer</a> -->

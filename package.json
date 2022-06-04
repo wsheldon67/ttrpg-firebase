@@ -24,6 +24,7 @@
   "type": "module",
   "dependencies": {
     "@popperjs/core": "^2.11.2",
+    "@sveltejs/adapter-node": "*",
     "algoliasearch": "^4.12.2",
     "better-sqlite3": "^7.5.0",
     "firebase": "^9.6.7",
