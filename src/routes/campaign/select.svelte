@@ -27,10 +27,15 @@
     goto('/')
   }
 </script>
-
+<h1>Select Existing Campaign</h1>
 <select on:change={changeCampaign}>
   <option>- Select -</option>
   {#each campaigns as campaign}
     <option value={campaign.id}>{campaign.data.name}</option>
   {/each}
 </select>
+<style>
+  h1 {
+    margin: .5em 0em;
+  }
+</style>

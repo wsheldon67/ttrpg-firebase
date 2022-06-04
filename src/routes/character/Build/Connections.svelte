@@ -6,6 +6,7 @@
   $: connections = playbook[character.playbook].connections
 
 </script>
+<h1>Connections</h1>
 <label>
   {connections[0][0]}
   <input type='text' bind:value={character.connections[0]}/>

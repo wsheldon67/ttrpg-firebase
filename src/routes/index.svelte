@@ -1,17 +1,15 @@
 <script lang='ts'>
-  import Adder from '$lib/c/Adder.svelte'
-  import Add from './notes/_add/Note.svelte'
-
-  let require = [{label: 'label1', type: 'number'},{label: 'label2'}]
-  let optional = [{label: 'opti1'},{label: 'opti2'}]
-  let links = [{label: 'NPC', value: 'npc'},{label: 'Place', value: 'place'}]
-
-  let opts = [
-    {label: 'yes', value: 'true', id: 'yes'},
-    {label: 'no', value: 'false', id: 'no'}
-  ]
 
 </script>
-
-<Add {require} {optional} type='quick' {links} />
-<Adder {opts} />
+<h1>Welcome to Avatar Legends!</h1>
+<p>Some things to try:</p>
+<div>
+  <a href='/character/new'>Build a new character</a>
+</div>
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+  }
+</style>
