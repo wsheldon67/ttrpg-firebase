@@ -4,6 +4,7 @@
   import { playbook } from '$lib/data/playbooks'
 
   export let character:Data
+  export let hide_limit:boolean = false
 
   $: mastered = character.techniques.filter(el => el.level === 2).length
   $: learned = character.techniques.filter(el => el.level === 1).length
@@ -36,7 +37,9 @@
   }
 
 </script>
-<p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
+{#if !hide_limit}
+  <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
+{/if}
 <div class='cardtainer'>
   {#await promise}
     Loading...
