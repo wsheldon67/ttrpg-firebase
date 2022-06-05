@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import WallOfPerfection from '../../Techniques/Playbook/WallOfPerfection.svelte'
+import WallOfPerfection from '../../techniques/Playbook/WallOfPerfection.svelte'
 
 export const Icon:Playbook = {
   name: 'Icon',

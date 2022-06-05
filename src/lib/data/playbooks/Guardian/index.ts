@@ -1,5 +1,5 @@
 import type { Playbook } from "../../playbooks";
-import Divert from "../../Techniques/Playbook/Divert.svelte";
+import Divert from "../../techniques/Playbook/Divert.svelte";
 
 export const Guardian:Playbook = {
   name: 'Guardian',

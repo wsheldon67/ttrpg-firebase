@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Patience from '../../Techniques/Playbook/Patience.svelte'
+import Patience from '../../techniques/Playbook/Patience.svelte'
 
 export const Elder:Playbook = {
   name: 'Elder',

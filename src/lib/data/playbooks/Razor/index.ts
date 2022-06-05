@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Lure from '../../Techniques/Playbook/Lure.svelte'
+import Lure from '../../techniques/Playbook/Lure.svelte'
 
 export const Razor:Playbook = {
   name: 'Razor',

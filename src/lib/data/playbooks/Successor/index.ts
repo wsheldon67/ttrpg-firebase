@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Break from '../../Techniques/Playbook/Break.svelte'
+import Break from '../../techniques/Playbook/Break.svelte'
 
 export const Successor:Playbook = {
   name: 'Successor',

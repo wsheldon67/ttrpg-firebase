@@ -93,3 +93,11 @@ export function array_to_words(array:string[]):string {
   })
   return res
 }
+
+export function comp_to_words(comps):string {
+  let res = ''
+  comps.forEach(({source, operation}) => {
+    res += source + ': ' + operation + '; '
+  })
+  return res
+}

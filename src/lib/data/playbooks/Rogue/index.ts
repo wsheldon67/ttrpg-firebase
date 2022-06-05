@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import SweepTheLeg from '../../Techniques/Playbook/SweepTheLeg.svelte'
+import SweepTheLeg from '../../techniques/Playbook/SweepTheLeg.svelte'
 
 export const Rogue:Playbook = {
   name: 'Rogue',

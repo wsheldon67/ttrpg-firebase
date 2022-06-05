@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import Overwhelm from '../../Techniques/Playbook/Overwhelm.svelte'
+import Overwhelm from '../../techniques/Playbook/Overwhelm.svelte'
 
 export const Hammer:Playbook = {
   name: 'Hammer',

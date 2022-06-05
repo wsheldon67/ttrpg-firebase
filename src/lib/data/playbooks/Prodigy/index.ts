@@ -1,5 +1,5 @@
 import type { Playbook } from '../../playbooks'
-import SteadyStance from '../../Techniques/Playbook/SteadyStance.svelte'
+import SteadyStance from '../../techniques/Playbook/SteadyStance.svelte'
 
 export const Prodigy:Playbook = {
   name: 'Prodigy',
