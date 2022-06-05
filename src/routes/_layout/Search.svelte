@@ -23,8 +23,10 @@
         }
       }
     ]
+    console.log('queries', queries)
     /* @ts-ignore*/
     const {results} = await search_client.multipleQueries(queries)
+    console.log('raw results', results)
     const res = [
       // notes
       ...results[0].hits.map((el) => {
@@ -35,6 +37,7 @@
         return {label: el.title, sub: el.description, value:{url: el.link || el.url}}
       })
     ]
+    console.log('processed results', res)
     return res
   }
 

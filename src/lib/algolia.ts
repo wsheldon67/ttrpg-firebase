@@ -1,3 +1,8 @@
 import algoliasearch from "algoliasearch/lite"
 
-export const search_client = algoliasearch('63TFNF6SIM', '3a935d9fd11ba4ca236618ee36fc1280')
+const appID = '63TFNF6SIM'
+const APIKey = '3a935d9fd11ba4ca236618ee36fc1280'
+
+console.log('Algolia AppID', appID)
+console.log('Algolia APIKey', APIKey)
+export const search_client = algoliasearch(appID, APIKey)

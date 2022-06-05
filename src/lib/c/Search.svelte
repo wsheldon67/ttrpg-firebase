@@ -11,6 +11,7 @@
   }
 
   export let searchFunc = async function (query_text: string): Promise<FilteredOpt[]>{
+    console.log('query_text passed to searchFunc', query_text)
     return [{value: '', label: 'Please provide callback to searchFunc'}]
   }
   export let threshold = 0
@@ -34,6 +35,7 @@
     if (e.target.value.length < threshold) {return}
     show = true
     filteredOpts = await searchFunc(e.target.value)
+    console.log('current filteredOpts {value, label, sub?}',filteredOpts)
   }
 
 </script>
