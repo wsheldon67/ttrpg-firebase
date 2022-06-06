@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Evade and Observe'>
+<Header h={1} {start} {hide} title='Evade and Observe' is_page_title>
   <Header h={2} {start} title='Examples' hide>
     <ul>
       <li>Slipping around blows and twisting just out of reach</li>

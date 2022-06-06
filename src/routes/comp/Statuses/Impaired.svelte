@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Impaired'>
+<Header h={1} {start} {hide} title='Impaired' is_page_title>
   <p>You're slowed, off-balance, impaired, or weakened. Mark 1 <Tip text='fatigue'/> for each action or...</p>
   <table>
     <tr>

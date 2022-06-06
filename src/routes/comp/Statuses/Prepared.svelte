@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Prepared'>
+<Header h={1} {start} {hide} title='Prepared' is_page_title>
   <p>You're ready for what's coming. Clear Prepared to take +1 to an appropriate roll or avoid marking a <Tip text='condition'/>.</p>
   <Header h={2} {start} title='Examples' hide>
     <p>You set up resource or devices in advance of needing them:</p>

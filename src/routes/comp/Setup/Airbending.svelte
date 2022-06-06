@@ -4,7 +4,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Airbending'>
+<Header h={1} {start} {hide} title='Airbending' is_page_title>
   <p>Use their element to defend themselves and redirect hostile energy.</p>
   <ul>
     <li>Swiping air upwards to deflect incoming arrows</li>

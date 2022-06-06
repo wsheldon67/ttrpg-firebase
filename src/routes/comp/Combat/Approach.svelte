@@ -8,7 +8,7 @@ import EvadeAndObserve from './EvadeAndObserve.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Approaches'>
+<Header h={1} {start} {hide} title='Approaches' is_page_title>
   <p>Determines what <Tip text='techniques'/> are availabe to a character during an exchange.</p>
   <DefendAndManeuver start={start+1} hide/>
   <AdvanceAndAttack start={start+1} hide/>

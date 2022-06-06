@@ -8,7 +8,7 @@ import Hold from './Hold.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Bonuses'>
+<Header h={1} {start} {hide} title='Bonuses' is_page_title>
   <Ongoing start={start+1} />
   <Hold start={start+1} />
   <Forward start={start+1} />

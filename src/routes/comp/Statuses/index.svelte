@@ -13,6 +13,7 @@ import Trapped from './Trapped.svelte'
   export let hide: boolean = false
   let low = start+1
 </script>
+<svelte:head><title>Statuses</title></svelte:head>
 <Header h={1} {start} {hide} title='Negative Statuses'>
   <Doomed start={low} hide/>
   <Impaired start={low} hide/>

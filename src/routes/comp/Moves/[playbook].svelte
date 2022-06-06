@@ -13,7 +13,7 @@
   export let start:number = 1
   export let hide:boolean = false
 </script>
-<Header h={1} {start} {hide} title={playbook + ' Moves'}>
+<Header h={1} {start} {hide} title={playbook + ' Moves'} is_page_title>
   {#each moves[playbook] as {component}}
     <svelte:component this={component} start={start+1} hide/>
   {/each}

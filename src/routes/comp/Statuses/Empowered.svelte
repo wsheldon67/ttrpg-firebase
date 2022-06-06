@@ -6,7 +6,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Empowered'>
+<Header h={1} {start} {hide} title='Empowered' is_page_title>
   <p>Your abilities are naturally stronger in this moment. Clear 1 <Tip text='fatigue'/> at the end of each <Tip text='exchange'/> or every few seconds.</p>
   <Header h={2} {start} title='Examples' hide>
     <ul>

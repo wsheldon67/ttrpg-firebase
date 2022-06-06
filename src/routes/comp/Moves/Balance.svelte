@@ -10,7 +10,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Balance Moves'>
+<Header h={1} {start} {hide} title='Balance Moves' is_page_title>
   <slot slot="header"/>
   <LiveUpToYourPrinciple start={start+1} hide/>
   <CallSomeoneOut start={start+1} hide/>

@@ -15,7 +15,7 @@
   export let hide:boolean = false
   const blurbs = {}
 </script>
-<Header h={1} {start} {hide} title={group + ' Techniques'}>
+<Header h={1} {start} {hide} title={group + ' Techniques'} is_page_title>
   {#if blurbs[group]}
     <p>{blurbs[group]}</p>
   {/if}

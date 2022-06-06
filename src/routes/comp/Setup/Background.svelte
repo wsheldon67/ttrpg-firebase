@@ -12,7 +12,7 @@ import Wilderness from './Wilderness.svelte'
   export let hide: boolean = false
   let low = start + 1
 </script>
-<Header h={1} {start} {hide} title='Background'>
+<Header h={1} {start} {hide} title='Background' is_page_title>
   <p>Who your character was and where they came from.</p>
   <ul>
     <li>Explains your character's origins and <Tip text='training'/></li>

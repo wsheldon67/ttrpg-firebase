@@ -9,6 +9,7 @@
   export let title: string
   export let show: boolean = undefined
   export let hide: boolean = undefined
+  export let is_page_title:boolean = false
 
   let loaded = !hide
 
@@ -63,7 +64,11 @@
   @component
   A magic header that upgrades/downgrades its level based on its parents.
 -->
-
+<svelte:head>
+  {#if is_page_title}
+    <title>{title}</title>
+  {/if}
+</svelte:head>
 <svelte:element this={'h'+c} class='header'>
   <button on:click={toggle}>
     {#if hide}

@@ -6,7 +6,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Technique Levels'>
+<Header h={1} {start} {hide} title='Technique Levels' is_page_title>
   <Header h={2} {start} title='Learned'>
     <p>To use in a combat exchange:</p>
     <ul>

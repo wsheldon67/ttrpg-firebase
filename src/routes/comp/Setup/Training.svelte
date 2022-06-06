@@ -11,7 +11,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Training Style'>
+<Header h={1} {start} {hide} title='Training Style' is_page_title>
   <Waterbending start={start+1} hide/>
   <Earthbending start={start+1} hide/>
   <Firebending start={start+1} hide/>

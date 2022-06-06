@@ -6,7 +6,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Conditions'>
+<Header h={1} {start} {hide} title='Conditions' is_page_title>
   <table>
     <tr>
       <th>Condition</th>

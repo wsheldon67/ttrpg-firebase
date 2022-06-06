@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Taken Out'>
+<Header h={1} {start} {hide} title='Taken Out' is_page_title>
   <p>Happens when you have already marked 5 conditions and must mark another.</p>
   <ul>
     <li>You become unconscious, injured, distraught, or trapped.</li>

@@ -12,7 +12,7 @@
   export let character:Data = undefined
   export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title="Deny a Callout">
+<Header h={1} {start} {hide} title="Deny a Callout" is_page_title>
   <div slot='header' class='buttons'>
     {#if character && move}
       <PrincipleRoll {character} {move} />

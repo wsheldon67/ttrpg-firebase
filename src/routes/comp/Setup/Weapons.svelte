@@ -4,7 +4,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Weapons'>
+<Header h={1} {start} {hide} title='Weapons' is_page_title>
   <p>Martial experts who can hold their own against benders.</p>
   <ul>
     <li>Raining arrows down on opponents</li>

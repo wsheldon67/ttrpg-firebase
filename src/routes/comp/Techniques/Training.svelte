@@ -28,7 +28,7 @@ import FullResult from '$lib/c/FullResult.svelte'
     flex-direction: column;
   }
 </style>
-<Header h={1} {start} {hide} title='The Training Move'>
+<Header h={1} {start} {hide} title='The Training Move' is_page_title>
   <p>Check all that apply:</p>
   <div class='rows'>
   <label>

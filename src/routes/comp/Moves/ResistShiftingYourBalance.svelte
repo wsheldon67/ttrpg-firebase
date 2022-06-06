@@ -12,7 +12,7 @@
   export let character:Data = undefined
   export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title="Resist Shifting Your Balance">
+<Header h={1} {start} {hide} title="Resist Shifting Your Balance" is_page_title>
   <div slot='header' class='buttons'>
     {#if character && move}
       <StatRoll {character} {move} />

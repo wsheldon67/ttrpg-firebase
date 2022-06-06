@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='The Roku Era'>
+<Header h={1} {start} {hide} title='The Roku Era' is_page_title>
   <p>Covers the time right after Sozin 
   became Fire Lord and before Roku married. Play 
   in the Roku Era if you want to deal with tensions 

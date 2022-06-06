@@ -8,7 +8,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Help'>
+<Header h={1} {start} {hide} title='Help' is_page_title>
   <p>Mark 1 <Tip text='fatigue'/> to give a companion +1 to a roll they just made.</p>
   <ul>
     <li>Cannot be used in a combat exchange</li>

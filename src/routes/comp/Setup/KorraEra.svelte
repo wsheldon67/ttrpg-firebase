@@ -4,7 +4,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='The Korra Era'>
+<Header h={1} {start} {hide} title='The Korra Era' is_page_title>
   <p>Covers a period that takes place 
     after the events of the Ruins of the Empire comic 
     trilogy, some time after the end of The Legend of 

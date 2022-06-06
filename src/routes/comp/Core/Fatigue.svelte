@@ -6,7 +6,7 @@ import Tooltip from '$lib/c/Tooltip.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Fatigue'>
+<Header h={1} {start} {hide} title='Fatigue' is_page_title>
   <p>PCs have 5 fatigue boxes</p>
   <ul>
     <li>You cannot voluntarily accept more than 5 fatigue.</li>

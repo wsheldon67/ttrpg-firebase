@@ -6,7 +6,7 @@ import FullResult from '$lib/c/FullResult.svelte'
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='The Stance Move'>
+<Header h={1} {start} {hide} title='The Stance Move' is_page_title>
   <p>Roll, based on your <Tip text='approach'/>:</p>
   <ul>
     <li><Tip text='Defend and maneuver'/> = Focus</li>

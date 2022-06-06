@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Favored'>
+<Header h={1} {start} {hide} title='Favored' is_page_title>
   <p>You're bouyed by circumstance. Choose an additional <Tip text='basic'/> or <Tip text='mastered'/> technique in the next <Tip text='exchange'/>, even on a miss.</p>
   <Header h={2} {start} title='Examples' hide>
     <ul>

@@ -11,7 +11,7 @@
   export let character:Data = undefined
   export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title="Live Up to Your Principle">
+<Header h={1} {start} {hide} title="Live Up to Your Principle" is_page_title>
   <div slot='header' class='buttons'>
     {#if character && move}
       <PrincipleRoll {character} {move} />

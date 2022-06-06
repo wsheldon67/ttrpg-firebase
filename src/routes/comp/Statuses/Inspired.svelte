@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Inspired'>
+<Header h={1} {start} {hide} title='Inspired' is_page_title>
   <p>You're ready to stand for something. Clear Inspired to <Tip text='shift your balance'/> toward a principle of your choice.</p>
   <Header h={2} {start} title='Examples' hide>
     <p>Your character is bolstered emotionally:</p>

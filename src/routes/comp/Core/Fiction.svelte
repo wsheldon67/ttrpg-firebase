@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='The Fiction'>
+<Header h={1} {start} {hide} title='The Fiction' is_page_title>
   <p>The world you create together when you play. Includes:</p>
   <ul>
     <li>The setting</li>

@@ -5,7 +5,7 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Scene'>
+<Header h={1} {start} {hide} title='Scene' is_page_title>
   <p>A scene is any time role-playing occurs.</p>
   <ul>
     <li>A scene starts when role-playing begins.</li>

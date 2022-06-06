@@ -11,7 +11,7 @@
   export let character:Data = undefined
   export let move:Move = undefined
 </script>
-<Header h={1} {start} {hide} title="Lose Your Balance">
+<Header h={1} {start} {hide} title="Lose Your Balance" is_page_title>
   <div slot='header' class='buttons'>
     {#if character && move}
       <ClearAllConditions bind:character={character} />

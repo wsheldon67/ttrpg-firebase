@@ -5,6 +5,6 @@
   export let start: number = 1
   export let hide: boolean = false
 </script>
-<Header h={1} {start} {hide} title='Ongoing'>
+<Header h={1} {start} {hide} title='Ongoing' is_page_title>
   <p>Applies to all applicable rolls as described by the move.</p>
 </Header>
