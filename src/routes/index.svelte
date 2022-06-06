@@ -6,6 +6,10 @@
 <div>
   <a href='/character/new'>Build a new character</a>
 </div>
+<label>
+  <input type='checkbox' checked/>
+  Checkbox
+</label>
 <style>
   div {
     display: flex;

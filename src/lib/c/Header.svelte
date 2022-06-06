@@ -52,6 +52,12 @@
   .header_content :global(button) {
     margin-right: 1px;
   }
+  .content {
+    max-width: 36rem;
+  }
+  .header {
+    max-width: 36rem;
+  }
 </style>
 <!--
   @component
@@ -71,7 +77,7 @@
 </svelte:element>
 
 {#if loaded}
-  <div class:hidden={hide} class={'panel'+c}>
+  <div class:hidden={hide} class={'content panel'+c}>
     <slot />
   </div>
 {/if}

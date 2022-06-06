@@ -22,3 +22,9 @@ export const techniques: Technique[] = [
   ...Airbending, ...Basic, ...Earthbending, ...Firebending, ...Group, ...Playbook, ...Technology,
   ...Universal, ...Waterbending, ...Weapons
 ]
+export const technique: {[group:string]:Technique[]} = {
+  Basic, Universal, Airbending, Earthbending, Firebending, Technology, Waterbending, Weapons, Playbook, Group
+}
+export const group_names = [
+  'Basic', 'Universal', 'Airbending', 'Earthbending', 'Firebending', 'Technology', 'Waterbending', 'Weapons', 'Playbook', 'Group'
+]

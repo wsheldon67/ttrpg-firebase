@@ -40,7 +40,6 @@
 <style>
   .range_cont {
     width: 100%;
-    max-width: 36em;
     padding: 0em 1em;
     box-sizing: border-box;
   }

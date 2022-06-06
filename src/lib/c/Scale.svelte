@@ -38,6 +38,7 @@
 <style>
   button {
     color: var(--at);
+    width: 1.3rem;
   }
   .bad {
     background-color: var(--bad);
@@ -46,6 +47,6 @@
     background-color: var(--good);
   }
   meter {
-    width: 90%;
+    width: calc(100% - 3rem);
   }
 </style>
