@@ -40,14 +40,14 @@
 </style>
 
 <nav>
-  <Widget id='time' tip='Adjust game time' on:click={click} show={open.time}>
+  <!--Widget id='time' tip='Adjust game time' on:click={click} show={open.time}>
     <TimeIcon slot='icon' />
     <Change />
   </Widget>
   <Widget id='notes' tip='Make a note' on:click={click} show={open.notes}>
     <NoteIcon slot='icon' />
     <Note type='quick' />
-  </Widget>
+  </Widget-->
   <Widget id='rules' tip='Look up a rule' on:click={click} show={open.rules}>
     <BookIcon slot='icon' />
     <CompSearch />
