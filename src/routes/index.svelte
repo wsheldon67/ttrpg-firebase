@@ -5,11 +5,8 @@
 <p>Some things to try:</p>
 <div>
   <a href='/character/new'>Build a new character</a>
+  <a href='/comp'>Explore the Compendium</a>
 </div>
-<label>
-  <input type='checkbox' checked/>
-  Checkbox
-</label>
 <style>
   div {
     display: flex;
