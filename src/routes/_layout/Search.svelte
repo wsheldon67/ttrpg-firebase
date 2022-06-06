@@ -19,7 +19,7 @@
         indexName: 'compendium',
         query,
         params: {
-          filters: `system:${$campaign.system}`
+          filters: `system:atla`
         }
       }
     ]
