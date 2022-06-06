@@ -16,51 +16,51 @@ import TurnTheTables from './TurnTheTables.svelte'
 export const Weapons:Technique[] = [{
   name: "Boom",
   component: Boom,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Advance & Attack", "Rare"]
 },{
   name: "Chi Blocking Jabs",
   component: ChiBlockingJabs,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Advance & Attack", "Rare"]
 },{
   name: "Chart A Course",
   component: ChartACourse,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Evade & Observe", "Rare"]
 },{
   name: "Counterstrike",
   component: Counterstrike,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Defend & Maneuver"]
 },{
   name: "Disarm",
   component: Disarm,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Defend & Maneuver"]
 },{
   name: "Feint",
   component: Feint,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Evade & Observe"]
 },{
   name: "Parry",
   component: Parry,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Defend & Maneuver"]
 },{
   name: "Pin A Fly To A Tree",
   component: PinAFlyToATree,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Advance & Attack", "Rare"]
 },{
   name: "Pinpoint Thrust",
   component: PinpointThrust,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Advance & Attack"]
 },{
   name: "Switch It Up",
   component: SwitchItUp,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Evade & Observe"]
 },{
   name: "Take The High Ground",
   component: TakeTheHighGround,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Defend & Maneuver"]
 },{
   name: "Turn The Tables",
   component: TurnTheTables,
-  tags: ["Weapons"]
+  tags: ["Weapons", "Advance & Attack", "Rare"]
 },]
 
 export default Weapons

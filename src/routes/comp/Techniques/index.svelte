@@ -91,6 +91,7 @@
   </Header>
 </Header>
 <Header h={1} {start} {hide} title='Techniques'>
+  <p>Results: {filtered_techniques.length}</p>
   <div class='cardtainer'>
     {#each filtered_techniques as {component}}
     <div class='card'>

@@ -17,55 +17,55 @@ import WindRun from './WindRun.svelte'
 export const Airbending:Technique[] = [{
   name: "Air Cushion",
   component: AirCushion,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe"]
 },{
   name: "Air Scooter",
   component: AirScooter,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe"]
 },{
   name: "Air Swipe",
   component: AirSwipe,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Defend & Maneuver"]
 },{
   name: "Breath Of Wind",
   component: BreathOfWind,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Advance & Attack", "Rare"]
 },{
   name: "Cannonball",
   component: Cannonball,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Advance & Attack"]
 },{
   name: "Cushion The Forceful Fist",
   component: CushionTheForcefulFist,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe", "Rare"]
 },{
   name: "Directed Funnel",
   component: DirectedFunnel,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Advance & Attack"]
 },{
   name: "Reed In The Wind",
   component: ReedInTheWind,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe", "Rare"]
 },{
   name: "Shockwave",
   component: Shockwave,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe", "Rare"]
 },{
   name: "Small Vortex",
   component: SmallVortex,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe"]
 },{
   name: "Suction",
   component: Suction,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Evade & Observe"]
 },{
   name: "Twisting Wind",
   component: TwistingWind,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Defend & Maneuver"]
 },{
   name: "Wind Run",
   component: WindRun,
-  tags: ["Airbending"]
+  tags: ["Airbending", "Defend & Maneuver"]
 },]
 
 export default Airbending

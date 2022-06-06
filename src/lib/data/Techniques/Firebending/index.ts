@@ -17,55 +17,55 @@ import WallOfFieryBreath from './WallOfFieryBreath.svelte'
 export const Firebending:Technique[] = [{
   name: "A Single Spark",
   component: ASingleSpark,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Evade & Observe"]
 },{
   name: "Arc Lightning",
   component: ArcLightning,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Evade & Observe", "Lightning", "Rare"]
 },{
   name: "Breath Of Fire",
   component: BreathOfFire,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack"]
 },{
   name: "Explosive Blast",
   component: ExplosiveBlast,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack", "Combustion", "Rare"]
 },{
   name: "Fire Blade",
   component: FireBlade,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack"]
 },{
   name: "Fire Pinwheel",
   component: FirePinwheel,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack", "Rare"]
 },{
   name: "Fire Stream",
   component: FireStream,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Defend & Maneuver"]
 },{
   name: "Fire Whip",
   component: FireWhip,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Defend & Maneuver"]
 },{
   name: "Flame Knives",
   component: FlameKnives,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack"]
 },{
   name: "Jet Stepping",
   component: JetStepping,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Evade & Observe"]
 },{
   name: "Lightning Blast",
   component: LightningBlast,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack", "Lightning", "Rare"]
 },{
   name: "Spiral Flare Kick",
   component: SpiralFlareKick,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Advance & Attack", "Rare"]
 },{
   name: "Wall Of Fiery Breath",
   component: WallOfFieryBreath,
-  tags: ["Firebending"]
+  tags: ["Firebending", "Defend & Maneuver"]
 },]
 
 export default Firebending

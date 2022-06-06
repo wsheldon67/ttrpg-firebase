@@ -17,55 +17,55 @@ import ThickMud from './ThickMud.svelte'
 export const Earthbending:Technique[] = [{
   name: "Detect The Heavy Step",
   component: DetectTheHeavyStep,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver", "Seismic Sense", "Rare"]
 },{
   name: "Dust Stepping",
   component: DustStepping,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver"]
 },{
   name: "Earth Armor",
   component: EarthArmor,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver"]
 },{
   name: "Earth Guantlet",
   component: EarthGuantlet,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Advance & Attack"]
 },{
   name: "Earth Launch",
   component: EarthLaunch,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver"]
 },{
   name: "Earth Sinking",
   component: EarthSinking,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Advance & Attack", "Rare"]
 },{
   name: "Eat Dirt",
   component: EatDirt,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Evade & Observe"]
 },{
   name: "Ground Shift",
   component: GroundShift,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Evade & Observe"]
 },{
   name: "Lava Star",
   component: LavaStar,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver", "Lava", "Rare"]
 },{
   name: "Metal Bindings",
   component: MetalBindings,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Evade & Observe", "Metal", "Rare"]
 },{
   name: "Rock Column",
   component: RockColumn,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Advance & Attack"]
 },{
   name: "Stone Shield",
   component: StoneShield,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Defend & Maneuver", "Rare"]
 },{
   name: "Thick Mud",
   component: ThickMud,
-  tags: ["Earthbending"]
+  tags: ["Earthbending", "Evade & Observe"]
 },]
 
 export default Earthbending

@@ -16,51 +16,51 @@ import WindUp from './WindUp.svelte'
 export const Technology:Technique[] = [{
   name: "Better Faster Stronger",
   component: BetterFasterStronger,
-  tags: ["Technology"]
+  tags: ["Technology", "Defend & Maneuver"]
 },{
   name: "Blinded By Science",
   component: BlindedByScience,
-  tags: ["Technology"]
+  tags: ["Technology", "Advance & Attack"]
 },{
   name: "Collect Material",
   component: CollectMaterial,
-  tags: ["Technology"]
+  tags: ["Technology", "Evade & Observe"]
 },{
   name: "Entangler",
   component: Entangler,
-  tags: ["Technology"]
+  tags: ["Technology", "Advance & Attack"]
 },{
   name: "Full Power Attack",
   component: FullPowerAttack,
-  tags: ["Technology"]
+  tags: ["Technology", "Advance & Attack", "Rare"]
 },{
   name: "Jolt",
   component: Jolt,
-  tags: ["Technology"]
+  tags: ["Technology", "Advance & Attack"]
 },{
   name: "Jury Rig",
   component: JuryRig,
-  tags: ["Technology"]
+  tags: ["Technology", "Advance & Attack", "Rare"]
 },{
   name: "Pinpoint Flaws",
   component: PinpointFlaws,
-  tags: ["Technology"]
+  tags: ["Technology", "Evade & Observe"]
 },{
   name: "Plant Trap",
   component: PlantTrap,
-  tags: ["Technology"]
+  tags: ["Technology", "Evade & Observe"]
 },{
   name: "Rebuild",
   component: Rebuild,
-  tags: ["Technology"]
+  tags: ["Technology", "Defend & Maneuver"]
 },{
   name: "Smoke Bomb",
   component: SmokeBomb,
-  tags: ["Technology"]
+  tags: ["Technology", "Defend & Maneuver"]
 },{
   name: "Wind Up",
   component: WindUp,
-  tags: ["Technology"]
+  tags: ["Technology", "Defend & Maneuver", "Rare"]
 },]
 
 export default Technology

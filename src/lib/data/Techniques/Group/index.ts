@@ -17,55 +17,55 @@ import ProtectObjective from './ProtectObjective.svelte'
 export const Group:Technique[] = [{
   name: "Attend To Commands",
   component: AttendToCommands,
-  tags: ["Group"]
+  tags: ["Group", "Evade & Observe"]
 },{
   name: "Coordination",
   component: Coordination,
-  tags: ["Group"]
+  tags: ["Group", "Evade & Observe"]
 },{
   name: "Draw Foe",
   component: DrawFoe,
-  tags: ["Group"]
+  tags: ["Group", "Evade & Observe"]
 },{
   name: "Engulf",
   component: Engulf,
-  tags: ["Group"]
+  tags: ["Group", "Defend & Maneuver"]
 },{
   name: "Focused Fire",
   component: FocusedFire,
-  tags: ["Group"]
+  tags: ["Group", "Advance & Attack"]
 },{
   name: "Overwhelm",
   component: Overwhelm,
-  tags: ["Group"]
+  tags: ["Group", "Advance & Attack"]
 },{
   name: "Scatter And Regroup",
   component: ScatterAndRegroup,
-  tags: ["Group"]
+  tags: ["Group", "Evade & Observe"]
 },{
   name: "Shield Wall",
   component: ShieldWall,
-  tags: ["Group"]
+  tags: ["Group", "Defend & Maneuver"]
 },{
   name: "Spread Out",
   component: SpreadOut,
-  tags: ["Group"]
+  tags: ["Group", "Defend & Maneuver"]
 },{
   name: "Surround",
   component: Surround,
-  tags: ["Group"]
+  tags: ["Group", "Advance & Attack"]
 },{
   name: "Swarm",
   component: Swarm,
-  tags: ["Group"]
+  tags: ["Group", "Advance & Attack"]
 },{
   name: "Test Defenses",
   component: TestDefenses,
-  tags: ["Group"]
+  tags: ["Group", "Evade & Observe"]
 },{
   name: "Protect Objective",
   component: ProtectObjective,
-  tags: ["Group"]
+  tags: ["Group", "Defend & Maneuver"]
 },]
 
 export default Group
