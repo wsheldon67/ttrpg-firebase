@@ -1,7 +1,6 @@
 <script lang='ts'>
   import Search from '$lib/c/Search.svelte'
   import { search_client } from '$lib/algolia'
-  import { campaign } from '$lib/campaign'
   import { goto } from '$app/navigation'
   // TODO pagination
   const campaignID = localStorage.getItem('campaignID')

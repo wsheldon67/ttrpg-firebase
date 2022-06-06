@@ -15,7 +15,7 @@
     return [{value: '', label: 'Please provide callback to searchFunc'}]
   }
   export let threshold = 0
-  export let max_length = 50
+  export let max_length = 256
   export let fit = false
 
   let show = false
@@ -52,10 +52,19 @@
   .cont {
     position: relative;
   }
+  .sub {
+    font-size: small;
+  }
+  .label {
+    font-weight: bold;
+  }
   button {
     width: 100%;
     text-align: justify;
     border: 2px solid black;
+  }
+  hr {
+    margin: 0em;
   }
 </style>
 <div class='cont'>
@@ -73,10 +82,10 @@
       on:click|preventDefault={() => {click(opt.value)}}
       on:mousedown|preventDefault={()=>{}}
     >
-    {opt.label}
+    <span class='label'>{opt.label}</span>
     {#if opt.sub}
       <hr />
-      {truncate_string(opt.sub, max_length)}
+      <span class='sub'>{truncate_string(opt.sub, max_length)}</span>
     {/if}
   </button>
   {/each}
