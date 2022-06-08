@@ -2,12 +2,12 @@
   import { plural, signed } from '$lib/pretty';
   import { moves } from '$lib/data/playbooks/moves'
   import { playbook } from '$lib/data/playbooks';
-  import { get_stats, stat_positions } from '$lib/data/calc_character';
-import Select from './_Select.svelte';
+  import { get_all_stats, stat_positions } from '$lib/data/calc_character';
+  import Select from './_Select.svelte';
   export let character
 
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
-  $: realized_stats = get_stats(character)
+  $: realized_stats = get_all_stats(character)
 
   function select_move(move_name:string) {
     if (character.moves.includes(move_name)) {
@@ -26,17 +26,17 @@ import Select from './_Select.svelte';
 </style>
 <p>Take +1 to a stat:</p>
 <div>
-  {#each stats as stat, index}
-    <label class:highlighted={character.boosted_stats[0] === stat}>
+  {#each realized_stats as {name, mod}, index}
+    <label class:highlighted={character.boosted_stats[0] === name}>
       <input
         type='radio'
         name='stat'
-        value={stat}
+        value={name}
         bind:group={character.boosted_stats[0]}
 
-        disabled={playbook[character.playbook].stats[stat_positions[stat]] >= 2}
+        disabled={playbook[character.playbook].stats[stat_positions[name]] >= 2}
       />
-      {stat} ({signed(realized_stats[index])})
+      {name} ({signed(mod)})
     </label>
   {/each}
 </div>
