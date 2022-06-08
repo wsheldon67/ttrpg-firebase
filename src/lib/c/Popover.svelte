@@ -22,6 +22,7 @@
     padding: .5em;
     background-color: var(--b4);
     height: initial;
+    z-index: 6;
   }
   .arrow {
     background-color: var(--b4);

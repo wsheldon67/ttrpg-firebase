@@ -75,5 +75,5 @@
         }
       }
     ]
-  }}>{tip}</div>
+  }}>{tip}<slot name='tip'/></div>
 {/if}
