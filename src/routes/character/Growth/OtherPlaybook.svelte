@@ -2,6 +2,7 @@
   import type { Data } from "$lib/data/character"
   import { all_moves } from '$lib/data/playbooks/moves'
   import type { Move } from '$lib/data/playbooks/moves'
+  import Select from "../Build/_Select.svelte"
 
   export let character:Data
   export let back:Function
@@ -24,9 +25,10 @@
   <button
     class='card'
     class:selected={selected === name}
-    on:click={()=>{selected = name}}
     >
-    <svelte:component this={component} start={2} hide/>
+    <svelte:component this={component} start={2} hide>
+      <Select selected={selected === name} on:click={()=>{selected = name}} />
+    </svelte:component>
   </button>
 {/each}
 </div>
