@@ -5,6 +5,7 @@
   import Airbending from '../../comp/Setup/Airbending.svelte'
   import Weapons from '../../comp/Setup/Weapons.svelte'
   import Technology from '../../comp/Setup/Technology.svelte'
+import Select from "./_Select.svelte"
 
   export let character
 
@@ -30,11 +31,10 @@
 </label>
 <div class='cardtainer'>
 {#each trainings as {component, name}}
-  <button
-    class={'card' + (character.training === name ? ' selected' : '')}
-    on:click={()=>{click(name)}}
-  >
-    <svelte:component this={component} start={2}/>
-  </button>
+  <div class={'card' + (character.training === name ? ' selected' : '')}>
+    <svelte:component this={component} start={2}>
+      <Select selected={character.training === name} on:click={()=>{click(name)}} />
+    </svelte:component>
+  </div>
 {/each}
 </div>

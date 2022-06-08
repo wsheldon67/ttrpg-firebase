@@ -21,6 +21,7 @@
         <Condition bind:character={character} condition='Insecure'/>
       {/if}
     {/if}
+    <slot />
   </div>
   <p><Tip text='Trick'/> an NPC by assuming a silly disguise or fake identity.</p>
   <ul>

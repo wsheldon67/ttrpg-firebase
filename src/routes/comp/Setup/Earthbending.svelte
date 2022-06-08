@@ -6,6 +6,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Earthbending' is_page_title>
+  <slot slot='header' />
   <p>Bide their time, using their element to defend until the perfect moment.</p>
   <ul>
     <li>Levitating stones to hurl them into obstacles</li>

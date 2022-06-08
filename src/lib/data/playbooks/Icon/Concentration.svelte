@@ -8,5 +8,8 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Concentration">
+  <div slot='header'>
+    <slot />
+  </div>
   <p>Take +1 to Focus</p>
 </Header>

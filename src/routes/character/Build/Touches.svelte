@@ -1,18 +1,14 @@
 <script lang='ts'>
 import Tooltip from "$lib/c/Tooltip.svelte";
+import type { Data } from "$lib/data/character";
 import { playbook as playbooks } from "$lib/data/playbooks";
 
-export let character
+export let character:Data
 $: playbook = playbooks[character.playbook]
 $: full_history = [...playbook.history, 'Why are you committed to this group or purpose?']
 
 let current_demeanor = ''
 
-function demeanor_keyboard(e) {
-  if (e.key === 'Enter') {
-    add_demeanor()
-  }
-}
 function add_demeanor() {
   character.demeanors = [...character.demeanors, current_demeanor]
   current_demeanor = ''
@@ -20,13 +16,26 @@ function add_demeanor() {
 function remove_demeanor(demeanor:string) {
   character.demeanors = character.demeanors.filter(el => el !== demeanor)
 }
-// TODO make Demeanors better, css what's been added, how to remove
 </script>
 <style>
   label {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-bottom: .5em;
+  }
+  .demeanors {
+    display: grid;
+    grid-template-columns: repeat(6, 1.2em 5em);
+    margin-bottom: 1em;
+  }
+  .demeanors > button:hover + span {
+    text-decoration: line-through;
+  }
+  .demeanors > button {
+    background-color: var(--b4);
+  }
+  p {
+    margin: 1em .25em;
   }
 </style>
 <label>
@@ -48,12 +57,12 @@ function remove_demeanor(demeanor:string) {
     <option>{demeanor}</option>
   {/each}
 </datalist>
-<div>
+<div class='demeanors'>
   {#each character.demeanors as demeanor}
     <button on:click={()=>{remove_demeanor(demeanor)}}>
       X
     </button>
-    {demeanor}
+    <span>{demeanor}</span>
   {/each}
 </div>
 <label>

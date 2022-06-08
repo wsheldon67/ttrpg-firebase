@@ -5,6 +5,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Firebending' is_page_title>
+  <slot slot='header' />
   <p>Manipulate their chi and ambient fire with intense and aggressive results.</p>
   <ul>
     <li>Slicing through a barrier with a blade of flame</li>

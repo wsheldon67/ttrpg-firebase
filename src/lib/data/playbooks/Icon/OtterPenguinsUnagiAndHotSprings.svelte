@@ -20,6 +20,7 @@
       <Fatigue bind:character={character} amt={-1}/>
       <Growth bind:character={character} />
     {/if}
+    <slot />
   </div>
   <p>When you visit a new inhabited location you might know about, roll <Tip text='Harmony'/>:</p>
   <FullResult>

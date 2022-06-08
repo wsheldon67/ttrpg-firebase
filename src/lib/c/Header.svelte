@@ -32,6 +32,7 @@
 <style>
   button {
     width: 100%;
+    height: 100%;
     padding: .25em 0em;
     text-align: left;
     color: inherit;
@@ -58,6 +59,7 @@
   }
   .header {
     max-width: 36rem;
+    margin: 0em;
   }
 </style>
 <!--

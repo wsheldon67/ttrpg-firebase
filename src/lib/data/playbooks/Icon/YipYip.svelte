@@ -18,6 +18,7 @@
       <Status bind:character={character} status='Favored' />
       <Fatigue bind:character={character} amt={-5} />
     {/if}
+    <slot />
   </div>
   <p>You have an animal companion large enough to ride.</p>
   <p>Fight beside your animal companion:</p>

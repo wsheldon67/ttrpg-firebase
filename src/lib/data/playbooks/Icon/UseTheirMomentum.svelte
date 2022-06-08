@@ -19,6 +19,7 @@
       <StatRoll {character} {move} />
       <Status bind:character={character} status='Prepared' />
     {/if}
+    <slot />
   </div>
   <p>Engage with a large or powerful foe.</p>
   <ul>

@@ -22,8 +22,6 @@
       character.techniques = character.techniques.filter(el => el.name !== name)
     }
   }
-  // TODO Confusing which technique the checkboxes belong to
-  // put checkbox after technique?
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
@@ -31,6 +29,7 @@
 <div class='cardtainer'>
 {#each comps as {component, name} (name)}
   <div class='card'>
+    <svelte:component this={component} hide start={2}/>
     <div>
       <label>
         <input type='checkbox'
@@ -47,7 +46,6 @@
         Mastered
       </label>
     </div>
-    <svelte:component this={component} hide start={2}/>
   </div>
 {/each}
 </div>

@@ -3,6 +3,7 @@
   import { moves } from '$lib/data/playbooks/moves'
   import { playbook } from '$lib/data/playbooks';
   import { get_stats, stat_positions } from '$lib/data/calc_character';
+import Select from './_Select.svelte';
   export let character
 
   const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
@@ -17,24 +18,22 @@
       character.moves = [...character.moves, move_name]
     }
   }
-  // TODO button/drop down combo is confusing.
-  // Move selector to button inside Header (using content API)
 </script>
 <style>
   .highlighted {
-    box-shadow: 0em 0em 1em 0em var(--good);
+    box-shadow: 0em 0em .5em 0em var(--good) inset, 0em 0em 1em 0em var(--good);
   }
 </style>
 <p>Take +1 to a stat:</p>
 <div>
   {#each stats as stat, index}
-    <label>
+    <label class:highlighted={character.boosted_stats[0] === stat}>
       <input
         type='radio'
         name='stat'
         value={stat}
         bind:group={character.boosted_stats[0]}
-        class:highlighted={character.boosted_stats[0] === stat}
+
         disabled={playbook[character.playbook].stats[stat_positions[stat]] >= 2}
       />
       {stat} ({signed(realized_stats[index])})
@@ -44,13 +43,14 @@
 <p>Choose {plural(2-character.moves.length, 'move')}:</p>
 <div class='cardtainer'>
 {#each moves[character.playbook] as {component, stat, name}}
-  <button
+  <div
     class='card'
     class:highlighted={stat === character.boosted_stats[0]}
     class:selected={character.moves.includes(name)}
-    on:click={()=>{select_move(name)}}
   >
-    <svelte:component this={component} hide start={2}/>
-  </button>
+    <svelte:component this={component} hide start={2}>
+      <Select selected={character.moves.includes(name)} on:click={()=>select_move(name)} />
+    </svelte:component>
+  </div>
 {/each}
 </div>

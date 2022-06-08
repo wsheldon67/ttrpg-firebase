@@ -5,6 +5,7 @@
   import Privileged from '../../comp/Setup/Privileged.svelte'
   import Urban from '../../comp/Setup/Urban.svelte'
   import Wilderness from '../../comp/Setup/Wilderness.svelte'
+  import Select from './_Select.svelte'
 
   export let character
 
@@ -34,11 +35,10 @@
 <p>Choose 1 or 2 backgrounds:</p>
 <div class='cont'>
   {#each options as {name, component} (name)}
-    <button
-      class={'card' + (character.backgrounds.includes(name) ? ' selected' : '')}
-      on:click={()=>{click(name)}}
-    >
-      <svelte:component this={component} start={2}/>
-    </button>
+    <div class={'card' + (character.backgrounds.includes(name) ? ' selected' : '')}>
+      <svelte:component this={component} start={2}>
+        <Select selected={character.backgrounds.includes(name)} on:click={()=>{click(name)}} />
+      </svelte:component>
+    </div>
   {/each}
 </div>

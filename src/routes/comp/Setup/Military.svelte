@@ -5,6 +5,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Military' is_page_title>
+  <slot slot='header' />
   <p>{backgrounds.Military}</p>
   <Header h={2} {start} title='To Ponder' hide>
     <ul>

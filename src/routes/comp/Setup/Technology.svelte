@@ -5,6 +5,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Technology' is_page_title>
+  <slot slot='header' />
   <p>Uses their expertise with devices and machines to engage foes and resolve threats.</p>
   <ul>
     <li>Setting jury-rigged traps and snares</li>

@@ -5,6 +5,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Waterbending' is_page_title>
+  <slot slot='header' />
   <p>Manipulate their element with fluidity and grace.</p>
   <ul>
     <li>Weaving water into snapping and slashing whips</li>
