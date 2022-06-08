@@ -18,6 +18,7 @@ import Status from '$lib/c/Status.svelte';
       <StatRoll {character} {move} />
       <Status bind:character={character} status='Prepared' />
     {/if}
+    <slot />
   </div>
   <p>When you provoke an NPC opponent into attack you, roll with <Tip text='Passion'/>.</p>
   <FullResult>

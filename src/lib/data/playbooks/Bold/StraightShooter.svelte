@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Tell an NPC the blunt, honest truth about what you really think of them and their plans. Roll <Tip text='Focus'/>:</p>
   <FullResult>

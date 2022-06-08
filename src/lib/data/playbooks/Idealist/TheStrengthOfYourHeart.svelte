@@ -9,5 +9,8 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="The Strength of Your Heart">
+  <div slot='header'>
+    <slot />
+  </div>
   <p>When you <Tip text='seize a position'/>, foes must mark 2 <Tip text='fatigue'/> to block your movement.</p>
 </Header>

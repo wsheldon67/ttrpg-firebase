@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Evaluate a friendly NPC's plan. Roll with <Tip text='Focus'/>:</p>
   <FullResult>

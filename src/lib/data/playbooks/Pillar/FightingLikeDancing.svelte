@@ -15,6 +15,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p><Tip text='Advance and attack'/> against:</p>
   <ul>

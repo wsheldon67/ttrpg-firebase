@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Stand up to an adult by telling them their rules are stupid. Roll Passion:</p>
   <FullResult>

@@ -16,6 +16,7 @@ import type { Move } from '../moves';
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Verbally needle someone by finding the weaknesses in their armor.</p>
   <Header h={2} {start} title='Roll Focus'>

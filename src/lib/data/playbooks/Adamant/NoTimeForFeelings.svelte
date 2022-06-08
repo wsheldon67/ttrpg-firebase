@@ -19,6 +19,7 @@
       <Fatigue bind:character={character} />
       <Roll mod={marked_conditions} label='Resist Shifting You Balance' stat='Conditions'/>
     {/if}
+    <slot />
   </div>
   <p>Mark 1 <Tip text='fatigue'/> to push down your feelings for the rest of the scene:</p>
   <ul>

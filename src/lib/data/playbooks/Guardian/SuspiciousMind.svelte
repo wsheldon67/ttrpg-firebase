@@ -16,6 +16,7 @@ import ResultTable from '$lib/c/ResultTable.svelte'
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Watch a person carefully to figure them out. Roll <Tip text='focus'/>:</p>
   <ResultTable>

@@ -15,6 +15,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Openly refuse to back down or flee while you are engaged in combat with superior opposition.</p>
   <ul>

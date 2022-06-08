@@ -9,6 +9,9 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Taking Care of Business">
+  <div slot='header'>
+    <slot />
+  </div>
   <p>When you <Tip text='lose your balance'/> in battle, you may instead sacrafice yourself for your companions.</p>
   <ul>
     <li>Your companions have a chance to get away without issue</li>

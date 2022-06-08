@@ -14,6 +14,9 @@
   $: total = character ? conditions + highest_principle + character.fatigue : null
 </script>
 <Header h={1} {start} {hide} title='Martyr Complex'>
+  <div slot='header'>
+    <slot />
+  </div>
   {#if character && move}
     <div class='status'>
       <p>Conditions: {conditions}</p>

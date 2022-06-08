@@ -17,6 +17,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Put on a disguised or physically altered persona to foll a community into thinking you're two different people. Roll Creativity:</p>
   <FullResult>

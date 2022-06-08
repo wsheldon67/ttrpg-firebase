@@ -15,6 +15,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Size someone up. Roll Focus:</p>
   <FullResult>

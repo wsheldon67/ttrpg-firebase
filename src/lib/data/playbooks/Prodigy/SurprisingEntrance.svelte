@@ -15,6 +15,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p><Tip text='Trick'/> someone using your skills to disappear and reappear somewhere else within the same scene.</p>
   <ul><li>Roll with Focus instead of Creativity</li></ul>

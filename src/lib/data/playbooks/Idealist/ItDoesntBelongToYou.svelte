@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Secretly pocket something owned by someone undeserving. Roll Harmony:</p>
   <FullResult>

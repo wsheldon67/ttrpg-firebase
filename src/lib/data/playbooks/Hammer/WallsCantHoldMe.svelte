@@ -15,6 +15,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>When you <Tip text='rely on your skills and training'/>, to dangerously smash your way through walls or other obstacles, roll with <Tip text='Passion'/> instead of <Tip text='Focus'/>.</p>
 </Header>

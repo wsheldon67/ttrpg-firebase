@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move}/>
     {/if}
+    <slot />
   </div>
   <p>Give an NPC an order based on the authority granted by a badge or symbol of authority from your background. Roll <Tip text='Passion'/></p>
   <FullResult>

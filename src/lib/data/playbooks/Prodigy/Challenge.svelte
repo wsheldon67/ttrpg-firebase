@@ -18,6 +18,7 @@
       <StatRoll {character} {move} />
       <Fatigue bind:character={character} amt={-5} />
     {/if}
+    <slot />
   </div>
   <p>Throw a boastful challenge at an opponent before a fight. Roll Passion:</p>
   <FullResult>

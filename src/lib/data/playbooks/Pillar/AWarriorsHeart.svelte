@@ -31,6 +31,7 @@
         {/if}
       {/if}
     {/if}
+    <slot />
   </div>
   <p>You get bonuses when you <Tip text='live up to your principle'/> if you have <Tip text='conditions'/> marked:</p>
   <ul>

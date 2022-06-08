@@ -18,6 +18,7 @@ import type { Move } from '../moves';
       <Fatigue bind:character={character} />
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Your small animal companion could helps you <Tip text='push your luck'/>:</p>
   <ul>

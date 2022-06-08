@@ -13,6 +13,9 @@
   // This move might be complicated, also looking into how we're implementing the Training Move
 </script>
 <Header h={1} {start} {hide} title="An Open Mind">
+  <div slot='header'>
+    <slot />
+  </div>
   <p>You can learn up to 3 techniques from other skills and trainings, as long as you have a teacher.</p>
   <ul>
     <li>Take +1 on the <Tip text='training move'/> to learn such techniques.</li>

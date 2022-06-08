@@ -17,6 +17,7 @@
       <Fatigue bind:character={character} />
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>When you <Tip text='defend and maneuver'/> against a foe whose balance <Tip text='principle'/> you know, you may mark <Tip text='fatigue'/> to roll with <Tip text='Creativity'/> instead of <Tip text='Focus'/>.</p>
 </Header>

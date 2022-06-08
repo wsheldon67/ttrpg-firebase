@@ -17,6 +17,7 @@
       <StatRoll {character} {move} />
       <Fatigue bind:character={character} amt={-5} />
     {/if}
+    <slot />
   </div>
   {#if character && move}
     <label>

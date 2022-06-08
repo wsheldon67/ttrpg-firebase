@@ -19,6 +19,7 @@
       <StatRoll {character} {move} />
       <Fatigue bind:character={character} />
     {/if}
+    <slot />
   </div>
   <p>Reveal that you have sabotaged a building, device, or vehicle right as it becomes relevant.</p>
   <Header h={2} {start} title='Roll Passion'>

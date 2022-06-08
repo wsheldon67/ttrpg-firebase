@@ -19,6 +19,7 @@
       <StatRoll {character} {move} />
       <Status bind:character={character} status='Prepared' />
     {/if}
+    <slot />
   </div>
   <p><Tip text='Assess a situation'/> while taking the time to use your extraordinary skills to absorb hidden or deep information.</p>
   <ul>

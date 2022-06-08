@@ -16,6 +16,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>You commit to a plan you've proposed to the group:</p>
   <ul>

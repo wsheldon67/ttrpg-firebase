@@ -17,6 +17,7 @@
     {#if character && move}
       <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p>Spend time talking to the locals about their problems. Roll Harmony:</p>
   <FullResult>

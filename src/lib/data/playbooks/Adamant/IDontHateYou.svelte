@@ -17,6 +17,7 @@
     <Condition bind:character={character} condition='Insecure'/>
     <StatRoll {character} {move} />
     {/if}
+    <slot />
   </div>
   <p><Tip text='Guide and comfort'/> someone in an awkward, understated, or idiosyncratic fashion:</p>
   <ul>
