@@ -17,6 +17,8 @@
       character.moves = [...character.moves, move_name]
     }
   }
+  // TODO button/drop down combo is confusing.
+  // Move selector to button inside Header (using content API)
 </script>
 <style>
   .highlighted {

@@ -22,7 +22,8 @@
       character.techniques = character.techniques.filter(el => el.name !== name)
     }
   }
-
+  // TODO Confusing which technique the checkboxes belong to
+  // put checkbox after technique?
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>

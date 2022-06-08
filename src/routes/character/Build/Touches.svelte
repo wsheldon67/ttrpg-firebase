@@ -20,6 +20,7 @@ function add_demeanor() {
 function remove_demeanor(demeanor:string) {
   character.demeanors = character.demeanors.filter(el => el !== demeanor)
 }
+// TODO make Demeanors better, css what's been added, how to remove
 </script>
 <style>
   label {
@@ -32,15 +33,16 @@ function remove_demeanor(demeanor:string) {
   Hometown:
   <input type='text' bind:value={character.hometown}/>
 </label>
+<form on:submit|preventDefault={add_demeanor}>
 <label>
   <Tooltip tip={`Recommended: ${playbook.demeanors.join(', ')}`}>Demeanors:</Tooltip>
   <input
     type='text'
-    on:keypress={demeanor_keyboard}
     bind:value={current_demeanor}
     list='demeanors'
   />
 </label>
+</form>
 <datalist id='demeanors'>
   {#each playbook.demeanors as demeanor}
     <option>{demeanor}</option>

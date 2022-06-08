@@ -29,7 +29,8 @@ import Training from "./Training.svelte";
       timeout_id = undefined
     }, 2000)
   })
-
+  // TODO Add explanations of each thing
+  // Fighting style was mentioned
 </script>
 <style>
   .next, .back {
