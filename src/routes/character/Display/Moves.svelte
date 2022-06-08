@@ -5,13 +5,18 @@
   import { all_moves } from "$lib/data/playbooks/moves";
   import BalanceMoves from "./BalanceMoves.svelte";
   import BasicMoves from "./BasicMoves.svelte";
+  import MomentOfBalance from "./MomentOfBalance.svelte";
 
   export let character:Data
   export let start:number = 1
   export let hide:boolean = false
+  $: moments_unlocked = character.growth_advancements.filter(el => el.name === 'Moment of Balance').length
   
 </script>
 <Header h={1} {start} {hide} title='Moves'>
+    {#if moments_unlocked > character.moments_used}
+      <MomentOfBalance start={start+2} bind:character={character}/>
+    {/if}
     {#each character.moves as move}
       <Move bind:character={character} move={all_moves.find(el => el.name === move)} start={start+2}/>
     {/each}

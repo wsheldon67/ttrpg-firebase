@@ -28,6 +28,7 @@ export interface Data {
     name: string
     settings?: any
   }[]
+  moments_used: number
   growth: number
   feature_settings: any
   bonuses: {name: string, source: string}[]
@@ -93,6 +94,7 @@ export const blank:Data = {
     {name: 'Stunned', applied: false}
   ],
   growth_advancements: [],
+  moments_used: 0,
   growth: 0,
   feature_settings: {},
   bonuses: []
