@@ -28,7 +28,7 @@
 <Identity {character} {start} hide/>
 <Stats bind:character={character} {start} hide/>
 <Status bind:character={character} {start} hide/>
-<Moves bind:character={character} {start} hide/>
+<Moves bind:character={character} {start} {id} hide/>
 <Techniques bind:character={character} {start} hide/>
 <Growth bind:character={character} {start} {id} hide/>
 <Bonuses bind:character={character} {start} hide/>

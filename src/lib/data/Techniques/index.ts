@@ -14,10 +14,6 @@ export interface Technique {
   component: any
   tags: string[]
 }
-// TODO make all techniques static imports
-// Sort these into index.ts in their folders
-// Replace URL with component
-// Fix the Display, Build, and anything else that uses this.
 export const techniques: Technique[] = [
   ...Airbending, ...Basic, ...Earthbending, ...Firebending, ...Group, ...Playbook, ...Technology,
   ...Universal, ...Waterbending, ...Weapons

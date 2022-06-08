@@ -6,9 +6,10 @@
   import Weapons from '../../comp/Setup/Weapons.svelte'
   import Technology from '../../comp/Setup/Technology.svelte'
   import Select from "./_Select.svelte"
-import Tooltip from "$lib/c/Tooltip.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
+  import type { Data } from "$lib/data/character";
 
-  export let character
+  export let character:Data
 
   const trainings = [
     {name: 'Waterbending', component: Waterbending},
@@ -20,7 +21,7 @@ import Tooltip from "$lib/c/Tooltip.svelte";
   ]
 
   function click(clicked_training:string) {
-    character.training = clicked_training
+    character.trainings[0] = clicked_training
   }
 </script>
 <p>Choose your Training, and then specify a Fighting Style.</p>
@@ -33,9 +34,9 @@ import Tooltip from "$lib/c/Tooltip.svelte";
 </label>
 <div class='cardtainer'>
 {#each trainings as {component, name}}
-  <div class={'card' + (character.training === name ? ' selected' : '')}>
+  <div class={'card' + (character.trainings[0] === name ? ' selected' : '')}>
     <svelte:component this={component} start={2}>
-      <Select selected={character.training === name} on:click={()=>{click(name)}} />
+      <Select selected={character.trainings[0] === name} on:click={()=>{click(name)}} />
     </svelte:component>
   </div>
 {/each}

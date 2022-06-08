@@ -1,11 +1,14 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-import { signed } from '$lib/pretty'
-import FullResult from '$lib/c/FullResult.svelte'
+  import { signed } from '$lib/pretty'
+  import FullResult from '$lib/c/FullResult.svelte'
   import Tip from '$lib/c/Tip.svelte'
+  import type { Data } from '$lib/data/character';
 
   export let start: number = 1
   export let hide: boolean = false
+  export let character:Data = undefined
+  export let id:string = undefined
 
   let balance:boolean = false
   let conditions:boolean = false
@@ -60,6 +63,10 @@ import FullResult from '$lib/c/FullResult.svelte'
         <td>-</td>
       </tr>
     </FullResult>
-    <p>You then learn the technique.</p>
+    {#if character}
+      <p>You then <a href={'/character/technique-'+ id}>learn the technique</a>.</p>
+    {:else}
+      <p>You then learn the technique.</p>
+    {/if}
   </Header>
 </Header>

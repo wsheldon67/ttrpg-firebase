@@ -12,7 +12,6 @@
     if (character.fatigue > 5) {character.fatigue = 5}
     if (character.fatigue < 0) {character.fatigue = 0}
   }
-  // TODO bounds, disable
 </script>
 <button class='p' on:click={click} {disabled}>
   {signed(amt)} Fatigue

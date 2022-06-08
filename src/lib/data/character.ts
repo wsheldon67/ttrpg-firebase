@@ -4,7 +4,7 @@ export interface Data {
   playbook: string
   concept: LongString
   name: string
-  training: string
+  trainings: string[]
   fighting_style: string
   backgrounds: string[]
   hometown: string
@@ -60,7 +60,7 @@ export const blank:Data = {
   playbook: 'Adamant',
   concept: '',
   name: '',
-  training: 'Waterbending',
+  trainings: [],
   fighting_style: '',
   backgrounds: [],
   hometown: '',

@@ -9,6 +9,7 @@
   <a href='/comp/Core/Scene'>Scenes</a>
   <a href='/comp/Statuses'>Statuses</a>
   <a href='/comp/Core/TakenOut'>Taken Out</a>
+  <a href='/comp/Techniques/Mastery'>Technique Mastery</a>
 </div>
 <h1><a href='/comp/Setup/'>Setup</a></h1>
   <h2><a href='/comp/Setup/Background'>Backgrounds</a></h2>
@@ -69,6 +70,7 @@
     <a href='/comp/Moves/RelyOnSkillsAndTraining'>Rely on Your Skills and Training</a>
     <a href='/comp/Moves/Trick'>Trick</a>
     <a href='/comp/Moves/Help'>Help</a>
+    <a href='/comp/Techniques/Training'>Training</a>
   </div>
   <h2><a href='/comp/Moves/Balance'>Balance Moves</a></h2>
   <div class='list'>

@@ -2,7 +2,6 @@
   import Search from '$lib/c/Search.svelte'
   import { search_client } from '$lib/algolia'
   import { goto } from '$app/navigation'
-  // TODO pagination
   const campaignID = localStorage.getItem('campaignID')
   async function searchFunc(query) {
     const { isSignedIn } = await import ('$lib/firebase')

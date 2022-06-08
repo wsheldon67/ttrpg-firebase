@@ -1,17 +1,18 @@
 <script lang='ts'>
   import type { Data } from "$lib/data/character"
-  import { techniques } from "$lib/data/techniques"
+  import { applicable_technqiues } from "$lib/data/trainings";
   import { playbook } from '$lib/data/playbooks'
+  import { beforeUpdate, createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
 
   export let character:Data
   export let hide_limit:boolean = false
+  export let all_trainings:boolean = false
 
   $: mastered = character.techniques.filter(el => el.level === 2).length
   $: learned = character.techniques.filter(el => el.level === 1).length
 
-  $: non_playbook = techniques.filter(({tags}) => {
-    return tags.includes(character.training) || tags.includes('Universal')
-  })
+  $: non_playbook = applicable_technqiues(character, all_trainings)
   $: comps = [playbook[character.playbook].technique, ...non_playbook]
 
   function check(level:number, name:string, e:any) {
@@ -22,6 +23,16 @@
       character.techniques = character.techniques.filter(el => el.name !== name)
     }
   }
+  // on updates, send to server
+  let timeout_id
+  beforeUpdate(async()=>{
+    if (timeout_id) {clearTimeout(timeout_id)}
+    // wait 200ms to see if there's any sequential updates
+    timeout_id = setTimeout(()=>{
+      dispatch('update',character)
+      timeout_id = undefined
+    }, 2000)
+  })
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
@@ -47,7 +58,7 @@
       </label>
       <label>
         <input type='checkbox'
-          on:input={e => check(2, name, e)}
+          on:input={e => check(3, name, e)}
           checked={character.techniques.some(el => el.name === name && el.level >= 2)}
         />
         Mastered
