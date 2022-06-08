@@ -5,7 +5,8 @@
   import Airbending from '../../comp/Setup/Airbending.svelte'
   import Weapons from '../../comp/Setup/Weapons.svelte'
   import Technology from '../../comp/Setup/Technology.svelte'
-import Select from "./_Select.svelte"
+  import Select from "./_Select.svelte"
+import Tooltip from "$lib/c/Tooltip.svelte";
 
   export let character
 
@@ -22,8 +23,9 @@ import Select from "./_Select.svelte"
     character.training = clicked_training
   }
 </script>
+<p>Choose your Training, and then specify a Fighting Style.</p>
 <label>
-  Fighting Style:
+  <Tooltip tip='Changes the way your character fights, making them different from other fighters who use the same training. See the examples for each training below.'>Fighting Style:</Tooltip>
   <input
     type='text'
     bind:value={character.fighting_style}

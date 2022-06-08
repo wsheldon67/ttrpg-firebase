@@ -25,6 +25,13 @@
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
+  <details>
+    <summary>More Info</summary>
+    <ul>
+      <li>You must learn a technique before you can master it, therefore mastered techinques are automatically marked as learned as well.</li>
+      <li>Your playbook technique is selected by default. GM approval is required to change it.</li>
+    </ul>
+  </details>
 {/if}
 <div class='cardtainer'>
 {#each comps as {component, name} (name)}

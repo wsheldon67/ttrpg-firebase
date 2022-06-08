@@ -38,6 +38,7 @@ function remove_demeanor(demeanor:string) {
     margin: 1em .25em;
   }
 </style>
+<p>Provide additional details about your character's identity.</p>
 <label>
   Hometown:
   <input type='text' bind:value={character.hometown}/>

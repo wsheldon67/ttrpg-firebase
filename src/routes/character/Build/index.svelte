@@ -14,7 +14,7 @@ import Techniques from "./Techniques.svelte";
 import Touches from "./Touches.svelte";
 import Training from "./Training.svelte";
 
-  const order = [Playbook, Details, Training, Backgrounds, Touches, Stats, Techniques, Connections, Review]
+  const order = [Playbook, Details, Training, Backgrounds, Touches, Stats, Techniques, Review, Connections]
   let current_page = 0
 
   export let character:Data = blank

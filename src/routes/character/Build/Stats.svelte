@@ -6,7 +6,6 @@
   import Select from './_Select.svelte';
   export let character
 
-  const stats = ['Creativity', 'Focus', 'Harmony', 'Passion']
   $: realized_stats = get_all_stats(character)
 
   function select_move(move_name:string) {
@@ -41,6 +40,7 @@
   {/each}
 </div>
 <p>Choose {plural(2-character.moves.length, 'move')}:</p>
+<p>Moves that use your boosted stat are highlighted.</p>
 <div class='cardtainer'>
 {#each moves[character.playbook] as {component, stat, name}}
   <div

@@ -11,6 +11,8 @@
     flex-direction: column;
   }
 </style>
+<p>Choose a character concept and name for your character.</p>
+<p>Auto-save is enabled once your character has a name.</p>
 <div class='cont'>
   <label>
     <Tooltip tip="A one-sentence description of your character.">Concept:</Tooltip>
