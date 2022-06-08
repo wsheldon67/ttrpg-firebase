@@ -27,6 +27,11 @@
     background-color: var(--b3);
     z-index: 12;
   }
+  a {
+    height: 1.7em;
+    margin-left: .5em;
+    margin-right: .25em;
+  }
 </style>
 
 <div class='nav'>
@@ -34,7 +39,7 @@
     <Menu />
   </button>
   <Search />
-  <div>Logo</div>
+  <a href='/'><img src='/favicon-32x32.png' alt='logo'/></a>
 </div>
 {#if isOpen}
 <div class='siteNav' on:click={()=>isOpen = false}>
