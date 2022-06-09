@@ -26,7 +26,6 @@ import Training from "./Training.svelte";
     // wait 200ms to see if there's any sequential updates
     timeout_id = setTimeout(()=>{
       dispatch('update',character)
-      console.log(character.history)
       timeout_id = undefined
     }, 2000)
   })

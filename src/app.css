@@ -94,6 +94,12 @@ h5 {
   padding-left: 1em;
 }
 .panel5 {background-color: var(--b4);}
+input, textarea {
+  background-color: var(--b4);
+}
+input:hover, textarea:hover {
+  background-color: var(--b5);
+}
 input[type='number'] {
   width: 3em;
 }
