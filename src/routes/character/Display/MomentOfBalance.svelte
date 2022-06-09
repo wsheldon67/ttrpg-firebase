@@ -17,14 +17,20 @@
   <Popover slot='header' bind:show={show}>
     <span slot='button' class='p'>Do it</span>
     <svelte:fragment slot='content'>
-      <p>This will expend one of your very limited uses of this move, removing it from your character sheet. Are you sure?</p>
-      <button class='p' on:click={()=>{show = false}}>No, take me back</button>
-      <button class='p' on:click={do_it}>Yes, do it</button>
+      {#if character.balance === character.center}
+        <p>This will expend one of your very limited uses of this move, removing it from your character sheet. Are you sure?</p>
+        <button class='p' on:click={()=>{show = false}}>No, take me back</button>
+        <button class='p' on:click={do_it}>Yes, do it</button>
+      {:else}
+        <p>Your balance must be at your center to use this move.</p>
+        <button class='p' on:click={()=>{show = false}}>Close</button>
+      {/if}
     </svelte:fragment>
   </Popover>
   <p><strong>{playbook[character.playbook].moment_of_balance}</strong></p>
   <p>This is a special and extremely powerful move that resolves an entire scene of conflict.</p>
   <ul>
     <li>This move must be unlocked prior to each use, and can only be unlocked twice.</li>
+    <li>Your balance must be at your center to use this move.</li>
   </ul>
 </Header>
