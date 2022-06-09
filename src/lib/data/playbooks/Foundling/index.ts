@@ -3,15 +3,17 @@ import FeelTheFlow from '../../techniques/Playbook/FeelTheFlow.svelte'
 
 export const Foundling:Playbook = {
   name: 'Foundling',
-  blurb: ``,
-  motivation: ``,
+  blurb: `is the child of two cultures, belonging to both but 
+  not at home in either.`,
+  motivation: `you want to synthesize 
+  the lessons and traditions of your heritage.`,
   principles: [
     {
       name: 'Unity',
-      text: ``
+      text: `The desire to combine their heritages and find connections that bring their two home cultures into one identity. They are coming to see themselves as something new, a truly innovative combination of two ways of being.`
     },{
       name: 'Heritage',
-      text: ``
+      text: `An interest and devotion to their heritage, embracing the unique and specific aspects of one of their cultures, sometimes at the expense of their identity with the other.`
     }
   ],
   stats: [1, -1, 1, 0],
@@ -32,7 +34,11 @@ export const Foundling:Playbook = {
   ],
   growth_question: `Did you resolve an issue or conflict relying on 
   something other than your trainings?`,
-  moment_of_balance: `Your new understanding 
-  lets you use both your trainings to accomplish an incredible 
+  moment_of_balance: `You have always struggled to find unity between your two 
+  halves while trying to honor their traditions. But true balance 
+  is about knowing that everything is part of a greater whole. 
+  One heritage cannot exist without the other...especially 
+  within you. Tell the GM how your new understanding lets 
+  you use both your trainings to accomplish an incredible 
   feat or vanquish an enemy that seems unstoppable.`
 }

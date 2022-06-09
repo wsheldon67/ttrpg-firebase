@@ -28,5 +28,10 @@ export const Adamant:Playbook = {
     [``, `is my lodestar; something about them makes them the one person I let my guard down around.`]
   ],
   growth_question: `Did you seek support or guidance from others?`,
-  moment_of_balance: `Solve an intractable problem or calm a terrible conflict by relating to dangerous people on a human level.`
+  moment_of_balance: `You’ve held true to a core of conviction even while getting 
+  your hands dirty to do what you deemed necessary. But 
+  balance means appreciating that other people are just as 
+  complex as you are, not merely obstacles or pawns. Tell the 
+  GM how you solve an intractable problem or calm a terrible 
+  conflict by relating to dangerous people on a human level.`
 }

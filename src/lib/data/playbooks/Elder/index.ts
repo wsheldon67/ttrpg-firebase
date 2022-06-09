@@ -3,15 +3,17 @@ import Patience from '../../techniques/Playbook/Patience.svelte'
 
 export const Elder:Playbook = {
   name: 'Elder',
-  blurb: ``,
-  motivation: ``,
+  blurb: `has spent many years living and learning, making 
+  mistakes and growing from them.`,
+  motivation: `you want to 
+  teach (and be taught by) your companions.`,
   principles: [
     {
       name: 'Experience',
-      text: ``
+      text: `Adherance to what they have learned during their time shaping the world. They provide new insight and guidance to their companions, and may even discount their companions and see things ridigly through a lens of past experience.`
     },{
       name: 'Humility',
-      text: ``
+      text: `Understanding that for all they have done and learned, they don't know everything and have plenty left to learn. The time to change who they are is never truly over. They can discount the wealth of their experience and fail to intervene when they see a friend making a mistake.`
     }
   ],
   stats: [0,0,2,-1],
@@ -29,6 +31,11 @@ export const Elder:Playbook = {
   ],
   growth_question: `You earn growth advancements as you aid chosen protégés to 
   achieve their full potential and move towards their own principles.`,
-  moment_of_balance: `You wipe away whatever conceals the truth so no 
-  one can see things as they once thought they were.`
+  moment_of_balance: `You will always be anchored to the past—unable to escape 
+  the painful lessons you have learned—but now you can hold 
+  the weight of that experience with the humility true wisdom 
+  brings. You look upon the current situation with unbiased 
+  eyes to see the truths roiling beneath the surface. Tell the 
+  GM how you wipe away whatever conceals the truth so 
+  no one can see things as they once thought they were.`
 }

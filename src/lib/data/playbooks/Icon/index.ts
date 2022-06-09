@@ -30,6 +30,9 @@ export const Icon:Playbook = {
     [``, `makes me feel better about my responsibilities and my burden with a smile and a few kind words.`]
   ],
   growth_question: `Did you accomplish a feat worthy of your burden and tradition?`,
-  moment_of_balance: `Your new understanding of your burdens forges a new way 
-  forward for everyone.`
+  moment_of_balance: `Others have laid a path for you that you cannot escape, but 
+  balance means you understand the limits of their vision. You make 
+  the role your own in this moment, charting a new path for yourself 
+  and your tradition. Tell the GM how your new understanding 
+  of your burdens forges a new way forward for everyone.`
 }

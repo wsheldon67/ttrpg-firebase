@@ -30,5 +30,10 @@ export const Successor:Playbook = {
   ],
   growth_question: `Did you learn something meaningful or important about your 
   lineage, its members, or its effects on the world and others?`,
-  moment_of_balance: `You knock down obstacles that seem impossible to overcome and save the day.`
+  moment_of_balance: `You may never escape the legacy of your family, but balance 
+  allows you to learn from them without defining yourself in their 
+  image. You call upon a resource of your family to innovate a new 
+  solution to an intractable problem, never forgetting who you are 
+  in the face of incredible danger. Tell the GM how you knock down 
+  obstacles that seem impossible to overcome and save the day. `
 }

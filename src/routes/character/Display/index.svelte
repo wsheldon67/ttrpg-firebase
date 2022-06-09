@@ -26,6 +26,9 @@
     }, 2000)
   })
 </script>
+<svelte:head>
+  <title>{character.name || 'Untitled'}: The {character.playbook}</title>
+</svelte:head>
 <Identity {character} {start} hide/>
 <Stats bind:character={character} {start} hide/>
 <Status bind:character={character} {start} hide/>

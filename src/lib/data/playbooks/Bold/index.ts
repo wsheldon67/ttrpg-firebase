@@ -31,5 +31,10 @@ export const Bold:Playbook = {
   ],
   growth_question: `Did you express vulnerability by admitting you were wrong or 
   that you should have listened to someone you ignored?`,
-  moment_of_balance: `Strike down an impossibly strong enemy or obstacle to protect your friends from harm as the best version of yourself`
+  moment_of_balance: `The greatest heroes of your age may have overwhelming 
+  confidence, but balance isn’t about pursuing greatness for 
+  the sake of greatness. You find a way to stand with your 
+  companions like no one else ever could. Tell the GM how you 
+  strike down an impossibly strong enemy or obstacle to protect 
+  your friends from harm as the best version of yourself.`
 }

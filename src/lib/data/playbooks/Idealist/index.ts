@@ -31,6 +31,8 @@ export const Idealist:Playbook = {
   ],
   growth_question: `Did you improve the lives of a community of average citizens or 
   help an ordinary person with their problems?`,
-  moment_of_balance: `Your compassionate actions end a conflict 
-  utterly and completely`
+  moment_of_balance: `The pain of the world can be overwhelming, but balance brings 
+  peace. You bring everything around you to a stop—villains, 
+  arguments, disaster—and set the world right. Tell the GM how 
+  your compassionate actions end a conflict utterly and completely.`
 }

@@ -31,7 +31,10 @@ export const Pillar:Playbook = {
   ],
   growth_question: `Did you help a companion find a significant success with their 
   issues, or lead the group in finding a significant collective success?`,
-  moment_of_balance: `Say something to each of 
-  your companions so that in this moment, you overcome an 
-  indomitable challenge, together.`
+  moment_of_balance: `You define yourself as a part of a larger group, and in this moment, 
+  the group defines itself by you. You rally them, move among 
+  them, saying the right things and providing the right guidance 
+  so your group works with perfect cohesion and confidence. Tell 
+  the GM what you say to each of your companions so that in this 
+  moment, you overcome an indomitable challenge, together.`
 }

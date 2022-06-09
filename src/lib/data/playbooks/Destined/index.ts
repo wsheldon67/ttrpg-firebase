@@ -3,15 +3,15 @@ import Anticipate from '../../techniques/Playbook/Anticipate.svelte'
 
 export const Destined:Playbook = {
   name: 'Destined',
-  blurb: ``,
-  motivation: ``,
+  blurb: `has a grand fate in store, something spiritual or otherwordly.`,
+  motivation: `you want to shape your destiny and decide what becomes of you.`,
   principles: [
     {
       name: 'Patience',
-      text: ``
+      text: `Thoughtful and introspective, they wait for the right moment. They see their destiny as coming to them.`
     },{
       name: 'Determination',
-      text: ``
+      text: `Acting openly, agressivley, and often, seeking what they want and finding their destiny instead of waiting for it to come to them.`
     }
   ],
   stats: [0,-1,2,0],
@@ -29,6 +29,10 @@ export const Destined:Playbook = {
   ],
   growth_question: `Did you spend meaningful time with someone else focused on 
   their concerns and troubles?`,
-  moment_of_balance: `Your serenity and resolve together win the day and inspire all 
-  those around you.`
+  moment_of_balance: `You’ve held true to a core of conviction even while getting 
+  your hands dirty to do what you deemed necessary. But 
+  balance means appreciating that other people are just as 
+  complex as you are, not merely obstacles or pawns. Tell the 
+  GM how you solve an intractable problem or calm a terrible 
+  conflict by relating to dangerous people on a human level.`
 }

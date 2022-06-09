@@ -30,6 +30,10 @@ export const Rogue:Playbook = {
   ],
   growth_question: `Did you get a friend to join in or approve of 
   one of your bad habits?`,
-  moment_of_balance: `You lead your companions to break all the rules and accomplish an 
-  incredible feat.`
+  moment_of_balance: `You learned early on that you had to do what you needed to 
+  survive, and that sometimes that meant you lost friends. Now, 
+  you find a new balance: rule-breaking isn’t something that just 
+  drives people away—it’s something you can use constructively, 
+  with your friends! Tell the GM how you lead your companions 
+  to break all the rules and accomplish an incredible feat.`
 }

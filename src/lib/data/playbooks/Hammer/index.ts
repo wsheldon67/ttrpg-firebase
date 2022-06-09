@@ -30,6 +30,9 @@ export const Hammer:Playbook = {
     ['I worry',`won't be able to hold their own when things get tough. I'm going to toughen them up!`],
   ],
   growth_question: `Did you make progress towards your goal against your adversary?`,
-  moment_of_balance: `Put yourself directly in the path of an inescapable threat 
+  moment_of_balance: `You can knock down every wall in the world, but balance 
+  isn’t found in conquest and destruction. You know some 
+  walls need to stand to keep people safe. Tell the GM how 
+  you put yourself directly in the path of an inescapable threat 
   to completely protect someone or something from harm.`
 }

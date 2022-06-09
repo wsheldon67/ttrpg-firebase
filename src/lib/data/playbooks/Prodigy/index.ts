@@ -31,6 +31,10 @@ export const Prodigy:Playbook = {
   ],
   growth_question: `Did you express gratitude to a companion for their presence, 
   support, or teaching?`,
-  moment_of_balance: `You accomplish a feat no one ever has before to help or save 
-  your friends.`
+  moment_of_balance: `You’ve always struggled to rely on other people—it feels 
+  like it makes you weak. But in this moment, connection to 
+  others is the very source of your strength. You call upon your 
+  commitment to the group to push yourself beyond your limits 
+  and do the impossible. Tell the GM how you accomplish a 
+  feat no one ever has before to help or save your friends.`
 }

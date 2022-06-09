@@ -31,6 +31,9 @@ export const Guardian:Playbook = {
   ],
   growth_question: `Did you pursue a desire or goal of your own, outside of 
   protecting others?`,
-  moment_of_balance: `Put your own life on the line to defeat a 
-  villain or danger that seems unstoppable.`
+  moment_of_balance: `You’ve sworn to protect the people you care about, but balance is 
+  about finding your own place in the world as well. You know what 
+  you’re capable of accomplishing, and you step up to show the 
+  world your unique strength. Tell the GM how you put your own life 
+  on the line to defeat a villain or danger that seems unstoppable.`
 }
