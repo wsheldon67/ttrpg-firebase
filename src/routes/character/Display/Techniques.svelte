@@ -2,6 +2,7 @@
   import Header from "$lib/c/Header.svelte";
   import type { Data } from '$lib/data/character'
   import { techniques } from '$lib/data/techniques'
+  import Stance from "../../../routes/comp/Combat/Stance.svelte";
 
   export let character:Data
   export let start:number = 1
@@ -13,7 +14,6 @@
     } else {
       character.techniques[index].level = level - 1
     }
-    
   }
   $: combo_techniques = character.techniques.map((el) => {
     const technique = techniques.find(ell => ell.name === el.name)
@@ -21,7 +21,9 @@
   })
 </script>
 <Header h={1} {start} {hide} title='Techniques'>
-
+  <p>Choose an approach and then roll using the Stance Move:</p>
+  <Stance {character} start={start+1} hide/>
+  <p>Use a technique that uses the approach you chose:</p>
   {#each combo_techniques as {level, component, tags}, index}
   <div class='cont'>
     <svelte:component this={component} start={start+1} bind:character={character} hide/>
@@ -48,15 +50,6 @@
     background-color: var(--b2);
     margin-bottom: .5em;
   }
-  .D {
-    background-color: var(--good);
-    color: var(--at);
-  }
-  .A {
-    background-color: var(--bad);
-    color: var(--at);
-  }
-  .E {background-color: var(--b6);}
   .approach {
     padding: .125em;
     border-radius: .25em;
