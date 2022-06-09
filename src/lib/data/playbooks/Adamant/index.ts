@@ -15,11 +15,18 @@ export const Adamant:Playbook = {
     }
   ],
   stats: [0,1,-1,1],
-  history: [
+  history_questions: [
     `What experience of being decieved or manipulated convinced you to steel yourself against being swayed by other people?`,
     `Who was your first lodestar, and why were they an exception? Why aren't they your lodestar anymore?`,
     `Who earned your grudging respect by teaching you pragmatism?`,
     `What heirloom or piece of craftsmanship do you carry to remind you to stay true to yourself?`,
+  ],
+  history: [
+    '', ` convinced me to steel myself against being swayed by other people.`,
+    ` was my first lodestar. They were an exception because`,
+    `. They aren't my lodestar anymore because `, '.',
+    ` earned my gruding respect by teaching me pragmatism. I carry `,
+    ` to remind me to stay true to myself.`
   ],
   technique: {name: 'Pinpoint Aim', tags: [], component: PinpointAim},
   demeanors: ['Above-it-all', 'Perfectionist', 'Chilly', 'Rebellious', 'Flippant', 'Standoffish'],

@@ -17,11 +17,18 @@ export const Successor:Playbook = {
   ],
   stats: [1,1,-1,0],
   demeanors: ['Perky', 'Intense', 'By-the-book', 'Casual', 'Arrogant', 'Oblivious'],
-  history: [
+  history_questions: [
     `Who is the current head of your lineage? How do you love and frustrate each other?`,
     `What close member of your lineage wants to revolutionize it?`,
     `What do you carry that reminds you of the place most associated with your lineage?`,
     `What part of your lineage's identity is most important and valuable to you as a person?`,
+  ],
+  history: [
+    ``, ` is the current head of my lineage. We love each other by `,
+    `; we frustrate each other by `, `. `,
+    ` wants to revolutionize our lineage. I carry `,
+    ` to remind me of the place most associated with my lineage. `,
+    ` is the part of my lineage's identity that is most important and valuable to me as a person.`
   ],
   technique: {name: 'Break', tags: [], component: Break},
   connections: [

@@ -18,7 +18,7 @@ export const Foundling:Playbook = {
   ],
   stats: [1, -1, 1, 0],
   demeanors: ['Caring', 'Dedicated', 'Friendly', 'Modest', 'Respectful', 'Shy'],
-  history: [
+  history_questions: [
     `How and when did you learn about your second heritage?`,
     `Who in your family insists you focus on upholding 
     the family heritage?`,
@@ -26,6 +26,12 @@ export const Foundling:Playbook = {
     complement each other?`,
     `What detail of your clothing or visible trinket reveals you belong 
     to two cultures?`,
+  ],
+  history: [
+    `I learned about my second heritage when `, `. `,
+    ` insists I focus on upholding the family heritage. `,
+    ` helped me understand that my two trainings can complement each other. `,
+    ` reveals I belong to two cultures.`
   ],
   technique: {name: 'Feel the Flow', tags: [], component: FeelTheFlow},
   connections: [

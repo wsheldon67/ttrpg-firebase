@@ -17,11 +17,17 @@ export const Hammer:Playbook = {
     }
   ],
   stats: [1,-1,0,1],
-  history: [
+  history_questions: [
     `What injustice has driven you to use your strength for good?`,
     `Who represents the kind of positive strength and force you want to embody?`,
     `Who tried their best to teach you restraint, calm, and thoughtfulness?`,
     `What fragile trinket or heirloom do you keep and protect?`,
+  ],
+  history: [
+    ``, `has driven me to use my strength for good. `,
+    ` represents the kind of positive strength and force I want to embody. `,
+    ` tried their best to teach me restraint, calm, and thoughtfulness. I keep and protect `,
+    ``
   ],
   technique: {name: 'Overwhelm', tags: [], component: Overwhelm},
   demeanors: ['Playful', 'Blunt', 'Quiet', 'Loud', 'Excessive', 'Determined'],

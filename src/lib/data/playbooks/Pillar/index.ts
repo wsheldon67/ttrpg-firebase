@@ -18,11 +18,17 @@ export const Pillar:Playbook = {
   ],
   stats: [1,0,1,-1],
   demeanors: ['Confident', 'Lighthearted', 'Critical', 'Stern', 'Gentle', 'Warm'],
-  history: [
+  history_questions: [
     `How did you rise to lead a renowned squad or group?`,
     `Who was your closest friend and confidant in the squad?`,
     `Who never thought you deserved to lead the group?`,
     `What uniform, heirloom, or symbol do you carry as a talisman of the group?`,
+  ],
+  history: [
+    `I rose to lead a renowned squad or group by `,
+    `. `, ` was my closest friend and confidant in the squad. `,
+    ` never thought I deserved to lead the group. I carry `,
+    ` as a talisman of the group.`
   ],
   technique: {name: 'Slide Around the Blow', tags: [], component: SlideAroundTheBlow},
   connections: [

@@ -17,11 +17,17 @@ export const Idealist:Playbook = {
     }
   ],
   stats: [0,-1,1,1],
-  history: [
+  history_questions: [
     `What tragedy befell you at a young age?`,
     `Who do you hold most responsible for the tragedy? Why?`,
     `Who helped you through your grief? What did they teach you?`,
     `What symbol, heirloom, or mark do you carry to remind you of what you lost?`,
+  ],
+  history: [
+    `When I was young, `, `. I hold `,
+    ` most responsible for this tragedy because `,
+    `. `, ` helped me through my grief. They taught me `,
+    `. I carry `, `to remind me of what I lost.`
   ],
   technique: {name: 'Disorient', tags: [], component: Disorient},
   demeanors: ['Lonely', 'Compassionate', 'Joyful', 'Grieving', 'Earnest', 'Resolute'],

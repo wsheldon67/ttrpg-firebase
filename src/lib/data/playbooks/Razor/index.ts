@@ -17,12 +17,18 @@ export const Razor:Playbook = {
   ],
   stats: [0, 2, -1, 0],
   demeanors: ['Childish', 'Fierce', 'Imperious', 'Overbearing', 'Proper', 'Strange'],
-  history: [
+  history_questions: [
     `Why were you chosen to be honed, perfected, and used by your masters?`,
     `Who was the former master you were closest to?`,
     `Who helped give you the will you needed to break with your 
     masters and be something more?`,
     `What totem of your masters can you not bring yourself to throw away?`,
+  ],
+  history: [
+    `I was chosen to be honed, perfected and used by my masters because `,
+    `. `, ` was the former master I was closest to. `,
+    ` helped give me the will I needed to break with my masters and be something more. I can't bring myself to throw away `,
+    ``
   ],
   technique: {name: 'Lure', tags: [], component: Lure},
   connections: [

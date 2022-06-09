@@ -16,11 +16,17 @@ export const Destined:Playbook = {
   ],
   stats: [0,-1,2,0],
   demeanors: ['Eager', 'Solemn', 'Haunted', 'Uncertain', 'Jocular', 'Watchful'],
-  history: [
+  history_questions: [
     `When did you realize you were marked by supernatural forces?`,
     `Who envies your destiny and seeks to seize it from you? Why can't you let that happen?`,
     `Who do you turn to for guidance when you feel overwhelmed by your destiny?`,
     `What token or symbol do you carry that proves to any observer that you are chosen by fate?`,
+  ],
+  history: [
+    `I realized I was marked by supernatural forces when `, `.`,
+    ` envies my destiny and seeks to seize it from me. I can't let that happen because `,
+    `. I turn to `, `when I feel overwhelmed by my destiny. I carry `,
+    `to prove to any observer that I am chosen by fate.`
   ],
   technique: {name: 'Anticipate', component: Anticipate, tags: []},
   connections: [

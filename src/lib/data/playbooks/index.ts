@@ -30,7 +30,8 @@ export interface Playbook {
   demeanors: string[]
   principles: [Principle, Principle]
   stats: Stats
-  history: [string, string, string, string]
+  history_questions: string[]
+  history: string[]
   technique: {name:string, tags:string[], component:any}
   connections: [[string,string], [string,string]]
   moment_of_balance: string

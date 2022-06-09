@@ -2,10 +2,11 @@
 import Tooltip from "$lib/c/Tooltip.svelte";
 import type { Data } from "$lib/data/character";
 import { playbook as playbooks } from "$lib/data/playbooks";
+import History from "./History.svelte";
 
 export let character:Data
 $: playbook = playbooks[character.playbook]
-$: full_history = [...playbook.history, 'Why are you committed to this group or purpose?']
+
 
 let current_demeanor = ''
 
@@ -70,10 +71,4 @@ function remove_demeanor(demeanor:string) {
   Look:
   <textarea bind:value={character.look}></textarea>
 </label>
-<p>Note: For best results, write full sentences in first person.</p>
-{#each character.history as question_text, index}
-  <label>
-    {full_history[index]}
-    <textarea bind:value={question_text}></textarea>
-  </label>
-{/each}
+<History bind:character={character} />

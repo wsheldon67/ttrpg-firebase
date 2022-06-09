@@ -17,11 +17,17 @@ export const Icon:Playbook = {
     }
   ],
   stats: [0,1,1,-1],
-  history : [
+  history_questions: [
     `What tradition do you represent as its icon? Why can't you set down the role?`,
     `Who was your chief mentor, teaching you the nature of your burden and its value?`,
     `Who showed you that even with the weight of your burden, you could still find ways to play?`,
     `What token of your burden and tradition do you always carry?`,
+  ],
+  history: [
+    `I represent `, `as it's icon. I can't set down the role because `,
+    `. `, ` was my chief mentor, teaching me the nature of my burden and its value. `,
+    ` showed me that even with the weight of my burden, I can still find ways to play. I carry `,
+    ` as a token of my burden and tradition.`
   ],
   technique: {name: 'Wall of Perfection', tags: [], component: WallOfPerfection},
   demeanors: ['Naive', 'Playful', 'Needy', 'Sad', 'Haughty', 'Grave'],

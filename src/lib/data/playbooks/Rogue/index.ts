@@ -17,11 +17,17 @@ export const Rogue:Playbook = {
   ],
   stats: [1, 0, -1, 1],
   demeanors: ['Acerbic', 'Joking', 'Cynical', 'Sly', 'Extreme', 'Wild'],
-  history: [
+  history_questions: [
     `How did you come to feel that the only way to survive was to break the rules?`,
     `Who kept trying to reach a kind hand out towards you, only to be rebuffed?`,
     `Who was ready to do anything to break you of your bad habits?`,
     `What is your favorite possession that you stole, swiped, or otherwise acquired illegitimately?`,
+  ],
+  history: [
+    ``, `, which is how I cam to feel that the only way to survive was to break the rules. `,
+    `. `, ` kept trying to reach a kind hand out towards me, but I rebuffed them.`,
+    ` was ready to do anything to break me of my bad habits. My favorite posession that I acquired illegitimately was `,
+    ``
   ],
   technique: {name: 'Sweep the Leg', tags: [], component: SweepTheLeg},
   connections: [

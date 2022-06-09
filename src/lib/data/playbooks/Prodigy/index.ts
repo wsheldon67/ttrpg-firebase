@@ -18,11 +18,17 @@ export const Prodigy:Playbook = {
   ],
   stats: [-1,2,0,0],
   demeanors: ['Curious', 'Proud', 'Defensive', 'Resolute', 'Direct', 'Stubborn'],
-  history: [
+  history_questions: [
     `When did you first accomplish something your teachers thought would be impossible for you? `,
     `Who gave you the lessons and support you needed to discover your incredible abilities?`,
     `Who cares for you greatly but doesn't understand your talent?`,
     `What strange talisman or detail of your clothing plays a role in your talents?`,
+  ],
+  history: [
+    `I first accomplished something my teachers thought would be impossible for me when `,
+    `. `, `gave me the lessons and support I needed to discover my incredible abilities. `,
+    ` cares for me greatly but doesn't understand my talent. `,
+    ` plays a role in my talents.`
   ],
   technique: {name: 'Steady Stance', tags: [], component: SteadyStance},
   connections: [

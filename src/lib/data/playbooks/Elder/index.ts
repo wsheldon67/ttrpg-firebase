@@ -18,11 +18,17 @@ export const Elder:Playbook = {
   ],
   stats: [0,0,2,-1],
   demeanors: ['Diligent', 'Kindly', 'Bemused', 'Dour', 'Distant', 'Irascible'],
-  history: [
+  history_questions: [
     `What great legacy did you inherit decades ago and recently relinquish?`,
     `Who has never forgiven you for decisions you made years ago?`,
     `Who is still your ally and confidante, despite the tense history you've shared?`,
     `What outfit or uniform do you wear to remind yourself of your former duties?`,
+  ],
+  history: [
+    `I recenctly relinquished `, ` a legacy I inherited decades ago. `,
+    ` has never forgiven me for decisions I made years ago. `,
+    ` is still my ally and confidante, despite the tense history we've shared. I wear `,
+    ` to remind myself of my former duties.`
   ],
   technique: {name: 'Patience', tags: [], component: Patience},
   connections: [

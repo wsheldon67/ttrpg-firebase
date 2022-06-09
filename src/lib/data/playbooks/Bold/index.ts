@@ -17,11 +17,16 @@ export const Bold:Playbook = {
     }
   ],
   stats: [1,1,0,-1],
-  history: [
+  history_questions: [
     `Why do you feel the need to prove yourself so badly?`,
     `Who epitomizes the kind of big, bold figure you hope to be?`,
     `Whose approval do you think you will never attain?`,
     `What token or symbol do you wear to prove you are serious?`,
+  ],
+  history: [
+    `I feel the need to prove myself because `, `. `,
+    ` epitomizes the kind of big, bold figure I hope to be. I think I will never attain `,
+    `'s approval. I wear `, `to prove I am serious.`
   ],
   technique: {name: 'Tag Team', tags: [], component: TagTeam},
   demeanors: ['Impatient', 'Sensitive', 'Affable', 'Enthusiatic', 'Talkative', 'Impetuous'],

@@ -17,11 +17,17 @@ export const Guardian:Playbook = {
     }
   ],
   stats: [-1,1,0,1],
-  history: [
+  history_questions: [
     `What pushed you to assume responsibility for the people you care about?`,
     `Whom have you protected for so long… but maybe doesn't need you anymore?`,
     `Who used to be in your circle of trust before they betrayed you?`,
     `What tattered garment or adornment reminds you of those you protect… or failed to protect?`,
+  ],
+  history: [
+    ``, ` pushed me to assume responsibility for the people I care about. I have protected `,
+    ` for so long, but they maybe don't need me anymore. `,
+    ` used to be in my circle of trust before they betrayed me. `,
+    ` reminds me of those I protect... or failed to protect.`
   ],
   technique: {name: 'Divert', tags: [], component: Divert},
   demeanors: ['Harsh', 'Serious', 'Polite', 'Quiet', 'Suspicious', 'Cautious'],
