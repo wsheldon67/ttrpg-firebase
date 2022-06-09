@@ -12,7 +12,7 @@
   $: stats = get_all_stats(character)
 
 </script>
-<Header h={1} {start} {hide} title='Stats'>
+<Header h={1} {start} {hide} title='Stats & Balance'>
   <div class='cont'>
     {#each stats as {name, mod}}
       <button class='p'>
