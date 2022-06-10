@@ -35,7 +35,7 @@ export const Group:Technique[] = [{
   component: FocusedFire,
   tags: ["Group", "Advance & Attack"]
 },{
-  name: "Overwhelm",
+  name: "Overwhelm (group)",
   component: Overwhelm,
   tags: ["Group", "Advance & Attack"]
 },{

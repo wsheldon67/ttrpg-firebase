@@ -27,7 +27,7 @@
   let timeout_id
   beforeUpdate(async()=>{
     if (timeout_id) {clearTimeout(timeout_id)}
-    // wait 200ms to see if there's any sequential updates
+    // wait 2000ms to see if there's any sequential updates
     timeout_id = setTimeout(()=>{
       dispatch('update',character)
       timeout_id = undefined
