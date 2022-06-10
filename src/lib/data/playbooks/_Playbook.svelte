@@ -5,11 +5,13 @@
   import Tooltip from "$lib/c/Tooltip.svelte"
   import { signed } from '$lib/pretty'
   import type { Move } from "$lib/data/playbooks/moves";
+  import { specials } from '$lib/data/playbooks/specials'
 
   export let playbook:Playbook
   export let moves:Move[]
   export let start: number = 1
   export let hide: boolean = false
+  $: special = specials[playbook.name]
 </script>
 <Header h={1} {start} {hide} title={playbook.name}>
   <p><em>The {playbook.name} {playbook.blurb} Play the {playbook.name} if {playbook.motivation}</em></p>
@@ -44,5 +46,6 @@
       <svelte:component this={component} start={start+2} hide/>
     {/each}
   </Header>
+  <svelte:component this={special.component} start={start+1} {hide} />
   <slot />
 </Header>
