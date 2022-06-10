@@ -13,11 +13,12 @@ import Stats from "./Stats.svelte";
 import Techniques from "./Techniques.svelte";
 import Touches from "./Touches.svelte";
 import Training from "./Training.svelte";
+import { beforeNavigate } from "$app/navigation";
 
   const order = [Playbook, Details, Training, Backgrounds, Touches, Stats, Techniques, Review, Connections]
   let current_page = 0
 
-  export let character:Data = blank
+  export let character:Data = JSON.parse(JSON.stringify(blank))
 
   // on updates, send to server
   let timeout_id
@@ -29,8 +30,9 @@ import Training from "./Training.svelte";
       timeout_id = undefined
     }, 2000)
   })
-  // TODO Add explanations of each thing
-  // Fighting style was mentioned
+  beforeNavigate(()=> {
+    dispatch('update', character)
+  })
 </script>
 <style>
   .next, .back {

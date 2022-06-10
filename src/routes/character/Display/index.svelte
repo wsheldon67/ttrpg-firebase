@@ -9,6 +9,7 @@
   import { beforeUpdate, createEventDispatcher } from 'svelte'
   import Bonuses from "./Bonuses.svelte";
   import Special from "./Special.svelte";
+import { beforeNavigate } from "$app/navigation";
   const dispatch = createEventDispatcher()
   
   export let character:Data
@@ -24,6 +25,9 @@
       dispatch('update',character)
       timeout_id = undefined
     }, 2000)
+  })
+  beforeNavigate(() => {
+    dispatch('update', character)
   })
 </script>
 <svelte:head>

@@ -8,6 +8,7 @@
   import Stat from "./Stat.svelte"
   import YourPlaybook from "./YourPlaybook.svelte"
   import { beforeUpdate, createEventDispatcher } from 'svelte'
+import { beforeNavigate } from "$app/navigation";
   const dispatch = createEventDispatcher()
 
   // on updates, send to server
@@ -20,48 +21,10 @@
       timeout_id = undefined
     }, 2000)
   })
-
-  export let character:Data = {
-    playbook: 'Adamant',
-    concept: '',
-    name: '',
-    training: 'Waterbending',
-    fighting_style: '',
-    backgrounds: [],
-    hometown: '',
-    demeanors: [],
-    history: ['','','','',''],
-    look: '',
-    boosted_stats: [],
-    fatigue: 0,
-    conditions: [
-      {name: 'Afraid', applied: false},
-      {name: 'Angry', applied: false},
-      {name: 'Guilty', applied: false},
-      {name: 'Insecure', applied: false},
-      {name: 'Troubled', applied: false}
-    ],
-    balance: 0,
-    center: 0,
-    moves: [],
-    techniques: [{name: 'Pinpoint Aim', level: 2}],
-    connections: ['',''],
-    positive_statuses: [
-      {name: 'Empowered', applied: false},
-      {name: 'Favored', applied: false},
-      {name: 'Inspired', applied: false},
-      {name: 'Prepared', applied: false}
-    ],
-    negative_statuses: [
-      {name: 'Doomed', applied: false},
-      {name: 'Impaired', applied: false},
-      {name: 'Trapped', applied: false},
-      {name: 'Stunned', applied: false}
-    ],
-    growth_advancements: [],
-    growth: 9,
-    feature_settings: {}
-  }
+  beforeNavigate(() => {
+    dispatch('update', character)
+  })
+  export let character:Data
   let page:any = false
   $: advancements_available = get_unused_advancements(character)
 
