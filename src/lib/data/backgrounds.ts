@@ -1,3 +1,4 @@
+export const background_names = ['Military', 'Monastic', 'Outlaw', 'Privileged', 'Urban', 'Wilderness']
 
 export const backgrounds = {
   Military: `You trained to fight as a soldier in a military unit such as a mercenary company, a regional militia, or a state government's standing army.`,
