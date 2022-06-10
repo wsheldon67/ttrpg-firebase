@@ -11,11 +11,11 @@ const moves:Move[] = [
   name: `Air-Cutting Edge`,
   component: AirCuttingEdge,
   stat: '',
-  tags: ['Razor']
+  tags: ['Razor', '+Focus']
 },{
   name: `Mind of Steel`,
   component: MindofSteel,
-  stat: '',
+  stat: 'Focus',
   tags: ['Razor']
 },{
   name: `I'm a People Person`,

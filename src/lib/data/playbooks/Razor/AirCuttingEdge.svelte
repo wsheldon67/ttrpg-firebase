@@ -9,4 +9,5 @@
 </script>
 <Header h={1} {start} {hide} title="Air-Cutting Edge">
   <slot slot='header'/>
+  <p>Take +1 to Focus (max +3).</p>
 </Header>

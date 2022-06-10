@@ -9,4 +9,5 @@
 </script>
 <Header h={1} {start} {hide} title='Way of the Future'>
   <slot slot='header'/>
+  <p>Take +1 Creativity (max +3).</p>
 </Header>

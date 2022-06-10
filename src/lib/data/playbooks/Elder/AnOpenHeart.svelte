@@ -9,4 +9,5 @@
 </script>
 <Header h={1} {start} {hide} title="An Open Heart">
   <slot slot='header'/>
+  <p>Take +1 Harmony (max +3).</p>
 </Header>

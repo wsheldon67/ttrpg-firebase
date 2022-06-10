@@ -11,7 +11,7 @@ const moves:Move[] = [
   name: `Way of the Future`,
   component: WayoftheFuture,
   stat: 'Creativity',
-  tags: ['Successor']
+  tags: ['Successor', '+Creativity']
 },{
   name: `Black Koala-Sheep`,
   component: BlackKoalaSheep,

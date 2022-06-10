@@ -3,6 +3,7 @@
   import type { Data } from '$lib/data/character'
   import { techniques } from '$lib/data/techniques'
   import Stance from "../../../routes/comp/Combat/Stance.svelte";
+  import { Basic } from '$lib/data/techniques/Basic'
 
   export let character:Data
   export let start:number = 1
@@ -42,7 +43,16 @@
     <span class={'approach '+tags[1].substring(0,1)}>{tags[1]}</span>
   </div>
   {/each}
-
+  {#each Basic as {component, tags}}
+    <div class='cont'>
+      <svelte:component this={component} start={start+1} bind:character={character} hide/>
+      <label>
+        <input type='checkbox' checked disabled/>
+        Basic
+      </label>
+      <span class={'approach '+tags[1].substring(0,1)}>{tags[1]}</span>
+    </div>
+  {/each}
 </Header>
 
 <style>
@@ -54,5 +64,6 @@
     padding: .125em;
     border-radius: .25em;
     margin-left: 1em;
+    filter: brightness(.875);
   }
 </style>
