@@ -14,10 +14,10 @@
     </ul>
   </Header>
   <Header h={2} {start} title='Techniques'>
-    <ol>
+    <ul>
       <li><Tip text='Strike'/></li>
       <li><Tip text='Pressure'/></li>
       <li><Tip text='Smash'/></li>
-    </ol>
+    </ul>
   </Header>
 </Header>

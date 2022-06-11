@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Tooltip from '$lib/c/Tooltip.svelte'
   import { onMount } from 'svelte'
+  import type { Article } from './compendium.type';
   import { get_comp_promise } from './get_comp'
   import Popover from './Popover.svelte'
   export let text:string

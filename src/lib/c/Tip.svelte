@@ -1,8 +1,23 @@
 <script lang='ts'>
+  import { onMount } from 'svelte';
+  import { get } from 'svelte/store';
+  import { tip_data } from './tip_data';
+
   import Tip from './_BaseTip.svelte'
 
   export let text:string
   export let path:string = text
+
+  /*onMount(() => {
+    tip_data.update((el) => {
+      if (!el[text]) {return {...el, [text]: 1}}
+      else {
+        el[text]++
+        return el
+      }
+    })
+    console.log(get(tip_data))
+  })*/
 
   const common = {
     'condition': 'Core/Condition',
@@ -14,6 +29,7 @@
     'troubled': 'Core/Troubled',
     'ongoing': 'Core/Ongoing',
     'forward': 'Core/Forward',
+    'hold': 'Core/Hold',
     'tricking': 'Moves/Trick',
     'trick': 'Moves/Trick',
     'pleading':'Moves/Plead',
@@ -21,6 +37,7 @@
     'calling them out': 'Moves/CallSomeoneOut',
     'call someone out': 'Moves/CallSomeoneOut',
     'call you out': 'Moves/CallSomeoneOut',
+    'calls you out': 'Moves/CallsYouOut',
     'live up to your principle': 'Moves/LiveUpToYourPrinciple',
     'live up to that principle': 'Moves/LiveUpToYourPrinciple',
     'balance': 'Balance',
@@ -33,6 +50,7 @@
     'push your luck': 'Moves/PushYourLuck',
     'deny a callout': 'Moves/DenyACallout',
     'rely on your skills or training': 'Moves/RelyOnSkillsAndTraining',
+    'rely on your skills and training': 'Moves/RelyOnSkillsAndTraining',
     'skills and training': 'Moves/RelyOnSkillsAndTraining',
     'taken out':'Core/TakenOut',
     'scene': 'Core/Scene',
@@ -63,6 +81,7 @@
     'statuses': 'Statuses',
     'doomed': 'Statuses/Doomed',
     'impaired': 'Statuses/Impaired',
+    'prepared': 'Statuses/Prepared',
     'techniques': 'Techniques',
     'ready': 'Techniques/Ready',
     'retaliate': 'Techniques/Retaliate',
@@ -74,10 +93,10 @@
     'bolster or hinder': 'Techniques/BolsterOrHinder',
     'commit': 'Techniques/Commit',
     'fictionally': 'Core/Fiction',
-    'creativity': '',
-    'focus': '',
-    'harmony': '',
-    'passion': '',
+    'creativity': 'Core/Creativity',
+    'focus': 'Core/Focus',
+    'harmony': 'Core/Harmony',
+    'passion': 'Core/Passion',
   }
 
   if (common[text.toLowerCase()]) {

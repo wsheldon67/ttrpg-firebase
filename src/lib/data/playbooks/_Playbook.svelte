@@ -4,7 +4,7 @@
   import Tip from '$lib/c/Tip.svelte'
   import Tooltip from "$lib/c/Tooltip.svelte"
   import { signed } from '$lib/pretty'
-  import type { Move } from "$lib/data/playbooks/moves";
+  import type { Move } from "$lib/data/playbooks/moves"
   import { specials } from '$lib/data/playbooks/specials'
 
   export let playbook:Playbook

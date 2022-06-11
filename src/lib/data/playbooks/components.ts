@@ -17,3 +17,5 @@ export const component = {
   Adamant, Bold, Destined, Elder, Foundling, Guardian, Hammer, Icon, Idealist, Pillar,
   Prodigy, Razor, Rogue, Successor
 }
+console.log('Playbook compenent module used (Adamant/index.svelte, etc.)')
+// TODO I think these are depreciated.

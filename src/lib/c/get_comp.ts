@@ -1,6 +1,9 @@
 import type {Article} from './compendium.type'
+import { quickie } from './quickies'
+
 export function get_comp_promise(system:string, path:string) {
   return async function():Promise<Article> {
+    if (quickie(path)) {return quickie(path)}
     const {db} = await import ('$lib/firebase')
     const { collection, query, where, getDocs } = await import ('firebase/firestore')
     const q = query(
