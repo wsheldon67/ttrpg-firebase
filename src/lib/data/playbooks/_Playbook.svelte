@@ -46,6 +46,6 @@
       <svelte:component this={component} start={start+2} hide/>
     {/each}
   </Header>
-  <svelte:component this={special.component} start={start+1} {hide} />
+  <svelte:component this={special.component} start={start+1} hide/>
   <slot />
 </Header>
