@@ -33,6 +33,7 @@
       timeout_id = undefined
     }, 2000)
   })
+  // TODO Mastered not counted correctly on change.
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>

@@ -6,7 +6,7 @@ import History from "./History.svelte";
 
 export let character:Data
 $: playbook = playbooks[character.playbook]
-
+// TODO add a button to make adding demeanors more obvioius.
 
 let current_demeanor = ''
 
@@ -38,6 +38,13 @@ function remove_demeanor(demeanor:string) {
   p {
     margin: 1em .25em;
   }
+  form {
+    display: grid;
+    grid-template-columns: auto 1.6em;
+  }
+  form > button {
+    height: 1.6em;
+  }
 </style>
 <p>Provide additional details about your character's identity.</p>
 <label>
@@ -53,6 +60,7 @@ function remove_demeanor(demeanor:string) {
     list='demeanors'
   />
 </label>
+<button type='submit' class='p'>+</button>
 </form>
 <datalist id='demeanors'>
   {#each playbook.demeanors as demeanor}

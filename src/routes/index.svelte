@@ -1,5 +1,5 @@
 <script lang='ts'>
-
+  //TODO fix light mode
 </script>
 <h1>Welcome to Avatar Legends!</h1>
 <p>Some things to try:</p>

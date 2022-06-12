@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Growth from "$lib/c/Growth.svelte"
   import Header from "$lib/c/Header.svelte"
+  import Tip from "$lib/c/Tip.svelte";
   import type { Data } from "$lib/data/character"
   import LegacyCharacter from "./LegacyCharacter.svelte"
 
@@ -32,6 +33,21 @@
   </div>
   <p>You have deidcated yourself to accomplishing great, exciting deeds and becoming worthy of the trust others place in you.</p>
   {#if character}
-      <LegacyCharacter bind:character={character} {drives} {start} />
+    <LegacyCharacter bind:character={character} {drives} {start} />
+  {:else}
+    <p>Choose 4 drives at the start of play. When you complete a drive:</p>
+    <ul>
+      <li>Mark it completed.</li>
+      <li>Mark <Tip text='growth'/> or clear a <Tip text='condition'/>.</li>
+    </ul>
+    <p>When your four drives are completed, select four new ones.</p>
+    <Header h={2} {start} title='Drives' hide>
+      <ul>
+        {#each drives as drive}
+          <li>{drive}</li>
+        {/each}
+      </ul>
+    </Header>
+    <p>When all drives have been completed, change playbooks or retire from a life of adventure.</p>
   {/if}
 </Header>

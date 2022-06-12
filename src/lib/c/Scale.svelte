@@ -5,9 +5,9 @@
   export let value:number = 0
   export let min
   export let max
-  export let optimum
-  export let low
-  export let high
+  export let optimum = undefined
+  export let low = undefined
+  export let high = undefined
   export let reverse:boolean = false
 
   function add() {

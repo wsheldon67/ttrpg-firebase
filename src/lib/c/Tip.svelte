@@ -63,6 +63,7 @@
     'shift your balance': 'Balance/Shift',
     'shifts your balance': 'Balance/Shift',
     'shift their balance': 'Balance/Shift',
+    'shifting their balance': 'Balance/Shift',
     'balance shifts': 'Balance/Shift',
     'combat exchange': 'Combat',
     'exchange':'Combat',
@@ -77,11 +78,13 @@
     'stance': 'Combat/Stance',
     'loses their balance': 'Moves/LoseYourBalance',
     'lost their balance': 'Moves/LoseYourBalance',
+    'lose your balance': 'Moves/LoseYourBalance',
     'status': 'Statuses',
     'statuses': 'Statuses',
     'doomed': 'Statuses/Doomed',
     'impaired': 'Statuses/Impaired',
     'prepared': 'Statuses/Prepared',
+    'inspired': 'Statuses/Inspired',
     'techniques': 'Techniques',
     'ready': 'Techniques/Ready',
     'retaliate': 'Techniques/Retaliate',
@@ -97,6 +100,7 @@
     'focus': 'Core/Focus',
     'harmony': 'Core/Harmony',
     'passion': 'Core/Passion',
+    'growth': 'Core/Growth'
   }
 
   if (common[text.toLowerCase()]) {

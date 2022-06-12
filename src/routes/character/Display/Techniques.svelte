@@ -20,6 +20,7 @@
     const technique = techniques.find(ell => ell.name === el.name)
     return {...el, ...technique}
   })
+  // TODO Shannon's techniques fucking dies on open on display
 </script>
 <Header h={1} {start} {hide} title='Techniques'>
   <p>Choose an approach and then roll using the Stance Move:</p>
