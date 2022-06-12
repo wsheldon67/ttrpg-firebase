@@ -49,7 +49,7 @@ export const Playbook:Technique[] = [
     component: SteadyStance,
     tags: ["Playbook", "Defend & Maneuver"]
   },{
-    name: "Sweep The Leg",
+    name: "Sweep the Leg",
     component: SweepTheLeg,
     tags: ["Playbook", "Advance & Attack"]
   },{
@@ -65,7 +65,7 @@ export const Playbook:Technique[] = [
     component: Patience,
     tags: ["Playbook", "Evade & Observe"]
   },{
-    name: "Feel The Flow",
+    name: "Feel the Flow",
     component: FeelTheFlow,
     tags: ["Playbook", "Evade & Observe"]
   },{
