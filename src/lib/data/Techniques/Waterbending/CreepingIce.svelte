@@ -6,6 +6,7 @@
 
   export let start: number = 1
   export let hide: boolean = false
+  // TODO Rye
 </script>
 <Header h={1} {start} {hide} title='Creeping Ice'>
 

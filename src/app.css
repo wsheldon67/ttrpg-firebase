@@ -24,7 +24,25 @@
 @media (prefers-color-scheme: light) {
   :root {
     --t: black;
-    --b0: white;
+    --at: white;
+    --at-weight: bold;
+  
+    --b0: hsl(44, 90%, 100%);
+    --b1: hsl(44, 90%, 97%);
+    --b2: hsl(44, 90%, 94%);
+    --b3: hsl(44, 90%, 91%);
+    --b4: hsl(44, 90%, 88%);
+    --b5: hsl(44, 90%, 85%);
+    --b6: hsl(44, 90%, 82%);
+  
+    --p: #0eb8f1;
+    --p2: #0d83e4;
+    --a: #997300;
+    --h3: #8914b8;
+    --link: #0000ff;
+  
+    --bad: #eb4747;
+    --good: #00b300;
   }
 }
 
