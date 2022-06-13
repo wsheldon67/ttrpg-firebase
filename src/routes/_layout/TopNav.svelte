@@ -5,6 +5,7 @@
 
   let isOpen = false
   function toggle() {isOpen = !isOpen}
+  // FIXME Can't see menu on scroll
 </script>
 <style>
   .nav {
@@ -20,7 +21,7 @@
   .siteNav {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: sticky;
     top: 1.8em;
     width: 100vw;
     max-width: var(--break1);
