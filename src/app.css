@@ -25,7 +25,7 @@
   :root {
     --t: black;
     --at: white;
-    --at-weight: bold;
+    --at-weight: normal;
   
     --b0: hsl(44, 90%, 100%);
     --b1: hsl(44, 90%, 97%);
@@ -39,7 +39,7 @@
     --p2: #0d83e4;
     --a: #997300;
     --h3: #8914b8;
-    --link: #0000ff;
+    --link: #3333ff;
   
     --bad: #eb4747;
     --good: #00b300;

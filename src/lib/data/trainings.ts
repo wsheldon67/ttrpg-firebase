@@ -22,6 +22,8 @@ export function get_other_techniques(char:Data):any {
 const bendings = ['Airbending', 'Earthbending', 'Firebending', 'Waterbending']
 const other = ['Technology', 'Weapons']
 
+export const trainings = [...bendings, ...other]
+
 export function compatible_trainings(trainings:string[]):string[] {
   const bending = find_bending(trainings)
   if (bending) {

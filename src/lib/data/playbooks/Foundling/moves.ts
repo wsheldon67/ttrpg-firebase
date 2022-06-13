@@ -20,7 +20,7 @@ const moves:Move[] = [
 },{
   name: `Martial Sensitive`,
   component: MartialSensitive,
-  stat: '',
+  stat: 'Harmony',
   tags: ['Foundling']
 },{
   name: `Trusty Talisman`,
