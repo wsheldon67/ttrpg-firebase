@@ -5,7 +5,7 @@
 
   let isOpen = false
   function toggle() {isOpen = !isOpen}
-  // FIXME Can't see menu on scroll
+
 </script>
 <style>
   .nav {

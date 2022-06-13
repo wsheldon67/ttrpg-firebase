@@ -54,7 +54,7 @@
     </FullResult>
     <p>Techniques from a 2nd bending are adapted to your bending.</p>
     {#if character}
-    <Header h={3} {start} title='Choose Techniques'>
+    <Header h={3} {start} title='Choose Techniques' hide>
       <Techniques bind:character={character} hide_limit all_trainings/>
     </Header>
     {/if}

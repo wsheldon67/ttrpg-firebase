@@ -3,6 +3,7 @@
   import Display from './index.svelte'
 
   export let id:string
+  export let readOnly:boolean = false
   let character
 
   onMount(async ()=> {
@@ -18,6 +19,7 @@
       console.error('Preventing overwiting with undefined character...',detail)
       return
     }
+    if (readOnly) {return}
     const { isSignedIn, db } = await import('$lib/firebase')
     const { doc, setDoc } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
