@@ -6,7 +6,6 @@ import History from "./History.svelte";
 
 export let character:Data
 $: playbook = playbooks[character.playbook]
-// TODO add a button to make adding demeanors more obvioius.
 
 let current_demeanor = ''
 
