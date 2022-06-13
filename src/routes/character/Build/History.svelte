@@ -24,7 +24,7 @@ import { playbook as playbooks } from "$lib/data/playbooks";
 
 <p class='history'>
 {#each full_history as text, index}
-  {text}
+  <span class='reg-text'>{text}</span>
   <span class='input-wrap'>
     <span class='width-machine' aria-hidden="true">
       {character.history[index]?.length < 8 ? '12345678' : character.history[index]}
@@ -37,7 +37,7 @@ import { playbook as playbooks } from "$lib/data/playbooks";
 <style>
   .input-wrap {
     position: relative;
-    margin-right: .5em;
+    white-space: nowrap;
   }
   .input-wrap input {
     position: absolute;
@@ -50,5 +50,8 @@ import { playbook as playbooks } from "$lib/data/playbooks";
   }
   .history {
     line-height: 1.5em;
+  }
+  .reg-text {
+    margin-left: .5rem;
   }
 </style>
