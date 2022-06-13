@@ -100,7 +100,8 @@
     'focus': 'Core/Focus',
     'harmony': 'Core/Harmony',
     'passion': 'Core/Passion',
-    'growth': 'Core/Growth'
+    'growth': 'Core/Growth',
+    'basic techniques': `Techniques/Basic`,
   }
 
   if (common[text.toLowerCase()]) {

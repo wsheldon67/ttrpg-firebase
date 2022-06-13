@@ -1,6 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-import Tip from '$lib/c/Tip.svelte'
+  import Tip from '$lib/c/Tip.svelte'
   import type { Data } from '$lib/data/character'
   import { compatible_trainings } from '$lib/data/trainings'
   import { background_names } from '$lib/data/backgrounds'
@@ -20,7 +20,6 @@ import Tip from '$lib/c/Tip.svelte'
       .filter(training => training !== character.trainings[0] && training !== 'Universal')
   }
 
-  // TODO select 2nd training, 3rd background
 </script>
 <Header h={1} {start} {hide} title='Worldly Knowledge'>
   <slot slot='header'/>

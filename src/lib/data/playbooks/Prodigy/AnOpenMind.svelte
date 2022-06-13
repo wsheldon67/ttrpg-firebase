@@ -2,17 +2,13 @@
   import Header from '$lib/c/Header.svelte'
   import type { Data } from '$lib/data/character'
   import Tip from '$lib/c/Tip.svelte'
-  import Techniques from '../../../../routes/character/Build/Techniques.svelte';
-  import { get_other_techniques } from '$lib/data/trainings';
+  import Techniques from '../../../../routes/character/Build/Techniques.svelte'
+  import { get_other_techniques } from '$lib/data/trainings'
   
   export let start: number = 1
   export let hide: boolean = false
   export let character:Data = undefined
 
-
-
-  // TODO techniques from other skills and training
-  // This move might be complicated, also looking into how we're implementing the Training Move
 </script>
 <Header h={1} {start} {hide} title="An Open Mind">
   <div slot='header'>

@@ -79,7 +79,7 @@ export const blank:Data = {
   balance: 0,
   center: 0,
   moves: [],
-  techniques: [{name: playbook.Adamant.technique.name, level: 2}],
+  techniques: [{name: playbook.Adamant.technique.name, level: 3}],
   connections: ['',''],
   positive_statuses: [
     {name: 'Empowered', applied: false},

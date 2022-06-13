@@ -3,7 +3,8 @@
   import { signed } from '$lib/pretty'
   import FullResult from '$lib/c/FullResult.svelte'
   import Tip from '$lib/c/Tip.svelte'
-  import type { Data } from '$lib/data/character';
+  import type { Data } from '$lib/data/character'
+  import { beforeUpdate } from 'svelte'
 
   export let start: number = 1
   export let hide: boolean = false
@@ -24,11 +25,23 @@
     - +!easy
   )
 
+  beforeUpdate(() => {
+    if (character) {
+      balance = character.balance === character.center
+      conditions = !character.conditions.some(el => el.applied)
+    }
+  })
+
 </script>
 <style>
   .rows {
     display: flex;
     flex-direction: column;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 </style>
 <Header h={1} {start} {hide} title='The Training Move' is_page_title>

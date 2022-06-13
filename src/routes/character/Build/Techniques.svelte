@@ -9,7 +9,7 @@
   export let hide_limit:boolean = false
   export let all_trainings:boolean = false
 
-  $: mastered = character.techniques.filter(el => el.level === 2).length
+  $: mastered = character.techniques.filter(el => el.level === 3).length
   $: learned = character.techniques.filter(el => el.level === 1).length
 
   $: non_playbook = applicable_technqiues(character, all_trainings)
@@ -33,7 +33,6 @@
       timeout_id = undefined
     }, 2000)
   })
-  // TODO Mastered not counted correctly on change.
 </script>
 {#if !hide_limit}
   <p>Choose {1 - mastered} mastered and {1 - learned} learned technique:</p>
@@ -60,7 +59,7 @@
       <label>
         <input type='checkbox'
           on:input={e => check(3, name, e)}
-          checked={character.techniques.some(el => el.name === name && el.level >= 2)}
+          checked={character.techniques.some(el => el.name === name && el.level >= 3)}
         />
         Mastered
       </label>
