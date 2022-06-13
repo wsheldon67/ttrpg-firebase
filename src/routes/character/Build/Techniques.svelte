@@ -3,6 +3,7 @@
   import { applicable_technqiues } from "$lib/data/trainings";
   import { playbook } from '$lib/data/playbooks'
   import { beforeUpdate, createEventDispatcher } from 'svelte'
+  import Technique from "$lib/data/techniques/Technique.svelte";
   const dispatch = createEventDispatcher()
 
   export let character:Data
@@ -45,9 +46,9 @@
   </details>
 {/if}
 <div class='cardtainer'>
-{#each comps as {component, name} (name)}
+{#each comps as {component, name, tags} (name)}
   <div class='card'>
-    <svelte:component this={component} hide start={2}/>
+    <Technique technique={{component, name, tags}} hide start={2}/>
     <div>
       <label>
         <input type='checkbox'

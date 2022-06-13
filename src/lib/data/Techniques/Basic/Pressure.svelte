@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Pressure'>
+  <slot slot='header' />
   <p>Choose an <Tip text='approach'/> that your foe cannot use in the next <Tip text='exchange'/>.</p>
   <Header h={2} {start} title='Examples' hide>
     <p>You impress or intimidate a foe.</p>

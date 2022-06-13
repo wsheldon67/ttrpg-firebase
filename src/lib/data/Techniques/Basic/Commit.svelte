@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Commit'>
+  <slot slot='header' />
   <ol>
     <li><Tip text='Shift your balance'/> towards one of your principles</li>
     <li>The next time you <Tip text='live up to that principle'/>, do not mark fatigue.</li>

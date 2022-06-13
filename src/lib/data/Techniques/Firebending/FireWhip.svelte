@@ -14,6 +14,7 @@ import Tip from '$lib/c/Tip.svelte'
     {#if character}
       <Fatigue bind:character={character} />
     {/if}
+    <slot />
   </div>
   <p>Lash out from a distance. Mark 1 <Tip text='fatigue'/>:</p>
   <ul>

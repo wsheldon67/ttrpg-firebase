@@ -7,5 +7,5 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Air Cushion">
-  
+  <slot slot='header' />
 </Header>

@@ -14,6 +14,7 @@
     {#if character}
       <Fatigue bind:character={character} />
     {/if}
+    <slot />
   </div>
   <p>Entangle a foe with a weapon or device. Mark 1 <Tip text='fatigue'/> to wrap the entangling object around your foe:</p>
   <ul>

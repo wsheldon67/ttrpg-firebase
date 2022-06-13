@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Ready'>
+  <slot slot='header' />
   <p>Mark 1 <Tip text='fatigue'/> to assign or clear a <Tip text='fictionally'/> appropriate <Tip text='status'/> to nearby characters or yourself.</p>
   <Header h={2} {start} title='Examples' hide>
     <ul>

@@ -12,6 +12,7 @@
     {#if character}
       <Fatigue bind:character={character}/>
     {/if}
+    <slot />
   </svelte:fragment>
   <p>Protect an ally within reach. Mark 1-fatigue to intercept and stop 
     an attack made against them in this exchange; if no attack is made 

@@ -14,6 +14,7 @@
     {#if character}
       <Status bind:character={character} status='Prepared' />
     {/if}
+    <slot />
   </div>
   <p>Carefully and stealthily extend a sheet of ice out beneath foes of your choice.</p>
   <ul>

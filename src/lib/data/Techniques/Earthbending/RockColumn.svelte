@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Rock Column">
+  <slot slot='header' />
   <p>Pin a foe with a column of earth. Inflict <Tip text='impaired'/> on a single combatant.</p>
   <ul>
     <li>If they are already impaired, inflict <Tip text='trapped'/></li>

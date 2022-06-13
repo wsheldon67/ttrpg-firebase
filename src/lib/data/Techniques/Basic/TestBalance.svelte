@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Test Balance'>
+  <slot slot='header' />
   <p>Mark 1 <Tip text='fatigue'/></p>
   <ul>
     <li>If you know their <Tip text='principle'/>, <Tip text='shift their balance'/> away from center</li>

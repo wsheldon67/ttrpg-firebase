@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Seize a Position'>
+  <slot slot='header' />
   <p>Choose one:</p>
   <ul>
     <li>Move to a new location</li>

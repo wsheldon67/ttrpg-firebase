@@ -212,16 +212,19 @@ button.p[disabled], button.p[disabled]:hover {
 .hidden {display: none;}
 
 .D {
-  background-color: var(--good);
-  color: var(--at);
+  background-color: #a5d6a7;
+  color: black;
+  fill: black;
 }
 .A {
-  background-color: var(--bad);
-  color: var(--at);
+  background-color: #ef9a9a;
+  fill: black;
+  color: black;
 }
 .E {
-  background-color: var(--b6);
-  color: var(--t);
+  background-color: #ddd;
+  fill: black;
+  color: black;
 }
 
 

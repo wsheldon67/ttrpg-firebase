@@ -1,6 +1,7 @@
 <script lang='ts'>
-  import { group_names, techniques } from '$lib/data/techniques'
+  import { group_names, technique, techniques } from '$lib/data/techniques'
   import Header from '$lib/c/Header.svelte'
+import Technique from '$lib/data/techniques/Technique.svelte'
 
   export let start:number = 1
   export let hide:boolean = false
@@ -93,9 +94,9 @@
 <Header h={1} {start} {hide} title='Techniques' is_page_title>
   <p>Results: {filtered_techniques.length}</p>
   <div class='cardtainer'>
-    {#each filtered_techniques as {component}}
+    {#each filtered_techniques as technique}
     <div class='card'>
-      <svelte:component this={component} start={2} hide/>
+      <Technique {technique} hide start={start+1} />
     </div>
     {/each}
   </div>

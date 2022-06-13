@@ -9,6 +9,7 @@ import Tip from '$lib/c/Tip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Collect Material">
+  <slot slot='header' />
   <p>Scrounge up bits and bobs from the area around you that you can use to your advantage.</p>
   <ul>
     <li>Take 3 gears</li>

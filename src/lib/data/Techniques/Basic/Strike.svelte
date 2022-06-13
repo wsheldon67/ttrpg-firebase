@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Strike'>
+  <slot slot='header' />
   <p>Mark 0 <Tip text='fatigue'/>, they choose one:</p>
   <ul>
     <li>Mark 2 fatigue</li>

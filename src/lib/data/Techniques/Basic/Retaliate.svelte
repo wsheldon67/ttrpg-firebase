@@ -9,5 +9,6 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Retaliate'>
+  <slot slot='header' />
   <p>Each time a foe inflicts <Tip text='fatigue'/>, a <Tip text='condition'/>, or <Tip text='shifts your balance'/> in this exchange, inflict 1 fatigue on them.</p>
 </Header>

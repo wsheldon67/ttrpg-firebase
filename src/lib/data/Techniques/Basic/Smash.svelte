@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Smash'>
+  <slot slot='header' />
   <p>Mark 1 <Tip text='fatigue'/> to destroy or destabilize something in the environment.</p>
   <ul><li>Can be used to remove or inflict <Tip text='statuses'/></li></ul>
   <Header h={2} {start} title='Examples' hide>

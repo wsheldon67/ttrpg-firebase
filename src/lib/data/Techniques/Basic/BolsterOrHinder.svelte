@@ -9,6 +9,7 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Bolster or Hinder'>
+  <slot slot='header' />
   <p>Apply a <Tip text='status'/> to another character or NPC group.</p>
   <Header h={2} {start} title='Examples' hide>
     <ul>

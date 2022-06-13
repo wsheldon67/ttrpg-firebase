@@ -7,5 +7,5 @@ import type { Data } from '$lib/data/character';
   export let character:Data = undefined
 </script>
 <Header h={1} {start} {hide} title='Duck and Twist'>
-
+  <slot slot='header' />
 </Header>
