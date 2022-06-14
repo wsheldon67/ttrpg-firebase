@@ -16,9 +16,7 @@
     const { db } = await import ('$lib/firebase')
     const docRef = await addDoc(collection(db, 'campaigns'),{
       uid, name,
-      users: {
-        [uid]: ['GM Only','Everyone']
-      }
+      users: [uid]
     })
     console.log('doc written with id', docRef.id)
     

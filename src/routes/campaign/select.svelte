@@ -6,17 +6,14 @@
   let campaigns = []
 
   onMount(async () => {
-    const { collection, query, where, getDocs} = await import('firebase/firestore')
+    const { collection, query, where, getDocs } = await import('firebase/firestore')
     const { db, isSignedIn } = await import('$lib/firebase')
+    const { uid } = await isSignedIn()
 
-    const user = await isSignedIn()
-    const q = query(collection(db, 'campaigns'), where('uid', '==', user.uid))
-    
-    const querySnapshot = await getDocs(q)
-    const res = []
-    querySnapshot.forEach((doc) => {
-      res.push({data: doc.data(), id: doc.id})
-    })
+    const q = query(collection(db, 'campaigns'), where('users', 'array-contains', uid))
+    let res = []
+    const snapshot = await getDocs(q)
+    snapshot.forEach(doc => res.push(doc))
     campaigns = res
   })
 
@@ -31,7 +28,7 @@
 <select on:change={changeCampaign}>
   <option>- Select -</option>
   {#each campaigns as campaign}
-    <option value={campaign.id}>{campaign.data.name}</option>
+    <option value={campaign.id}>{campaign.data().name}</option>
   {/each}
 </select>
 <style>
