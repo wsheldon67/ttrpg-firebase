@@ -9,6 +9,7 @@ import Tip from '$lib/c/Tip.svelte'
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title='Anticipate'>
+  <slot slot='header' />
   <p>Study a nearby foe to learn where their momentum will take them next.</p>
   <ul>
     <li>Declare the <Tip text='approach'/> they are tending towards.</li>

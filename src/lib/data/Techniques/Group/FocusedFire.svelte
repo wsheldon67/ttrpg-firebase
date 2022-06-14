@@ -8,5 +8,5 @@
   export let hide: boolean = false
 </script>
 <Header h={1} {start} {hide} title="Focused Fire">
-  
+  <slot slot='header' />
 </Header>

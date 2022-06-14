@@ -16,6 +16,7 @@
       <Status bind:character={character} status='Favored' />
       <Fatigue bind:character={character} amt={-1} />
     {/if}
+    <slot />
   </div>
   <p>Take pause to feel the flow of battle and study the way your opposition fights.</p>
   <ul>

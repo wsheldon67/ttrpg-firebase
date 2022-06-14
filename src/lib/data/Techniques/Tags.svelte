@@ -11,6 +11,7 @@
   import Earth from '$lib/i/earth.svg?src'
   import Weapons from '$lib/i/weapons.svg?src'
   import Technology from '$lib/i/technology.svg?src'
+  import Group from '$lib/i/group.svg?src'
 
 
   export let technique:Technique
@@ -31,7 +32,8 @@
     'Firebending': {_class: 'Fire', icon: Fire},
     'Earthbending': {_class: 'Earth', icon: Earth},
     'Weapons': {_class: 'Weapons', icon: Weapons},
-    'Technology': {_class: 'Technology', icon: Technology}
+    'Technology': {_class: 'Technology', icon: Technology},
+    'Group': {_class: 'Group', icon: Group}
   }
 
   function get_tags(tags:string[]):Tag[] {
@@ -81,6 +83,10 @@
   }
   .Technology {
     background-color: hsl(255, 75%, 45%);
+    fill: white;
+  }
+  .Group {
+    background-color: hsl(0, 0%, 40%);
     fill: white;
   }
 </style>
