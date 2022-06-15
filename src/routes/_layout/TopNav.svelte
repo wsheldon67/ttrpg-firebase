@@ -2,9 +2,8 @@
   import SiteNav from './SiteNav.svelte'
   import Menu from '$lib/i/menu.svg'
   import Search from './Search.svelte'
+  import Popover from '$lib/c/Popover.svelte';
 
-  let isOpen = false
-  function toggle() {isOpen = !isOpen}
 
 </script>
 <style>
@@ -18,16 +17,6 @@
     height: 1.8em;
     z-index: 12;
   }
-  .siteNav {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 1.8em;
-    width: 100vw;
-    max-width: var(--break1);
-    background-color: var(--b3);
-    z-index: 12;
-  }
   a {
     height: 1.7em;
     margin-left: .5em;
@@ -36,14 +25,10 @@
 </style>
 
 <div class='nav'>
-  <button on:click={toggle} class='vertCenter'>
-    <Menu />
-  </button>
+  <Popover>
+    <Menu slot='button' />
+    <SiteNav slot='content' />
+  </Popover>
   <Search />
   <a href='/'><img src='/favicon-32x32.png' alt='logo'/></a>
 </div>
-{#if isOpen}
-<div class='siteNav' on:click={()=>isOpen = false}>
-  <SiteNav />
-</div>
-{/if}

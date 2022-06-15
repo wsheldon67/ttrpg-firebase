@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { campaign } from "$lib/campaign"
-import { name_to_color } from "$lib/name_to_color";
+  import { name_to_color } from "$lib/name_to_color";
 
   $: tag_cats = tag_cats_as_array($campaign)
   function tag_cats_as_array(camp):{name:string, tags:string[]}[] {
@@ -12,7 +12,7 @@ import { name_to_color } from "$lib/name_to_color";
       untagged = untagged.filter(tag => !tags.includes(tag))
     }
     return [
-      {name: 'Untagged', tags: untagged},
+      {name: 'No Category', tags: untagged},
       ...res
     ]
   }
@@ -51,7 +51,7 @@ import { name_to_color } from "$lib/name_to_color";
 <a href='/notes/all'>View All Notes</a>
 {#each tag_cats as {name, tags}}
   <h1>{name}
-    {#if name !== 'Untagged'}
+    {#if name !== 'No Category'}
       <form on:submit|preventDefault={(e) => move_to_cat(e, name)}>
         <label>
           Add Tag to {name}:
@@ -67,7 +67,7 @@ import { name_to_color } from "$lib/name_to_color";
   </h1>
   {#each tags as tag}
     <div class='tag' style={`background-color: ${name_to_color(tag)}`}>
-      {#if name !== 'Untagged'}
+      {#if name !== 'No Category'}
         <button on:click={()=>{remove_from_cat(tag, name)}}>X</button>
       {/if}
       <a href={`/notes/tag-${tag}`}>{tag}</a>
@@ -87,6 +87,7 @@ import { name_to_color } from "$lib/name_to_color";
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
   }
   .tag {
     width: max-content;
@@ -96,11 +97,12 @@ import { name_to_color } from "$lib/name_to_color";
   }
   .tag > * {
     color: var(--at);
+    font-weight: var(--at-weight);
   }
   .tag > a:hover {
     filter: brightness(.8);
   }
   hr {
-    margin-top: 1em;
+    margin-top: 2em;
   }
 </style>

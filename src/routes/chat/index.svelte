@@ -69,11 +69,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    box-shadow: -.5em 0em .25em -.25em var(--b3);
   }
   .messages {
     flex: 1 1 auto;
     overflow-y: auto;
     min-height: 0px;
+    background-color: var(--b3);
+    
   }
   textarea {
     width: 100%;
