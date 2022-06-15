@@ -264,3 +264,10 @@ button.p[disabled], button.p[disabled]:hover {
 .tip[data-popper-placement^='right'] > .arrow {
   left: -4px;
 }
+
+span.search_note {
+  color: var(--p);
+}
+span.search_comp {
+  color: var(--good);
+}

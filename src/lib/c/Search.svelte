@@ -7,7 +7,8 @@
   type FilteredOpt = {
     value: any,
     label: string,
-    sub?: string
+    sub?: string,
+    _class?:string
   }
 
   export let searchFunc = async function (query_text: string): Promise<FilteredOpt[]>{
@@ -82,7 +83,7 @@
       on:click|preventDefault={() => {click(opt.value)}}
       on:mousedown|preventDefault={()=>{}}
     >
-    <span class='label'>{opt.label}</span>
+    <span class={'label ' + opt._class || ''}>{opt.label}</span>
     {#if opt.sub}
       <hr />
       <span class='sub'>{truncate_string(opt.sub, max_length)}</span>

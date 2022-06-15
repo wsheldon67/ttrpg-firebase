@@ -21,21 +21,21 @@
         }
       }
     ]
-    console.log('queries', queries)
+
     /* @ts-ignore*/
     const {results} = await search_client.multipleQueries(queries)
-    console.log('raw results', results)
+
     const res = [
       // notes
       ...results[0].hits.map((el) => {
-        return {label: el.title || 'Note', sub: el.body, value: {id: el.objectID, type: 'note'}}
+        return {label: el.title || 'Note', sub: el.body, value: {id: el.objectID, type: 'note'}, _class: 'search_note'}
       }),
       // compendium
       ...results[1].hits.map((el) => {
-        return {label: el.title, sub: el.description, value:{url: el.link || el.url}}
+        return {label: el.title, sub: el.description, value:{url: el.link || el.url}, _class: 'search_comp'}
       })
     ]
-    console.log('processed results', res)
+
     return res
   }
 
