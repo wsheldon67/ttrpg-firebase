@@ -30,7 +30,6 @@ export function subscribe_to_log(callback:Function, gm:boolean = false, desc:boo
     const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
     const campaign = localStorage.getItem('campaignID')
-    console.log(campaign)
     const q = query(
       collection(db, 'notes'),
       where('campaign', '==', campaign),
@@ -51,7 +50,6 @@ export function subscribe_by_user_tag(user_tag:string, callback:Function, gm:boo
     const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
     const campaign = localStorage.getItem('campaignID')
-    console.log(campaign)
     const q = query(
       collection(db, 'notes'),
       where('campaign', '==', campaign),
@@ -63,6 +61,18 @@ export function subscribe_by_user_tag(user_tag:string, callback:Function, gm:boo
     )
     return onSnapshot(q, (snapshot) => {
       const res:Note[] = arrayify(snapshot)
+      callback(res)
+    })
+  }
+}
+
+export function subscribe_by_id(id:string, callback:Function) {
+  return async () => {
+    const { onSnapshot, doc } = await import ('firebase/firestore')
+    const { db } = await import ('$lib/firebase')
+    const ref = doc(db, 'notes', id)
+    return onSnapshot(ref, (snapshot) => {
+      const res = {id: snapshot.id, ...snapshot.data()}
       callback(res)
     })
   }

@@ -11,7 +11,7 @@
         indexName: 'notes',
         query,
         params: {
-          filters: `campaign:${campaignID} AND viewers:${uid}`
+          filters: `campaign:${campaignID} AND gm:false AND log:true`
         }
       }, {
         indexName: 'compendium',
@@ -28,7 +28,7 @@
     const res = [
       // notes
       ...results[0].hits.map((el) => {
-        return {label: el.data.name, sub: el.data.body, value: {id: el.objectID, type: 'note'}}
+        return {label: el.title || 'Note', sub: el.body, value: {id: el.objectID, type: 'note'}}
       }),
       // compendium
       ...results[1].hits.map((el) => {
@@ -41,7 +41,7 @@
 
   function click(e) {
     if (e.detail.type === 'note') {
-      goto(`/notes/edit/${e.detail.id}`)
+      goto(`/notes/id-${e.detail.id}`)
     } else {
       goto(`/comp/${e.detail.url}`)
     }

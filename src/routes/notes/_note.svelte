@@ -100,4 +100,8 @@
   button {
     height: 1.8em;
   }
+  textarea {
+    width: 50%;
+    height: 6em;
+  }
 </style>
