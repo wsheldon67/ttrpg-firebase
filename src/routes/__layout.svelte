@@ -8,8 +8,15 @@
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
 
+  let small = false
   
   onMount(async ()=>{
+    const mql = window.matchMedia('(min-width: 48em)')
+    mql.onchange = ({matches}) => {
+      if (matches) {small = false}
+      else {small = true}
+      console.log(small)
+    }
     try {
       const { isSignedIn } = await import ('$lib/firebase')
       const signedIn = await isSignedIn()
@@ -31,9 +38,11 @@ Loading...
 <TopNav />
 <div class='chatcont'>
   <div class='main'><slot /></div>
-  <Chat />
+  {#if !small}
+    <Chat />
+  {/if}
 </div>
-<BottomNav />
+<BottomNav {small}/>
 {/await}
 
 <style>
@@ -42,27 +51,20 @@ Loading...
   }
   .main {
     overflow-y: scroll;
-    height: 80%;
-    padding-bottom: 20%;
+    height: 100%;
   }
   .chatcont > :global(.chat) {
     position: fixed;
     box-sizing: border-box;
+    right: 1.5em;
     bottom: 0em;
-    height: 20%;
-    width: 100%;
+    width: 20%;
+    height: 100%;
+    min-width: 12em;
+    padding: 2em 0em;
   }
   @media only screen and (min-width: 48em) {
-    .chatcont > :global(.chat) {
-      right: 1.5em;
-      width: 20%;
-      height: 100%;
-      min-width: 12em;
-      padding: 2em 0em;
-    }
     .main {
-      height: 100%;
-      padding-bottom: initial;
       padding-right: max(20%, 13em);
     }
   }
