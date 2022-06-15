@@ -43,3 +43,23 @@ export function subscribe_by_tag(tag:string, callback:Function, desc:boolean = f
     })
   }
 }
+
+export function subscribe_by_user_tag(tag:string, callback:Function, desc:boolean = false, _limit:number = 100) {
+  return async () => {
+    const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
+    const { db } = await import ('$lib/firebase')
+    const campaign = localStorage.getItem('campaignID')
+    console.log(campaign)
+    const q = query(
+      collection(db, 'notes'),
+      where('campaign', '==', campaign),
+      where('user_tags', 'array-contains', tag),
+      orderBy('created', desc ? 'desc' : 'asc'),
+      limit(_limit)
+    )
+    return onSnapshot(q, (snapshot) => {
+      const res = arrayify(snapshot)
+      callback(res)
+    })
+  }
+}
