@@ -6,7 +6,7 @@
 
   import CompSearch from '../comp/Search.svelte'
   import Change from '../time/change.svelte'
-  import Note from '../notes/_add/Note.svelte'
+  import Note from '../notes/quick.svelte'
 
   const open = {
     time: false,
@@ -46,7 +46,7 @@
   </Widget>
   <Widget id='notes' tip='Make a note' on:click={click} show={open.notes}>
     <NoteIcon slot='icon' />
-    <Note type='quick' />
+    <Note />
   </Widget>
   <Widget id='rules' tip='Look up a rule' on:click={click} show={open.rules}>
     <BookIcon slot='icon' />

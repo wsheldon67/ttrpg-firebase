@@ -2,6 +2,7 @@
   import '../app.css'
   import TopNav from './_layout/TopNav.svelte'
   import BottomNav from './_layout/BottomNav.svelte'
+  import Chat from './chat/index.svelte'
   import { campaign } from '$lib/campaign'
 
   import { onMount } from 'svelte'
@@ -28,6 +29,41 @@
 Loading...
 {:then}
 <TopNav />
-<slot />
+<div class='chatcont'>
+  <div class='main'><slot /></div>
+  <Chat />
+</div>
 <BottomNav />
 {/await}
+
+<style>
+  .chatcont {
+    height: 100%;
+  }
+  .main {
+    overflow-y: scroll;
+    height: 80%;
+    padding-bottom: 20%;
+  }
+  .chatcont > :global(.chat) {
+    position: fixed;
+    box-sizing: border-box;
+    bottom: 0em;
+    height: 20%;
+    width: 100%;
+  }
+  @media only screen and (min-width: 48em) {
+    .chatcont > :global(.chat) {
+      right: 1.5em;
+      width: 20%;
+      height: 100%;
+      min-width: 12em;
+      padding: 2em 0em;
+    }
+    .main {
+      height: 100%;
+      padding-bottom: initial;
+      padding-right: max(20%, 13em);
+    }
+  }
+</style>

@@ -58,12 +58,19 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: large;
 }
-html {background-color: var(--b0);}
+html {
+  background-color: var(--b0);
+  height: 100%;
+}
 body {
   background-color: var(--b0);
   padding: 2em 0em;
   margin: 0em;
-  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+body > div {
+  height: 100%;
 }
 
 a {
