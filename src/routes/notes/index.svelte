@@ -5,7 +5,7 @@
   $: tag_cats = tag_cats_as_array($campaign)
   function tag_cats_as_array(camp):{name:string, tags:string[]}[] {
     let res = []
-    let untagged = [...camp.user_tags]
+    let untagged = camp.user_tags ? [...camp.user_tags] : []
     for (let cat in camp.tag_cats) {
       const tags = camp.tag_cats[cat]
       res.push({name: cat, tags})

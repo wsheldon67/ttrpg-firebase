@@ -10,3 +10,11 @@ export async function get_display_name(uid:string) {
   display_names[uid] = docSnap.data().displayName
   return display_names[uid]
 }
+
+export function isGM(campaign, callback) {
+  return async () => {
+    const { isSignedIn } = await import('$lib/firebase')
+    const {uid} = await isSignedIn()
+    callback(campaign.uid === uid)
+  }
+}

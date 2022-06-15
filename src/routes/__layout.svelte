@@ -64,7 +64,7 @@ Loading...
   }
   @media only screen and (min-width: 48em) {
     .main {
-      padding-right: max(25%, 15em);
+      padding-right: var(--right-side);
     }
   }
 </style>

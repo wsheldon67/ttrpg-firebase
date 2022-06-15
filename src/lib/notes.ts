@@ -7,13 +7,14 @@ export interface Note {
   [key: string]:any
 }
 
-export async function add_note(note:Note) {
+export async function add_note(note:Note, log:boolean = false, gm:boolean = false) {
   const { collection, addDoc, serverTimestamp } = await import ('firebase/firestore')
   const { db, isSignedIn } = await import ('$lib/firebase')
   const { uid } = await isSignedIn()
   const campaign = localStorage.getItem('campaignID')
   const doc = {
-    campaign, user: uid, ...note, created: serverTimestamp()
+    campaign, user: uid, ...note, created: serverTimestamp(),
+    gm, log
   }
   await addDoc(collection(db, 'notes'), doc)
 }
@@ -24,7 +25,7 @@ export function arrayify(snapshot:any):Note[] {
   return res
 }
 
-export function subscribe_by_tag(tag:string, callback:Function, desc:boolean = false, _limit:number = 100) {
+export function subscribe_to_log(callback:Function, gm:boolean = false, desc:boolean = false, _limit:number = 100) {
   return async () => {
     const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
@@ -33,7 +34,8 @@ export function subscribe_by_tag(tag:string, callback:Function, desc:boolean = f
     const q = query(
       collection(db, 'notes'),
       where('campaign', '==', campaign),
-      where('tags', 'array-contains', tag),
+      where('log', '==', true),
+      where('gm', '==', gm),
       orderBy('created', desc ? 'desc' : 'asc'),
       limit(_limit)
     )
@@ -44,7 +46,7 @@ export function subscribe_by_tag(tag:string, callback:Function, desc:boolean = f
   }
 }
 
-export function subscribe_by_user_tag(tag:string, callback:Function, desc:boolean = false, _limit:number = 100) {
+export function subscribe_by_user_tag(user_tag:string, callback:Function, gm:boolean = false, desc:boolean = false, _limit:number = 100) {
   return async () => {
     const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
@@ -53,7 +55,9 @@ export function subscribe_by_user_tag(tag:string, callback:Function, desc:boolea
     const q = query(
       collection(db, 'notes'),
       where('campaign', '==', campaign),
-      where('user_tags', 'array-contains', tag),
+      where('user_tags', 'array-contains', user_tag),
+      where('gm', '==', gm),
+      where('log', '==', true),
       orderBy('created', desc ? 'desc' : 'asc'),
       limit(_limit)
     )

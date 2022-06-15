@@ -20,6 +20,8 @@
 
   --bad: #ef9a9a;
   --good: #a5d6a7;
+  
+  --right-side: max(25%, 15em);
 }
 @media (prefers-color-scheme: light) {
   :root {

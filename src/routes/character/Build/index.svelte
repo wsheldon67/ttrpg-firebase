@@ -40,7 +40,8 @@ import { beforeNavigate } from "$app/navigation";
     bottom: 2.2em;
   }
   .next {
-    right: .5em;
+    right: var(--right-side);
+    margin-right: 1em;
   }
   .back {
     left: .5em;

@@ -7,17 +7,20 @@
   }
 </script>
 <script lang='ts'>
-import { subscribe_by_user_tag } from "$lib/notes";
-import { onMount } from "svelte";
-import Note from "./_note.svelte";
+  import { campaign } from "$lib/campaign";
+  import { isGM } from "$lib/display_name";
+  import { onMount } from "svelte";
+  import ByTag from "./_by_tag.svelte";
 
   export let tag:string
-  let notes = []
+  let gm:boolean
 
-  onMount(subscribe_by_user_tag(tag, res => notes = res))
+  onMount(isGM($campaign, res => gm = res))
 </script>
 <a href='/notes'>All Tags</a>
 <h1>{tag}</h1>
-{#each notes as note}
-  <Note {note} />
-{/each}
+<ByTag {tag} />
+{#if gm}
+  <h1>GM Notes</h1>
+  <ByTag {tag} {gm} />
+{/if}

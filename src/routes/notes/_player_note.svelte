@@ -1,6 +1,5 @@
 <script lang='ts'>
-import { add_note } from "$lib/notes"
-
+  import { add_note } from "$lib/notes"
 
   let body:string = ''
 
@@ -11,7 +10,8 @@ import { add_note } from "$lib/notes"
     }, true)
     body = ''
   }
-
+  // TODO player note, name of character as user_tag ideally
+  // automatically categorize tag into PC category.
 </script>
 <form on:submit|preventDefault={submit}>
   <textarea bind:value={body}></textarea>

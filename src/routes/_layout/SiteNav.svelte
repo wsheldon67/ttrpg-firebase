@@ -1,5 +1,10 @@
 <script lang='ts'>
-  
+  import { campaign } from '$lib/campaign'
+  import { isGM } from '$lib/display_name';
+  import { onMount } from 'svelte'
+
+  let gm:boolean
+  onMount(isGM($campaign, res => gm = res))
 </script>
 <style>
   a {
@@ -13,11 +18,14 @@
   }
 </style>
 <div>
-  <a href='/notes'>Notes</a>
+  <a href='/notes/all'>Notes</a>
   <!--a href='/time/change'>Adjust Time</a-->
   <a href='/comp'>Compendium</a>
   <a href='/character'>Characters</a>
   <a href='/campaign'>Campaigns</a>
   <!--a href='/scriptwrite'>Script Writer</a-->
+  {#if gm}
+    <a href='/admin/characters'>View All Characters</a>
+  {/if}
   <a href='/auth/login'>Log Off</a>
 </div>

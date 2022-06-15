@@ -3,7 +3,12 @@
   import Menu from '$lib/i/menu.svg'
   import Search from './Search.svelte'
   import Popover from '$lib/c/Popover.svelte';
+  import { beforeNavigate } from '$app/navigation';
 
+  let show = false
+  beforeNavigate(() => {
+    show = false
+  })
 
 </script>
 <style>
@@ -25,7 +30,7 @@
 </style>
 
 <div class='nav'>
-  <Popover>
+  <Popover bind:show={show}>
     <Menu slot='button' />
     <SiteNav slot='content' />
   </Popover>

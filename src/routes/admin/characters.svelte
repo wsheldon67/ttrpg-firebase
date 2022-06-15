@@ -18,7 +18,6 @@
     })
     characters = res
   })
-  // FIXME opening other people's characters assigns them to you
 </script>
 {#if characters.length === 0}
   <p>You don't have any characters! Would you like to <a href='/character/new'>make one</a>?</p>
