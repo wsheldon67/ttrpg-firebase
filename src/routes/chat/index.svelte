@@ -47,13 +47,15 @@
 </script>
 <div class='chat'>
   <div class='messages'>
-    {#each messages as note}
+    {#each messages as note, index}
       <div class='cont'>
+        {#if messages[index-1]?.user !== note.user}
         {#await get_display_name(note.user)}
           Loading...
-        {:then name} 
-          <p class='user' style={`color: ${name_to_color(name)}`}>{name}</p>
+        {:then name}
+          <p class='user' style={`color: ${name_to_color(name)}; border-bottom: 1px solid ${name_to_color(name)};`}>{name}</p>
         {/await}
+        {/if}
         <svelte:component this={types[note.type]} {note} />
       </div>
     {/each}
@@ -80,6 +82,6 @@
   }
   .user {
     font-size: smaller;
-    filter: brightness(.8) saturate(.8);
+    margin-top: 1em;
   }
 </style>
