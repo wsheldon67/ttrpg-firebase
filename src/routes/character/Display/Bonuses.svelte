@@ -1,7 +1,6 @@
 <script lang='ts'>
-import Header from "$lib/c/Header.svelte";
-import Tooltip from "$lib/c/Tooltip.svelte";
-
+  import Header from "$lib/c/Header.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
   import type { Data } from "$lib/data/character";
 
   export let character:Data
@@ -18,7 +17,7 @@ import Tooltip from "$lib/c/Tooltip.svelte";
     current_effect = ''
   }
 </script>
-<Header h={1} {start} {hide} title='Temporary Effects'>
+<Header h={1} {start} {hide} title='Temporary Notes'>
   <form on:submit|preventDefault={add_effect}>
     <label>
       <Tooltip tip='Usually in the form "+1 ongoing to prevent otter-bearpox", but can be any text.'>Add an effect</Tooltip>:
@@ -31,11 +30,18 @@ import Tooltip from "$lib/c/Tooltip.svelte";
       <p><Tooltip tip={'From ' + source}>{name}</Tooltip></p>
     {/each}
   </div>
+  <Header h={2} {start} title='Personal Notes'>
+    <textarea bind:value={character.feature_settings.notes}></textarea>
+  </Header>
 </Header>
 
 <style>
   .cont {
     display: grid;
     grid-template-columns: 1.5em auto;
+  }
+  textarea {
+    width: 100%;
+    min-height: 6em;
   }
 </style>
