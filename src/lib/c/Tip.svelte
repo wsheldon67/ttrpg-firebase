@@ -1,23 +1,9 @@
 <script lang='ts'>
-  import { onMount } from 'svelte';
-  import { get } from 'svelte/store';
-  import { tip_data } from './tip_data';
 
   import Tip from './_BaseTip.svelte'
 
   export let text:string
   export let path:string = text
-
-  /*onMount(() => {
-    tip_data.update((el) => {
-      if (!el[text]) {return {...el, [text]: 1}}
-      else {
-        el[text]++
-        return el
-      }
-    })
-    console.log(get(tip_data))
-  })*/
 
   const common = {
     'condition': 'Core/Condition',
