@@ -9,6 +9,7 @@
 <script lang='ts'>
 import { subscribe_by_user_tag } from "$lib/notes";
 import { onMount } from "svelte";
+import Note from "./_note.svelte";
 
   export let tag:string
   let notes = []
@@ -17,6 +18,6 @@ import { onMount } from "svelte";
 </script>
 <a href='/notes'>All Tags</a>
 <h1>{tag}</h1>
-{#each notes as {body}}
-  <p>{body}</p>
+{#each notes as note}
+  <Note {note} />
 {/each}

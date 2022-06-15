@@ -57,14 +57,14 @@ Loading...
     box-sizing: border-box;
     right: 1.5em;
     bottom: 0em;
-    width: 20%;
+    width: 25%;
     height: 100%;
-    min-width: 12em;
+    min-width: 14em;
     padding: 2em 0em;
   }
   @media only screen and (min-width: 48em) {
     .main {
-      padding-right: max(20%, 13em);
+      padding-right: max(25%, 15em);
     }
   }
 </style>

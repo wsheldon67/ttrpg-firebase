@@ -58,7 +58,7 @@ export function subscribe_by_user_tag(tag:string, callback:Function, desc:boolea
       limit(_limit)
     )
     return onSnapshot(q, (snapshot) => {
-      const res = arrayify(snapshot)
+      const res:Note[] = arrayify(snapshot)
       callback(res)
     })
   }

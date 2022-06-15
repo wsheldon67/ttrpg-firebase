@@ -66,15 +66,14 @@
 </div>
 <style>
   .chat {
-    display: grid;
-    grid-template-rows: auto 4em;
-  }
-  .messages {
-    background-color: var(--b2);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    height: 100%;
+  }
+  .messages {
+    flex: 1 1 auto;
     overflow-y: auto;
+    min-height: 0px;
   }
   textarea {
     width: 100%;
