@@ -15,7 +15,6 @@
     mql.onchange = ({matches}) => {
       if (matches) {small = false}
       else {small = true}
-      console.log(small)
     }
     try {
       const { isSignedIn } = await import ('$lib/firebase')

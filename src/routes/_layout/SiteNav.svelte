@@ -10,13 +10,9 @@
 </style>
 
 <a href='/auth/login'>Login</a>
-<a href='/notes/add'>Add Note</a>
-<a href='/notes/all'>All Notes</a>
-<a href='/time/change'>Adjust Time</a>
+<a href='/notes'>Notes</a>
+<!--a href='/time/change'>Adjust Time</a-->
 <a href='/comp'>Compendium</a>
-<a href='/character/select'>Character Sheet</a>
-<a href='/character/new'>New Character</a>
-<a href='/campaign'>Switch Campaign</a>
-<a href='/campaign/join'>Join Campaign</a>
-<a href='/campaign/add_players'>Add Players to Campaign</a>
-<a href='/scriptwrite'>Script Writer</a>
+<a href='/character'>Characters</a>
+<a href='/campaign'>Campaigns</a>
+<!--a href='/scriptwrite'>Script Writer</a-->

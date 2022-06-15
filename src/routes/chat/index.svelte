@@ -4,6 +4,7 @@
   import { add_note, arrayify } from "$lib/notes"
   import Chat from "./chat.svelte";
   import Roll from "./roll.svelte";
+  import { name_to_color } from "$lib/name_to_color";
 
   const types = {
     'chat': Chat, 'roll': Roll
@@ -29,6 +30,7 @@
     const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
     const campaign = localStorage.getItem('campaignID')
+    console.log(campaign)
     const q = query(
       collection(db, 'notes'),
       where('campaign', '==', campaign),
@@ -47,13 +49,11 @@
   <div class='messages'>
     {#each messages as note}
       <div class='cont'>
-        <p class='user'>
-          {#await get_display_name(note.user)}
-            Loading...
-          {:then name} 
-            {name}
-          {/await}
-        </p>
+        {#await get_display_name(note.user)}
+          Loading...
+        {:then name} 
+          <p class='user' style={`color: ${name_to_color(name)}`}>{name}</p>
+        {/await}
         <svelte:component this={types[note.type]} {note} />
       </div>
     {/each}

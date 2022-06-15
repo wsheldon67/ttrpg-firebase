@@ -7,7 +7,7 @@ import { add_note } from "$lib/notes"
   function submit() {
     add_note({
       type: 'quick',
-      body
+      body, tags: ['log']
     })
     body = ''
   }

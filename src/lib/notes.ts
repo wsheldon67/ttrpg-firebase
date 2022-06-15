@@ -18,43 +18,28 @@ export async function add_note(note:Note) {
   await addDoc(collection(db, 'notes'), doc)
 }
 
-export async function get_notes_by_tag(tag:string):Promise<Note[]> {
-  const { collection, query, where, getDocs, orderBy } = await import ('firebase/firestore')
-  const { db } = await import ('$lib/firebase')
-  const campaignID = localStorage.getItem('campaignID')
-  const q = query(
-    collection(db, 'notes'),
-    where('campaign','==',campaignID),
-    where('tags','array-contains',tag),
-    orderBy('created', 'desc')
-  )
-  const snapshot = getDocs(q)
-  return arrayify(snapshot)
-}
-
-export async function get_note(id:string):Promise<Note> {
-  return
-}
-
-export async function get_notes_by_type(type:string):Promise<Note> {
-  return
-}
-
-export async function update_note(id:string, note:Note) {
-
-}
-
-export async function get_all_notes():Promise<Note[]> {
-  const { collection, query, where, getDocs, orderBy } = await import ('firebase/firestore')
-  const { db } = await import ('$lib/firebase')
-  const campaignID = localStorage.getItem('campaignID')
-  const q = query(collection(db, 'notes'), where('campaign','==', campaignID), orderBy('created', 'desc'))
-  const snapshot = await getDocs(q)
-  return arrayify(snapshot)
-}
-
 export function arrayify(snapshot:any):Note[] {
   const res = []
-  snapshot.forEach(doc => res.push(doc.data()))
+  snapshot.forEach(doc => res.push({id: doc.id, ...doc.data()}))
   return res
+}
+
+export function subscribe_by_tag(tag:string, callback:Function, desc:boolean = false, _limit:number = 100) {
+  return async () => {
+    const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
+    const { db } = await import ('$lib/firebase')
+    const campaign = localStorage.getItem('campaignID')
+    console.log(campaign)
+    const q = query(
+      collection(db, 'notes'),
+      where('campaign', '==', campaign),
+      where('tags', 'array-contains', tag),
+      orderBy('created', desc ? 'desc' : 'asc'),
+      limit(_limit)
+    )
+    return onSnapshot(q, (snapshot) => {
+      const res = arrayify(snapshot)
+      callback(res)
+    })
+  }
 }
