@@ -61,7 +61,7 @@
     {/each}
   </div>
   <form on:submit={send_message} on:keyup={keydown}>
-    <textarea bind:value={message}></textarea>
+    <textarea bind:value={message} placeholder="Send a message"></textarea>
   </form>
 </div>
 <style>
@@ -85,5 +85,17 @@
   .user {
     font-size: smaller;
     margin-top: 1em;
+  }
+  @media only screen and (max-width: 48em) {
+    .chat {
+      width: 90vw;
+      height: 80vh;
+    }
+    form {
+      height: 20%;
+    }
+    .cont {
+      height: max-content;
+    }
   }
 </style>

@@ -13,6 +13,7 @@
   import { onMount } from 'svelte';
   import { isGM } from '$lib/display_name';
   import { campaign } from '$lib/campaign';
+  import Chat from '../chat/index.svelte'
 
   export let small:boolean
 
@@ -21,7 +22,7 @@
     notes: false,
     rules: false,
     gmnote: false,
-    playernote: false,
+    chat: false,
   }
   let lastOpen
   let gm:boolean = false
@@ -71,6 +72,9 @@
     <CompSearch />
   </Widget>
   {#if small}
-    <a href='/chat'><BellIcon /></a>
+  <Widget id='chat' tip='Open the chat' on:click={click} show={open.chat}>
+    <BellIcon slot='icon' />
+    <Chat />
+  </Widget>
   {/if}
 </nav>

@@ -12,9 +12,9 @@
   
   onMount(async ()=>{
     const mql = window.matchMedia('(min-width: 48em)')
+    small = !mql.matches
     mql.onchange = ({matches}) => {
-      if (matches) {small = false}
-      else {small = true}
+      small = !matches
     }
     try {
       const { isSignedIn } = await import ('$lib/firebase')
