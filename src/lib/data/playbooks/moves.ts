@@ -12,13 +12,15 @@ import Destined from './Destined/moves'
 import Elder from './Elder/moves'
 import Foundling from './Foundling/moves'
 import Razor from './Razor/moves'
+import type { Condition } from '../character'
 
 
 export interface Move {
   name: string,
   component: any,
   stat: string,
-  tags: string[]
+  tags: string[],
+  conditions?: {name:Condition, mod:number}[]
 }
 interface Moves {
   [Playbook: string]: Move[]

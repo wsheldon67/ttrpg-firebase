@@ -4,24 +4,26 @@
   import Tip from '$lib/c/Tip.svelte'
   import type { Data } from '$lib/data/character'
   import Roll from '$lib/c/Roll.svelte'
-  import { get_stat_object } from '$lib/data/calc_character'
-import Tooltip from '$lib/c/Tooltip.svelte';
+  import { condition_is_applied, get_stat_object } from '$lib/data/calc_character'
+  import Tooltip from '$lib/c/Tooltip.svelte';
 
   export let start: number = 1
   export let hide: boolean = false
   export let character:Data = undefined
   $: stats = character ? get_stat_object(character) : null
+  $: remorse = character ? condition_is_applied(character, 'Remorseful') : false
+  $: remorse_mod = remorse ? -2 : 0
 </script>
 <Header h={1} {start} {hide} title='The Stance Move' is_page_title>
   <div slot='header' class='buttons'>
     {#if character}
-      <Roll mod={stats.Focus} stat='D&M' label='Defend & Maneuver' class_name='D p'/>
-      <Roll mod={stats.Passion} stat='A&A' label='Advance & Attack' class_name='A p'/>
+      <Roll mod={stats.Focus + remorse_mod} stat='D&M' label='Defend & Maneuver' class_name='D p'/>
+      <Roll mod={stats.Passion + remorse_mod} stat='A&A' label='Advance & Attack' class_name='A p'/>
       <Tooltip tip='Using Creativity'>
-        <Roll mod={stats.Creativity} stat='E&O' label='Evade & Observe' class_name='E p'/>
+        <Roll mod={stats.Creativity + remorse_mod} stat='E&O' label='Evade & Observe' class_name='E p'/>
       </Tooltip>
       <Tooltip tip='Using Harmony'>
-        <Roll mod={stats.Harmony} stat='E&O' label='Evade & Observe' class_name='E p'/>
+        <Roll mod={stats.Harmony + remorse_mod} stat='E&O' label='Evade & Observe' class_name='E p'/>
       </Tooltip>
     {/if}
   </div>

@@ -1,7 +1,7 @@
 <script lang='ts'>
 import { beforeUpdate } from "svelte";
 import { blank, type Data } from '$lib/data/character'
-import { createEventDispatcher } from "svelte/internal";
+import { createEventDispatcher, onMount } from "svelte/internal";
 const dispatch = createEventDispatcher()
 
 import Backgrounds from "./Backgrounds.svelte";
@@ -32,6 +32,12 @@ import { beforeNavigate } from "$app/navigation";
   })
   beforeNavigate(()=> {
     dispatch('update', character)
+  })
+  onMount(()=> {
+    //@ts-ignore
+    window.debug_character = () => {
+      return character
+    }
   })
 </script>
 <style>

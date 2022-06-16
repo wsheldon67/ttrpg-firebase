@@ -10,6 +10,7 @@
   <a href='/comp/Statuses'>Statuses</a>
   <a href='/comp/Core/TakenOut'>Taken Out</a>
   <a href='/comp/Techniques/Mastery'>Technique Mastery</a>
+  <a href='/comp/Core/Growth'>Growth</a>
 </div>
 <h1><a href='/comp/Setup/'>Setup</a></h1>
   <h2><a href='/comp/Setup/Background'>Backgrounds</a></h2>

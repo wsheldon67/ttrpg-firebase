@@ -13,12 +13,14 @@ export const Basic:Move[] = [
     name: 'Assess a Situation',
     component: AssessSituation,
     stat: 'Creativity',
-    tags: ['Basic', 'Angry']
+    tags: ['Basic'],
+    conditions: [{name: 'Shaken', mod: 1}, {name: 'Angry', mod: -2}]
   },{
     name: 'Guide and Comfort',
     component: GuideAndComfort,
     stat: 'Harmony',
-    tags: ['Basic', 'Angry']
+    tags: ['Basic'],
+    conditions: [{name: 'Shaken', mod: -2}, {name: 'Angry', mod: -2}]
   },{
     name: 'Help',
     component: Help,
@@ -28,26 +30,31 @@ export const Basic:Move[] = [
     name: 'Intimidate',
     component: Intimidate,
     stat: 'Passion',
-    tags: ['Basic', 'Afraid']
+    tags: ['Basic'],
+    conditions: [{name: 'Frustrated', mod: 1}, {name: 'Afraid', mod: -2}]
   },{
     name: 'Plead',
     component: Plead,
     stat: 'Harmony',
-    tags: ['Basic', 'Troubled']
+    tags: ['Basic'],
+    conditions: [{name: 'Jaded', mod: -2}, {name: 'Troubled', mod: -2}]
   },{
     name: 'Push Your Luck',
     component: PushYourLuck,
     stat: 'Passion',
-    tags: ['Basic', 'Guilty']
+    tags: ['Basic'],
+    conditions: [{name: 'Frustrated', mod: -2}, {name: 'Guilty', mod: -2}]
   },{
     name: 'Rely on Your Skills and Training',
     component: RelyOnSkillsAndTraining,
     stat: 'Focus',
-    tags: ['Basic', 'Troubled']
+    tags: ['Basic'],
+    conditions: [{name: 'Worried', mod: 1}, {name: 'Troubled', mod: -2}]
   },{
     name: 'Trick',
     component: Trick,
     stat: 'Creativity',
-    tags: ['Basic', 'Insecure']
+    tags: ['Basic'],
+    conditions: [{name: 'Jaded', mod: 1}, {name: 'Insecure', mod: -2}]
   }
 ]

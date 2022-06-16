@@ -15,17 +15,20 @@ export const Balance:Move[] = [
     name: 'Call Someone Out',
     component: CallSomeoneOut,
     stat: 'Their Principle',
-    tags: ['Balance', 'Afraid']
+    tags: ['Balance'],
+    conditions: [{name: 'Remorseful', mod: 1}, {name: 'Afraid', mod: -2}]
   },{
     name: 'Deny a Callout',
     component: DenyACallout,
     stat: 'Principle',
-    tags: ['Balance', '-Guilty']
+    tags: ['Balance'],
+    conditions: [{name: 'Worried', mod: -2}, {name: 'Guilty', mod: 2}]
   },{
     name: 'Resist Shifting Your Balance',
     component: ResistShiftingYourBalance,
     stat: 'No Stat',
-    tags: ['Balance', 'Insecure']
+    tags: ['Balance'],
+    conditions: [{name: 'Insecure', mod: -2}]
   },{
     name: 'Lose Your Balance',
     component: LoseYourBalance,

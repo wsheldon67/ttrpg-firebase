@@ -1,6 +1,5 @@
 <script lang='ts'>
   import Header from "$lib/c/Header.svelte";
-  import Move from "$lib/c/Move.svelte";
   import type { Data } from '$lib/data/character'
   import { all_moves } from "$lib/data/playbooks/moves";
   import Training from "../../../routes/comp/Techniques/Training.svelte";
@@ -20,7 +19,7 @@
       <MomentOfBalance start={start+2} bind:character={character}/>
     {/if}
     {#each character.moves as move}
-      <Move bind:character={character} move={all_moves.find(el => el.name === move)} start={start+2}/>
+    <svelte:component this={all_moves.find(el => el.name === move).component} bind:character={character} start={start+2} move={all_moves.find(el => el.name === move)} hide/>
     {/each}
     <BasicMoves bind:character={character} start={start+1} hide/>
     <BalanceMoves bind:character={character} start={start+1} hide/>

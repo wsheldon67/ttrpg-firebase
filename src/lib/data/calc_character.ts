@@ -59,13 +59,12 @@ export function condition_is_applied(character:Data, condition:Condition):boolea
   return character.conditions.some(el => el.name === condition && el.applied)
 }
 export function apply_condition(character:Data, move: Move):number {
-  if (move.tags.includes('-Guilty') && condition_is_applied(character, 'Guilty')) {
-    return 2
-  }
+  if (!move.conditions){ return 0 }
+
   let condition_mod = 0
-  move.tags.forEach((tag) => {
-    if (condition_is_applied(character, tag as Condition)) {
-      condition_mod = -2
+  move.conditions.forEach(({name, mod}) => {
+    if (condition_is_applied(character, name)) {
+      condition_mod += mod
     }
   })
   return condition_mod

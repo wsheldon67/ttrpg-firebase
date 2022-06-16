@@ -89,6 +89,10 @@
     'growth': 'Core/Growth',
     'basic techniques': 'Techniques/Basic',
     'engage': 'Combat/Engaged',
+    'training move': 'Techniques/Training',
+    'center': 'Balance/Center',
+    'moment of balance': 'Moves/MomentOfBalance',
+    'stat': 'Core/Stats',
   }
 
   if (common[text.toLowerCase()]) {

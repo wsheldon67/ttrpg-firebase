@@ -2,7 +2,6 @@
   import Header from '$lib/c/Header.svelte'
   import type { Data } from '$lib/data/character'
   import { Balance } from '$lib/data/playbooks/balance_moves'
-  import Move from '$lib/c/Move.svelte';
 
   export let character:Data
   export let start: number = 1
@@ -11,6 +10,6 @@
 </script>
 <Header h={1} {start} {hide} title='Balance Moves'>
   {#each Balance as move}
-    <Move bind:character={character} {move} start={start+1}/>
+  <svelte:component this={move.component} bind:character={character} start={start+1} {move} hide/>
   {/each}
 </Header>

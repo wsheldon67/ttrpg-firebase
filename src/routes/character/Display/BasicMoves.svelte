@@ -1,6 +1,5 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
-  import Move from '$lib/c/Move.svelte';
   import type { Data } from '$lib/data/character';
   import { Basic } from '$lib/data/playbooks/basic_moves'
 
@@ -12,6 +11,6 @@
 </script>
 <Header h={1} {start} {hide} title='Basic Moves'>
   {#each Basic as move}
-    <Move bind:character={character} {move} start={start+1}/>
+  <svelte:component this={move.component} bind:character={character} start={start+1} {move} hide/>
   {/each}
 </Header>

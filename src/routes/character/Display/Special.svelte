@@ -5,7 +5,8 @@
   export let character:Data
   export let start:number = 1
   export let hide:boolean = false
+  export let id:string
 
   $: special = specials[character.playbook]
 </script>
-<svelte:component this={special.component} {start} {hide} bind:character={character}/>
+<svelte:component this={special.component} {start} {hide} bind:character={character} {id}/>

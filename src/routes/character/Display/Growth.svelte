@@ -17,7 +17,7 @@
     character.growth += detail
   }
 </script>
-<Header h={1} {start} {hide} title='Growth'>
+<Header h={1} {start} {hide} title='Growth & Advancement'>
   <Scale
     value={current_growth} 
     min=0 max=4 optimum=4 low=0 high=4

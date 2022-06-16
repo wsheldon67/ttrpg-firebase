@@ -31,7 +31,7 @@
   function click(clicked_playbook:Playbook) {
     character = JSON.parse(JSON.stringify(blank))
     character.playbook = clicked_playbook.name
-    character.techniques = [{name: clicked_playbook.technique.name, level: 2}]
+    character.techniques = [{name: clicked_playbook.technique.name, level: 3}]
   }
 </script>
 
