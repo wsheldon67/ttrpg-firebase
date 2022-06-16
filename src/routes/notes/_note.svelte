@@ -2,6 +2,8 @@
   import type { Note } from "$lib/notes";
   import { name_to_color } from "$lib/name_to_color";
   import Edit from '$lib/i/edit.svg'
+  import Up from '$lib/i/arrow-up.svg'
+  import Down from '$lib/i/arrow-down.svg'
 
   export let note:Note
   $: body = note.body
@@ -36,12 +38,18 @@
     })
   }
   async function save_note() {
-
     const { doc, updateDoc } = await import ('firebase/firestore')
     const { db } = await import ('$lib/firebase')
     const ref = doc(db, 'notes', id)
     await updateDoc(ref, {body: textarea_body})
     editmode = false
+  }
+
+  async function set_gm(gm:boolean) {
+    const { doc, updateDoc } = await import ('firebase/firestore')
+    const { db } = await import ('$lib/firebase')
+    const ref = doc(db, 'notes', id)
+    await updateDoc(ref, {gm})
   }
 </script>
 <div class='cont'>
@@ -66,6 +74,11 @@
       <button class='p' on:click={save_note}>Save</button>
     {:else}
       <button on:click={()=>{editmode = true}}><Edit /></button>
+    {/if}
+    {#if note.gm}
+      <button on:click={()=>{set_gm(false)}}><Up /></button>
+    {:else}
+      <button on:click={()=>{set_gm(true)}}><Down /></button>
     {/if}
   </div>
 </div>
@@ -103,5 +116,8 @@
   textarea {
     width: 50%;
     height: 6em;
+  }
+  p {
+    white-space: pre-line;
   }
 </style>
