@@ -82,6 +82,7 @@
     {/if}
   </div>
 </div>
+<hr />
 
 <style>
   .tag {
