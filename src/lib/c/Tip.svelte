@@ -87,7 +87,8 @@
     'harmony': 'Core/Harmony',
     'passion': 'Core/Passion',
     'growth': 'Core/Growth',
-    'basic techniques': `Techniques/Basic`,
+    'basic techniques': 'Techniques/Basic',
+    'engage': 'Combat/Engaged',
   }
 
   if (common[text.toLowerCase()]) {
