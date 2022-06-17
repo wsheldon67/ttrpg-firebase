@@ -53,7 +53,7 @@ import Tip from "$lib/c/Tip.svelte";
       <p>Spend resources during the session to establish a boon you had previously asked for or obtained, that your lineage's unique position and stores could provide.</p>
     </Header>
   {:else}
-    <p>Choose one domain that is the source of your lineage's power:</p>
+    <p>Choose one domain that is the source of your lineage's power, and one that your lineage is now beginning to extend their reach into:</p>
     <ul>
       {#each domains as domain}
         <li>{domain}</li>
