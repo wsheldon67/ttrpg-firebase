@@ -1,6 +1,7 @@
 <script lang='ts'>
   import FullResult from "$lib/c/FullResult.svelte";
 import Header from "$lib/c/Header.svelte"
+import Roll from "$lib/c/Roll.svelte";
 import Tip from "$lib/c/Tip.svelte";
   import type { Data } from "$lib/data/character";
 import { onMount } from "svelte";
@@ -40,6 +41,12 @@ import { onMount } from "svelte";
   </ul>
   {/if}
   <Header h={2} {start} title='Indulge Alone' hide>
+    <div slot='header' class='buttons'>
+      {#if character}
+        <button class='p' on:click={()=>{character.balance++}}>+Survival</button>
+        <Roll mod={character.balance} label='Indulge Alone' stat='Survival'/>
+      {/if}
+    </div>
     <p>Indulge a bad habit on your own:</p>
     <ul>
       <li><Tip text='Shift your balance'/> toward Survival.</li>
@@ -57,6 +64,12 @@ import { onMount } from "svelte";
     </FullResult>
   </Header>
   <Header h={2} {start} title='Indulge With Friends' hide>
+    <div slot='header' class='buttons'>
+      {#if character}
+        <button class='p' on:click={()=>{character.balance--}}>+Friendship</button>
+        <Roll mod={-character.balance} label='Indulge With Friends' stat='Friendship' />
+      {/if}
+    </div>
     <p>Indulge a bad habit with a friend:</p>
     <ul>
       <li><Tip text='Shift your balance'/> toward Friendship</li>
