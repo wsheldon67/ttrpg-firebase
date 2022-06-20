@@ -5,7 +5,6 @@
 <div class='top'>
   <a href='/comp'>Explore the Compendium</a>
 </div>
-<h1>Your Characters</h1>
 <Select />
 <style>
   div {

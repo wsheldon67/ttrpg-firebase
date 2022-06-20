@@ -21,10 +21,12 @@
 
   let show = false
   let filteredOpts: FilteredOpt[] = []
+  let inputval = ''
 
   function click(value) {
     dispatch('click', value)
     show = false
+    inputval = ''
   }
   
   function focus(e) {
@@ -76,6 +78,7 @@
   on:focus={focus}
   on:input={change}
   slot='reference'
+  bind:value={inputval}
 />
 <div class={fit?'fit':'expand'} slot='content'>
   {#each filteredOpts as opt}
