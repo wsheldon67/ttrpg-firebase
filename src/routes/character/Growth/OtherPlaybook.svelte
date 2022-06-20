@@ -6,6 +6,7 @@
 
   export let character:Data
   export let back:Function
+  export let count_advancement = true
   let other_moves:Move[] = all_moves.filter(el => !el.tags.includes(character.playbook))
   let selected:string
   $: filtered_moves = other_moves
@@ -13,7 +14,9 @@
 
   function save() {
     character.moves = [selected, ...character.moves]
-    character.growth_advancements = [{name: 'Other Playbook'}, ...character.growth_advancements]
+    if (count_advancement) {
+      character.growth_advancements = [{name: 'Other Playbook'}, ...character.growth_advancements]
+    }
     back()
   }
   // TODO add filtering

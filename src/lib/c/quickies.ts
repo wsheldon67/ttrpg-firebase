@@ -83,7 +83,7 @@ export function quickie(text:string):Article {
         care, and empathy, their aptitude at taking into 
         account the views and feelings of others and acting 
         in an honest and compassionate way.`,
-        quick: `Roll 226 + your Harmony modifier`,
+        quick: `Roll 2d6 + your Harmony modifier`,
         relevance: 0,
         system: 'atla',
         tags: [],
