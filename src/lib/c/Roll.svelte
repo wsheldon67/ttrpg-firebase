@@ -1,6 +1,7 @@
 <script lang='ts'>
   import { signed } from "$lib/pretty";
   import { add_note } from "$lib/notes";
+  import Die from '$lib/i/die.svg'
 
   export let mod:number
   export let label:string
@@ -22,5 +23,13 @@
   }
 </script>
 <button class={class_name ? class_name : 'p'} on:click={roll}>
-  {stat} {signed(mod)}
+  <Die />{stat} {signed(mod)}
 </button>
+<style>
+  button > :global(svg) {
+    width: 1em;
+    position: relative;
+    top: .18em;
+    padding-right: .25em;
+  }
+</style>
