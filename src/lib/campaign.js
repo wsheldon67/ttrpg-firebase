@@ -9,7 +9,10 @@ function createStore() {
   return {
     subscribe,
     set: async (id) => {
-      const { db } = await import('./firebase')
+      const { db, isSignedIn } = await import('./firebase')
+      const { uid } = await isSignedIn()
+      console.log(uid, 'would like to access campaign', id)
+      if (!id) {return}
       return new Promise((resolve) => {
         if (unsub) {unsub()}
         unsub = onSnapshot(doc(db, `campaigns/${id}`), (doc) => {
