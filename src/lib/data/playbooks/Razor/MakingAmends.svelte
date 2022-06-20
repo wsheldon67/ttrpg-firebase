@@ -7,6 +7,7 @@
   import Tooltip from "$lib/c/Tooltip.svelte";
   import OtherPlaybook from "../../../../routes/character/Growth/OtherPlaybook.svelte";
   import Honed from "./Honed.svelte";
+import Roll from "$lib/c/Roll.svelte";
 
   export let character:Data
   export let start:number = 1
@@ -45,6 +46,11 @@
     </ul>
   {/if}
   <Header h={2} {start} title='Prove You Are Different' hide>
+    <div slot='header' class='buttons'>
+      {#if character}
+        <Roll mod={total} label='Prove You Are Different' stat='Roll' />
+      {/if}
+    </div>
     <p>Try your best to prove that you are a different, better person now through your actions. Check all that apply:</p>
     <div class='col'>
       <label>
