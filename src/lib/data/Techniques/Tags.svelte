@@ -57,36 +57,4 @@
     height: 100%;
     width: auto;
   }
-  .Rare {
-    background-color: black;
-    fill: yellow;
-  }
-  .Water {
-    background-color: hsl(182, 100%, 40%);
-    fill: white;
-  }
-  .Air {
-    background-color: hsl(60, 30%, 35%);
-    fill: white;
-  }
-  .Fire {
-    background-color: hsl(0, 90%, 30%);
-    fill: white;
-  }
-  .Earth {
-    background-color: hsl(80, 60%, 17%);
-    fill: white;
-  }
-  .Weapons {
-    background-color: hsl(135, 61%, 10%);
-    fill: white;
-  }
-  .Technology {
-    background-color: hsl(255, 75%, 45%);
-    fill: white;
-  }
-  .Group {
-    background-color: hsl(0, 0%, 40%);
-    fill: white;
-  }
 </style>

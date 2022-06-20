@@ -82,7 +82,7 @@ import { onMount } from "svelte";
     <p>Study with a teacher to learn a new technique.</p>
     <ul>
       <li><Tip text='Shift your balance'/> toward Community</li>
-      <li>Learn the technique at the <Tip text='practiced'/> level</li>
+      <li>Use the <Tip text='training move'/> to learn the technique at the <Tip text='practiced'/> level</li>
     </ul>
     <p>You can only do this if your balance is at +0 Community or higher.</p>
     {#if community}

@@ -55,10 +55,8 @@
     margin-right: 1px;
   }
   .content {
-    max-width: 36rem;
   }
   .header {
-    max-width: 36rem;
     margin: 0em;
   }
 </style>
