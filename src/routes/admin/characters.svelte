@@ -7,7 +7,7 @@
     const { isSignedIn, db } = await import('$lib/firebase')
     const { collection, query, where, getDocs } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
-    const q = query(collection(db, 'characters'))
+    const q = query(collection(db, 'characters'), where('campaign', 'array-contains', localStorage.getItem('campaignID')))
     const snapshot = await getDocs(q)
     const res = []
     snapshot.forEach((doc) => {
