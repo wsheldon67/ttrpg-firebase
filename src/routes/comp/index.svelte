@@ -41,10 +41,10 @@
   </div>
   <h2><a href='/comp/Nations'>The Four Nations</a></h2>
   <div class='list'>
-    <a href='/comp/Nations/Water'>The Water Nation</a>
-    <a href='/comp/Nations/Earth'>The Earth Nation</a>
+    <a href='/comp/Nations/Water'>The Water Tribes</a>
+    <a href='/comp/Nations/Earth'>The Earth Kingdom</a>
     <a href='/comp/Nations/Fire'>The Fire Nation</a>
-    <a href='/comp/Nations/Air'>The Air Nation</a>
+    <a href='/comp/Nations/Air'>The Air Nomads</a>
   </div>
 <h1><a href='/comp/Playbooks'>Playbooks</a></h1>
   <h2>Core Playbooks</h2>
