@@ -38,7 +38,6 @@
     if (e.target.value.length < threshold) {return}
     show = true
     filteredOpts = await searchFunc(e.target.value)
-    console.log('current filteredOpts {value, label, sub?}',filteredOpts)
   }
 
 </script>

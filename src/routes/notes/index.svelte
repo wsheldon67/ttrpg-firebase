@@ -48,7 +48,7 @@
     })
   }
 </script>
-<a href='/notes/all'>View All Notes</a>
+<a href='/notes/all' class='p'>View All Notes</a>
 {#each tag_cats as {name, tags}}
   <h1>{name}
     {#if name !== 'No Category'}

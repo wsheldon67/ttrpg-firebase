@@ -8,7 +8,7 @@
 
   onMount(isGM($campaign, res => gm = res))
 </script>
-<a href='/notes'>Browse Tags</a>
+<a href='/notes' class='p'>Browse Tags</a>
 <h1>All Notes</h1>
 <All />
 {#if gm}
