@@ -9,7 +9,7 @@ import { onMount } from "svelte";
   export let hide:boolean = false
 
   const responsiblities = [
-    `Protecting humanity from natural disasters and dark spirits`,` 
+    `protecting humanity from natural disasters and dark spirits`,` 
     destroying dangerous creatures`,` overthrowing tyrants`,` serving and 
     defending rightful rulers`,` performing rituals`,` providing aid and succor 
     to the downtrodden`,` searching for hidden histories and artifacts`,` 
@@ -17,7 +17,7 @@ import { onMount } from "svelte";
     and relics`
   ]
   const prohibitions = [
-    `Never refuse an earnest request for help`,` never express great 
+    `never refuse an earnest request for help`,` never express great 
     emotion`,` never run from a fight`,` never start a fight`,` never deny 
     someone knowledge or truth`,` never use your role for gain or profit`,` 
     never intervene in a community without invitation`,` never withhold 

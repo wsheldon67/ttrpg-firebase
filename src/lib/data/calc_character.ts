@@ -60,6 +60,7 @@ export function condition_is_applied(character:Data, condition:Condition):boolea
 }
 export function apply_condition(character:Data, move: Move):number {
   if (!move.conditions){ return 0 }
+  if (character.feature_settings.ignore_penalties) {return 0}
 
   let condition_mod = 0
   move.conditions.forEach(({name, mod}) => {

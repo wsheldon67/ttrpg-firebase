@@ -9,7 +9,7 @@ import Statuses from "./Statuses.svelte";
   export let start:number = 1
   export let hide:boolean = false
 </script>
-<Header h={1} {start} {hide} title='Condition'>
+<Header h={1} {start} {hide} title='Status/Condition/Fatigue'>
   <Fatigue start={start+1} bind:character={character} />
   <Conditions start={start+1} bind:character={character} />
   <Statuses start={start+1} bind:character={character}/>
