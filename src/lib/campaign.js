@@ -11,7 +11,6 @@ function createStore() {
     set: async (id) => {
       const { db, isSignedIn } = await import('./firebase')
       const { uid } = await isSignedIn()
-      console.log(uid, 'would like to access campaign', id)
       if (!id) {return}
       return new Promise((resolve) => {
         if (unsub) {unsub()}

@@ -23,6 +23,7 @@
     Campaign ID:
     <input bind:value={id}/>
   </label>
+  <button class='p'>Submit</button>
 </form>
 {#if success}
 Campaign Added! <a href='/campaign/select'>Switch Campaigns</a>

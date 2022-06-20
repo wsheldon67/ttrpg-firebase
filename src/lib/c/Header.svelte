@@ -44,6 +44,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 1em;
   }
   .header > .header_content {
     height: 100%;
@@ -55,6 +56,7 @@
     margin-right: 1px;
   }
   .content {
+    margin-right: 1em;
   }
   .header {
     margin: 0em;

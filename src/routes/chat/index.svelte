@@ -44,6 +44,7 @@
       messages = forwards
     })
   })
+  // FIXME prev campaign chat sticks around until page refresh on campaign switch
 </script>
 <div class='chat'>
   <div class='messages'>
