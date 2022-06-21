@@ -1,0 +1,74 @@
+<script lang='ts'>
+  import type { NPC } from "./npc";
+  import { beforeUpdate, createEventDispatcher } from 'svelte'
+  import { beforeNavigate } from '$app/navigation'
+  import Header from "$lib/c/Header.svelte";
+  import Scale from "$lib/c/Scale.svelte";
+  import { techniques } from '$lib/data/techniques'
+  import Basic from '$lib/data/techniques/Basic'
+  import Technique from "$lib/data/techniques/Technique.svelte";
+  import Tip from "$lib/c/Tip.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
+import Notes from "./notes.svelte";
+  const dispatch = createEventDispatcher()
+
+  export let npc:NPC
+  export let start:number = 1
+  export let hide:boolean = false
+
+  // on updates, send to server
+  let timeout_id
+  beforeUpdate(async()=>{
+    if (timeout_id) {clearTimeout(timeout_id)}
+    // wait 200ms to see if there's any sequential updates
+    timeout_id = setTimeout(()=>{
+      dispatch('update',npc)
+      timeout_id = undefined
+    }, 2000)
+  })
+  beforeNavigate(() => {
+    dispatch('update', npc)
+  })
+</script>
+<Header h={1} {start} {hide} title={`${npc.name} - ${npc.importance} NPC`} is_page_title>
+  <p>{npc.name} {npc.feature}</p>
+  <p>Drive: {npc.drive}</p>
+  <p>Hopes: {npc.hopes}</p>
+  <p>Fears: {npc.fears}</p>
+  <p>Description:</p>
+  <p>{npc.notes}</p>
+</Header>
+<Header h={1} {start} title='Mechanics' hide>
+  <p>Principle: {npc.principle}</p>
+  <Scale bind:value={npc.balance} min={0} max={npc.max_balance} />
+  <p>Fatigue:</p>
+  <Scale bind:value={npc.fatigue} min={0} max={npc.max_fatigue} reverse/>
+  <p>Conditions</p>
+  <div class='conditions'>
+    {#each npc.conditions as {name, applied}}
+      <label>
+        <input type='checkbox' bind:checked={applied} />
+        {name}
+      </label>
+    {/each}
+  </div>
+</Header>
+<Header h={1} {start} title='Techniques' hide>
+  <p>Choose an <Tip text='approach'/>, you can use <Tooltip tip='Your balance + 1'>{npc.balance + 1}</Tooltip> techniques from that approach.</p>
+  {#each npc.techniques as name}
+    <Technique technique={techniques.find(el => el.name === name)} start={start+1} hide/>
+  {/each}
+  {#each Basic as technique}
+    <Technique {technique} start={start+1} hide/>
+  {/each}
+</Header>
+<Header h={1} {start} title='Notes'>
+  <Notes name={npc.name} />
+</Header>
+<style>
+  .conditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>

@@ -1,10 +1,11 @@
 <script lang='ts'>
-  import { group_names, technique, techniques } from '$lib/data/techniques'
+  import { group_names, techniques } from '$lib/data/techniques'
   import Header from '$lib/c/Header.svelte'
-import Technique from '$lib/data/techniques/Technique.svelte'
+  import Technique from '$lib/data/techniques/Technique.svelte'
 
   export let start:number = 1
   export let hide:boolean = false
+  export let onClick:Function = undefined
 
   let groups = group_names.map((name) => {
     const defaults = ['Basic', 'Universal']
@@ -96,7 +97,11 @@ import Technique from '$lib/data/techniques/Technique.svelte'
   <div class='cardtainer'>
     {#each filtered_techniques as technique}
     <div class='card'>
-      <Technique {technique} hide start={start+1} />
+      <Technique {technique} hide start={start+1}>
+        {#if onClick}
+          <button class='p' on:click={()=>{onClick(technique)}}>+</button>
+        {/if}
+      </Technique>
     </div>
     {/each}
   </div>

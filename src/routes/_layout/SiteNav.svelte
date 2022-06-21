@@ -26,6 +26,7 @@
   <!--a href='/scriptwrite'>Script Writer</a-->
   {#if gm}
     <a href='/admin/characters'>View All Characters</a>
+    <a href='/npc'>NPCs</a>
   {/if}
   <a href='/auth/login'>Log Off</a>
 </div>

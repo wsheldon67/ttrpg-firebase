@@ -8,5 +8,5 @@
 
 </script>
 <svelte:component this={technique.component} {start} {hide}>
-  <Tags {technique} />
+  <Tags {technique} /><slot />
 </svelte:component>
