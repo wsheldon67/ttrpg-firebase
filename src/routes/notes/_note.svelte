@@ -60,11 +60,12 @@
   {/if}
   <div class='tagstuff'>
     {#each user_tags || [] as tag}
-      <button
-        on:click={()=>{remove_tag(tag, id)}}
-        class='tag'
-        style={`background-color: ${name_to_color(tag)}`}
-      >{tag}</button>
+      <div class='tag' style={`background-color: ${name_to_color(tag)}`}>
+        <button
+          on:click={()=>{remove_tag(tag, id)}}
+        >X</button>
+        <a href={'/notes/tag-'+tag}>{tag}</a>
+      </div>
     {/each}
     {#if editmode}
       <form on:submit|preventDefault={(e)=>{add_tag(e, id)}}>
@@ -86,12 +87,19 @@
 
 <style>
   .tag {
-    color: var(--at);
-    font-weight: var(--at-weight);
     margin-left: .25em;
     border-radius: .25em;
+    padding: .25em;
+    width: max-content;
   }
-  .tag:hover {
+  .tag > * {
+    color: var(--at);
+    font-weight: var(--at-weight);
+  }
+  .tag > a:hover {
+    filter: brightness(.8);
+  }
+  .tag > button:hover + a {
     text-decoration: line-through;
   }
   .cont {

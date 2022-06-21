@@ -102,6 +102,9 @@
   .tag > a:hover {
     filter: brightness(.8);
   }
+  .tag > button:hover + a {
+    text-decoration: line-through;
+  }
   hr {
     margin-top: 2em;
   }
