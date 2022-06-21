@@ -65,6 +65,7 @@ Loading...
   @media only screen and (min-width: 48em) {
     .main {
       padding-right: calc(var(--right-side) + 1em);
+      padding-left: .25em;
     }
   }
 </style>
