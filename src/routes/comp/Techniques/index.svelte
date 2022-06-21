@@ -106,3 +106,8 @@
     {/each}
   </div>
 </Header>
+<style>
+  .p {
+    margin-left: .5em;
+  }
+</style>
