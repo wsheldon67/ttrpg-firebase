@@ -4,6 +4,7 @@
   import { techniques } from '$lib/data/techniques'
   import Stance from "../../../routes/comp/Combat/Stance.svelte";
   import { Basic } from '$lib/data/techniques/Basic'
+import Tags from "$lib/data/techniques/Tags.svelte";
 
   export let character:Data
   export let start:number = 1
@@ -25,32 +26,38 @@
   <p>Choose an approach and then roll using the Stance Move:</p>
   <Stance {character} start={start+1} hide/>
   <p>Use a technique that uses the approach you chose:</p>
-  {#each combo_techniques as {level, component, tags}, index}
+  {#each combo_techniques as {level, component, tags, name}, index}
   <div class='cont'>
     <svelte:component this={component} start={start+1} bind:character={character} hide/>
-    <label>
-      <input type='checkbox' checked disabled class='learned'/>
-      Learned
-    </label>
-    <label>
-      <input type='checkbox' checked={level > 1} on:input={(e)=>{check(e, index, 2)}}/>
-      Practiced
-    </label>
-    <label>
-      <input type='checkbox' checked={level > 2} on:input={(e)=>{check(e, index, 3)}}/>
-      Mastered
-    </label>
-    <span class={'approach '+tags[1].substring(0,1)}>{tags[1]}</span>
+    <div class='row'>
+      <div>
+        <label>
+          <input type='checkbox' checked disabled class='learned'/>
+          Learned
+        </label>
+        <label>
+          <input type='checkbox' checked={level > 1} on:input={(e)=>{check(e, index, 2)}}/>
+          Practiced
+        </label>
+        <label>
+          <input type='checkbox' checked={level > 2} on:input={(e)=>{check(e, index, 3)}}/>
+          Mastered
+        </label>
+      </div>
+      <Tags technique={{name, component, tags}} />
+    </div>
   </div>
   {/each}
-  {#each Basic as {component, tags}}
+  {#each Basic as technique}
     <div class='cont'>
-      <svelte:component this={component} start={start+1} bind:character={character} hide/>
-      <label>
-        <input type='checkbox' checked disabled/>
-        Basic
-      </label>
-      <span class={'approach '+tags[1].substring(0,1)}>{tags[1]}</span>
+      <svelte:component this={technique.component} start={start+1} bind:character={character} hide/>
+      <div class='row'>
+        <label>
+          <input type='checkbox' checked disabled/>
+          Basic
+        </label>
+        <Tags {technique}/>
+      </div>
     </div>
   {/each}
 </Header>
@@ -65,5 +72,17 @@
     border-radius: .25em;
     margin-left: 1em;
     filter: brightness(.875);
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row > :global(div) {
+    width: max-content;
+    height: 1em;
+  }
+  .row :global(.cont) {
+    height: 1em;
   }
 </style>
