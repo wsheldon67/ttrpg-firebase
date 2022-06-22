@@ -109,5 +109,6 @@
 <style>
   .p {
     margin-left: .5em;
+    height: 1.8em;
   }
 </style>
