@@ -9,7 +9,8 @@
   import Technique from "$lib/data/techniques/Technique.svelte";
   import Tip from "$lib/c/Tip.svelte";
   import Tooltip from "$lib/c/Tooltip.svelte";
-import Notes from "./notes.svelte";
+  import Notes from "./notes.svelte";
+  import { quick } from "$lib/data/quick_tips";
   const dispatch = createEventDispatcher()
 
   export let npc:NPC
@@ -39,9 +40,9 @@ import Notes from "./notes.svelte";
   <p>{npc.notes}</p>
 </Header>
 <Header h={1} {start} title='Mechanics' hide>
-  <p>Principle: {npc.principle}</p>
+  <p>Principle: {npc.principle} (+{npc.balance})</p>
   <Scale bind:value={npc.balance} min={0} max={npc.max_balance} />
-  <p>Fatigue:</p>
+  <p>Fatigue: {npc.fatigue}/{npc.max_fatigue}</p>
   <Scale bind:value={npc.fatigue} min={0} max={npc.max_fatigue} reverse/>
   <p>Conditions</p>
   <div class='conditions'>
@@ -51,6 +52,26 @@ import Notes from "./notes.svelte";
         {name}
       </label>
     {/each}
+  </div>
+  <div class='status_cont'>
+    <p>Positive Statuses</p>
+    <div class='status'>
+      {#each npc.positive_statuses as {name, applied}}
+        <label>
+          <input type='checkbox' bind:checked={applied} />
+          <Tooltip tip={quick[name.toLowerCase()]}>{name}</Tooltip>
+        </label>
+      {/each}
+    </div>
+    <p>Negative Statuses</p>
+    <div class='status'>
+      {#each npc.negative_statuses as {name, applied}}
+        <label>
+          <input type='checkbox' bind:checked={applied} />
+          <Tooltip tip={quick[name.toLowerCase()]}>{name}</Tooltip>
+        </label>
+      {/each}
+    </div>
   </div>
 </Header>
 <Header h={1} {start} title='Techniques' hide>
@@ -67,6 +88,11 @@ import Notes from "./notes.svelte";
 </Header>
 <style>
   .conditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .status {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
