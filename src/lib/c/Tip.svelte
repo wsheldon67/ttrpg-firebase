@@ -54,6 +54,7 @@
     'shift their balance': 'Balance/Shift',
     'shifting their balance': 'Balance/Shift',
     'balance shifts': 'Balance/Shift',
+    'balance shift': 'Balance/Shift',
     'combat exchange': 'Combat',
     'exchange':'Combat',
     'basic': 'Techniques/Basic',

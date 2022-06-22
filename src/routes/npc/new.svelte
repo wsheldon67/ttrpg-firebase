@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { goto } from '$app/navigation';
   import Edit from './edit.svelte'
-  import { blank } from './npc'
+  import { blank } from '$lib/data/npc'
 
   let id:string
 

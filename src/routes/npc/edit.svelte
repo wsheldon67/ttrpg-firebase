@@ -1,7 +1,7 @@
 <script lang='ts'>
 import Tooltip from "$lib/c/Tooltip.svelte";
 import { name_to_color } from "$lib/name_to_color";
-import { blank, type NPC } from "./npc";
+import { blank, type NPC } from "$lib/data/npc";
 import { createEventDispatcher } from 'svelte'
 import Techniques from '../comp/Techniques/index.svelte'
 import Header from "$lib/c/Header.svelte";

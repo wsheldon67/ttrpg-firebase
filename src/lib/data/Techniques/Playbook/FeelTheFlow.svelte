@@ -4,6 +4,9 @@
   import Status from '$lib/c/Status.svelte'
   import Tip from '$lib/c/Tip.svelte'
   import type { Data } from '$lib/data/character'
+  import type { NPC } from '$lib/data/npc'
+  
+  export let npc:NPC = undefined
   
   export let character:Data = undefined
 

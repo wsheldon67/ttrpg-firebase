@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import type { NPC } from "./npc";
+  import type { NPC } from "$lib/data/npc";
   import { beforeUpdate, createEventDispatcher } from 'svelte'
   import { beforeNavigate } from '$app/navigation'
   import Header from "$lib/c/Header.svelte";
