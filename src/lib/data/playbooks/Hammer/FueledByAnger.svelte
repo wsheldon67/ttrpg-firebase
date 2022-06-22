@@ -11,6 +11,7 @@
   export let hide: boolean = false
   export let character:Data = undefined
   export let move:Move = undefined
+
 </script>
 <Header h={1} {start} {hide} title='Fueled By Anger'>
   <div slot='header' class='buttons'>

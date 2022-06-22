@@ -6,9 +6,11 @@
 
   export let character:Data
   export let move:Move
+  export let results: [string, string, string] = undefined
 </script>
 <Roll 
 mod={get_basic_move_stat(character, move)}
 label={move.name}
 stat={move.stat}
+{results}
 />

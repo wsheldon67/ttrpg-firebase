@@ -7,14 +7,17 @@
 
   export let character:Data
   export let move:Move
+  export let results: [string, string, string] = undefined
 </script>
 <Roll 
   mod={-character.balance + apply_condition(character, move)}
   label={move.name}
   stat={playbook[character.playbook].principles[0].name}
+  {results}
 />
 <Roll 
   mod={character.balance + apply_condition(character, move)}
   label={move.name}
   stat={playbook[character.playbook].principles[1].name}
+  {results}
 />
