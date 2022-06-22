@@ -96,6 +96,7 @@
     'center': 'Balance/Center',
     'moment of balance': 'Moves/MomentOfBalance',
     'stat': 'Core/Stats',
+    'miss': '',//TODO miss/hit/roll
   }
 
   if (common[text.toLowerCase()]) {
