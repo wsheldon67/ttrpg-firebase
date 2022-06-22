@@ -11,7 +11,8 @@
   import Tooltip from "$lib/c/Tooltip.svelte";
   import Notes from "./notes.svelte";
   import { quick } from "$lib/data/quick_tips";
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher();
+  import { plural } from "$lib/pretty";
 
   export let npc:NPC
   export let start:number = 1
@@ -75,7 +76,7 @@
   </div>
 </Header>
 <Header h={1} {start} title='Techniques' hide>
-  <p>Choose an <Tip text='approach'/>, you can use <Tooltip tip='Your balance + 1'>{npc.balance + 1}</Tooltip> techniques from that approach.</p>
+  <p>Choose an <Tip text='approach'/>, you can use <Tooltip tip='Your balance + 1'>{plural(npc.balance + 1, 'technique')}</Tooltip> from that approach.</p>
   {#each npc.techniques as name}
     <Technique technique={techniques.find(el => el.name === name)} start={start+1} hide/>
   {/each}
