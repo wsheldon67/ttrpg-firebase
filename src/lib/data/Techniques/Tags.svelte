@@ -13,7 +13,6 @@
   import Technology from '$lib/i/technology.svg?src'
   import Group from '$lib/i/group.svg?src'
 
-
   export let technique:Technique
 
   interface Tag {
@@ -33,7 +32,7 @@
     'Earthbending': {_class: 'Earth', icon: Earth},
     'Weapons': {_class: 'Weapons', icon: Weapons},
     'Technology': {_class: 'Technology', icon: Technology},
-    'Group': {_class: 'Group', icon: Group}
+    'Group': {_class: 'Group', icon: Group},
   }
 
   function get_tags(tags:string[]):Tag[] {

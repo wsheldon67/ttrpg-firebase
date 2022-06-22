@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="SVGRoot"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22132" />
+  <g
+     id="layer1">
+    <rect
+       style="stroke-width:3.48985"
+       id="rect9727"
+       width="12"
+       height="64"
+       x="26"
+       y="0" />
+    <rect
+       style="stroke-width:3.48985"
+       id="rect9729"
+       width="12"
+       height="64"
+       x="26"
+       y="-64"
+       transform="rotate(90)" />
+  </g>
+</svg>
