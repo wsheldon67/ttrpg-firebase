@@ -1,5 +1,6 @@
 <script lang='ts'>
   import Header from '$lib/c/Header.svelte'
+import Tip from '$lib/c/Tip.svelte'
   import type { Data } from '$lib/data/character'
   
   export let character:Data = undefined
@@ -9,4 +10,10 @@
 </script>
 <Header h={1} {start} {hide} title="Attend To Commands">
   <slot slot='header' />
+  <p><em>A leading voice in the group takes a moment to organize it effectively.</em></p>
+  <ul>
+    <li>Clear <Tip text='impaired'/></li>
+    <li>Become <Tip text='inspired'/></li>
+    <li>Inflict 1 additional <Tip text='fatigue'/> on all attacks made next <Tip text='exchange'/></li>
+  </ul>
 </Header>
