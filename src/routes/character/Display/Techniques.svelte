@@ -67,12 +67,6 @@ import Tags from "$lib/data/techniques/Tags.svelte";
     background-color: var(--b2);
     margin-bottom: .5em;
   }
-  .approach {
-    padding: .125em;
-    border-radius: .25em;
-    margin-left: 1em;
-    filter: brightness(.875);
-  }
   .row {
     display: flex;
     flex-direction: row;
