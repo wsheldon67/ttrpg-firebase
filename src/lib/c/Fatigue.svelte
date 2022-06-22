@@ -1,6 +1,8 @@
 <script lang='ts'>
   import type { Data } from "$lib/data/character";
   import { signed } from "$lib/pretty";
+import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher()
 
   export let character:Data
   export let amt:number = 1
@@ -11,6 +13,7 @@
     character.fatigue += amt
     if (character.fatigue > 5) {character.fatigue = 5}
     if (character.fatigue < 0) {character.fatigue = 0}
+    dispatch('click',{new_value: character.fatigue, inflicted: amt})
   }
 </script>
 <button class='p' on:click={click} {disabled}>
