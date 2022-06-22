@@ -1,16 +1,14 @@
 <script lang='ts'>
   import Fatigue from '$lib/c/Fatigue.svelte';
-import Header from '$lib/c/Header.svelte'
-import Status from '$lib/c/Status.svelte';
-import Tip from '$lib/c/Tip.svelte';
-import type { Data } from '$lib/data/character';
+  import Header from '$lib/c/Header.svelte'
+  import Status from '$lib/c/Status.svelte';
+  import Tip from '$lib/c/Tip.svelte';
+  import type { Data } from '$lib/data/character';
   import type { NPC } from '$lib/data/npc'
-  
-  export let npc:NPC = undefined
 
   export let start: number = 1
   export let hide: boolean = false
-  export let character:Data = undefined
+  export let character:Data|NPC = undefined
 </script>
 <Header h={1} {start} {hide} title='Duck and Twist'>
   <div slot='header' class='buttons'>

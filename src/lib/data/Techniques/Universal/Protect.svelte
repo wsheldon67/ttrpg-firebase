@@ -2,9 +2,6 @@
   import Header from '$lib/c/Header.svelte'
   import type { Data } from '$lib/data/character';
   import Fatigue from '$lib/c/Fatigue.svelte';
-  import type { NPC } from '$lib/data/npc'
-  
-  export let npc:NPC = undefined
 
   export let start: number = 1
   export let hide: boolean = false
