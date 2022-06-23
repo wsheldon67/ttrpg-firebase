@@ -17,6 +17,7 @@ import Status from '$lib/c/Status.svelte'
       <Status bind:character={character} status='Inspired' />
     {/if}
     <slot />
+  </div>
   <p><em>The group slowly probes the defenses of a foe, one or two members attacking individually to determine the foe's abilities.</em></p>
   <ul>
     <li>Become <Tip text='prepared'/>, <Tip text='favored'/>, and <Tip text='Inspired'/></li>
