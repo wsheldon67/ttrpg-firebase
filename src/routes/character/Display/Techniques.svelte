@@ -44,7 +44,9 @@ import Tags from "$lib/data/techniques/Tags.svelte";
           Mastered
         </label>
       </div>
-      <Tags technique={{name, component, tags}} />
+      <div class='tags'>
+        <Tags technique={{name, component, tags}} />
+      </div>
     </div>
   </div>
   {/each}
@@ -78,5 +80,10 @@ import Tags from "$lib/data/techniques/Tags.svelte";
   }
   .row :global(.cont) {
     height: 1em;
+  }
+  .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 </style>

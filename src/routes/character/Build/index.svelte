@@ -47,7 +47,7 @@ import { beforeNavigate } from "$app/navigation";
   }
   .next {
     right: var(--right-side);
-    margin-right: 1em;
+    margin-right: 2.2em;
   }
   .back {
     left: .5em;
