@@ -16,6 +16,7 @@ export interface NPC {
   techniques:string[]
   positive_statuses: {name:string, applied:boolean}[]
   negative_statuses: {name: string, applied:boolean}[]
+  feature_settings: any
 }
 
 export const blank:NPC = {
@@ -44,5 +45,6 @@ export const blank:NPC = {
     {name: 'Impaired', applied: false},
     {name: 'Trapped', applied: false},
     {name: 'Stunned', applied: false}
-  ]
+  ],
+  feature_settings: {},
 }

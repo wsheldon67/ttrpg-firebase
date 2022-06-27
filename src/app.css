@@ -199,6 +199,11 @@ ul, ol {
   flex-wrap: wrap;
   column-gap: 2em;
 }
+.or > li:nth-child(1n+2)::marker {
+  content: "or   ";
+  font-size: small;
+  white-space: pre;
+}
 .p {
   background-color: var(--p);
   color: var(--at);
