@@ -143,11 +143,19 @@ table {
   border: 1px solid var(--b6);
   border-collapse: collapse;
 }
+table td {
+  border: 2px solid var(--b6);
+  text-align: center;
+  min-width: 3em;
+}
 th {
   filter: saturate(.5) brightness(1.5);
 }
 tr:nth-child(odd) {
-  filter: saturate(.5) brightness(1.125)
+  background-color: var(--b3);
+}
+table ul {
+  text-align: start;
 }
 ul, ol {
   margin-top: .25em;
