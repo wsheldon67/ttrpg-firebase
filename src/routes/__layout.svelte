@@ -55,7 +55,7 @@ Loading...
   .chatcont > :global(.chat) {
     position: fixed;
     box-sizing: border-box;
-    right: 1.5em;
+    right: 0em;
     bottom: 0em;
     width: 25%;
     height: 100%;
