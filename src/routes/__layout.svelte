@@ -57,9 +57,8 @@ Loading...
     box-sizing: border-box;
     right: 0em;
     bottom: 0em;
-    width: 25%;
+    width: var(--right-side);
     height: 100%;
-    min-width: 14em;
     padding: 2em 0em;
   }
   @media only screen and (min-width: 48em) {

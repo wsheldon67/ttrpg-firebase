@@ -1,3 +1,7 @@
+<script lang='ts'>
+  import { playbooks } from '$lib/data/playbooks'
+</script>
+
 <h1><a href='/comp/Core'>The Fundamentals of Play</a></h1>
 <div class='list'>
   <a href='/comp/Balance'>Balance</a>
@@ -47,25 +51,10 @@
     <a href='/comp/Nations/Air'>The Air Nomads</a>
   </div>
 <h1><a href='/comp/Playbooks'>Playbooks</a></h1>
-  <h2>Core Playbooks</h2>
   <div class='list'>
-    <a href='/comp/Playbooks/Adamant'>The Adamant</a>
-    <a href='/comp/Playbooks/Bold'>The Bold</a>
-    <a href='/comp/Playbooks/Guardian'>The Guardian</a>
-    <a href='/comp/Playbooks/Hammer'>The Hammer</a>
-    <a href='/comp/Playbooks/Icon'>The Icon</a>
-    <a href='/comp/Playbooks/Idealist'>The Idealist</a>
-    <a href='/comp/Playbooks/Pillar'>The Pillar</a>
-    <a href='/comp/Playbooks/Prodigy'>The Prodigy</a>
-    <a href='/comp/Playbooks/Rogue'>The Rogue</a>
-    <a href='/comp/Playbooks/Successor'>The Successor</a>
-  </div>
-  <h2>Wan Shi Tong's Playbooks</h2>
-  <div class='list'>
-    <a href='/comp/Playbooks/Elder'>The Elder</a>
-    <a href='/comp/Playbooks/Destined'>The Destined</a>
-    <a href='/comp/Playbooks/Foundling'>The Foundling</a>
-    <a href='/comp/Playbooks/Razor'>The Razor</a>
+    {#each playbooks as {name}}
+      <a href={`/comp/Playbooks/${name}`}>The {name}</a>
+    {/each}
   </div>
 <h1>Moves</h1>
   <h2><a href='/comp/Moves/Basic'>Basic Moves</a></h2>

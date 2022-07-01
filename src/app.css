@@ -21,7 +21,7 @@
   --bad: #ef9a9a;
   --good: #a5d6a7;
   
-  --right-side: max(25%, 15em);
+  --right-side: min(max(25%, 15em), 24em);
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -59,6 +59,11 @@
   background-color: inherit;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: large;
+}
+html, body {
+  margin: 0em;
+  min-height: 100%;
+  width: 100%;
 }
 html {
   background-color: var(--b0);
@@ -177,7 +182,7 @@ ul, ol {
 }
 .card {
   background-color: var(--b3);
-  max-width: 36em;
+  max-width: 30em;
   width: 46%;
   text-align: initial;
   display: flex;
