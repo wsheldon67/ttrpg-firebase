@@ -17,7 +17,7 @@ export function get_comp_promise(system:string, path:string) {
       res = doc.data()
     })
     if (!res){
-      res = {system: 'Common', path: 'NODBENTRY', quick: `"${path}"" was not found in firestore/compendium`}
+      res = {system: 'Common', path: 'NODBENTRY', quick: `"${path}"" was not found (this is probably unfinished content). Send me a message and I'll get it added.`}
     }
     return res
   }
