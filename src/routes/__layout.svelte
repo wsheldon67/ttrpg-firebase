@@ -7,6 +7,7 @@
 
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
+import { chat } from '$lib/chat';
 
   let small = false
   
@@ -24,6 +25,7 @@
       } else if (!localStorage.getItem('campaignID')) {
         goto('/campaign/change')
       }
+      chat.set(localStorage.getItem('campaignID'))
     } catch(err) {
       await goto('/auth/login')
     }

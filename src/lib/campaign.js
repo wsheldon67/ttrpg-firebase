@@ -15,7 +15,7 @@ function createStore() {
       return new Promise((resolve) => {
         if (unsub) {unsub()}
         unsub = onSnapshot(doc(db, `campaigns/${id}`), (doc) => {
-          set(doc.data())
+          set({...doc.data(), id: doc.id})
           resolve('campaign has loaded')
         })
       })

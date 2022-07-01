@@ -5,13 +5,14 @@
   import Chat from "./chat.svelte";
   import Roll from "./roll.svelte";
   import { name_to_color } from "$lib/name_to_color";
+  import { chat } from "$lib/chat";
 
   const types = {
     'chat': Chat, 'roll': Roll
   }
 
   let message = ''
-  let messages = []
+  $: messages = [...$chat].reverse()
   function send_message() {
     add_note({
       type: 'chat',
@@ -26,25 +27,6 @@
       send_message()
     }
   }
-  onMount(async () => {
-    const { onSnapshot, collection, query, where, orderBy, limit } = await import ('firebase/firestore')
-    const { db } = await import ('$lib/firebase')
-    const campaign = localStorage.getItem('campaignID')
-    console.log(campaign)
-    const q = query(
-      collection(db, 'notes'),
-      where('campaign', '==', campaign),
-      where('tags', 'array-contains', 'chat'),
-      orderBy('created', 'desc'),
-      limit(100)
-    )
-    return onSnapshot(q, (snapshot) => {
-      const forwards = arrayify(snapshot)
-      forwards.reverse()
-      messages = forwards
-    })
-  })
-  // FIXME prev campaign chat sticks around until page refresh on campaign switch
 </script>
 <div class='chat'>
   <div class='messages'>

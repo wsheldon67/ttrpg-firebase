@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import { campaign as campaignStore } from '$lib/campaign'
+  import { chat } from '$lib/chat';
   import { goto } from '$app/navigation'
 
   let campaigns = []
@@ -20,6 +21,7 @@
   async function changeCampaign(e) {
     const id = e.target.value
     campaignStore.set(id)
+    chat.set(id)
     localStorage.setItem('campaignID', id)
     goto('/')
   }
