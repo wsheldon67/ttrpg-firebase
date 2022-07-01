@@ -46,7 +46,18 @@ export const playbook:Playbooks = {
   Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor,
   Destined, Elder, Foundling, Razor
 }
-export const playbooks:Playbook[] = [
-  Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor,
-  Destined, Elder, Foundling, Razor
+export let playbooks:Playbook[] = [
+  Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor
 ]
+
+async function check_WST() {
+  const {db, isSignedIn} = await import ('$lib/firebase')
+  const {doc, getDoc} = await import ('firebase/firestore')
+  const { uid } = await isSignedIn()
+  const docRef = doc(db, 'users', uid)
+  const docSnap = await getDoc(docRef)
+  if (docSnap.data().WST) {
+    playbooks = [...playbooks, Destined, Elder, Foundling, Razor]
+  }
+}
+check_WST()

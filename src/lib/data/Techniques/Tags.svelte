@@ -5,12 +5,12 @@
   import Shield from '$lib/i/shield.svg?src'
   import Eye from '$lib/i/eye.svg?src'
   import Star from '$lib/i/star.svg?src'
-  import Water from '$lib/i/water.svg?src'
-  import Air from '$lib/i/air.svg?src'
-  import Fire from '$lib/i/fire.svg?src'
-  import Earth from '$lib/i/earth.svg?src'
-  import Weapons from '$lib/i/weapons.svg?src'
-  import Technology from '$lib/i/technology.svg?src'
+  import Water from '$lib/i/droplet.svg?src'
+  import Air from '$lib/i/wind.svg?src'
+  import Fire from '$lib/i/fire2.svg?src'
+  import Earth from '$lib/i/earth2.svg?src'
+  import Weapons from '$lib/i/weapon2.svg?src'
+  import Technology from '$lib/i/settings.svg?src'
   import Group from '$lib/i/group.svg?src'
 
   export let technique:Technique

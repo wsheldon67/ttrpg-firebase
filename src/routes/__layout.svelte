@@ -22,7 +22,7 @@
       if (!signedIn) {
         await goto('/auth/login')
       } else if (!localStorage.getItem('campaignID')) {
-        goto('/campaign')
+        goto('/campaign/change')
       }
     } catch(err) {
       await goto('/auth/login')

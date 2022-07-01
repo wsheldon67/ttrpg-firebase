@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="SVGRoot"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22132">
+    <rect
+       x="0.088388346"
+       y="-0.044194173"
+       width="64.081551"
+       height="64.037361"
+       id="rect1831" />
+  </defs>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       id="text1829"
+       style="font-size:42.6667px;white-space:pre;shape-inside:url(#rect1831);display:inline;fill:none;stroke-width:3"
+       transform="matrix(1.7745388,0,0,1.9552101,1.8986707,-14.814943)"><tspan
+         x="0.087890625"
+         y="38.881201"
+         id="tspan1929">🜁</tspan></text>
+  </g>
+</svg>
