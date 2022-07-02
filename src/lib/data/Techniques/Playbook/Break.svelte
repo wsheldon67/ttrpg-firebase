@@ -2,10 +2,7 @@
   import Header from '$lib/c/Header.svelte'
 import Tip from '$lib/c/Tip.svelte'
   import type { Data } from '$lib/data/character'
-  import type { NPC } from '$lib/data/npc'
-  
-  export let npc:NPC = undefined
-  
+
   export let character:Data = undefined
 
   export let start: number = 1
@@ -13,7 +10,7 @@ import Tip from '$lib/c/Tip.svelte'
 </script>
 <Header h={1} {start} {hide} title='Break'>
   <slot slot='header' />
-  <p>Target a foe's vulnerable equipment, rendering it useless or broken.</p>
+  <p><em>Target a foe's vulnerable equipment, rendering it useless or broken.</em></p>
   <ul>
     <li>Possibly inflict or overcome a <Tip text='fictionally'/> appropriate <Tip text='status'/>.</li>
   </ul>
