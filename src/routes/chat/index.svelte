@@ -1,11 +1,11 @@
 <script lang='ts'>
   import { get_display_name } from "$lib/display_name";
-  import { onMount } from "svelte";
-  import { add_note, arrayify } from "$lib/notes"
+  import { add_note } from "$lib/notes"
   import Chat from "./chat.svelte";
   import Roll from "./roll.svelte";
   import { name_to_color } from "$lib/name_to_color";
   import { chat } from "$lib/chat";
+import { afterUpdate } from "svelte";
 
   const types = {
     'chat': Chat, 'roll': Roll
@@ -27,6 +27,13 @@
       send_message()
     }
   }
+  let last_scroll_top:number = 0
+  afterUpdate(() => {
+    const el = document.querySelector('.messages')
+    if (el.scrollTop < last_scroll_top - 30) {return}
+    document.querySelector('.messages').lastElementChild.scrollIntoView()
+    last_scroll_top = el.scrollTop
+  })
 </script>
 <div class='chat'>
   <div class='messages'>
