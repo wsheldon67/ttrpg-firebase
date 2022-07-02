@@ -18,5 +18,8 @@
   div :global(h1) {
     background-color: white;
   }
+  div :global(input:hover) {
+    background-color: rgba(255,255,255,0);
+  }
 </style>
 <div id='firebaseui-auth-container'></div>
