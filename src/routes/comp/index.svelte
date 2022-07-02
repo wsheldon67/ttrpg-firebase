@@ -79,20 +79,9 @@
   </div>
   <h2>Playbook Moves</h2>
   <div class='list'>
-    <a href='/comp/Moves/Adamant'>Adamant</a>
-    <a href='/comp/Moves/Bold'>Bold</a>
-    <a href='/comp/Moves/Guardian'>Guardian</a>
-    <a href='/comp/Moves/Hammer'>Hammer</a>
-    <a href='/comp/Moves/Icon'>Icon</a>
-    <a href='/comp/Moves/Idealist'>Idealist</a>
-    <a href='/comp/Moves/Pillar'>Pillar</a>
-    <a href='/comp/Moves/Prodigy'>Prodigy</a>
-    <a href='/comp/Moves/Rogue'>Rogue</a>
-    <a href='/comp/Moves/Successor'>Successor</a>
-    <a href='/comp/Moves/Elder'>Elder</a>
-    <a href='/comp/Moves/Destined'>Destined</a>
-    <a href='/comp/Moves/Foundling'>Foundling</a>
-    <a href='/comp/Moves/Razor'>Razor</a>
+    {#each playbooks as {name}}
+      <a href={`/comp/Moves/${name}`}>{name}</a>
+    {/each}
   </div>
 <h1><a href='/comp/Techniques'>Techniques</a></h1>
   <div class='list'>
