@@ -1,10 +1,11 @@
 <script lang='ts'>
-  import Widget from './widget.svelte'
+  import Widget from './Widget.svelte'
   import TimeIcon from '$lib/i/clock.svg'
   import NoteIcon from '$lib/i/edit-3.svg'
   import BookIcon from '$lib/i/book-open.svg'
   import BellIcon from '$lib/i/bell.svg'
   import GMIcon from '$lib/i/command.svg'
+  import IdeaIcon from '$lib/i/cloud-lightning.svg'
 
   import CompSearch from '../comp/Search.svelte'
   import Change from '../time/change.svelte'
@@ -14,6 +15,7 @@
   import { isGM } from '$lib/display_name';
   import { campaign } from '$lib/campaign';
   import Chat from '../chat/index.svelte'
+  import SuggestMove from '$lib/data/gm_moves/SuggestMove.svelte'
 
   export let small:boolean
 
@@ -23,6 +25,7 @@
     rules: false,
     gmnote: false,
     chat: false,
+    move_idea: false,
   }
   let lastOpen
   let gm:boolean = false
@@ -58,6 +61,10 @@
     <Change />
   </Widget-->
   {#if gm}
+    <Widget id='move_idea' tip='Suggest a GM Move' on:click={click} show={open.move_idea}>
+      <IdeaIcon slot='icon' />
+      <SuggestMove />
+    </Widget>
     <Widget id='gmnote' tip='Make a GM only note' on:click={click} show={open.gmnote}>
       <GMIcon slot='icon' />
       <GMNote />
