@@ -5,5 +5,6 @@ export function name_to_color(name:string):string {
   for (let i=0; i < name.length; i++) {
     total += name.charCodeAt(i)
   }
-  return `hsl(${total % 254}, ${light ? '80%' : '40%'}, ${light ? '60%': '60%'})`
+  console.log(total)
+  return `hsl(${(total * 6) % 254}, ${light ? '80%' : '40%'}, ${light ? '60%': '60%'})`
 }
