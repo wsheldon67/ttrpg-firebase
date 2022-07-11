@@ -17,7 +17,6 @@
   function click(name:string) {
     campaign.era = name
   }
-  // TODO other eras
 </script>
 <svelte:head><title>Choose an Era</title></svelte:head>
 <h1>Era</h1>

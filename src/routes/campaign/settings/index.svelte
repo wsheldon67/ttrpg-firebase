@@ -7,8 +7,6 @@
       console.error('Campaign is blank! Cancelling upload.',detail)
       return
     }
-    console.log(detail)
-    return
     const {db} = await import ('$lib/firebase')
     const {doc, setDoc} = await import ('firebase/firestore')
     await setDoc(
@@ -16,6 +14,5 @@
       detail
     )
   }
-  // TODO finish campaign settings
 </script>
 <Build campaign={$campaign} on:update={save}/>
