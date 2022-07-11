@@ -5,9 +5,10 @@ import { blank, type NPC } from "$lib/data/npc";
 import { createEventDispatcher } from 'svelte'
 import Techniques from '../comp/Techniques/index.svelte'
 import Header from "$lib/c/Header.svelte";
+import { character_names } from "$lib/data/names";
 const dispatch = createEventDispatcher()
 
-export let npc:NPC = blank
+export let npc:NPC = JSON.parse(JSON.stringify(blank))
 
 let current_condition = ''
 
@@ -17,6 +18,7 @@ const importances = {
   Master: `Powerful or very important to the story. 10 fatigue, 5 conditions, 3 balance, 2-5 techniques`,
   Legendary: `Important paragons of the whole setting. 15 fatigue, 8 conditions, 4 balance, 3+ techniques`
 }
+let nation = 'Air Nomad'
 
 function add_condition() {
   npc.conditions = [
@@ -37,9 +39,24 @@ function technqiue_click(technique) {
 function remove_technique(name) {
   npc.techniques = npc.techniques.filter(el => el !== name)
 }
+function generate_name(){
+  const index = Math.floor(Math.random() * character_names[nation].length)
+  npc.name = character_names[nation][index]
+}
 </script>
 <button class='p' on:click={save}>Save</button>
 <div class='cont'>
+<label class='row genname'>
+  Generate Name:
+  <select>
+    <option>Air Nomad</option>
+    <option>Water Tribe</option>
+    <option>Earth Kingdom</option>
+    <option>Fire Nation</option>
+    <option>Foggy Swamp</option>
+  </select>
+  <button class='p' on:click={generate_name}>Go</button>
+</label>
 <label>
   Name:
   <input bind:value={npc.name}/>
@@ -48,16 +65,18 @@ function remove_technique(name) {
   <Tooltip tip="A physical feature, piece of clothing, signature gesture or mannerism, or personality quirk.">Memorable Feature:</Tooltip>
   <input bind:value={npc.feature}/>
 </label>
-<label>
-  Importance:
-  <select bind:value={npc.importance}>
-    <option>Minor</option>
-    <option>Major</option>
-    <option>Master</option>
-    <option>Legendary</option>
-  </select>
-</label>
-<p>{importances[npc.importance]}</p>
+<div>
+  <label>
+    Importance:
+    <select bind:value={npc.importance}>
+      <option>Minor</option>
+      <option>Major</option>
+      <option>Master</option>
+      <option>Legendary</option>
+    </select>
+  </label>
+  <p>{importances[npc.importance]}</p>
+</div>
 <label>
   <Tooltip tip='What motivates the NPC? What do they feel driven to do?'>Drive:</Tooltip>
   <input bind:value={npc.drive}/>
@@ -145,5 +164,8 @@ function remove_technique(name) {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+  .genname {
+    height: 1.6em;
   }
 </style>
