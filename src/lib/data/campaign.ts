@@ -9,4 +9,7 @@ export type Campaign = {
   users:string[]
   
   era:string
+  scope:string
+  focus:string
+  incident:string[]
 }

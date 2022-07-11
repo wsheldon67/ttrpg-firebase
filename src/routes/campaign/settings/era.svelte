@@ -1,6 +1,8 @@
 <script lang='ts'>
   import type { Campaign } from "$lib/data/campaign";
-
+  import AangEra from "../../comp/Setup/AangEra.svelte";
+  import HundredYearWarEra from "../../comp/Setup/HundredYearWarEra.svelte";
+  import KorraEra from "../../comp/Setup/KorraEra.svelte";
   import KyoshiEra from "../../comp/Setup/KyoshiEra.svelte";
   import RokuEra from "../../comp/Setup/RokuEra.svelte";
 
@@ -8,6 +10,8 @@
 
   const eras = [
     {name: 'Kyoshi', comp: KyoshiEra}, {name: 'Roku', comp: RokuEra},
+    {name: 'Hundred Year War', comp: HundredYearWarEra}, {name: 'Aang', comp: AangEra},
+    {name: 'Korra', comp: KorraEra}
   ]
 
   function click(name:string) {
@@ -15,6 +19,8 @@
   }
   // TODO other eras
 </script>
+<svelte:head><title>Choose an Era</title></svelte:head>
+<h1>Era</h1>
 Choose an era:
 <div class='cardtainer'>
   {#each eras as {name, comp}}
