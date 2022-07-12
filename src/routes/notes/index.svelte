@@ -1,6 +1,12 @@
 <script lang='ts'>
   import { campaign } from "$lib/campaign"
+  import { isGM } from "$lib/display_name";
   import { name_to_color } from "$lib/name_to_color";
+  import { onMount } from "svelte";
+
+  let gm:boolean
+
+  onMount(isGM($campaign, el => gm = el))
 
   $: tag_cats = tag_cats_as_array($campaign)
   function tag_cats_as_array(camp):{name:string, tags:string[]}[] {
@@ -47,9 +53,11 @@
       ['tag_cats.'+cat]: arrayRemove(tag)
     })
   }
+  //TODO add GM only tag category
 </script>
 <a href='/notes/all' class='p'>View All Notes</a>
 {#each tag_cats as {name, tags}}
+  {#if name !== 'GM Only' || gm}
   <h1>{name}
     {#if name !== 'No Category'}
       <form on:submit|preventDefault={(e) => move_to_cat(e, name)}>
@@ -65,6 +73,7 @@
       </form>
     {/if}
   </h1>
+  {/if}
   {#each tags as tag}
     <div class='tag' style={`background-color: ${name_to_color(tag)}`}>
       {#if name !== 'No Category'}

@@ -20,7 +20,14 @@
 
 <a href='/npc/new'>New NPC</a>
 <h1>Existing NPCs</h1>
-{#each npcs as {name, id}}
-  <a href={`/npc/${id}`}>{name}</a>
-  <a href={`/npc/edit-${id}`}><Edit /></a>
-{/each}
+  {#each npcs as {name, id}}
+    <span class='cont'>
+      <a href={`/npc/${id}`}>{name}</a>
+      <a href={`/npc/edit-${id}`}><Edit /></a>
+    </span>
+  {/each}
+<style>
+  .cont {
+    padding-left: 1em;
+  }
+</style>
