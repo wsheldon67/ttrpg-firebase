@@ -53,7 +53,6 @@
       ['tag_cats.'+cat]: arrayRemove(tag)
     })
   }
-  //TODO add GM only tag category
 </script>
 <a href='/notes/all' class='p'>View All Notes</a>
 {#each tag_cats as {name, tags}}

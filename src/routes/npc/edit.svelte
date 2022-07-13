@@ -11,6 +11,7 @@ const dispatch = createEventDispatcher()
 export let npc:NPC = JSON.parse(JSON.stringify(blank))
 
 let current_condition = ''
+let current_tag = ''
 
 const importances = {
   Minor: `A side character of low importance to the story. 3 fatigue, 1 condition, 1 balance, 0 techniques`,
@@ -42,6 +43,13 @@ function remove_technique(name) {
 function generate_name(){
   const index = Math.floor(Math.random() * character_names[nation].length)
   npc.name = character_names[nation][index]
+}
+function remove_tag(tag:string) {
+  npc.tags = npc.tags.filter(el => el !== tag)
+}
+function add_tag() {
+  npc.tags = [...npc.tags, current_tag]
+  current_tag = ''
 }
 </script>
 <button class='p' on:click={save}>Save</button>
@@ -129,6 +137,18 @@ function generate_name(){
 <Header h={1} title='Add Techniques' hide>
   <Techniques onClick={technqiue_click} />
 </Header>
+<form on:submit|preventDefault={add_tag}>
+  <label>
+    Tags
+    <input bind:value={current_tag} />
+    <button class='p' type='submit'>+</button>
+  </label>
+</form>
+<div class='list'>
+  {#each npc.tags as tag}
+    <button class='pill' style={'background-color: '+name_to_color(tag)} on:click={()=>{remove_tag(tag)}}>{tag}</button>
+  {/each}
+</div>
 <style>
   .cont {
     display: flex;

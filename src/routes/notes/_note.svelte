@@ -4,6 +4,7 @@
   import Edit from '$lib/i/edit.svg'
   import Up from '$lib/i/arrow-up.svg'
   import Down from '$lib/i/arrow-down.svg'
+  import Trash from '$lib/i/trash-2.svg'
 
   export let note:Note
   $: body = note.body
@@ -51,6 +52,11 @@
     const ref = doc(db, 'notes', id)
     await updateDoc(ref, {gm})
   }
+  async function del_note() {
+    const { doc, deleteDoc } = await import ('firebase/firestore')
+    const { db } = await import ('$lib/firebase')
+    await deleteDoc(doc(db, 'notes', id))
+  }
 </script>
 <div class='cont'>
   {#if editmode}
@@ -73,6 +79,7 @@
         <button class='p add'>+</button>
       </form>
       <button class='p' on:click={save_note}>Save</button>
+      <button class='trash' on:click={del_note}><Trash /></button>
     {:else}
       <button on:click={()=>{editmode = true}}><Edit /></button>
     {/if}

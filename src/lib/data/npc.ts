@@ -17,6 +17,7 @@ export interface NPC {
   positive_statuses: {name:string, applied:boolean}[]
   negative_statuses: {name: string, applied:boolean}[]
   feature_settings: any
+  tags:string[]
 }
 
 export const blank:NPC = {
@@ -47,4 +48,5 @@ export const blank:NPC = {
     {name: 'Stunned', applied: false}
   ],
   feature_settings: {},
+  tags: []
 }
