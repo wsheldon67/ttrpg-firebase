@@ -7,7 +7,7 @@
   let notes = []
   export let gm:boolean = false
 
-  onMount(subscribe_to_log(res => notes = res, gm))
+  onMount(subscribe_to_log(res => notes = res, gm, true))
 </script>
 <datalist id='used_tags'>
   {#each $campaign.user_tags || [] as used_tag}
