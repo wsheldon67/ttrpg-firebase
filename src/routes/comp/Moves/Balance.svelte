@@ -16,5 +16,5 @@
   <CallSomeoneOut start={start+1} hide/>
   <DenyACallout start={start+1} hide/>
   <ResistShiftingYourBalance start={start+1} hide/>
-  <LoseYourBalance start={start+1} />
+  <LoseYourBalance start={start+1} hide/>
 </Header>
