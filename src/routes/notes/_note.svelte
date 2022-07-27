@@ -96,13 +96,14 @@
   .tag {
     margin-left: .25em;
     border-radius: .25em;
-    padding: .25em;
+    padding: .125em .5em .25em .125em;
     width: max-content;
     height: max-content;
   }
   .tag > * {
     color: var(--at);
     font-weight: var(--at-weight);
+    font-size: small;
   }
   .tag > a:hover {
     filter: brightness(.8);
