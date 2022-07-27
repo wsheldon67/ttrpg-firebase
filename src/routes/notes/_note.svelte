@@ -1,6 +1,6 @@
 <script lang='ts'>
   import type { Note } from "$lib/notes";
-  import { name_to_color } from "$lib/name_to_color";
+  import { n2h_settings } from "$lib/name_to_color";
   import Edit from '$lib/i/edit.svg'
   import Up from '$lib/i/arrow-up.svg'
   import Down from '$lib/i/arrow-down.svg'
@@ -66,7 +66,7 @@
   {/if}
   <div class='tagstuff'>
     {#each user_tags || [] as tag}
-      <div class='tag' style={`background-color: ${name_to_color(tag)}`}>
+      <div class='tag' style={`background-color: ${n2h_settings(tag, [50, 100], [60, 50])}`}>
         <button
           on:click={()=>{remove_tag(tag, id)}}
         >X</button>

@@ -3,7 +3,7 @@
   import { add_note } from "$lib/notes"
   import Chat from "./chat.svelte";
   import Roll from "./roll.svelte";
-  import { name_to_color } from "$lib/name_to_color";
+  import { n2h_settings } from "$lib/name_to_color";
   import { chat } from "$lib/chat";
   import { afterUpdate } from "svelte";
 
@@ -36,6 +36,9 @@
     }
     last_scroll_top = el.scrollTop
   })
+  function color(name:string) {
+    return n2h_settings(name, [50, 80], [60, 42])
+  }
 </script>
 <div class='chat'>
   <div class='messages'>
@@ -45,7 +48,7 @@
         {#await get_display_name(note.user)}
           Loading...
         {:then name}
-          <p class='user' style={`color: ${name_to_color(name)}; border-bottom: 1px solid ${name_to_color(name)};`}>{name}</p>
+          <p class='user' style={`color: ${color(name)}; border-bottom: 1px solid ${color(name)};`}>{name}</p>
         {/await}
         {/if}
         <svelte:component this={types[note.type]} {note} />
