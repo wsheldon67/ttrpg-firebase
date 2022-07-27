@@ -31,7 +31,9 @@ import { afterUpdate } from "svelte";
   afterUpdate(() => {
     const el = document.querySelector('.messages')
     if (el.scrollTop < last_scroll_top - 30) {return}
-    document.querySelector('.messages').lastElementChild.scrollIntoView()
+    if (document.querySelector('.messages').lastElementChild) {
+      document.querySelector('.messages').lastElementChild.scrollIntoView()
+    }
     last_scroll_top = el.scrollTop
   })
 </script>

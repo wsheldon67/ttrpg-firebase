@@ -21,6 +21,7 @@ import { chat } from '$lib/chat';
       const { isSignedIn } = await import ('$lib/firebase')
       const signedIn = await isSignedIn()
       if (!signedIn) {
+        console.log(signedIn)
         await goto('/auth/login')
       } else if (!localStorage.getItem('campaignID')) {
         goto('/campaign/change')
