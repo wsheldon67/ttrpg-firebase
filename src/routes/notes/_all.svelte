@@ -14,6 +14,6 @@
     <option>{used_tag}</option>
   {/each}
 </datalist>
-{#each notes as note}
+{#each notes as note (note.id)}
   <Note {note} />
 {/each}
