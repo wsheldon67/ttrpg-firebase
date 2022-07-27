@@ -12,4 +12,5 @@
 
   {#each notes as note}
     <Note {note} />
+    <hr />
   {/each}
