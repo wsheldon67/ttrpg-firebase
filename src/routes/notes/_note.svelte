@@ -5,7 +5,7 @@
   import Up from '$lib/i/arrow-up.svg'
   import Down from '$lib/i/arrow-down.svg'
   import Trash from '$lib/i/trash-2.svg'
-import Tooltip from "$lib/c/Tooltip.svelte";
+  import Tooltip from "$lib/c/Tooltip.svelte";
 
   export let note:Note
   $: body = note.body
@@ -91,7 +91,6 @@ import Tooltip from "$lib/c/Tooltip.svelte";
     {/if}
   </div>
 </div>
-<hr />
 
 <style>
   .tag {

@@ -2,6 +2,7 @@
 export interface Note {
   body: string
   type: string
+  created?: {seconds:number, nanoseconds:number}
   title?: string
   tags?: string[]
   [key: string]:any
