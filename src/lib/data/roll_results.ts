@@ -56,7 +56,7 @@ export function results(label:string):RollResult {
         both_pre: `You succeed, but the GM tells you what it costs you.`,
         ten_plus: `The GM also tells you what other lucky opportunity falls in your lap`
       }
-    case 'Rely On Your Skills and Training':
+    case 'Rely on Your Skills and Training':
       return {
         miss: basic_miss,
         hit: `You do it imperfectly - the GM tells you how your approach might lead to unexpected consquences; accept those consequences or mark 1 fatigue.`,
