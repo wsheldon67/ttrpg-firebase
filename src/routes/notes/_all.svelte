@@ -21,21 +21,31 @@
     const index = note_index(note)
     const neighbor = notes[index - dir].created
     created.seconds = neighbor.seconds
-    created.nanoseconds = neighbor.nanoseconds + dir
+    const diff = Math.abs(created.nanoseconds - neighbor.nanoseconds)
+    const half = Math.ceil(diff / 2)
+    created.nanoseconds = neighbor.nanoseconds + dir * Math.max(half, 1)
     await updateDoc(ref, {created})
   }
 
   function note_index(note:INote):number {
-    return notes.findIndex(el => el.id === note.id)
+    return sort(notes).findIndex(el => el.id === note.id)
   }
-
+  function sort(notes:INote[]):INote[] {
+    const res = [...notes]
+    res.sort((a, b) => {
+      const s = b.created.seconds - a.created.seconds
+      const n = b.created.nanoseconds - a.created.nanoseconds
+      return s * 315360000 + n
+    })
+    return res
+  }
 </script>
 <datalist id='used_tags'>
   {#each $campaign.user_tags || [] as used_tag}
     <option>{used_tag}</option>
   {/each}
 </datalist>
-{#each notes as note (note.id)}
+{#each sort(notes) as note (note.id)}
   <div class='cont'>
     <div class='order'>
       {#if note_index(note) !== 0}
