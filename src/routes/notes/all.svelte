@@ -7,6 +7,8 @@
   let gm:boolean
 
   onMount(isGM($campaign, res => gm = res))
+
+  // TODO a way to reorder notes
 </script>
 <a href='/notes' class='p'>Browse Tags</a>
 <h1>All Notes</h1>
