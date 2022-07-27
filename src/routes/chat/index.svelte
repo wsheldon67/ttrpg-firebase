@@ -5,7 +5,7 @@
   import Roll from "./roll.svelte";
   import { name_to_color } from "$lib/name_to_color";
   import { chat } from "$lib/chat";
-import { afterUpdate } from "svelte";
+  import { afterUpdate } from "svelte";
 
   const types = {
     'chat': Chat, 'roll': Roll
@@ -52,7 +52,8 @@ import { afterUpdate } from "svelte";
       </div>
     {/each}
   </div>
-  <form on:submit={send_message} on:keyup={keydown}>
+  <form on:submit|preventDefault={send_message} on:keyup={keydown}>
+    <button type='submit' class='p'>Send</button>
     <textarea bind:value={message} placeholder="Send a message"></textarea>
   </form>
 </div>
@@ -68,7 +69,7 @@ import { afterUpdate } from "svelte";
     overflow-y: auto;
     min-height: 0px;
     background-color: var(--b3);
-    
+    padding-bottom: .5em;
   }
   textarea {
     width: 100%;
@@ -78,16 +79,30 @@ import { afterUpdate } from "svelte";
     font-size: smaller;
     margin-top: 1em;
   }
+  button.p {
+    width: 100%;
+    height: 1.5em;
+    display: none;
+  }
+  form {
+    border-top: 1px solid black;
+  }
   @media only screen and (max-width: 48em) {
     .chat {
       width: 90vw;
-      height: 80vh;
+      height: 76vh;
     }
     form {
-      height: 20%;
+      height: 25%;
+    }
+    textarea {
+      height: 80%;
     }
     .cont {
       height: max-content;
+    }
+    button.p {
+      display: block;
     }
   }
 </style>
