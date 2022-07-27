@@ -67,7 +67,7 @@
   {/if}
   <div class='tagstuff'>
     {#each user_tags || [] as tag}
-      <div class='tag' style={`background-color: ${n2h_settings(tag, [50, 100], [60, 40])}`}>
+      <div class='tag' style={`background-color: ${n2h_settings(tag, [40, 100], [40, 40])}`}>
         <button
           on:click={()=>{remove_tag(tag, id)}}
         >X</button>
