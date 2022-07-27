@@ -98,6 +98,7 @@
     border-radius: .25em;
     padding: .25em;
     width: max-content;
+    height: max-content;
   }
   .tag > * {
     color: var(--at);
