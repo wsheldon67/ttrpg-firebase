@@ -5,6 +5,7 @@
   import Up from '$lib/i/arrow-up.svg'
   import Down from '$lib/i/arrow-down.svg'
   import Trash from '$lib/i/trash-2.svg'
+import Tooltip from "$lib/c/Tooltip.svelte";
 
   export let note:Note
   $: body = note.body
@@ -81,12 +82,12 @@
       <button class='p' on:click={save_note}>Save</button>
       <button class='trash' on:click={del_note}><Trash /></button>
     {:else}
-      <button on:click={()=>{editmode = true}}><Edit /></button>
+      <button on:click={()=>{editmode = true}}><Tooltip tip='Edit note'><Edit /></Tooltip></button>
     {/if}
     {#if note.gm}
-      <button on:click={()=>{set_gm(false)}}><Up /></button>
+      <button on:click={()=>{set_gm(false)}}><Tooltip tip='Show to players'><Up /></Tooltip></button>
     {:else}
-      <button on:click={()=>{set_gm(true)}}><Down /></button>
+      <button on:click={()=>{set_gm(true)}}><Tooltip tip='Change to GM only'><Down /></Tooltip></button>
     {/if}
   </div>
 </div>
