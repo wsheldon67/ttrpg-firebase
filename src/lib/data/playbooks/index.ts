@@ -47,9 +47,11 @@ export const playbook:Playbooks = {
   Destined, Elder, Foundling, Razor
 }
 export let playbooks:Playbook[] = [
-  Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor
+  Adamant, Bold, Guardian, Hammer, Icon, Idealist, Pillar, Prodigy, Rogue, Successor,
+  Destined, Elder, Foundling, Razor
 ]
 
+/*
 async function check_WST() {
   const {db, isSignedIn} = await import ('$lib/firebase')
   const {doc, getDoc} = await import ('firebase/firestore')
@@ -61,3 +63,4 @@ async function check_WST() {
   }
 }
 check_WST()
+*/
