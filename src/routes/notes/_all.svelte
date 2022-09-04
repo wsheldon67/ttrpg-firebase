@@ -33,6 +33,7 @@
   function sort(notes:INote[]):INote[] {
     const res = [...notes]
     res.sort((a, b) => {
+      if (!a.created || !b.created) return 1
       const s = b.created.seconds - a.created.seconds
       const n = b.created.nanoseconds - a.created.nanoseconds
       return s * 315360000 + n
