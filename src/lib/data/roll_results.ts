@@ -75,6 +75,30 @@ export function results(label:string):RollResult {
             <li>They overcommit; they are deceived for some time</li>
           </ul>`
       }
+    case 'Call Someone Out':
+      return {
+        miss: `They can demand you act in accordance with one of your principles. Mark a condition or act as they request.`,
+        both_pre: `They are called to act as you say. They must do it or mark a condition. `,
+        hit: `They also challenge your view of the world in turn. Mark 1 fatigue or they shift your balance as they choose.`,
+      }
+    case 'Deny a Callout':
+      return {
+        miss: `You stand strong. Clear a condition, 1-fatigue, or shift your balance.`,
+        both_pre: `Act as they say or mark 1 fatigue. `,
+        ten_plus: `Also shift your balance towards the called-on principle.`
+      }
+    case 'Resist Shifting Your Balance':
+      return {
+        miss: `Mark a condition. The GM shifts your balance twice.`,
+        both_pre: `You maintain your balance.`,
+        hit: `Choose 1:`,
+        ten_plus: `Choose 2:`,
+        both_post: `<ul>
+          <li>Clear a condition or mark growth by immediately acting to prove them wrong.</li>
+          <li>Shift your balance towards the opposite principle.</li>
+          <li>Learn what their principle is. If you already know, take +1 forward against them.</li>
+        </ul>`
+      }
     default:
       return {}
   }
