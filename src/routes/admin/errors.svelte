@@ -1,19 +1,10 @@
 <script lang='ts'>
   import { onMount } from "svelte";
-  import type {Timestamp} from 'firebase/firestore'
   import Tooltip from '$lib/c/Tooltip.svelte'
+  import type { FullLog } from "$lib/error_logger";
 
-  type ErrorDoc = {
-    colno: number
-    display_name: string
-    filename: string
-    lineno: number
-    message: string
-    timestamp: Timestamp
-    uid: string
-  }
 
-  let error_data:ErrorDoc[] = []
+  let error_data:FullLog[] = []
 
   onMount(async ()=> {
     const { collection, query, orderBy, limit, getDocs } = await import ('firebase/firestore')
@@ -36,16 +27,22 @@
 <table>
   <tr>
     <th>Time</th>
-    <th>Error</th>
+    <th>Message</th>
     <th>User</th>
     <th>Location</th>
   </tr>
-  {#each error_data as {colno, display_name, uid, filename, lineno, message, timestamp}}
-    <tr>
-      <td>{timestamp.toDate().toISOString()}</td>
+  {#each error_data as {colno, display_name, uid, filename, lineno, message, timestamp, log_type}}
+    <tr class:error={log_type == 'Error'}>
+      <td>{timestamp.toDate().toLocaleString()}</td>
       <td>{message}</td>
       <td><Tooltip tip={display_name}>{uid}</Tooltip></td>
       <td>{filename}:{lineno}:{colno}</td>
     </tr>
   {/each}
 </table>
+
+<style>
+  .error > td {
+    color: var(--bad);
+  }
+</style>
