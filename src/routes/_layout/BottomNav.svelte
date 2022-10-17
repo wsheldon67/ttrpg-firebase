@@ -6,6 +6,7 @@
   import BellIcon from '$lib/i/bell.svg'
   import GMIcon from '$lib/i/command.svg'
   import IdeaIcon from '$lib/i/cloud-lightning.svg'
+  import YingYangIcon from '$lib/i/yin-yang.svg'
 
   import CompSearch from '../comp/Search.svelte'
   import Change from '../time/change.svelte'
@@ -16,6 +17,7 @@
   import { campaign } from '$lib/campaign';
   import Chat from '../chat/index.svelte'
   import SuggestMove from '$lib/data/gm_moves/SuggestMove.svelte'
+  import Principles from '../admin/characters.svelte'
 
   export let small:boolean
 
@@ -26,6 +28,7 @@
     gmnote: false,
     chat: false,
     move_idea: false,
+    principles: false,
   }
   let lastOpen
   let gm:boolean = false
@@ -77,6 +80,10 @@
   <Widget id='rules' tip='Look up a rule' on:click={click} show={open.rules}>
     <BookIcon slot='icon' />
     <CompSearch />
+  </Widget>
+  <Widget id='principles' tip='View player Principles' on:click={click} show={open.principles}>
+    <YingYangIcon slot='icon' />
+    <Principles />
   </Widget>
   {#if small}
   <Widget id='chat' tip='Open the chat' on:click={click} show={open.chat}>
