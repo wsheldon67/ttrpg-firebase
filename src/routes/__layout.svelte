@@ -37,9 +37,6 @@
   let returnval = campaign.set(localStorage.getItem('campaignID'))
 
 </script>
-<button on:click={()=>{eval('const s;')}}>
-  Create Error
-</button>
 {#await returnval}
 Loading...
 {:then}
