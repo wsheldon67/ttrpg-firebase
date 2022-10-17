@@ -99,6 +99,18 @@ export function results(label:string):RollResult {
           <li>Learn what their principle is. If you already know, take +1 forward against them.</li>
         </ul>`
       }
+    case 'Defend & Maneuver':
+    case 'Advance & Attack':
+    case 'Evade & Observe':
+      return {
+        miss: `Can choose to shift your balance away from center to use 1 basic technique.`,
+        hit: `Use 1 basic or mastered techinque.`,
+        ten_plus: `Choose 1: <ul>
+          <li>Mark 1 fatigue to use a learned techinque.</li>
+          <li>Use 1 practiced techinque.</li>
+          <li>Use 2 different basic or mastered techinques.</li>
+        </ul>`
+      }
     default:
       return {}
   }
