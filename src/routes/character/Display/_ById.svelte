@@ -21,10 +21,9 @@
     }
     if (readOnly) {return}
     const { isSignedIn, db } = await import('$lib/firebase')
-    const { doc, setDoc } = await import ('firebase/firestore')
+    const { doc, updateDoc } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
-    await setDoc(doc(db, 'characters', id), {
-      player: uid,
+    await updateDoc(doc(db, 'characters', id), {
       character: detail
     })
   }
