@@ -3,6 +3,7 @@
   import EditIcon from '$lib/i/Edit.svg'
   import Up from '$lib/i/arrow-up.svg'
   import Down from '$lib/i/arrow-down.svg'
+  import { server_log } from '$lib/error_logger';
 
   let characters = []
   let campaignID = localStorage.getItem('campaignID')
@@ -15,6 +16,11 @@
     const { collection, query, where, onSnapshot } = await import ('firebase/firestore')
     const { uid } = await isSignedIn()
     const q = query(collection(db, 'characters'), where('player','==', uid))
+    server_log({
+      message: `Initializing listener for characters.player == ${uid}`,
+      filename: `/character/select.svelte`,
+      lineno: 19
+    })
     return onSnapshot(q, (snapshot)=>{
       const res = []
       snapshot.forEach((doc) => {
@@ -25,6 +31,11 @@
         })
       })
       characters = res
+      server_log({
+        message: `Found ${res.length} results for characters.player == ${uid}`,
+        filename: `/characters/select.svelte`,
+        lineno: 33
+      })
     })
 
   })

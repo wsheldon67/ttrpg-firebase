@@ -36,7 +36,7 @@
       <td>{timestamp.toDate().toLocaleString()}</td>
       <td>{message}</td>
       <td><Tooltip tip={display_name}>{uid}</Tooltip></td>
-      <td>{filename}:{lineno}:{colno}</td>
+      <td>{filename}:{lineno||''}:{colno||''}</td>
     </tr>
   {/each}
 </table>

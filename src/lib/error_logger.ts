@@ -36,6 +36,12 @@ export async function server_log({message, filename, lineno, colno, log_type}:Lo
     timestamp: serverTimestamp()
   }
 
+  for (let i in log_doc) {
+    if (!log_doc[i]) {
+      log_doc[i] = null
+    }
+  }
+
   const docRef = await addDoc(collection(db, 'errors'), log_doc)
   console.log('log sent to db with id', docRef.id)
 }
