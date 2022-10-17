@@ -7,7 +7,7 @@
     export let gm:boolean = false
     let notes = []
   
-    onMount(subscribe_by_user_tag(tag, res => notes = res, gm))
+    onMount(subscribe_by_user_tag(tag, res => notes = res, gm, true))
   </script>
 
   {#each notes as note}

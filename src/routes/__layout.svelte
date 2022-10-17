@@ -7,7 +7,8 @@
 
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
-import { chat } from '$lib/chat';
+  import { chat } from '$lib/chat'
+  import { on_error } from '$lib/error_logger'
 
   let small = false
   
@@ -17,6 +18,8 @@ import { chat } from '$lib/chat';
     mql.onchange = ({matches}) => {
       small = !matches
     }
+    window.addEventListener("error", on_error)
+    // @ts-ignore
     try {
       const { isSignedIn } = await import ('$lib/firebase')
       const signedIn = await isSignedIn()
@@ -34,6 +37,9 @@ import { chat } from '$lib/chat';
   let returnval = campaign.set(localStorage.getItem('campaignID'))
 
 </script>
+<button on:click={()=>{eval('const s;')}}>
+  Create Error
+</button>
 {#await returnval}
 Loading...
 {:then}
