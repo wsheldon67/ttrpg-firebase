@@ -17,7 +17,7 @@
   <div slot='header' class='buttons'>
     {#if character && move}
       <Fatigue bind:character={character} />
-      <Roll mod={marked_conditions} label='Resist Shifting You Balance' stat='Conditions'/>
+      <Roll mod={marked_conditions} label='Resist Shifting Your Balance' stat='Conditions'/>
     {/if}
     <slot />
   </div>

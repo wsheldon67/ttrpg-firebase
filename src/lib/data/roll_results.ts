@@ -34,6 +34,7 @@ export function results(label:string):RollResult {
           <li>Who or what is in the greatest danger?</li>
         </ul>`
       }
+    case "I Don't Hate You":
     case 'Guide and Comfort':
       return {
         miss: basic_miss,
